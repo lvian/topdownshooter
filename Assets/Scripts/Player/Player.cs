@@ -5,11 +5,12 @@ public class Player : MonoBehaviour {
 
 	public BaseWeapon[] playerWeapons;
 	public BaseWeapon currentWeapon;
+	public GameObject leftHand, rightHand;
 
 	// Use this for initialization
 	void Start () {
-		currentWeapon = (BaseWeapon) GameObject.Instantiate(playerWeapons [0] , transform.position , transform.rotation);  
-		currentWeapon.transform.parent = transform;
+		currentWeapon = (BaseWeapon) GameObject.Instantiate(playerWeapons [0] , rightHand.transform.position , rightHand.transform.rotation);  
+		currentWeapon.transform.parent = rightHand.transform;
 	}
 	
 	// Update is called once per frame
@@ -49,6 +50,17 @@ public class Player : MonoBehaviour {
 				currentWeapon.fire();
 			}
 
+			if(Input.GetKeyDown(KeyCode.Q))
+			{
+				currentWeapon.transform.position = leftHand.transform.position;
+				currentWeapon.transform.parent = leftHand.transform;
+			}
+
+			if(Input.GetKeyDown(KeyCode.E))
+			{
+				currentWeapon.transform.position = rightHand.transform.position;
+				currentWeapon.transform.parent = rightHand.transform;
+			}
 		}
 
 	
