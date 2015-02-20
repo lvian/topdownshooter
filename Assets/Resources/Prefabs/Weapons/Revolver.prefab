@@ -44,6 +44,7 @@ MonoBehaviour:
   weaponFireDelay: 1
   weaponReloadSpeed: 3
   weaponSwapSpeed: 1.5
+  lastShot: 5
 --- !u!212 &21261610
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -9,12 +9,11 @@ public abstract class BaseWeapon : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		lastShot = 5;
+		lastShot = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (lastShot);
 		lastShot += Time.deltaTime;
 	}
 

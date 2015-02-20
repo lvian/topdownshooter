@@ -9,13 +9,11 @@ public class Revolver : BaseWeapon {
 
 	public override void fire ()
 	{
-		Debug.Log (lastShot);
+		Debug.Log (base.);
 		if(lastShot >= weaponFireDelay )
 		{
-			Debug.Log ("Fire 3");
 			GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
-			
-			base.lastShot = 0;
+ 			lastShot = 0;
 		} 
 	}
 

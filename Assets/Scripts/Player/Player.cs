@@ -8,7 +8,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentWeapon = playerWeapons [0];
+		currentWeapon = (BaseWeapon) GameObject.Instantiate(playerWeapons [0] , transform.position , transform.rotation);  
+		currentWeapon.transform.parent = transform;
 	}
 	
 	// Update is called once per frame
