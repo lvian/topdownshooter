@@ -4,21 +4,46 @@ using System.Collections;
 public class Revolver : BaseWeapon {
 
 
-
 	#region implemented abstract members of BaseWeapon
 
-	public override void fire ()
+	public override void Fire ()
 	{
-		if(lastShot >= weaponFireDelay )
+		if(!IsReloading)
 		{
-			GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
- 			lastShot = 0;
-		} 
+			if(AmountOfBullets > 0)
+			{
+				if(lastShot >= weaponFireDelay )
+				{
+					GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
+		 			lastShot = 0;
+					amountOfBullets --;
+					bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+				}
+			} else{
+				//play out of bullets sound 
+			}
+		} else
+		{
+			//Show the player a message "I'm Reloading"
+			Debug.Log ("I'm Reloading");
+		}
 	}
 
-	public override void reload ()
+	public override void Reload (GameObject rb)
 	{
-		throw new System.NotImplementedException ();
+		if(AmountOfBullets < MaxAmountOfBullets)
+		{
+			NGUITools.SetActive (rb, true);
+			rb.GetComponent<UISlider> ().value = 0;
+			reloadTimer = 0;
+			isReloading = true;
+			base.reloadBar = rb;
+		} else
+		{
+			//Show a message "Weapon fully loaded"
+			Debug.Log ("Weapon fully loaded");
+		}
+
 	}
 
 	#endregion
