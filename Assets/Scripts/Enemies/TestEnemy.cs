@@ -34,10 +34,13 @@ public class TestEnemy : Enemy {
 
 		Vector3 vectorToTarget = _player.transform.position - transform.position;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
-		Quaternion q = Quaternion.AngleAxis(angle, Vector3.left);
+		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+		Vector3 euler = q.eulerAngles;
+		euler.z -= 90;
+		q = Quaternion.Euler(euler);
 		transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
 
-		//Debug.Log(distance + " " + direction);
+		Debug.Log(distance + " " + direction);
 		//if(direction > 0){
 			if(distance > 4){
 				_state = EnemyState.Moving;
@@ -53,21 +56,14 @@ public class TestEnemy : Enemy {
 
 	protected override void Move() {
 		Debug.Log("Moving!");
-		float distance = Vector3.Distance(transform.position, _player.transform.position);
-		
-		Vector3 dir = (_player.transform.position - transform.position).normalized;
-		
-		float direction = Vector3.Dot(dir, transform.forward);
-		if(distance > 4){
-			_state = EnemyState.Searching;
-		}
-		else{
+		//float distance = Vector3.Distance(transform.position, _player.transform.position);
+		// dir = (_player.transform.position - transform.position);
+		//dir.Normalize();
+		//float direction = Vector3.Dot(dir, transform.forward);
 			if(currentWeapon.AmountOfBullets > 0)
 				_state = EnemyState.Attacking;
 			else
 				_state = EnemyState.Reloading;
-		}
-		//transform.Translate(new Vector3(0f, 1f * Time.deltaTime, 0f));
 	}
 
 	protected override void Attack(){
