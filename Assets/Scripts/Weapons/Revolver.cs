@@ -8,24 +8,48 @@ public class Revolver : BaseWeapon {
 
 	public override void Fire ()
 	{
-		if(!IsReloading)
+		if(transform.parent.tag == "Player")
 		{
-			if(AmountOfBullets > 0)
+			if(!IsReloading)
 			{
-				if(lastShot >= weaponFireDelay )
+				if(AmountOfBullets > 0)
 				{
-					GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
-		 			lastShot = 0;
-					amountOfBullets --;
-					bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+					if(lastShot >= weaponFireDelay )
+					{
+						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
+			 			lastShot = 0;
+						amountOfBullets --;
+						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+					}
+				} else{
+					//play out of bullets sound 
 				}
-			} else{
-				//play out of bullets sound 
+			} else
+			{
+				//Show the player a message "I'm Reloading"
+				Debug.Log ("I'm Reloading");
 			}
-		} else
-		{
-			//Show the player a message "I'm Reloading"
-			Debug.Log ("I'm Reloading");
+		} else {
+			if(!IsReloading)
+			{
+				if(AmountOfBullets > 0)
+				{
+					if(lastShot >= weaponFireDelay )
+					{
+						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
+						lastShot = 0;
+						amountOfBullets --;
+						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+					}
+				} else{
+					//play out of bullets sound 
+				}
+			} else
+			{
+				//Show the player a message "I'm Reloading"
+				Debug.Log ("I'm Reloading");
+			}
+
 		}
 	}
 

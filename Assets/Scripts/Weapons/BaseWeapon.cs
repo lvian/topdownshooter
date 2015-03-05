@@ -24,23 +24,46 @@ public abstract class BaseWeapon : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		lastShot += Time.deltaTime;
-
-		if(isReloading)
+		Debug.Log (transform.parent.tag);
+		if(transform.parent.tag == "Player")
 		{
-			float sliderPercentage = 1 / weaponReloadSpeed;
-			UISlider slider = reloadBar.GetComponent<UISlider>();
-			if(reloadTimer >= weaponReloadSpeed)
+			if(isReloading)
 			{
-				amountOfBullets = maxAmountOfBullets;
-				bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
-				isReloading = false;
-				NGUITools.SetActive(reloadBar , false);
-			} else
+				float sliderPercentage = 1 / weaponReloadSpeed;
+				UISlider slider = reloadBar.GetComponent<UISlider>();
+				if(reloadTimer >= weaponReloadSpeed)
+				{
+					amountOfBullets = maxAmountOfBullets;
+					bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+					isReloading = false;
+					NGUITools.SetActive(reloadBar , false);
+				} else
+				{
+					slider.value = reloadTimer * sliderPercentage;
+				}
+
+				reloadTimer += Time.deltaTime;
+			}
+		} else
+		{
+			if(isReloading)
 			{
-				slider.value = reloadTimer * sliderPercentage;
+				//float sliderPercentage = 1 / weaponReloadSpeed;
+				//UISlider slider = reloadBar.GetComponent<UISlider>();
+				if(reloadTimer >= weaponReloadSpeed)
+				{
+					amountOfBullets = maxAmountOfBullets;
+				//	bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+					isReloading = false;
+				//	NGUITools.SetActive(reloadBar , false);
+				} else
+				{
+				//	slider.value = reloadTimer * sliderPercentage;
+				}
+				
+				reloadTimer += Time.deltaTime;
 			}
 
-			reloadTimer += Time.deltaTime;
 		}
 	}
 
