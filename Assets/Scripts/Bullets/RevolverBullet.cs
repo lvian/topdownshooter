@@ -23,7 +23,6 @@ public class RevolverBullet : BaseBullet {
 	}
 	public override void OnTriggerEnter2D (Collider2D other)
 	{
-		Debug.Log (other.name);
 		if(other.tag == "Wall")
 		{
 			GameObject.Destroy(gameObject);

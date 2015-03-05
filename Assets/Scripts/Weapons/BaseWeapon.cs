@@ -38,7 +38,6 @@ public abstract class BaseWeapon : MonoBehaviour {
 			} else
 			{
 				slider.value = reloadTimer * sliderPercentage;
-
 			}
 
 			reloadTimer += Time.deltaTime;
