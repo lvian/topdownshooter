@@ -8,6 +8,7 @@ public class Revolver : BaseWeapon {
 
 	public override void Fire ()
 	{
+		//Player Logic
 		if(transform.parent.tag == "Player")
 		{
 			if(!IsReloading)
@@ -16,7 +17,7 @@ public class Revolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
+						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.GetChild(0).position , transform.rotation); 
 			 			lastShot = 0;
 						amountOfBullets --;
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
@@ -30,6 +31,7 @@ public class Revolver : BaseWeapon {
 				Debug.Log ("I'm Reloading");
 			}
 		} else {
+			//Enemies logic
 			if(!IsReloading)
 			{
 				if(AmountOfBullets > 0)

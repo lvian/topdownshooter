@@ -187,6 +187,7 @@
      <Compile Include="Assets\Scripts\Enemies\TestEnemy.cs" />
      <Compile Include="Assets\Scripts\Other\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerArm.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />

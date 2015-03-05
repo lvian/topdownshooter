@@ -5,15 +5,14 @@ public class Player : MonoBehaviour {
 
 	public BaseWeapon[] playerWeapons;
 	public BaseWeapon currentWeapon;
-	public GameObject leftHand, rightHand;
+	public GameObject leftArm, rightArm;
 
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax;
 
 	// Use this for initialization
 	void Start () {
-		currentWeapon = (BaseWeapon) GameObject.Instantiate(playerWeapons [0] , rightHand.transform.position , rightHand.transform.rotation);  
-		currentWeapon.transform.parent = rightHand.transform;
+		equipRightHand (playerWeapons[0], true);
 
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
@@ -61,14 +60,12 @@ public class Player : MonoBehaviour {
 
 			if(Input.GetKeyDown(KeyCode.Q))
 			{
-				currentWeapon.transform.position = leftHand.transform.position;
-				currentWeapon.transform.parent = leftHand.transform;
+				equipLeftHand(currentWeapon , false);
 			}
 
 			if(Input.GetKeyDown(KeyCode.E))
 			{
-				currentWeapon.transform.position = rightHand.transform.position;
-				currentWeapon.transform.parent = rightHand.transform;
+				equipRightHand(currentWeapon , false);
 			}
 			if(Input.GetKeyDown(KeyCode.R))
 			{
@@ -78,4 +75,38 @@ public class Player : MonoBehaviour {
 	
 	}
 
+
+
+	public void equipRightHand(BaseWeapon weapon, bool newWeapon = false)
+	{
+		NGUITools.SetActive (rightArm, true);
+		if(newWeapon)
+		{
+			currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon , rightArm.transform.GetChild(0).transform.position , rightArm.transform.GetChild(0).rotation);  
+			currentWeapon.transform.parent = rightArm.transform.GetChild(0).transform;
+		} else
+		{
+			currentWeapon.transform.position = rightArm.transform.GetChild(0).transform.position;
+			currentWeapon.transform.parent = rightArm.transform.GetChild(0).transform;
+
+		}
+		NGUITools.SetActive (leftArm, false);
+	}
+
+	public void equipLeftHand(BaseWeapon weapon, bool newWeapon = false)
+	{
+		NGUITools.SetActive (leftArm, true);
+		if(newWeapon)
+		{
+			currentWeapon = (BaseWeapon) GameObject.Instantiate( weapon , leftArm.transform.GetChild(0).transform.position , leftArm.transform.GetChild(0).rotation);  
+			currentWeapon.transform.parent = leftArm.transform.GetChild(0).transform;
+		} else
+		{
+			currentWeapon.transform.position = leftArm.transform.GetChild(0).transform.position;
+			currentWeapon.transform.parent = leftArm.transform.GetChild(0).transform;
+			
+		}
+		NGUITools.SetActive (rightArm, false);
+		
+	}
 }

@@ -23,8 +23,10 @@ public abstract class BaseWeapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
 		lastShot += Time.deltaTime;
-		Debug.Log (transform.parent.tag);
 		if(transform.parent.tag == "Player")
 		{
 			if(isReloading)
