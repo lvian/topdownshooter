@@ -924,13 +924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7ccc27c4014c4441af30f8a6a37b8dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  rotationSpeed: 2
   weapons:
   - {fileID: 11461610, guid: 44655350676b4de408c590b3fc87ff3a, type: 2}
   currentWeapon: {fileID: 11461610, guid: 44655350676b4de408c590b3fc87ff3a, type: 2}
-  leftHand: {fileID: 419277931}
-  rightHand: {fileID: 114732092}
+  leftArm: {fileID: 627068126}
+  rightArm: {fileID: 57578161}
+  _player: {fileID: 1627501233}
+  rotationSpeed: 68
 --- !u!50 &851280352
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1199,6 +1199,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -1629,7 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe559280c04ade441a87b21fe33c5dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerWeapons:
+  weapons:
   - {fileID: 11461610, guid: 44655350676b4de408c590b3fc87ff3a, type: 2}
   currentWeapon: {fileID: 0}
   leftArm: {fileID: 2134698953}
@@ -1670,7 +1671,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627501232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.48000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children:
   - {fileID: 597837045}
@@ -1829,7 +1830,7 @@ Transform:
   m_GameObject: {fileID: 2057595564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 15.6999998, z: 0}
-  m_LocalScale: {x: .00208333344, y: .00208333344, z: .00208333344}
+  m_LocalScale: {x: .00249999994, y: .00249999994, z: .00249999994}
   m_Children:
   - {fileID: 1166566378}
   - {fileID: 331605248}

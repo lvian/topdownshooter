@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Enemy : MonoBehaviour {
+public abstract class Enemy : Entity {
 	public enum EnemyState {
 		Init,
 		Setup,
@@ -21,6 +21,7 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	protected EnemyState _state = EnemyState.Init;
+	protected EnemyStance _stance = EnemyStance.Offensive;
 
 	IEnumerator Start () {
 		while(true){
@@ -61,8 +62,6 @@ public abstract class Enemy : MonoBehaviour {
 	protected abstract void Setup ();
 
 	protected abstract void Search ();
-
-	protected abstract void Move ();
 
 	protected abstract void Attack ();
 

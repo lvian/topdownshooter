@@ -1,21 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
-
-	public BaseWeapon[] playerWeapons;
-	public BaseWeapon currentWeapon;
-	public GameObject leftArm, rightArm;
-
+public class Player : Entity {
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax;
 
 	// Use this for initialization
-	void Start () {
-		equipRightHand (playerWeapons[0], true);
-
+	protected override void Start () {
+		equipRightHand (weapons[0], true);
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
+
+		base.Start();
 	}
 	
 	// Update is called once per frame
@@ -30,28 +26,7 @@ public class Player : MonoBehaviour {
 			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 			transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
-
-
-			//Buttons
-			if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-			{
-				transform.Translate(new Vector3(0, currentWeapon.WeaponMoveSpeed, 0) * Time.deltaTime);
-			}
-			
-			if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-			{
-				transform.Translate(new Vector3(0, - currentWeapon.WeaponMoveSpeed, 0) * Time.deltaTime);
-			}		 
-
-			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-			{
-				transform.Translate(new Vector3(-currentWeapon.WeaponMoveSpeed, 0, 0) * Time.deltaTime);
-			}
-			
-			if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-			{
-				transform.Translate(new Vector3(currentWeapon.WeaponMoveSpeed, 0, 0) * Time.deltaTime);
-			}
+			Move();
 
 			if(Input.GetKey(KeyCode.Mouse0))
 			{
@@ -75,6 +50,31 @@ public class Player : MonoBehaviour {
 	
 	}
 
+	#region implemented abstract members of Entity
+	protected override void Move ()
+	{
+		//Buttons
+		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+		{
+			transform.Translate(new Vector3(0, Speed * currentWeapon.WeaponMoveSpeed, 0) * Time.deltaTime, Space.World);
+		}
+		
+		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+		{
+			transform.Translate(new Vector3(0, -Speed * currentWeapon.WeaponMoveSpeed, 0) * Time.deltaTime, Space.World);
+		}		 
+		
+		if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+		{
+			transform.Translate(new Vector3(-Speed * currentWeapon.WeaponMoveSpeed, 0, 0) * Time.deltaTime, Space.World);
+		}
+		
+		if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+		{
+			transform.Translate(new Vector3(Speed * currentWeapon.WeaponMoveSpeed, 0, 0) * Time.deltaTime, Space.World);
+		}
+	}
+	#endregion
 
 
 	public void equipRightHand(BaseWeapon weapon, bool newWeapon = false)
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour {
 		NGUITools.SetActive (rightArm, true);
 		if(newWeapon)
 		{
-			currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon , rightArm.transform.GetChild(0).transform.position , rightArm.transform.GetChild(0).rotation);  
+			currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon, rightArm.transform.GetChild(0).transform.position, rightArm.transform.GetChild(0).rotation);  
 			currentWeapon.transform.parent = rightArm.transform.GetChild(0).transform;
 		} else
 		{

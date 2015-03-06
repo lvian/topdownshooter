@@ -4,22 +4,22 @@ using System.Collections;
 public class TestEnemy : Enemy {
 	public Player _player;
 	public float rotationSpeed;
-	public BaseWeapon[] weapons;
-	public BaseWeapon currentWeapon;
-	public GameObject leftHand, rightHand;
 
 	#region implemented abstract members of Enemy
 
 	protected override void Init() {
 		Debug.Log("Initializing");
-		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapons [0] , rightHand.transform.position , rightHand.transform.rotation);  
-		currentWeapon.transform.parent = rightHand.transform;
+		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapons [0] , rightArm.transform.position , rightArm.transform.rotation);  
+		currentWeapon.transform.parent = rightArm.transform;
 		_player = GameObject.Find("Player").GetComponent<Player>();
 		_state = EnemyState.Setup;
+		_stance = EnemyStance.Defensive;
+
 	}
 
 	protected override void Setup() {
 		Debug.Log("Setting up!");
+		base.Start();
 		_state = EnemyState.Searching;
 	}
 
@@ -56,7 +56,7 @@ public class TestEnemy : Enemy {
 
 	protected override void Move() {
 		Debug.Log("Moving!");
-		//float distance = Vector3.Distance(transform.position, _player.transform.position);
+		float distance = Vector3.Distance(transform.position, _player.transform.position);
 		// dir = (_player.transform.position - transform.position);
 		//dir.Normalize();
 		//float direction = Vector3.Dot(dir, transform.forward);
