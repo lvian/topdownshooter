@@ -17,10 +17,13 @@ public class Revolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.GetChild(0).position , transform.rotation); 
+						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
 			 			lastShot = 0;
 						amountOfBullets --;
+						anim.SetTrigger("Attack");
+						NGUITools.PlaySound(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+
 					}
 				} else{
 					//play out of bullets sound 
@@ -38,9 +41,11 @@ public class Revolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , transform.position , transform.rotation); 
+						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
 						lastShot = 0;
+						anim.SetTrigger("Attack");
 						amountOfBullets --;
+						NGUITools.PlaySound(shotSound);
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
 				} else{
@@ -59,11 +64,22 @@ public class Revolver : BaseWeapon {
 	{
 		if(AmountOfBullets < MaxAmountOfBullets)
 		{
-			NGUITools.SetActive (rb, true);
-			rb.GetComponent<UISlider> ().value = 0;
-			reloadTimer = 0;
-			isReloading = true;
-			base.reloadBar = rb;
+			if(IsReloading == false){
+
+				//Not cool bro, need a better solution
+				if(rb.tag == "Player"){
+					NGUITools.SetActive (rb, true);
+					rb.GetComponent<UISlider> ().value = 0;
+
+				}
+				reloadTimer = 0;
+				isReloading = true;
+				base.reloadBar = rb;
+				anim.SetTrigger("Reload");
+				NGUITools.PlaySound(reloadSound);
+			} else{
+				Debug.Log ("Already reloading!");
+			}
 		} else
 		{
 			//Show a message "Weapon fully loaded"

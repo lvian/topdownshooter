@@ -5,12 +5,15 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
 	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets;
+	public GameObject muzzle;
+	public AudioClip  shotSound,reloadSound;
 
 	//Auxiliary Variables
 	protected GameObject  bulletsLabelNumber, bulletsLabelMax;
 	protected float lastShot,reloadTimer;
 	protected bool isReloading;
 	protected GameObject reloadBar;
+	protected Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +22,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 		bulletsLabelNumber = GameObject.Find ("Bullets Number");
 		bulletsLabelMax = GameObject.Find ("Bullets Max");
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -48,8 +52,10 @@ public abstract class BaseWeapon : MonoBehaviour {
 			}
 		} else
 		{
+
 			if(isReloading)
 			{
+
 				//float sliderPercentage = 1 / weaponReloadSpeed;
 				//UISlider slider = reloadBar.GetComponent<UISlider>();
 				if(reloadTimer >= weaponReloadSpeed)

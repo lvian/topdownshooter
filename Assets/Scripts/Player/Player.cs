@@ -7,7 +7,7 @@ public class Player : Entity {
 
 	// Use this for initialization
 	protected override void Start () {
-		equipRightHand (weapons[0], true);
+		spawnWeapon (weapons[0]);
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 
@@ -35,12 +35,12 @@ public class Player : Entity {
 
 			if(Input.GetKeyDown(KeyCode.Q))
 			{
-				equipLeftHand(currentWeapon , false);
+				// previous weapon
 			}
 
 			if(Input.GetKeyDown(KeyCode.E))
 			{
-				equipRightHand(currentWeapon , false);
+				// next weapon 
 			}
 			if(Input.GetKeyDown(KeyCode.R))
 			{
@@ -77,36 +77,11 @@ public class Player : Entity {
 	#endregion
 
 
-	public void equipRightHand(BaseWeapon weapon, bool newWeapon = false)
+	public void spawnWeapon(BaseWeapon weapon)
 	{
-		NGUITools.SetActive (rightArm, true);
-		if(newWeapon)
-		{
-			currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon, rightArm.transform.GetChild(0).transform.position, rightArm.transform.GetChild(0).rotation);  
-			currentWeapon.transform.parent = rightArm.transform.GetChild(0).transform;
-		} else
-		{
-			currentWeapon.transform.position = rightArm.transform.GetChild(0).transform.position;
-			currentWeapon.transform.parent = rightArm.transform.GetChild(0).transform;
-
-		}
-		NGUITools.SetActive (leftArm, false);
+		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon, transform.position, transform.rotation);  
+		currentWeapon.transform.parent = transform;
 	}
 
-	public void equipLeftHand(BaseWeapon weapon, bool newWeapon = false)
-	{
-		NGUITools.SetActive (leftArm, true);
-		if(newWeapon)
-		{
-			currentWeapon = (BaseWeapon) GameObject.Instantiate( weapon , leftArm.transform.GetChild(0).transform.position , leftArm.transform.GetChild(0).rotation);  
-			currentWeapon.transform.parent = leftArm.transform.GetChild(0).transform;
-		} else
-		{
-			currentWeapon.transform.position = leftArm.transform.GetChild(0).transform.position;
-			currentWeapon.transform.parent = leftArm.transform.GetChild(0).transform;
-			
-		}
-		NGUITools.SetActive (rightArm, false);
-		
-	}
+
 }

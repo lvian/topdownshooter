@@ -9,8 +9,8 @@ public class TestEnemy : Enemy {
 
 	protected override void Init() {
 		Debug.Log("Initializing");
-		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapons [0] , rightArm.transform.position , rightArm.transform.rotation);  
-		currentWeapon.transform.parent = rightArm.transform;
+		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapons [0] , transform.position , transform.rotation);  
+		currentWeapon.transform.parent = transform;
 		_player = GameObject.Find("Player").GetComponent<Player>();
 		_state = EnemyState.Setup;
 		_stance = EnemyStance.Defensive;
@@ -74,7 +74,7 @@ public class TestEnemy : Enemy {
 
 	protected override void Reload(){
 		Debug.Log("Reloading!");
-		currentWeapon.amountOfBullets = 6;
+		currentWeapon.Reload(transform.gameObject);
 		_state = EnemyState.Attacking;
 	}
 
