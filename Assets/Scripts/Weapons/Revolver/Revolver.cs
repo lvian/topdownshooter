@@ -62,7 +62,7 @@ public class Revolver : BaseWeapon {
 
 	public override void Reload (GameObject rb)
 	{
-		if(AmountOfBullets < MaxAmountOfBullets)
+		if(AmountOfBullets < MaxAmountOfBullets && lastShot >= weaponFireDelay)
 		{
 			if(IsReloading == false){
 
@@ -77,6 +77,9 @@ public class Revolver : BaseWeapon {
 				base.reloadBar = rb;
 				anim.SetTrigger("Reload");
 				NGUITools.PlaySound(reloadSound);
+				GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
+				gb.transform.parent = GameObject.Find ("WeaponCases").transform;
+
 			} else{
 				Debug.Log ("Already reloading!");
 			}

@@ -191,7 +191,8 @@
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerArm.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Revolver.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Revolver\Revolver.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Revolver\RevolverCases.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.8.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

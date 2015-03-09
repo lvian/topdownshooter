@@ -240,7 +240,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.31002617, y: .671802282, z: 0}
+  m_LocalPosition: {x: -3.44904089, y: -2.69253492, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 483542}
@@ -295,6 +295,7 @@ MonoBehaviour:
   amountOfBullets: 6
   maxAmountOfBullets: 6
   muzzle: {fileID: 160816}
+  weaponCases: {fileID: 144480, guid: c4440724c24d731478275a69c72f4aee, type: 2}
   shotSound: {fileID: 8300000, guid: 6532cf3d58694c7408475278235e20aa, type: 3}
   reloadSound: {fileID: 8300000, guid: 24b1a294665081c4e9127ff82e27a8bd, type: 3}
 --- !u!212 &21227148

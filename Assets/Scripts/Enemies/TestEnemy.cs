@@ -40,7 +40,7 @@ public class TestEnemy : Enemy {
 		q = Quaternion.Euler(euler);
 		transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
 
-		Debug.Log(distance + " " + direction);
+		//Debug.Log(distance + " " + direction);
 		//if(direction > 0){
 			if(distance > 4){
 				_state = EnemyState.Moving;
