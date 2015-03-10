@@ -23,6 +23,7 @@ public class Revolver : BaseWeapon {
 						anim.SetTrigger("Attack");
 						NGUITools.PlaySound(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 
 					}
 				} else{
@@ -46,6 +47,7 @@ public class Revolver : BaseWeapon {
 						anim.SetTrigger("Attack");
 						amountOfBullets --;
 						NGUITools.PlaySound(shotSound);
+						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
 				} else{

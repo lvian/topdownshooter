@@ -5,7 +5,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
 	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets;
-	public GameObject muzzle, weaponCases;
+	public GameObject muzzle, weaponCases, muzzleFireEffect;
 	public AudioClip  shotSound,reloadSound;
 
 	//Auxiliary Variables

@@ -736,7 +736,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &851280351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &1382971180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1537,7 @@ Transform:
   - {fileID: 824738986}
   - {fileID: 1648107344}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1627501232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,7 +1549,7 @@ GameObject:
   - 212: {fileID: 1627501234}
   - 114: {fileID: 1627501233}
   - 50: {fileID: 1627501236}
-  - 61: {fileID: 1627501237}
+  - 58: {fileID: 1627501237}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1613,7 +1613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!50 &1627501236
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -1629,8 +1629,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!61 &1627501237
-BoxCollider2D:
+--- !u!58 &1627501237
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1639,9 +1639,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.014318645, y: .00606203079}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: .866796851, y: .601013243}
+  m_Radius: .462409258
 --- !u!1 &1648107343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,7 +1924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1768582080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1831426345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,6 +2051,52 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: .13333334, g: .0901960805, b: .00392156886, a: 1}
+--- !u!1001 &1882675699
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.33501697
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.64724064
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474854, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 116290, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e9112c9d6cc1c594ab2f4560dafbeab3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2033007849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2167,7 +2213,7 @@ Transform:
   - {fileID: 331605248}
   - {fileID: 34718521}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!54 &2057595566
 Rigidbody:
   m_ObjectHideFlags: 0
