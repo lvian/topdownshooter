@@ -14,12 +14,14 @@ public abstract class BaseWeapon : MonoBehaviour {
 	protected bool isReloading;
 	protected GameObject reloadBar;
 	protected Animator anim;
+	protected PlayerCamera playerCamera;
 
 	// Use this for initialization
 	void Start () {
 		isReloading = false;
 		lastShot = 0;
 
+		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		bulletsLabelNumber = GameObject.Find ("Bullets Number");
 		bulletsLabelMax = GameObject.Find ("Bullets Max");
 		anim = GetComponent<Animator> ();

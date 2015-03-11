@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Revolver : BaseWeapon {
@@ -24,6 +24,7 @@ public class Revolver : BaseWeapon {
 						NGUITools.PlaySound(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
+						playerCamera.shakeCamera(0.1f , 0.05f);
 
 					}
 				} else{

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Player : Entity {
@@ -6,12 +6,14 @@ public class Player : Entity {
 	public GameObject reloadBar, bulletsNumber, bulletsMax;
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
+	protected PlayerCamera playerCamera;
 	// Use this for initialization
 	protected override void Start () {
 		spawnWeapon (weapons[0]);
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
+		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		base.Start();
 	}
 	
@@ -118,5 +120,10 @@ public class Player : Entity {
 	void OnTriggerEnter2D(Collider2D other) {
 
 		//Will be used in the future ... I'll  be back!!!!
+		Debug.Log (other.name);
+		if (other.tag == "Bullet")
+		{
+			playerCamera.shakeCamera(0.1f , 0.05f);
+		}
 	}
 }
