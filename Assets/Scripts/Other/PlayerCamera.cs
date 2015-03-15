@@ -20,7 +20,6 @@ public class PlayerCamera : MonoBehaviour {
 		if(shakeTime > 0)
 		{
 			pos = Random.insideUnitCircle * shakeValue;
-			Debug.Log (pos);
 			camera.transform.position = new Vector3( camera.transform.position.x - pos.x , camera.transform.position.y - pos.y , transform.localPosition.z);
 			shakeTime -= Time.deltaTime;
 		} 

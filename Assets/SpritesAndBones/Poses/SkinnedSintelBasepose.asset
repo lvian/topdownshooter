@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc57e5e95493434e91e7de286002d45, type: 3}
+  m_Name: SkinnedSintelBasepose
+  m_EditorClassIdentifier: 
+  rotations:
+  - name: 48697073
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - name: 54686967682e4c
+    rotation: {x: 0, y: 0, z: .999987543, w: -.0049967994}
+  - name: 5368696e2e4c
+    rotation: {x: 0, y: 0, z: .0186268445, w: .999826491}
+  - name: 466f6f742e4c
+    rotation: {x: 0, y: 0, z: .00118437584, w: -.999999285}
+  - name: 4368657374
+    rotation: {x: 0, y: 0, z: .00711572357, w: .999974668}
+  - name: 557070657241726d2e4c
+    rotation: {x: 0, y: 0, z: .878626287, w: -.477510065}
+  - name: 4c6f77657241726d2e4c
+    rotation: {x: 0, y: 0, z: .0575857051, w: -.998340607}
+  - name: 48616e642e4c
+    rotation: {x: 0, y: 0, z: .00373449246, w: -.999993026}
+  - name: 48656164
+    rotation: {x: 0, y: 0, z: .00711569376, w: -.999974728}
+  - name: 557070657241726d2e52
+    rotation: {x: 0, y: 0, z: .831053317, w: .556192756}
+  - name: 4c6f77657241726d2e52
+    rotation: {x: 0, y: 0, z: .210895061, w: .977508724}
+  - name: 48616e642e52
+    rotation: {x: 0, y: 0, z: .122178569, w: -.992508173}
+  - name: 54686967682e52
+    rotation: {x: 0, y: 0, z: .999812722, w: .0193526149}
+  - name: 5368696e2e52
+    rotation: {x: 0, y: 0, z: .0377159901, w: .999288499}
+  - name: 466f6f742e52
+    rotation: {x: 0, y: 0, z: .00978326332, w: -.999952137}
+  positions:
+  - name: 48697073
+    position: {x: 0, y: 0, z: 0}
+  - name: 54686967682e4c
+    position: {x: .377970427, y: .333724737, z: 0}
+  - name: 5368696e2e4c
+    position: {x: -2.39440432e-08, y: 1.33564866, z: 0}
+  - name: 466f6f742e4c
+    position: {x: -1.82973537e-07, y: 1.01717544, z: 0}
+  - name: 4368657374
+    position: {x: 0, y: 1.22000003, z: 0}
+  - name: 557070657241726d2e4c
+    position: {x: .440125704, y: .239183322, z: 0}
+  - name: 4c6f77657241726d2e4c
+    position: {x: -1.61005431e-07, y: .561019123, z: 0}
+  - name: 48616e642e4c
+    position: {x: -5.18034895e-08, y: .56068635, z: 0}
+  - name: 48656164
+    position: {x: 9.79724635e-11, y: .454003066, z: 0}
+  - name: 557070657241726d2e52
+    position: {x: -.433027357, y: .25161007, z: 0}
+  - name: 4c6f77657241726d2e52
+    position: {x: 1.05720588e-09, y: .577132463, z: 0}
+  - name: 48616e642e52
+    position: {x: 1.77147228e-07, y: .560704589, z: 0}
+  - name: 54686967682e52
+    position: {x: -.312803477, y: .333724499, z: 0}
+  - name: 5368696e2e52
+    position: {x: 9.03026987e-09, y: 1.2930299, z: 0}
+  - name: 466f6f742e52
+    position: {x: 5.34835571e-08, y: 1.05498683, z: 0}
+  targets:
+  - name: 466f6f742e4c
+    position: {x: .496740758, y: -3.29615712, z: 0}
+  - name: 48616e642e4c
+    position: {x: 2.12781572, y: .18163228, z: 0}
+  - name: 48616e642e52
+    position: {x: -2.03326941, y: .367670774, z: 0}
+  - name: 466f6f742e52
+    position: {x: -.307360768, y: -2.98660684, z: 0}

@@ -17,9 +17,9 @@ public class RotateArm : MonoBehaviour {
 		if(anim.GetCurrentAnimatorClipInfo(0).Length > 0)
 		{
 			an = anim.GetCurrentAnimatorClipInfo(0)[0];
-			if(transform.parent.tag =="Player");
+			if(anim.transform.parent.tag =="Player")
 			{
-				if(anim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "Reload")
+				if(an.clip.name != "Reload")
 				{
 					//Turns the weapon towards the current mouse position
 					Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

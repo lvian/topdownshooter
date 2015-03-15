@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc57e5e95493434e91e7de286002d45, type: 3}
+  m_Name: BasicSkeletonBase
+  m_EditorClassIdentifier: 
+  rotations:
+  - name: 48697073
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - name: 546967682e4c
+    rotation: {x: 0, y: 0, z: 1, w: -6.71943144e-06}
+  - name: 5368696e2e4c
+    rotation: {x: 0, y: 0, z: .00730019296, w: .999973357}
+  - name: 466f6f742e4c
+    rotation: {x: 0, y: 0, z: .0168745853, w: .999857605}
+  - name: 4368657374
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - name: 557070657241726d2e4c
+    rotation: {x: 0, y: 0, z: .871872306, w: -.489733249}
+  - name: 4c6f77657241726d2e4c
+    rotation: {x: 0, y: 0, z: 1.41241458e-06, w: 1}
+  - name: 48616e642e4c
+    rotation: {x: 0, y: 0, z: .0295251925, w: -.999564052}
+  - name: 48656164
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - name: 557070657241726d2e52
+    rotation: {x: 0, y: 0, z: .875155628, w: .483841509}
+  - name: 4c6f77657241726d2e52
+    rotation: {x: 0, y: 0, z: 3.5749124e-06, w: 1}
+  - name: 48616e642e52
+    rotation: {x: 0, y: 0, z: .0323097631, w: .999477923}
+  - name: 546967682e52
+    rotation: {x: 0, y: 0, z: .999979496, w: .00640872354}
+  - name: 5368696e2e52
+    rotation: {x: 0, y: 0, z: .0192617532, w: -.99981451}
+  - name: 466f6f742e52
+    rotation: {x: 0, y: 0, z: .0232650544, w: .999729335}
+  positions:
+  - name: 48697073
+    position: {x: 0, y: 2.5910182, z: 0}
+  - name: 546967682e4c
+    position: {x: .246716976, y: .0200283527, z: 0}
+  - name: 5368696e2e4c
+    position: {x: -3.15962501e-09, y: 1.15514612, z: 0}
+  - name: 466f6f742e4c
+    position: {x: 4.66614192e-10, y: .995653152, z: 0}
+  - name: 4368657374
+    position: {x: 0, y: .839999914, z: 0}
+  - name: 557070657241726d2e4c
+    position: {x: .370075583, y: .557795763, z: 0}
+  - name: 4c6f77657241726d2e4c
+    position: {x: -2.40297524e-08, y: .726513982, z: 0}
+  - name: 48616e642e4c
+    position: {x: -8.38661336e-08, y: .465618968, z: 0}
+  - name: 48656164
+    position: {x: 0, y: .7900002, z: 0}
+  - name: 557070657241726d2e52
+    position: {x: -.385172069, y: .557796001, z: 0}
+  - name: 4c6f77657241726d2e52
+    position: {x: 1.09213119e-08, y: .656872928, z: 0}
+  - name: 48616e642e52
+    position: {x: -2.09120383e-08, y: .465619266, z: 0}
+  - name: 546967682e52
+    position: {x: -.230610996, y: .0200288296, z: 0}
+  - name: 5368696e2e52
+    position: {x: -1.26790611e-09, y: 1.15530562, z: 0}
+  - name: 466f6f742e52
+    position: {x: -1.88502334e-08, y: 1.0044055, z: 0}
+  targets: []

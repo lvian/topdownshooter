@@ -18,13 +18,13 @@ public class TestEnemy : Enemy {
 	}
 
 	protected override void Setup() {
-		Debug.Log("Setting up!");
+		//Debug.Log("Setting up!");
 		base.Start();
 		_state = EnemyState.Searching;
 	}
 
 	protected override void Search() {
-		Debug.Log("Searching!");
+		//Debug.Log("Searching!");
 		float distance = Vector3.Distance(transform.position, _player.transform.position);
 
 		Vector3 dir = (transform.position - _player.transform.position);
@@ -55,7 +55,7 @@ public class TestEnemy : Enemy {
 	}
 
 	protected override void Move() {
-		Debug.Log("Moving!");
+		//Debug.Log("Moving!");
 		float distance = Vector3.Distance(transform.position, _player.transform.position);
 		// dir = (_player.transform.position - transform.position);
 		//dir.Normalize();
@@ -67,23 +67,23 @@ public class TestEnemy : Enemy {
 	}
 
 	protected override void Attack(){
-		Debug.Log("Attacking!");
+		//Debug.Log("Attacking!");
 		currentWeapon.Fire();
 		_state = EnemyState.Searching;
 	}
 
 	protected override void Reload(){
-		Debug.Log("Reloading!");
+		//Debug.Log("Reloading!");
 		currentWeapon.Reload(transform.gameObject);
 		_state = EnemyState.Attacking;
 	}
 
 	protected override void Dodge() {
-		Debug.Log("Dodging");
+		//Debug.Log("Dodging");
 	}
 
 	protected override void Die() {
-		Debug.Log("Dying!");
+		//Debug.Log("Dying!");
 	}
 
 	#endregion

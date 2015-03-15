@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
@@ -129,6 +130,23 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AlphaNumericSort.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationHierarchyEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationToPNGMenu.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\BakePoseEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\BoneEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\ControlPointEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\InverseKinematicsEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\PoseEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SkeletonEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\Skin2DEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SkinMakerEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SkinMesh.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SortLayerExposedEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SortLayerMaterialEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SortingLayerDrawer.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SortingLayerHelper.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\Weightpainter.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.8.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
@@ -138,6 +156,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
+     <None Include="Assets\SpritesAndBones\Shader\Sprites-Skeleton-Cutout.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 2.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
@@ -149,13 +168,16 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\SpritesAndBones\Shader\LinesColoredBlended.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\SpritesAndBones\license-attributions.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\SpritesAndBones\Shader\Sprites-Skeleton-Diffuse.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />

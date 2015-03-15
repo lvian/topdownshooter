@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc57e5e95493434e91e7de286002d45, type: 3}
+  m_Name: StartPos
+  m_EditorClassIdentifier: 
+  rotations:
+  - name: 486970
+    rotation: {x: 0, y: 0, z: 0, w: 1}
+  - name: 54686967684c656674
+    rotation: {x: 0, y: 0, z: .882127702, w: -.471010327}
+  - name: 5368696e4c656674
+    rotation: {x: 0, y: 0, z: .443546802, w: -.896251202}
+  - name: 54686967685269676874
+    rotation: {x: 0, y: 0, z: .958147824, w: .286273926}
+  - name: 5368696e5269676874
+    rotation: {x: 0, y: 0, z: .255472302, w: .966816366}
+  - name: 55707065724261636b
+    rotation: {x: 0, y: 0, z: .0353769921, w: .999374032}
+  - name: 48656164
+    rotation: {x: 0, y: 0, z: .0507919602, w: -.998709261}
+  - name: 4a6177426f6e65
+    rotation: {x: 0, y: 0, z: .991148174, w: -.132760614}
+  - name: 557070657241726d4c656674
+    rotation: {x: 0, y: 0, z: .886926115, w: -.461911291}
+  - name: 4c6f77657241726d4c656674
+    rotation: {x: 0, y: 0, z: .419929326, w: .907556832}
+  - name: 557070657241726d5269676874
+    rotation: {x: 0, y: 0, z: .843865156, w: .536555409}
+  - name: 4c6f77657241726d5269676874
+    rotation: {x: 0, y: 0, z: .469853431, w: .882744431}
+  positions:
+  - name: 486970
+    position: {x: -.278725386, y: .586486995, z: 0}
+  - name: 54686967684c656674
+    position: {x: .228526309, y: -.329485536, z: 0}
+  - name: 5368696e4c656674
+    position: {x: 4.3340691e-08, y: .922416449, z: 0}
+  - name: 54686967685269676874
+    position: {x: -.228525713, y: -.329485506, z: 0}
+  - name: 5368696e5269676874
+    position: {x: -6.45577103e-08, y: .921901643, z: 0}
+  - name: 55707065724261636b
+    position: {x: 5.96046448e-08, y: 1, z: 0}
+  - name: 48656164
+    position: {x: .108448707, y: 1.55851519, z: 0}
+  - name: 4a6177426f6e65
+    position: {x: 1.44541645, y: -.202084631, z: 0}
+  - name: 557070657241726d4c656674
+    position: {x: .607226789, y: .297986358, z: 0}
+  - name: 4c6f77657241726d4c656674
+    position: {x: -2.350952e-07, y: 1.08439457, z: 0}
+  - name: 557070657241726d5269676874
+    position: {x: -1.16990721, y: .423961818, z: 0}
+  - name: 4c6f77657241726d5269676874
+    position: {x: 1.16422662e-07, y: 1.08453369, z: 0}
+  targets:
+  - name: 5368696e4c656674
+    position: {x: .777231395, y: -1.24105883, z: 0}
+  - name: 5368696e5269676874
+    position: {x: -1.07904708, y: -1.54449654, z: 0}
+  - name: 557070657241726d4c656674
+    position: {x: 1.51570392, y: .174816608, z: 0}
+  - name: 4c6f77657241726d4c656674
+    position: {x: 2.42178082, y: 1.77152312, z: 0}
+  - name: 557070657241726d5269676874
+    position: {x: -3.70113659, y: .862170398, z: 0}
+  - name: 4c6f77657241726d5269676874
+    position: {x: -2.52682114, y: .158319712, z: 0}
