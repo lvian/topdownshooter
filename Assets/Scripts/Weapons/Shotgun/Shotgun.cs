@@ -28,6 +28,7 @@ public class Shotgun : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
+						StartCoroutine(muzzleEffect());
 						NGUITools.PlaySound(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -35,7 +36,11 @@ public class Shotgun : BaseWeapon {
 
 					}
 				} else{
-					//play out of bullets sound 
+					if(triggerSoundDelay >= weaponReloadSpeed)
+					{
+						NGUITools.PlaySound(triggerSound);
+						triggerSoundDelay = 0;
+					}
 				}
 			} else
 			{
@@ -55,11 +60,16 @@ public class Shotgun : BaseWeapon {
 						anim.SetTrigger("Attack");
 						amountOfBullets --;
 						NGUITools.PlaySound(shotSound);
+						StartCoroutine(muzzleEffect());
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
 				} else{
-					//play out of bullets sound 
+					if(triggerSoundDelay >= weaponReloadSpeed)
+					{
+						NGUITools.PlaySound(triggerSound);
+						triggerSoundDelay = 0;
+					}
 				}
 			} else
 			{

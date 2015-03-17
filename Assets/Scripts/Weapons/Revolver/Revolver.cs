@@ -21,6 +21,7 @@ public class Revolver : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
+						StartCoroutine(muzzleEffect());
 						NGUITools.PlaySound(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -28,7 +29,11 @@ public class Revolver : BaseWeapon {
 
 					}
 				} else{
-					//play out of bullets sound 
+					if(triggerSoundDelay >= weaponReloadSpeed)
+					{
+						NGUITools.PlaySound(triggerSound);
+						triggerSoundDelay = 0;
+					}
 				}
 			} else
 			{
@@ -46,13 +51,18 @@ public class Revolver : BaseWeapon {
 						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
 						lastShot = 0;
 						anim.SetTrigger("Attack");
+						StartCoroutine(muzzleEffect());
 						amountOfBullets --;
 						NGUITools.PlaySound(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
 				} else{
-					//play out of bullets sound 
+					if(triggerSoundDelay >= weaponReloadSpeed)
+					{
+						NGUITools.PlaySound(triggerSound);
+						triggerSoundDelay = 0;
+					}
 				}
 			} else
 			{

@@ -5,12 +5,12 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
 	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets;
-	public GameObject muzzle, weaponCases, muzzleFireEffect;
-	public AudioClip  shotSound,reloadSound;
+	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect;
+	public AudioClip  shotSound,reloadSound, triggerSound;
 
 	//Auxiliary Variables
 	protected GameObject  bulletsLabelNumber, bulletsLabelMax;
-	protected float lastShot,reloadTimer;
+	protected float lastShot,reloadTimer, triggerSoundDelay;
 	protected bool isReloading;
 	protected GameObject reloadBar;
 	protected Animator anim;
@@ -25,14 +25,20 @@ public abstract class BaseWeapon : MonoBehaviour {
 		bulletsLabelNumber = GameObject.Find ("Bullets Number");
 		bulletsLabelMax = GameObject.Find ("Bullets Max");
 		anim = GetComponent<Animator> ();
+		triggerSoundDelay = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
-
 		lastShot += Time.deltaTime;
+
+
+		if(amountOfBullets == 0)
+		{
+			triggerSoundDelay += Time.deltaTime;
+		}
+
 		if(transform.parent.tag == "Player")
 		{
 			if(isReloading)
@@ -77,6 +83,14 @@ public abstract class BaseWeapon : MonoBehaviour {
 		}
 	}
 
+	protected IEnumerator muzzleEffect()
+	{
+		Debug.Log (muzzleFlashEffect);
+		muzzleFlashEffect.SetActive (true);
+		yield return new WaitForSeconds (0.2f);
+		muzzleFlashEffect.SetActive (false);
+
+	}
 	public abstract void Fire();
 	public abstract void Reload(GameObject rb);
 

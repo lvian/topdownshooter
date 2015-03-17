@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &105558
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 466412}
+  - 212: {fileID: 21253522}
+  m_Layer: 0
+  m_Name: muzzle_flash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &106878
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,9 +279,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.84287739e-08, y: .909999847, z: 0}
+  m_LocalPosition: {x: -.0260000005, y: .538999975, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 466412}
   m_Father: {fileID: 491892}
   m_RootOrder: 0
 --- !u!4 &442506
@@ -274,7 +291,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110870}
-  m_LocalRotation: {x: 0, y: 0, z: .203235254, w: .97912997}
+  m_LocalRotation: {x: 0, y: 0, z: .202708229, w: .979239225}
   m_LocalPosition: {x: -.00999999978, y: .331999987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -301,7 +318,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.40350008, y: 1.40414536, z: 0}
+  m_LocalPosition: {x: -5.35015392, y: .845592976, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447084}
@@ -321,6 +338,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 447084}
   m_RootOrder: 1
+--- !u!4 &466412
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105558}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalPosition: {x: .0299999993, y: -.0340000018, z: 0}
+  m_LocalScale: {x: 1.0000025, y: 1.00000167, z: 3}
+  m_Children: []
+  m_Father: {fileID: 435894}
+  m_RootOrder: 0
 --- !u!4 &467522
 Transform:
   m_ObjectHideFlags: 1
@@ -340,7 +369,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181272}
-  m_LocalRotation: {x: 0, y: 0, z: .301746905, w: -.953388095}
+  m_LocalRotation: {x: 0, y: 0, z: .301582545, w: -.95344007}
   m_LocalPosition: {x: 3.35276127e-08, y: .421583921, z: 0}
   m_LocalScale: {x: .99999994, y: 1.00000072, z: 1}
   m_Children:
@@ -354,7 +383,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163580}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: .973999977, z: 0}
+  m_LocalPosition: {x: -0, y: .50999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 491892}
@@ -627,8 +656,10 @@ MonoBehaviour:
   muzzle: {fileID: 176614}
   weaponCases: {fileID: 144480, guid: c4440724c24d731478275a69c72f4aee, type: 2}
   muzzleFireEffect: {fileID: 163580}
+  muzzleFlashEffect: {fileID: 105558}
   shotSound: {fileID: 8300000, guid: 6532cf3d58694c7408475278235e20aa, type: 3}
   reloadSound: {fileID: 8300000, guid: 24b1a294665081c4e9127ff82e27a8bd, type: 3}
+  triggerSound: {fileID: 8300000, guid: 6a326b875ee10c441b3146b509eb05fd, type: 3}
 --- !u!114 &11478850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1889,6 +1920,32 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d023f61c7ad4e6a46a4580f540598ad9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!212 &21253522
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105558}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 744669d42b77d6542bcfa8bd28a53d38, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 595a97d2d80ff474d8635f2a1edd6cb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21259116
 SpriteRenderer:

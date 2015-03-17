@@ -184,6 +184,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192286
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 433558}
+  - 212: {fileID: 21268284}
+  m_Layer: 0
+  m_Name: muzzle_flash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &198086
 GameObject:
   m_ObjectHideFlags: 1
@@ -257,6 +273,18 @@ Transform:
   - {fileID: 412860}
   m_Father: {fileID: 478534}
   m_RootOrder: 0
+--- !u!4 &433558
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192286}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalPosition: {x: .00100000005, y: .00800000038, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 3}
+  m_Children: []
+  m_Father: {fileID: 459074}
+  m_RootOrder: 0
 --- !u!4 &439936
 Transform:
   m_ObjectHideFlags: 1
@@ -316,7 +344,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.00600000005, y: .298000008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 433558}
   m_Father: {fileID: 412860}
   m_RootOrder: 0
 --- !u!4 &466440
@@ -394,7 +423,7 @@ Animator:
   m_GameObject: {fileID: 107158}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 865180d1da5681444bfcec1b49f7e9b5, type: 2}
+  m_Controller: {fileID: 22100000, guid: 08f551a34715bec4393ecfdbcd461454, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -616,15 +645,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMoveSpeed: 1
   weaponFireDelay: 1.5
-  weaponReloadSpeed: 2
+  weaponReloadSpeed: 1.5
   weaponSwapSpeed: 1
   amountOfBullets: 2
   maxAmountOfBullets: 2
   muzzle: {fileID: 152000}
   weaponCases: {fileID: 145022, guid: f0d04f521945d664cbaa93c1b3e54a45, type: 2}
   muzzleFireEffect: {fileID: 102362}
-  shotSound: {fileID: 8300000, guid: 24b1a294665081c4e9127ff82e27a8bd, type: 3}
-  reloadSound: {fileID: 8300000, guid: 24b1a294665081c4e9127ff82e27a8bd, type: 3}
+  muzzleFlashEffect: {fileID: 192286}
+  shotSound: {fileID: 8300000, guid: b5e6499a3e21e8d479128bae41f6a3a5, type: 3}
+  reloadSound: {fileID: 8300000, guid: 3794a9da07de11a4da649ef60dc784f8, type: 3}
+  triggerSound: {fileID: 8300000, guid: 6a326b875ee10c441b3146b509eb05fd, type: 3}
   spreadAngle: 70
   bulletsperShot: 5
 --- !u!114 &11475944
@@ -1891,6 +1922,32 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 380d17d3bfd08d244bc353f19f674367, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!212 &21268284
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192286}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 744669d42b77d6542bcfa8bd28a53d38, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: -2
+  m_Sprite: {fileID: 21300000, guid: 595a97d2d80ff474d8635f2a1edd6cb5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21271296
 SpriteRenderer:
