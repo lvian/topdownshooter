@@ -183,6 +183,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\Scripts\Bullets\BaseBullet.cs" />
      <Compile Include="Assets\Scripts\Bullets\RevolverBullet.cs" />
+     <Compile Include="Assets\Scripts\Bullets\ShotgunBullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\TestEnemy.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
@@ -195,6 +196,8 @@
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver\Revolver.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver\RevolverCases.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Shotgun\ShotgunCases.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\AnimationWindowUtils.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Bone.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\ControlPoint.cs" />
