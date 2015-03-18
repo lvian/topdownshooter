@@ -102,7 +102,7 @@ public class Player : Entity {
 		//Tests X and Y separetely so you can move them individually during collisions
 		foreach(Collider2D c in colX )
 		{
-			if(c.tag == "Wall")
+			if(c.tag == "Wall" || c.tag == "Small Obstacle")
 			{
 				newX = 0;
 			}
@@ -110,7 +110,7 @@ public class Player : Entity {
 
 		foreach(Collider2D c in colY )
 		{
-			if(c.tag == "Wall")
+			if(c.tag == "Wall" || c.tag == "Small Obstacle")
 			{
 				newY = 0;
 			}

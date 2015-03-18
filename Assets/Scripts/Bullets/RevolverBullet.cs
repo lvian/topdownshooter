@@ -9,11 +9,7 @@ public class RevolverBullet : BaseBullet {
 	
 	}
 	
-	// Update is called once per frame
-	void Update () {
 
-		transform.Translate(new Vector3(0, bulletSpeed, 0) * Time.deltaTime);
-	}
 
 
 	#region implemented abstract members of BaseBullet
