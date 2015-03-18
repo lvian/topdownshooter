@@ -7,9 +7,10 @@ public class Player : Entity {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 	protected PlayerCamera playerCamera;
+	protected BaseWeapon[] availableWeapons;
 	// Use this for initialization
 	protected override void Start () {
-		spawnWeapon (weapons[0]);
+		spawnWeapons ();
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
@@ -49,6 +50,16 @@ public class Player : Entity {
 			{
 				currentWeapon.Reload(reloadBar);
 			}
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				changeWeapons(0);
+			}
+
+			if(Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				changeWeapons(1);
+			}
+
 		}
 	
 	}
@@ -88,10 +99,30 @@ public class Player : Entity {
 	#endregion
 
 
-	public void spawnWeapon(BaseWeapon weapon)
+	public void spawnWeapons()
 	{
-		currentWeapon = (BaseWeapon) GameObject.Instantiate(weapon, transform.position, transform.rotation);  
-		currentWeapon.transform.parent = transform;
+		availableWeapons = new BaseWeapon[weapons.Length];
+		for ( int key = 0 ; key < weapons.Length ; key ++)
+		{
+
+			BaseWeapon b = (BaseWeapon) GameObject.Instantiate(weapons[key], transform.position, transform.rotation);  
+			b.transform.parent = transform;
+			availableWeapons[key] = b;
+			b.gameObject.SetActive(false);
+			Debug.Log (b.name);
+
+		}
+		availableWeapons [0].gameObject.SetActive (true);
+		currentWeapon = availableWeapons[0];
+		currentWeapon.gameObject.SetActive(true);
+	}
+
+	public void changeWeapons(int weaponNumber)
+	{
+		currentWeapon.gameObject.SetActive (false);
+		currentWeapon = availableWeapons [weaponNumber];
+		currentWeapon.gameObject.SetActive (true);
+
 	}
 
 	public void checkObstacles()
