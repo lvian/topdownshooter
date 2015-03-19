@@ -2266,13 +2266,14 @@ GameObject:
   - 212: {fileID: 851280353}
   - 50: {fileID: 851280352}
   - 114: {fileID: 851280351}
-  m_Layer: 0
+  - 58: {fileID: 851280354}
+  m_Layer: 2
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &851280350
 Transform:
   m_ObjectHideFlags: 0
@@ -2301,8 +2302,10 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   leftArm: {fileID: 0}
   rightArm: {fileID: 0}
-  _player: {fileID: 1627501233}
+  player: {fileID: 0}
   rotationSpeed: 68
+  enemyState: 0
+  enemyStance: 0
 --- !u!50 &851280352
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -2344,6 +2347,19 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 994dc9c2046e741478b31e39c2417401, type: 3}
   m_Color: {r: 1, g: 0, b: .144827366, a: 1}
+--- !u!58 &851280354
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 851280349}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .460000008
 --- !u!4 &857104519
 Transform:
   m_PrefabParentObject: {fileID: 416600, guid: 31a2e308f9119fb4e9a60d42f5662a4f, type: 2}
@@ -2991,6 +3007,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -4106,7 +4123,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .462409258
+  m_Radius: .460000008
 --- !u!4 &1645266590
 Transform:
   m_PrefabParentObject: {fileID: 416600, guid: 31a2e308f9119fb4e9a60d42f5662a4f, type: 2}
