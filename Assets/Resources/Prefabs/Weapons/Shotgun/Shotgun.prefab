@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMoveSpeed: 1
-  weaponFireDelay: 1.5
+  weaponFireDelay: 1
   weaponReloadSpeed: 1.5
   weaponSwapSpeed: 1
   amountOfBullets: 2
