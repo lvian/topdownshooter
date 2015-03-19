@@ -648,7 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMoveSpeed: 1
-  weaponFireDelay: 1
+  weaponFireDelay: .5
   weaponReloadSpeed: 1.5
   weaponSwapSpeed: 1.5
   amountOfBullets: 6
