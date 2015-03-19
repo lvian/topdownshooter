@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Entity : MonoBehaviour {
+public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	private int hitPoints;
 	private int armor;
 	private float speed;
@@ -15,7 +15,14 @@ public abstract class Entity : MonoBehaviour {
 		speed = 1f;
 	}
 
-	protected abstract void Move();
+	#region IMoveBehaviour implementation
+	public virtual void Move (Transform t)
+	{
+		Move();
+	}
+	#endregion
+
+	public abstract void Move();
 
 	public virtual int HitPoints {
 		get {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Enemy : Entity {
+public abstract class Enemy : Entity{
 	public enum EnemyState {
 		Init,
 		Setup,
@@ -20,12 +20,17 @@ public abstract class Enemy : Entity {
 		Aggresive
 	}
 
-	protected EnemyState _state = EnemyState.Init;
-	protected EnemyStance _stance = EnemyStance.Offensive;
+	public Player player;
+	public float rotationSpeed;
 
-	IEnumerator Start () {
+	public EnemyState enemyState = EnemyState.Init;
+	public EnemyStance enemyStance = EnemyStance.Offensive;
+	public IEnemyBehaviour enemyBehaviour = new OffensiveBehaviour();
+
+
+	public IEnumerator Start () {
 		while(true){
-			switch(_state) {
+			switch(enemyState) {
 			case EnemyState.Init:
 				Init();
 				break;
@@ -57,17 +62,35 @@ public abstract class Enemy : Entity {
 		}
 	}
 
-	protected abstract void Init ();
+	protected void Init () {
+		enemyBehaviour.Init(this);
+	}
 
-	protected abstract void Setup ();
+	protected void Setup () {
+		enemyBehaviour.Setup();
+	}
 
-	protected abstract void Search ();
+	protected void Search () {
+		enemyBehaviour.Search();
+	}
 
-	protected abstract void Attack ();
+	protected void Attack () {
+		enemyBehaviour.Attack();
+	}
 
-	protected abstract void Reload ();
+	protected void Reload () {
+		enemyBehaviour.Reload();
+	}
 
-	protected abstract void Dodge ();
+	protected void Dodge () {
+		enemyBehaviour.Dodge();
+	}
 
-	protected abstract void Die ();
+	protected void Die () {
+		enemyBehaviour.Die();
+	}
+
+	public override void Move (){
+		enemyBehaviour.Move();
+	}
 }

@@ -65,9 +65,8 @@ public class Player : Entity {
 	}
 
 	#region implemented abstract members of Entity
-	protected override void Move ()
+	public override void Move ()
 	{
-
 		newY = 0;
 		newX = 0;
 
