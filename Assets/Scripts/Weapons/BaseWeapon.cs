@@ -83,6 +83,11 @@ public abstract class BaseWeapon : MonoBehaviour {
 		muzzleFlashEffect.SetActive (false);
 
 	}
+
+	public string currentAnimation()
+	{
+		return anim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+	}
 	public abstract void Fire();
 	public abstract void Reload(GameObject rb);
 

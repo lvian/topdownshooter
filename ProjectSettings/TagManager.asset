@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullet
   - Small Obstacle
+  - GUI Camera
   layers:
   - Default
   - TransparentFX

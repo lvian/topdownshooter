@@ -121,9 +121,18 @@ public class Player : Entity {
 
 	public void changeWeapons(int weaponNumber)
 	{
-		currentWeapon.gameObject.SetActive (false);
-		currentWeapon = availableWeapons [weaponNumber];
-		currentWeapon.gameObject.SetActive (true);
+		if(currentWeapon.currentAnimation() == "Idle")
+		{
+			currentWeapon.gameObject.SetActive (false);
+			currentWeapon = availableWeapons [weaponNumber];
+			currentWeapon.gameObject.SetActive (true);
+			bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
+			bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
+
+		} else
+		{
+			Debug.Log ("Busy");
+		}
 
 	}
 
