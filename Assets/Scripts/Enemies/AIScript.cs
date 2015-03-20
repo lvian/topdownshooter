@@ -4,7 +4,8 @@ using System.Collections;
 public class AIScript {
 
 	protected bool CanSeeTarget(Transform self, Transform target){
-		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f);
+		LayerMask layerMask = ~( (1 << 10) | (1 << 8) );
+		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f, layerMask);
 		if( hit.collider != null){
 			Debug.Log(hit.transform.tag);
 			if(hit.transform.Equals(target))
@@ -37,14 +38,15 @@ public class AIScript {
 		RaycastHit2D[] hit = new RaycastHit2D[8];
 		bool[] collisions = new bool[8];
 
-		hit[0] = Physics2D.Raycast(self.position, up + (-right), distance);
-		hit[1] = Physics2D.Raycast(self.position, up, distance);
-		hit[2] = Physics2D.Raycast(self.position, up + right, distance);
-		hit[3] = Physics2D.Raycast(self.position, right, distance);
-		hit[4] = Physics2D.Raycast(self.position, -up + right, distance);
-		hit[5] = Physics2D.Raycast(self.position, -up, distance);
-		hit[6] = Physics2D.Raycast(self.position, -up + (-right), distance);
-		hit[7] = Physics2D.Raycast(self.position, -right, distance);
+		LayerMask layerMask = ~((1 << 8));
+		hit[0] = Physics2D.Raycast(self.position, up + (-right), distance, layerMask);
+		hit[1] = Physics2D.Raycast(self.position, up, distance, layerMask);
+		hit[2] = Physics2D.Raycast(self.position, up + right, distance, layerMask);
+		hit[3] = Physics2D.Raycast(self.position, right, distance, layerMask);
+		hit[4] = Physics2D.Raycast(self.position, -up + right, distance, layerMask);
+		hit[5] = Physics2D.Raycast(self.position, -up, distance, layerMask);
+		hit[6] = Physics2D.Raycast(self.position, -up + (-right), distance, layerMask);
+		hit[7] = Physics2D.Raycast(self.position, -right, distance, layerMask);
 
 		/*
 		Debug.DrawRay(self.position, up + (-right), Color.green, distance);
@@ -60,7 +62,7 @@ public class AIScript {
 		for(int i = 0; i < hit.Length; i++){
 			if(hit[i].collider != null){
 				collisions[i] = Vector2.Distance(self.position, hit[i].transform.position) < 2f? true:false;
-				Debug.Log("Direction " + i + " distance " + collisions[i] + " collision with " + hit[i].transform.name);
+				//Debug.Log("Direction " + i + " distance " + collisions[i] + " collision with " + hit[i].transform.name);
 			}
 		}
 

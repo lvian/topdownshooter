@@ -94,8 +94,8 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 
 	public void Attack () {
 		Debug.Log("Attacking!");
-		//if(CanSeeTarget(_enemy.transform, _player.transform))
-		//	_enemy.currentWeapon.Fire();
+		if(CanSeeTarget(_enemy.transform, _player.transform))
+			_enemy.currentWeapon.Fire();
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 

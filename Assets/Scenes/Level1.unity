@@ -2414,7 +2414,7 @@ GameObject:
   - 50: {fileID: 851280352}
   - 114: {fileID: 851280351}
   - 58: {fileID: 851280354}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4062,7 +4062,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 139194, guid: 8e969c8d944633c46af33def64091a92, type: 2}
       propertyPath: m_Name
@@ -4861,8 +4861,8 @@ Transform:
   - {fileID: 124728709}
   - {fileID: 1894113305}
   - {fileID: 1681828130}
-  - {fileID: 1668846797}
   - {fileID: 1377297228}
+  - {fileID: 1668846797}
   m_Father: {fileID: 1622070241}
   m_RootOrder: 1
 --- !u!1001 &1653814693
@@ -4998,7 +4998,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484596, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Name
