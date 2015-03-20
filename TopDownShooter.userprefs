@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\GUIFollowPlayer.cs">
     <Files>
+<<<<<<< Updated upstream
       <File FileName="Assets\Scripts\Player\GUIFollowPlayer.cs" Line="22" Column="1" />
       <File FileName="Assets\Scripts\Other\PlayerCamera.cs" Line="35" Column="1" />
+=======
+      <File FileName="Assets\Scripts\Enemies\AIScript.cs" Line="34" Column="5" />
+      <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="66" Column="56" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

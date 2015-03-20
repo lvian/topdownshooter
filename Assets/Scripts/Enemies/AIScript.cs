@@ -16,4 +16,54 @@ public class AIScript {
 			return false;
 		}
 	}
+
+	protected bool[] CheckCollisions (Transform self) {
+		/*
+		 *
+		 * 0	1	 2
+		 *    \	| /
+		 * 7 --	  -- 3		
+		 * 	  /	| \	
+		 * 6	5	 4
+		 * 
+		 * 
+		 */
+
+		float distance = 30f;
+		//Vector2 up = Vector2.up;
+		//Vector2 right = Vector2.right;
+		Vector2 up = self.up;
+		Vector2 right = self.right;
+		RaycastHit2D[] hit = new RaycastHit2D[8];
+		bool[] collisions = new bool[8];
+
+		hit[0] = Physics2D.Raycast(self.position, up + (-right), distance);
+		hit[1] = Physics2D.Raycast(self.position, up, distance);
+		hit[2] = Physics2D.Raycast(self.position, up + right, distance);
+		hit[3] = Physics2D.Raycast(self.position, right, distance);
+		hit[4] = Physics2D.Raycast(self.position, -up + right, distance);
+		hit[5] = Physics2D.Raycast(self.position, -up, distance);
+		hit[6] = Physics2D.Raycast(self.position, -up + (-right), distance);
+		hit[7] = Physics2D.Raycast(self.position, -right, distance);
+
+		/*
+		Debug.DrawRay(self.position, up + (-right), Color.green, distance);
+		Debug.DrawRay(self.position, up, Color.white, distance);
+		Debug.DrawRay(self.position, up + right, Color.cyan, distance);
+		Debug.DrawRay(self.position, right, Color.magenta, distance);
+		Debug.DrawRay(self.position, -up + right, Color.grey, distance);
+		Debug.DrawRay(self.position, -up, Color.blue, distance);
+		Debug.DrawRay(self.position, -up + (-right), Color.black, distance);
+		Debug.DrawRay(self.position, -right, Color.red, distance);
+		*/
+
+		for(int i = 0; i < hit.Length; i++){
+			if(hit[i].collider != null){
+				collisions[i] = Vector2.Distance(self.position, hit[i].transform.position) < 2f? true:false;
+				Debug.Log("Direction " + i + " distance " + collisions[i] + " collision with " + hit[i].transform.name);
+			}
+		}
+
+		return collisions;
+	}
 }
