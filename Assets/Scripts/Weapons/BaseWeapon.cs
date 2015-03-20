@@ -64,18 +64,11 @@ public abstract class BaseWeapon : MonoBehaviour {
 			if(isReloading)
 			{
 
-				//float sliderPercentage = 1 / weaponReloadSpeed;
-				//UISlider slider = reloadBar.GetComponent<UISlider>();
 				if(reloadTimer >= weaponReloadSpeed)
 				{
 					amountOfBullets = maxAmountOfBullets;
-				//	bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					isReloading = false;
-				//	NGUITools.SetActive(reloadBar , false);
-				} else
-				{
-				//	slider.value = reloadTimer * sliderPercentage;
-				}
+				} 
 				
 				reloadTimer += Time.deltaTime;
 			}
@@ -85,7 +78,6 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	protected IEnumerator muzzleEffect()
 	{
-		Debug.Log (muzzleFlashEffect);
 		muzzleFlashEffect.SetActive (true);
 		yield return new WaitForSeconds (0.2f);
 		muzzleFlashEffect.SetActive (false);

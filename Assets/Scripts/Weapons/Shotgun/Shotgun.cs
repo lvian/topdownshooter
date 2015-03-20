@@ -55,7 +55,11 @@ public class Shotgun : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/ShotgunBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						for(int x = 0 ; x < bulletsperShot ; x++)
+						{
+							GameObject gb =(GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/ShotgunBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+							gb.transform.Rotate(0f ,0f , Random.Range(- spreadAngle/ 2 , spreadAngle/2));
+						}
 						lastShot = 0;
 						anim.SetTrigger("Attack");
 						amountOfBullets --;

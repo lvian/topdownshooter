@@ -12,7 +12,7 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	protected virtual void Start(){
 		hitPoints = 4;
 		armor = 4;
-		speed = 1f;
+		speed = 2f;
 	}
 
 	#region IMoveBehaviour implementation

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : Entity {
 	//GUI Panels and objects
-	public GameObject reloadBar, bulletsNumber, bulletsMax;
+	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber;
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 	protected PlayerCamera playerCamera;
@@ -11,11 +11,15 @@ public class Player : Entity {
 	// Use this for initialization
 	protected override void Start () {
 		spawnWeapons ();
-		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
-		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
+
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		base.Start();
+		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
+		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
+		healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
+		armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
+
 	}
 	
 	// Update is called once per frame
@@ -108,7 +112,6 @@ public class Player : Entity {
 			b.transform.parent = transform;
 			availableWeapons[key] = b;
 			b.gameObject.SetActive(false);
-			Debug.Log (b.name);
 
 		}
 		availableWeapons [0].gameObject.SetActive (true);
@@ -150,10 +153,42 @@ public class Player : Entity {
 	void OnTriggerEnter2D(Collider2D other) {
 
 		//Will be used in the future ... I'll  be back!!!!
-		Debug.Log (other.name);
 		if (other.tag == "Bullet")
 		{
 			playerCamera.shakeCamera(0.1f , 0.05f);
+			controlPlayerHitPoints(other.GetComponent<BaseBullet>().bulletDamage);
+		}
+	}
+
+	public void controlPlayerHitPoints(int damage)
+	{
+		if(Armor > 0)
+		{
+			Armor -= damage;
+		} else
+		{
+			HitPoints -= damage;
+		}
+	}
+
+	public override int HitPoints {
+		get {
+			return base.HitPoints;
+		}
+		set {
+			base.HitPoints = value;
+			healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
+
+		}
+	}
+	
+	public override int Armor {
+		get {
+			return base.Armor;
+		}
+		set {
+			base.Armor = value;
+			armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
 		}
 	}
 }

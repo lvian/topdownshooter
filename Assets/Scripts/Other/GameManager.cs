@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour {
 
 	public void GameStart()
 	{
-		Debug.Log ("here");
 		Application.LoadLevel (1);
 
 	}

@@ -741,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMoveSpeed: 1
   weaponFireDelay: 1
-  weaponReloadSpeed: 1.5
+  weaponReloadSpeed: 2.5
   weaponSwapSpeed: 1
   amountOfBullets: 2
   maxAmountOfBullets: 2
@@ -752,7 +752,7 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: b5e6499a3e21e8d479128bae41f6a3a5, type: 3}
   reloadSound: {fileID: 8300000, guid: 3794a9da07de11a4da649ef60dc784f8, type: 3}
   triggerSound: {fileID: 8300000, guid: 6a326b875ee10c441b3146b509eb05fd, type: 3}
-  spreadAngle: 70
+  spreadAngle: 60
   bulletsperShot: 5
 --- !u!114 &11475944
 MonoBehaviour:

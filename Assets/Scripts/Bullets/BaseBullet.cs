@@ -6,6 +6,7 @@ public abstract class BaseBullet  : MonoBehaviour{
 
 	protected string bulletName;
 	public float bulletSpeed;
+	public int bulletDamage;
 	//maybe we can apply effects like poison, fire, slow etc
 
 	// Update is called once per frame
