@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
-	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets;
+	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets, rotationSpeed;
 	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect;
 	public AudioClip  shotSound,reloadSound, triggerSound;
 
@@ -118,6 +118,12 @@ public abstract class BaseWeapon : MonoBehaviour {
 	public bool IsReloading {
 		get {
 			return isReloading;
+		}
+	}
+
+	public float RotationSpeed {
+		get {
+			return rotationSpeed;
 		}
 	}
 }

@@ -2,14 +2,27 @@ using UnityEngine;
 using System.Collections;
 
 public class Player : Entity {
+
+	public enum PlayerState {
+		Setup,
+		Idle,
+		Moving,
+		Attacking,
+		Reloading,
+		Dodging,
+		Dying
+	}
+
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber;
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 	protected PlayerCamera playerCamera;
 	protected BaseWeapon[] availableWeapons;
+	protected PlayerState playerState;
 	// Use this for initialization
 	protected override void Start () {
+		playerState = PlayerState.Idle;
 		spawnWeapons ();
 
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
@@ -28,46 +41,54 @@ public class Player : Entity {
 		//if game is in play state
 		if (true) {
 
-			//Turns the player towards the current mouse position
-			Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-			diff.Normalize();
-			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+			if(playerState != PlayerState.Dying)
+			{
+				//Turns the player towards the current mouse position
+				Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+				diff.Normalize();
+				float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+				Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
+				transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
 
-			Move();
+				Move();
 
-			if(Input.GetKey(KeyCode.Mouse0))
+				if(Input.GetKey(KeyCode.Mouse0))
+				{
+					currentWeapon.Fire();
+				}
+
+				if(Input.GetKeyDown(KeyCode.Q))
+				{
+					// previous weapon
+				}
+
+				if(Input.GetKeyDown(KeyCode.E))
+				{
+					// next weapon 
+				}
+				if(Input.GetKeyDown(KeyCode.R))
+				{
+					currentWeapon.Reload(reloadBar);
+				}
+				if(Input.GetKeyDown(KeyCode.Alpha1))
+				{
+					changeWeapons(0);
+				}
+
+				if(Input.GetKeyDown(KeyCode.Alpha2))
+				{
+					changeWeapons(1);
+				}
+
+				if(Input.GetKeyDown(KeyCode.Alpha3))
+				{
+					changeWeapons(2);
+				}
+			} else if(playerState == PlayerState.Dying)
 			{
-				currentWeapon.Fire();
+				GetComponent<CircleCollider2D>().enabled = false;
 			}
 
-			if(Input.GetKeyDown(KeyCode.Q))
-			{
-				// previous weapon
-			}
-
-			if(Input.GetKeyDown(KeyCode.E))
-			{
-				// next weapon 
-			}
-			if(Input.GetKeyDown(KeyCode.R))
-			{
-				currentWeapon.Reload(reloadBar);
-			}
-			if(Input.GetKeyDown(KeyCode.Alpha1))
-			{
-				changeWeapons(0);
-			}
-
-			if(Input.GetKeyDown(KeyCode.Alpha2))
-			{
-				changeWeapons(1);
-			}
-
-			if(Input.GetKeyDown(KeyCode.Alpha3))
-			{
-				changeWeapons(2);
-			}
 		}
 	
 	}
@@ -204,4 +225,13 @@ public class Player : Entity {
 			armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
 		}
 	}
+
+	#region implemented abstract members of Entity
+
+	public override void Died ()
+	{
+		playerState = PlayerState.Dying;
+	}
+
+	#endregion
 }

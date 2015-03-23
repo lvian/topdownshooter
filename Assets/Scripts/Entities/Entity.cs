@@ -12,7 +12,7 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	protected virtual void Start(){
 		hitPoints = 4;
 		armor = 4;
-		speed = 2f;
+		speed = 1.5f;
 	}
 
 	#region IMoveBehaviour implementation
@@ -23,6 +23,7 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	#endregion
 
 	public abstract void Move();
+	public abstract void Died();
 
 	public virtual int HitPoints {
 		get {
@@ -30,6 +31,10 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 		}
 		set {
 			hitPoints = value;
+			if(hitPoints == 0)
+			{
+				Died();
+			}
 		}
 	}
 

@@ -13,6 +13,9 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Init (Enemy enemy) {
 		Debug.Log("Initializing");
 		_enemy = enemy;
+		_enemy.HitPoints = 4;
+		_enemy.Armor = 1;
+		_enemy.Speed = 1.5f;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
 		_enemy.transform.parent = GameObject.Find("Spawner").transform;
@@ -111,7 +114,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 	public void Die ()
 	{
-		//Debug.Log("Dying");
+		_enemy.transform.GetComponent<CircleCollider2D> ().enabled = false;
 	}
 	#endregion
 }

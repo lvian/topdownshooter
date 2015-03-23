@@ -187,6 +187,7 @@
      <Compile Include="Assets\Scripts\Bullets\ShotgunBullet.cs" />
      <Compile Include="Assets\Scripts\Enemies\AIScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Enemies\IEnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\IMoveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\OffensiveBehaviour.cs" />

@@ -745,6 +745,7 @@ MonoBehaviour:
   weaponSwapSpeed: 1
   amountOfBullets: 2
   maxAmountOfBullets: 2
+  rotationSpeed: 1.25
   muzzle: {fileID: 152000}
   weaponCases: {fileID: 145022, guid: f0d04f521945d664cbaa93c1b3e54a45, type: 2}
   muzzleFireEffect: {fileID: 102362}

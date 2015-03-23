@@ -653,6 +653,7 @@ MonoBehaviour:
   weaponSwapSpeed: 1.5
   amountOfBullets: 6
   maxAmountOfBullets: 6
+  rotationSpeed: 1.5
   muzzle: {fileID: 176614}
   weaponCases: {fileID: 144480, guid: c4440724c24d731478275a69c72f4aee, type: 2}
   muzzleFireEffect: {fileID: 163580}

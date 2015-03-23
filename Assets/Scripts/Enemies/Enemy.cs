@@ -93,4 +93,25 @@ public abstract class Enemy : Entity{
 	public override void Move (){
 		enemyBehaviour.Move();
 	}
+
+	#region implemented abstract members of Entity
+
+
+	public override void Died ()
+	{
+		enemyState = EnemyState.Dying;
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+
+
+		//Will be used in the future ... I'll  be back!!!!
+		if (other.tag == "Bullet")
+		{
+			HitPoints -= other.GetComponent<BaseBullet>().bulletDamage;
+		}
+	}
+
+	#endregion
+
 }
