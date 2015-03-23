@@ -64,6 +64,10 @@ public class Player : Entity {
 				changeWeapons(1);
 			}
 
+			if(Input.GetKeyDown(KeyCode.Alpha3))
+			{
+				changeWeapons(2);
+			}
 		}
 	
 	}

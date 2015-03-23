@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6219d276151454a8c8517078bc520c, type: 3}
+  m_Name: RifleIdle
+  m_EditorClassIdentifier: 
+  rotations:
+  - name: Left Upper
+    rotation: {x: 0, y: 0, z: .364687026, w: -.931130171}
+  - name: Left Lower
+    rotation: {x: 0, y: 0, z: .0054079378, w: .999985397}
+  - name: Left Hand
+    rotation: {x: 0, y: 0, z: .00761421304, w: -.999971032}
+  - name: Right Upper
+    rotation: {x: 0, y: 0, z: .323761135, w: -.946138859}
+  - name: Right Lower
+    rotation: {x: 0, y: 0, z: .827674985, w: .561207712}
+  - name: Right Hand
+    rotation: {x: 0, y: 0, z: .0761469603, w: .997096658}
+  positions:
+  - name: Left Upper
+    position: {x: -.400000006, y: 0, z: 0}
+  - name: Left Lower
+    position: {x: 1.49011612e-08, y: .432794541, z: 0}
+  - name: Left Hand
+    position: {x: 1.43554644e-08, y: .343485624, z: 0}
+  - name: Right Upper
+    position: {x: .400000006, y: -.112999998, z: 0}
+  - name: Right Lower
+    position: {x: 0, y: .432794482, z: 0}
+  - name: Right Hand
+    position: {x: 3.43425199e-09, y: .343485594, z: 0}
+  controlPoints: []
+  targets:
+  - name: Left Hand
+    position: {x: .238999993, y: .694999993, z: 0}
+  - name: Right Hand
+    position: {x: .187999994, y: .342999995, z: 0}
