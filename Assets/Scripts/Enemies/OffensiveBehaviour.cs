@@ -15,6 +15,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		_enemy = enemy;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
+		_enemy.transform.parent = GameObject.Find("Spawner").transform;
 		_player = GameObject.Find("Player").GetComponent<Player>();
 		_enemy.enemyState = Enemy.EnemyState.Setup;
 		_enemy.enemyStance = Enemy.EnemyStance.Defensive;
