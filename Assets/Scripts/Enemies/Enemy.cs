@@ -108,7 +108,25 @@ public abstract class Enemy : Entity{
 		//Will be used in the future ... I'll  be back!!!!
 		if (other.tag == "Bullet")
 		{
-			HitPoints -= other.GetComponent<BaseBullet>().bulletDamage;
+			controlPlayerHitPoints(other.GetComponent<BaseBullet>().bulletDamage);
+			if(Armor <= 0)
+			{
+				GameObject blood = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bloodhit") , other.transform.position, other.transform.rotation);  
+				blood.GetComponentInChildren<ParticleSystem>().Play();
+			}
+			GameObject.Destroy(other.gameObject);
+		}
+	}
+
+
+	public void controlPlayerHitPoints(int damage)
+	{
+		if(Armor > 0)
+		{
+			Armor -= damage;
+		} else
+		{
+			HitPoints -= damage;
 		}
 	}
 

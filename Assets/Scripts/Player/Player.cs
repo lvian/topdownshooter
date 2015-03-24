@@ -191,6 +191,12 @@ public class Player : Entity {
 		{
 			playerCamera.shakeCamera(0.1f , 0.05f);
 			controlPlayerHitPoints(other.GetComponent<BaseBullet>().bulletDamage);
+			if(Armor <= 0)
+			{
+				GameObject blood = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bloodhit") , other.transform.position, other.transform.rotation);  
+				blood.GetComponentInChildren<ParticleSystem>().Play();
+			}
+			GameObject.Destroy(other.gameObject);
 		}
 	}
 
@@ -201,6 +207,7 @@ public class Player : Entity {
 			Armor -= damage;
 		} else
 		{
+
 			HitPoints -= damage;
 		}
 	}
