@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(_delay <= 0 && transform.childCount < max){
-			GameObject go = Instantiate(entities[0], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity) as GameObject;
+			GameObject go = Instantiate(entities[Random.Range(0,entities.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity) as GameObject;
 			CalculateDelay();
 		}
 		_delay -= Time.deltaTime;

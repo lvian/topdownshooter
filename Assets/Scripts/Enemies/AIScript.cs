@@ -65,7 +65,29 @@ public class AIScript {
 				//Debug.Log("Direction " + i + " distance " + collisions[i] + " collision with " + hit[i].transform.name);
 			}
 		}
-
 		return collisions;
+	}
+
+	public Vector2 GetNearestCovering(Transform self, Transform player) {
+		GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Wall");
+		GameObject closest = null;
+		float distancePlayer = Mathf.Infinity;
+		float distanceWall = Mathf.Infinity;
+		float closestMeanDistance = Mathf.Infinity;
+
+		foreach(GameObject go in obstacles) {
+			distancePlayer = Vector3.Distance(player.position, go.transform.position);
+			distanceWall = Vector3.Distance(self.position, go.transform.position);
+			float curMeanDistance = (distancePlayer + distanceWall) / 2;
+			if(curMeanDistance < closestMeanDistance){
+				closest = go;
+				closestMeanDistance = curMeanDistance;
+			}
+		}
+
+		Vector3 dir = closest.transform.position - player.position;
+		Ray2D ray = new Ray2D(closest.transform.position, new Vector2(dir.x, dir.y));
+		Debug.DrawRay(closest.transform.position, new Vector2(dir.x, dir.y));
+		return ray.GetPoint(3f);
 	}
 }
