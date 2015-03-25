@@ -261,7 +261,7 @@ MonoBehaviour:
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 0
+  mDepth: 1
   mSortingOrder: 0
   mClipOffset: {x: 0, y: 0}
 --- !u!1001 &35133035
@@ -526,18 +526,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: Bullets
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -548,7 +549,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -636,17 +637,18 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 0
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -657,7 +659,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -903,13 +905,13 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3001
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 0
+  mDepth: 1
   mSortingOrder: 0
   mClipOffset: {x: 0, y: 0}
 --- !u!1001 &236463103
@@ -1114,13 +1116,13 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3002
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
   mClipSoftness: {x: 4, y: 4}
-  mDepth: 0
+  mDepth: 1
   mSortingOrder: 0
   mClipOffset: {x: 0, y: 0}
 --- !u!1 &281964019
@@ -1332,8 +1334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thumb: {fileID: 0}
   mBG: {fileID: 0}
-  mFG: {fileID: 0}
-  mValue: 1
+  mFG: {fileID: 1518992683}
+  mValue: 0
   mFill: 0
   numberOfSteps: 0
   onChange: []
@@ -1369,16 +1371,16 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .316176474, g: .316176474, b: .316176474, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 20
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
-  mType: 0
+  aspectRatio: 5
+  mType: 1
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
@@ -1388,8 +1390,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: 
+  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
+  mSpriteName: Bright
   mFillCenter: 1
 --- !u!114 &331605251
 MonoBehaviour:
@@ -1764,14 +1766,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entities:
   - {fileID: 11481436, guid: 65208ba752c20b549a4902abbefb86b3, type: 2}
-  - {fileID: 11437664, guid: e6a590fa6aecf554aadede6b99827804, type: 2}
   spawnPoints:
   - {fileID: 1943983243}
   - {fileID: 281964019}
   - {fileID: 674210421}
   spawnedEntities: []
   max: 5
-  initialDelay: 2
+  initialDelay: 4
   delayFactor: 2
   _delay: 3
 --- !u!4 &418933337
@@ -2824,18 +2825,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 25
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: .510204077
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: /
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -2846,7 +2848,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -3175,18 +3177,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: Health
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -3197,7 +3200,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -3269,17 +3272,18 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 0
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -3290,7 +3294,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -3362,17 +3366,18 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 0
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -3383,7 +3388,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -3474,7 +3479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a92b5d748695fd44aac9feef17ba415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: 1
+  eventType: 3
   eventsGoToColliders: 0
   eventReceiverMask:
     serializedVersion: 2
@@ -3495,7 +3500,6 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
-  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -3664,20 +3668,21 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 1 = Revolver
+  mFontSize: 30
   mFontStyle: 0
-  mAlignment: 0
+  mAlignment: 1
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 0
@@ -3686,7 +3691,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -4436,16 +4441,16 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .213235319, g: 1, b: .251217127, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
-  mDepth: 0
+  mHeight: 20
+  mDepth: 1
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
-  mType: 0
+  aspectRatio: 5
+  mType: 1
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
@@ -4455,8 +4460,8 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mAtlas: {fileID: 0}
-  mSpriteName: 
+  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
+  mSpriteName: Bright
   mFillCenter: 1
 --- !u!1001 &1525483572
 Prefab:
@@ -4563,17 +4568,18 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 0
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -4584,7 +4590,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -4822,14 +4828,14 @@ MonoBehaviour:
   - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
   - {fileID: 11458150, guid: 78716932b1dab8541944c08717fb6a07, type: 2}
   - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
-  currentWeapon: {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
+  currentWeapon: {fileID: 0}
   leftArm: {fileID: 0}
   rightArm: {fileID: 0}
-  reloadBar: {fileID: 0}
-  bulletsNumber: {fileID: 0}
-  bulletsMax: {fileID: 0}
-  healthNumber: {fileID: 0}
-  armorNumber: {fileID: 0}
+  reloadBar: {fileID: 331605247}
+  bulletsNumber: {fileID: 138237501}
+  bulletsMax: {fileID: 1546497937}
+  healthNumber: {fileID: 1104996379}
+  armorNumber: {fileID: 1114559018}
 --- !u!212 &1627501234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5247,20 +5253,21 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 3 = Rifle
+  mFontSize: 30
   mFontStyle: 0
-  mAlignment: 0
+  mAlignment: 1
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 0
@@ -5269,7 +5276,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -5599,8 +5606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2c8ce7fb88a444ea5ed54ee158f0d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efxSource: {fileID: 0}
-  musicSource: {fileID: 0}
+  efxSource: {fileID: 1768582078}
+  musicSource: {fileID: 1768582077}
   lowPitchRange: .949999988
   highPitchRange: 1.04999995
 --- !u!1001 &1778286081
@@ -6244,20 +6251,21 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: 2 = Shotgun
+  mFontSize: 30
   mFontStyle: 0
-  mAlignment: 0
+  mAlignment: 1
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 0
@@ -6266,7 +6274,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
@@ -6728,7 +6736,7 @@ Transform:
   m_GameObject: {fileID: 2057595564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20.6100006, z: 0}
-  m_LocalScale: {x: .00290697673, y: .00290697673, z: .00290697673}
+  m_LocalScale: {x: .00249999994, y: .00249999994, z: .00249999994}
   m_Children:
   - {fileID: 1166566378}
   - {fileID: 331605248}
@@ -6808,12 +6816,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5ecb5660b11414fb042fb826e03b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalingStyle: 0
+  scalingStyle: 1
   manualWidth: 1280
-  manualHeight: 720
-  minimumHeight: 320
-  maximumHeight: 1536
-  fitWidth: 0
+  manualHeight: 800
+  minimumHeight: 1280
+  maximumHeight: 800
+  fitWidth: 1
   fitHeight: 1
   adjustByDPI: 0
   shrinkPortraitUI: 0
@@ -7071,18 +7079,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 100
-  mHeight: 100
+  mWidth: 200
+  mHeight: 49
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
+  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
+    type: 0}
   mFont: {fileID: 0}
-  mText: 
-  mFontSize: 16
+  mText: Armor
+  mFontSize: 61
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -7093,7 +7102,7 @@ MonoBehaviour:
   mEffectDistance: {x: 1, y: 1}
   mOverflow: 0
   mMaterial: {fileID: 0}
-  mApplyGradient: 0
+  mApplyGradient: 1
   mGradientTop: {r: 1, g: 1, b: 1, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
