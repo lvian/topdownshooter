@@ -22,6 +22,7 @@ public abstract class Enemy : Entity{
 
 	public Player player;
 	public float rotationSpeed;
+	public float maxShootingDistance;
 
 	public EnemyState enemyState = EnemyState.Init;
 	public EnemyStance enemyStance = EnemyStance.Offensive;

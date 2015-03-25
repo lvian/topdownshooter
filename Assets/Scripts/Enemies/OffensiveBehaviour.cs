@@ -98,7 +98,8 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 
 	public void Attack () {
 		Debug.Log("Attacking!");
-		if(CanSeeTarget(_enemy.transform, _player.transform))
+		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+		if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance)
 			_enemy.currentWeapon.Fire();
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
