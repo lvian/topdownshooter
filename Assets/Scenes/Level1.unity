@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 34718521}
   - 114: {fileID: 34718522}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Weapon Information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 112603932}
   - 114: {fileID: 112603933}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Bullets
   mFontSize: 61
@@ -586,7 +586,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 138237502}
   - 114: {fileID: 138237503}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -845,7 +845,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 220027280}
   - 114: {fileID: 220027281}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 280470710}
   - 114: {fileID: 280470711}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player Information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1299,7 @@ GameObject:
   - 114: {fileID: 331605250}
   - 114: {fileID: 331605249}
   - 114: {fileID: 331605251}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ReloadBar
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2774,7 +2774,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 959274647}
   - 114: {fileID: 959274648}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Divider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2831,7 +2831,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: .510204077
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: /
   mFontSize: 61
@@ -3125,7 +3125,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1096899636}
   - 114: {fileID: 1096899637}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Health Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3182,7 +3182,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Health
   mFontSize: 61
@@ -3218,7 +3218,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1104996380}
   - 114: {fileID: 1104996381}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Health Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3275,7 +3275,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -3311,7 +3311,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1114559019}
   - 114: {fileID: 1114559020}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Armor Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -3455,7 +3455,7 @@ GameObject:
   - 4: {fileID: 1166566378}
   - 20: {fileID: 1166566377}
   - 114: {fileID: 1166566376}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Camera
   m_TagString: GUI Camera
   m_Icon: {fileID: 0}
@@ -3522,7 +3522,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3613,7 +3613,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1277398332}
   - 114: {fileID: 1277398333}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3670,7 +3670,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 1 = Revolver
   mFontSize: 30
@@ -4387,7 +4387,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1518992682}
   - 114: {fileID: 1518992683}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ReloadBar Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4511,7 +4511,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1546497938}
   - 114: {fileID: 1546497939}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Max
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -5196,7 +5196,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1692632213}
   - 114: {fileID: 1692632214}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Label 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5253,7 +5253,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 3 = Rifle
   mFontSize: 30
@@ -6193,7 +6193,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1931215812}
   - 114: {fileID: 1931215813}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Bullets Label 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6250,7 +6250,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: 2 = Shotgun
   mFontSize: 30
@@ -6711,7 +6711,7 @@ GameObject:
   - 114: {fileID: 2057595568}
   - 114: {fileID: 2057595567}
   - 54: {fileID: 2057595566}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: UI Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7020,7 +7020,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2118510341}
   - 114: {fileID: 2118510342}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Armor Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7077,7 +7077,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
+  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   mFont: {fileID: 0}
   mText: Armor
   mFontSize: 61
