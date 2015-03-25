@@ -30,7 +30,7 @@ public abstract class Enemy : Entity{
 
 
 	public IEnumerator Start () {
-		while(true){
+		while(GameManager.instance.State == GameManager.GameState.Playing){
 			switch(enemyState) {
 			case EnemyState.Init:
 				Init();

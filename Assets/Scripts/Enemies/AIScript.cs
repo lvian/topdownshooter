@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class AIScript {
+	protected float timer;
+	protected float curTimer;
 
 	protected bool CanSeeTarget(Transform self, Transform target){
 		LayerMask layerMask = ~( (1 << 10) | (1 << 8) );
@@ -89,5 +91,14 @@ public class AIScript {
 		Ray2D ray = new Ray2D(closest.transform.position, new Vector2(dir.x, dir.y));
 		Debug.DrawRay(closest.transform.position, new Vector2(dir.x, dir.y));
 		return ray.GetPoint(3f);
+	}
+
+	protected void SetTimer(float timer){
+		this.timer = CustomTimer.instance.GameTimer;
+		curTimer = timer;
+	}
+
+	protected bool IsDelayTimeElapsed(){
+		return ((CustomTimer.instance.GameTimer - timer) >= curTimer);
 	}
 }
