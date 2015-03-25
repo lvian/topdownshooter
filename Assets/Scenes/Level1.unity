@@ -534,8 +534,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: Bullets
   mFontSize: 61
@@ -644,8 +643,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -2833,8 +2831,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: .510204077
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: /
   mFontSize: 61
@@ -3185,8 +3182,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: Health
   mFontSize: 61
@@ -3279,8 +3275,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -3373,8 +3368,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -3676,8 +3670,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 1 = Revolver
   mFontSize: 30
@@ -4575,8 +4568,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.04081631
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 0
   mFontSize: 61
@@ -5261,8 +5253,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 3 = Rifle
   mFontSize: 30
@@ -6259,8 +6250,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: 2 = Shotgun
   mFontSize: 30
@@ -7087,8 +7077,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.08163261
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 3459068928204737762, guid: 0000000000000000d000000000000000,
-    type: 0}
+  mTrueTypeFont: {fileID: 0, guid: 0000000000000000d000000000000000, type: 3}
   mFont: {fileID: 0}
   mText: Armor
   mFontSize: 61
