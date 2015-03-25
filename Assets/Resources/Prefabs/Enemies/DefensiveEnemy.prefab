@@ -67,16 +67,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 125572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 717d05e4ddc249843a228016ba426bef, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f5ba5567f6aac74392b072d5ad00a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
   leftArm: {fileID: 0}
   rightArm: {fileID: 0}
   player: {fileID: 0}
-  rotationSpeed: 8
+  rotationSpeed: 0
   enemyState: 0
   enemyStance: 0
 --- !u!212 &21242700

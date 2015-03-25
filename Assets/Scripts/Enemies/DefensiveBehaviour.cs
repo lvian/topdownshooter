@@ -28,7 +28,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 	
 	public void Setup () {
-		Debug.Log("Setting up!");
+		Debug.Log("Setting up!!");
 		_enemy.Start();
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
@@ -67,7 +67,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 			diff.Normalize();
 			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 			_enemy.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-			bool[] collisions = CheckLocalCollisions(_enemy.transform);
+			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 
@@ -97,7 +97,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 			_enemy.transform.rotation = oldQ;
 		}
 		else {
-			bool[] collisions = CheckLocalCollisions(_enemy.transform);
+			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = 0;
 			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			
