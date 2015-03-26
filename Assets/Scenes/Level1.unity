@@ -1811,9 +1811,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entities:
-  - {fileID: 11414886, guid: 79b420ddae149884aa3a00e27d0cad3d, type: 2}
   - {fileID: 11433512, guid: 545ea3e5c44f79f4180d8b33173aabe5, type: 2}
-  - {fileID: 11481436, guid: 65208ba752c20b549a4902abbefb86b3, type: 2}
+  - {fileID: 11433512, guid: 545ea3e5c44f79f4180d8b33173aabe5, type: 2}
+  - {fileID: 11433512, guid: 545ea3e5c44f79f4180d8b33173aabe5, type: 2}
   spawnPoints:
   - {fileID: 1943983243}
   - {fileID: 281964019}
@@ -3027,6 +3027,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1008353680}
   - 114: {fileID: 1008353679}
+  - 114: {fileID: 1008353681}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3057,6 +3058,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!114 &1008353681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1008353678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b50bf2f8405984c8d4090de015aa10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1024321637
 Prefab:
   m_ObjectHideFlags: 0
@@ -3647,6 +3659,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class AIScript {
-	protected float timer;
-	protected float curTimer;
+	private Dictionary<Enemy.EnemyState, Timer> timers;
 
 	protected bool CanSeeTarget(Transform self, Transform target){
 		LayerMask layerMask = ~( (1 << 10) | (1 << 8) );
@@ -93,12 +94,21 @@ public class AIScript {
 		return ray.GetPoint(3f);
 	}
 
-	protected void SetTimer(float timer){
-		this.timer = CustomTimer.instance.GameTimer;
-		curTimer = timer;
+	protected void AddTimer(float time, Enemy.EnemyState state){
+		if(timers == null) {
+			timers = new Dictionary<Enemy.EnemyState, Timer>();
+			timers.Add(state, new Timer(time));
+		}
+		else{
+			if(!timers.ContainsKey(state))
+				timers.Add(state, new Timer(time));
+		}
 	}
 
-	protected bool IsDelayTimeElapsed(){
-		return ((CustomTimer.instance.GameTimer - timer) >= curTimer);
+	protected bool IsDelayTimeElapsed(Enemy.EnemyState state){
+		bool ret = timers[state].IsDelayTimeElapsed();
+		if(ret)
+			timers.Remove(state);
+		return ret;
 	}
 }

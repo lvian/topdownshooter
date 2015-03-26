@@ -48,8 +48,10 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 			_enemy.enemyState = Enemy.EnemyState.Moving;
 		}
 		else{
-			if(_enemy.currentWeapon.AmountOfBullets > 0)
+			if(_enemy.currentWeapon.AmountOfBullets > 0){
 				_enemy.enemyState = Enemy.EnemyState.Attacking;
+				AddTimer(2f, Enemy.EnemyState.Attacking);
+			}
 			else
 				_enemy.enemyState = Enemy.EnemyState.Reloading;
 		}
@@ -90,17 +92,21 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 
 			_enemy.transform.Translate(new Vector2(newX, newY));
 		}
-		if(_enemy.currentWeapon.AmountOfBullets > 0)
+		if(_enemy.currentWeapon.AmountOfBullets > 0){
 			_enemy.enemyState = Enemy.EnemyState.Attacking;
+			AddTimer(2f, Enemy.EnemyState.Attacking);
+		}
 		else
 			_enemy.enemyState = Enemy.EnemyState.Reloading;
 	}
 
 	public void Attack () {
 		Debug.Log("Attacking!");
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance)
-			_enemy.currentWeapon.Fire();
+		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
+			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance)
+				_enemy.currentWeapon.Fire();
+		}
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 
