@@ -23,6 +23,7 @@ public abstract class Enemy : Entity{
 	public Player player;
 	public float rotationSpeed;
 	public float maxShootingDistance;
+	public AudioClip enemyHit;
 
 	public EnemyState enemyState = EnemyState.Init;
 	public EnemyStance enemyStance = EnemyStance.Offensive;
@@ -105,7 +106,7 @@ public abstract class Enemy : Entity{
 
 	void OnTriggerEnter2D(Collider2D other) {
 
-
+		// Play enemyHiSound here
 		//Will be used in the future ... I'll  be back!!!!
 		if (other.tag == "Bullet")
 		{

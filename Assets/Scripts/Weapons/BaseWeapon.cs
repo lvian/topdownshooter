@@ -8,6 +8,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect;
 	public AudioClip  shotSound,reloadSound, triggerSound;
 
+
 	//Auxiliary Variables
 	protected GameObject  bulletsLabelNumber, bulletsLabelMax;
 	protected float lastShot,reloadTimer, triggerSoundDelay;
@@ -15,12 +16,14 @@ public abstract class BaseWeapon : MonoBehaviour {
 	protected GameObject reloadBar;
 	protected Animator anim;
 	protected PlayerCamera playerCamera;
+	protected AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
 		isReloading = false;
 		lastShot = 0;
 
+		audioSource = GetComponent<AudioSource> ();
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		bulletsLabelNumber = GameObject.Find ("Bullets Number");
 		bulletsLabelMax = GameObject.Find ("Bullets Max");

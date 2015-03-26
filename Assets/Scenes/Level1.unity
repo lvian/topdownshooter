@@ -3647,7 +3647,6 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
-  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -4984,6 +4983,7 @@ GameObject:
   - 50: {fileID: 1627501236}
   - 58: {fileID: 1627501237}
   - 81: {fileID: 1627501238}
+  - 82: {fileID: 1627501239}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5007,13 +5007,14 @@ MonoBehaviour:
   - {fileID: 11458150, guid: 78716932b1dab8541944c08717fb6a07, type: 2}
   - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
   currentWeapon: {fileID: 0}
-  leftArm: {fileID: 0}
-  rightArm: {fileID: 0}
   reloadBar: {fileID: 331605247}
   bulletsNumber: {fileID: 138237501}
   bulletsMax: {fileID: 1546497937}
   healthNumber: {fileID: 1104996379}
   armorNumber: {fileID: 1114559018}
+  playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
+  lowPitchRange: .949999988
+  highPitchRange: 1.04999995
 --- !u!212 &1627501234
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5087,6 +5088,75 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627501232}
   m_Enabled: 1
+--- !u!82 &1627501239
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1627501232}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &1645266590
 Transform:
   m_PrefabParentObject: {fileID: 416600, guid: 31a2e308f9119fb4e9a60d42f5662a4f, type: 2}

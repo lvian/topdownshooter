@@ -22,7 +22,7 @@ public class Rifle : BaseWeapon {
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
-						NGUITools.PlaySound(shotSound);
+						audioSource.PlayOneShot(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
@@ -55,7 +55,7 @@ public class Rifle : BaseWeapon {
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
 						amountOfBullets --;
-						NGUITools.PlaySound(shotSound);
+						audioSource.PlayOneShot(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
 						gb.transform.parent = GameObject.Find ("WeaponCases").transform;
@@ -93,7 +93,7 @@ public class Rifle : BaseWeapon {
 				isReloading = true;
 				base.reloadBar = rb;
 				anim.SetTrigger("Reload");
-				NGUITools.PlaySound(reloadSound);
+				audioSource.PlayOneShot(reloadSound);
 
 
 			} else{

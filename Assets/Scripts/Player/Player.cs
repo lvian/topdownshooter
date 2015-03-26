@@ -15,19 +15,29 @@ public class Player : Entity {
 
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber;
-	private GameObject[] obstacles;
-	private float newY = 0, newX = 0;
+	public AudioClip playerHit;
+	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
+	public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
+
 	protected PlayerCamera playerCamera;
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
+	protected AudioSource audioSource;
+
+	private GameObject[] obstacles;
+	private float newY = 0, newX = 0;
+	private float hitSoundCooldown;
+
+
 	// Use this for initialization
 	protected override void Start () {
 		playerState = PlayerState.Idle;
 		spawnWeapons ();
-
+		audioSource = GetComponent<AudioSource> ();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		base.Start();
+		hitSoundCooldown = 0;
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 		healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
@@ -37,6 +47,8 @@ public class Player : Entity {
 	
 	// Update is called once per frame
 	void Update () {
+
+		hitSoundCooldown += Time.deltaTime;
 
 		//if game is in play state
 		if (true) {
@@ -202,6 +214,13 @@ public class Player : Entity {
 
 	public void controlPlayerHitPoints(int damage)
 	{
+		if(hitSoundCooldown  > 0.5)
+		{
+			//Choose a random pitch to play back our clip at between our high and low pitch ranges.
+			float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+			audioSource.pitch = randomPitch;
+			audioSource.PlayOneShot (playerHit);
+		}
 		if(Armor > 0)
 		{
 			Armor -= damage;

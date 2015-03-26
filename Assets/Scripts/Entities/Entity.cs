@@ -7,7 +7,6 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	private float speed;
 	public BaseWeapon[] weapons;
 	public BaseWeapon currentWeapon;
-	public GameObject leftArm, rightArm;
 
 	protected virtual void Start(){
 		hitPoints = 4;

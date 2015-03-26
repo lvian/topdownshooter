@@ -22,7 +22,7 @@ public class Revolver : BaseWeapon {
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
-						NGUITools.PlaySound(shotSound);
+						audioSource.PlayOneShot(shotSound);
 						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						playerCamera.shakeCamera(0.1f , 0.05f);
@@ -53,7 +53,7 @@ public class Revolver : BaseWeapon {
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
 						amountOfBullets --;
-						NGUITools.PlaySound(shotSound);
+						audioSource.PlayOneShot(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
@@ -89,7 +89,7 @@ public class Revolver : BaseWeapon {
 				isReloading = true;
 				base.reloadBar = rb;
 				anim.SetTrigger("Reload");
-				NGUITools.PlaySound(reloadSound);
+				audioSource.PlayOneShot(reloadSound);
 				GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
 				gb.transform.parent = GameObject.Find ("WeaponCases").transform;
 
