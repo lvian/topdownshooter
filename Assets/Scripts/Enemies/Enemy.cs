@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Enemy : Entity{
+public abstract class Enemy : Humanoid{
 	public enum EnemyState {
 		Init,
 		Setup,
@@ -30,7 +30,8 @@ public abstract class Enemy : Entity{
 	public IEnemyBehaviour enemyBehaviour = new OffensiveBehaviour();
 
 
-	public IEnumerator Start () {
+	public new IEnumerator Start () {
+		base.Start();
 		while(GameManager.instance.State == GameManager.GameState.Playing){
 			switch(enemyState) {
 			case EnemyState.Init:
@@ -102,34 +103,6 @@ public abstract class Enemy : Entity{
 	public override void Died ()
 	{
 		enemyState = EnemyState.Dying;
-	}
-
-	void OnTriggerEnter2D(Collider2D other) {
-
-		// Play enemyHiSound here
-		//Will be used in the future ... I'll  be back!!!!
-		if (other.tag == "Bullet")
-		{
-			controlPlayerHitPoints(other.GetComponent<BaseBullet>().bulletDamage);
-			if(Armor <= 0)
-			{
-				GameObject blood = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bloodhit") , other.transform.position, other.transform.rotation);  
-				blood.GetComponentInChildren<ParticleSystem>().Play();
-			}
-			GameObject.Destroy(other.gameObject);
-		}
-	}
-
-
-	public void controlPlayerHitPoints(int damage)
-	{
-		if(Armor > 0)
-		{
-			Armor -= damage;
-		} else
-		{
-			HitPoints -= damage;
-		}
 	}
 
 	#endregion

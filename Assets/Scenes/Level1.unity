@@ -1821,8 +1821,8 @@ MonoBehaviour:
   spawnedEntities: []
   max: 5
   initialDelay: 4
-  delayFactor: 2
-  _delay: 3
+  delayFactor: 1
+  _delay: 1
 --- !u!4 &418933337
 Transform:
   m_ObjectHideFlags: 0
@@ -5020,14 +5020,14 @@ MonoBehaviour:
   - {fileID: 11458150, guid: 78716932b1dab8541944c08717fb6a07, type: 2}
   - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
   currentWeapon: {fileID: 0}
+  playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
+  lowPitchRange: .949999988
+  highPitchRange: 1.04999995
   reloadBar: {fileID: 331605247}
   bulletsNumber: {fileID: 138237501}
   bulletsMax: {fileID: 1546497937}
   healthNumber: {fileID: 1104996379}
   armorNumber: {fileID: 1114559018}
-  playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
-  lowPitchRange: .949999988
-  highPitchRange: 1.04999995
 --- !u!212 &1627501234
 SpriteRenderer:
   m_ObjectHideFlags: 0

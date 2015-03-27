@@ -106,9 +106,14 @@ public class AIScript {
 	}
 
 	protected bool IsDelayTimeElapsed(Enemy.EnemyState state){
-		bool ret = timers[state].IsDelayTimeElapsed();
-		if(ret)
-			timers.Remove(state);
-		return ret;
+		if(timers.ContainsKey(state)){
+			bool ret = timers[state].IsDelayTimeElapsed();
+			if(ret)
+				timers.Remove(state);
+			return ret;
+		}
+		else{
+			return false;
+		}
 	}
 }

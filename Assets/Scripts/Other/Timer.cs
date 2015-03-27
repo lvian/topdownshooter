@@ -13,4 +13,8 @@ public class Timer {
 	public bool IsDelayTimeElapsed(){
 		return ((CustomTimer.instance.GameTimer - timer) >= curTimer);
 	}
+
+	public void Reset(){
+		timer = CustomTimer.instance.GameTimer;
+	}
 }
