@@ -16,6 +16,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		_enemy.HitPoints = 4;
 		_enemy.Armor = 1;
 		_enemy.Speed = 1.5f;
+		_enemy.IsMoving = true;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
 		_enemy.transform.parent = GameObject.Find("Spawner").transform;
@@ -62,8 +63,8 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 		if(distance > 0) {
 			bool[] collisions = CheckCollisions(_enemy.transform);
-			newY = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 
 			if(collisions[0] || collisions[1] || collisions[2]){ // detect collision in front
 				newY = 0;
@@ -83,7 +84,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 			if(goBack)
 				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 
-			_enemy.transform.Translate(new Vector2(newX, newY));
+			_enemy.transform.parent.Translate(new Vector2(newX, newY));
 		}
 		else {
 			bool[] collisions = CheckCollisions(_enemy.transform);

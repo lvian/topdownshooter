@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
-	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets, rotationSpeed;
+	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets, rotationSpeed, bulletDeviationAngle;
 	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect;
 	public AudioClip  shotSound,reloadSound, triggerSound;
 

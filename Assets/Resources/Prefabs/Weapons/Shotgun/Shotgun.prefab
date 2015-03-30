@@ -816,6 +816,7 @@ MonoBehaviour:
   amountOfBullets: 2
   maxAmountOfBullets: 2
   rotationSpeed: 1.25
+  bulletDeviationAngle: 50
   muzzle: {fileID: 152000}
   weaponCases: {fileID: 145022, guid: f0d04f521945d664cbaa93c1b3e54a45, type: 2}
   muzzleFireEffect: {fileID: 102362}
@@ -823,8 +824,6 @@ MonoBehaviour:
   shotSound: {fileID: 8300000, guid: b5e6499a3e21e8d479128bae41f6a3a5, type: 3}
   reloadSound: {fileID: 8300000, guid: 3794a9da07de11a4da649ef60dc784f8, type: 3}
   triggerSound: {fileID: 8300000, guid: 6a326b875ee10c441b3146b509eb05fd, type: 3}
-  audioSource: {fileID: 0}
-  spreadAngle: 60
   bulletsperShot: 5
 --- !u!114 &11475944
 MonoBehaviour:

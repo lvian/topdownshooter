@@ -94,14 +94,20 @@ public abstract class Enemy : Humanoid{
 	}
 
 	public override void Move (){
+		anim.SetBool ("isMoving", isMoving);
 		enemyBehaviour.Move();
 	}
 
 	#region implemented abstract members of Entity
 
+	public void DisableWeapons()
+	{
+		currentWeapon.gameObject.SetActive(false);
+	}
 
 	public override void Died ()
 	{
+		anim.SetTrigger("isDying");
 		enemyState = EnemyState.Dying;
 	}
 

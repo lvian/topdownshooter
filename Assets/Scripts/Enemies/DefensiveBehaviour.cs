@@ -17,6 +17,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 		_enemy.HitPoints = 4;
 		_enemy.Armor = 1;
 		_enemy.Speed = 1.5f;
+		_enemy.IsMoving = true;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
 		_enemy.transform.parent = GameObject.Find("Spawner").transform;
@@ -68,8 +69,8 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 			_enemy.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 			bool[] collisions = CheckCollisions(_enemy.transform);
-			newY = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 
 			//newY = newPos.y;
 			//newX = newPos.x;
@@ -101,7 +102,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 			newY = 0;
 			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			
-			_enemy.transform.Translate(new Vector2(newX, newY));
+			_enemy.transform.parent.Translate(new Vector2(newX, newY));
 		}
 		if(_enemy.currentWeapon.AmountOfBullets > 0)
 			_enemy.enemyState = Enemy.EnemyState.Attacking;

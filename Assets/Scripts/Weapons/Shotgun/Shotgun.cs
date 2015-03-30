@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Shotgun : BaseWeapon {
 
-	//Looking the weapon from top, the center is 90º
-	public float spreadAngle;
 	//How many bullets are instantiated on each shot
 	public int bulletsperShot;
 	#region implemented abstract members of BaseWeapon
@@ -23,7 +21,7 @@ public class Shotgun : BaseWeapon {
 						for(int x = 0 ; x < bulletsperShot ; x++)
 						{
 							GameObject gb =(GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/ShotgunBullet") , muzzle.transform.position , muzzle.transform.rotation); 
-							gb.transform.Rotate(0f ,0f , Random.Range(- spreadAngle/ 2 , spreadAngle/2));
+							gb.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						}
 			 			lastShot = 0;
 						amountOfBullets --;
@@ -58,7 +56,7 @@ public class Shotgun : BaseWeapon {
 						for(int x = 0 ; x < bulletsperShot ; x++)
 						{
 							GameObject gb =(GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/ShotgunBullet") , muzzle.transform.position , muzzle.transform.rotation); 
-							gb.transform.Rotate(0f ,0f , Random.Range(- spreadAngle/ 2 , spreadAngle/2));
+							gb.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						}
 						lastShot = 0;
 						anim.SetTrigger("Attack");

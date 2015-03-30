@@ -17,7 +17,8 @@ public class Revolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						GameObject bullet = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");

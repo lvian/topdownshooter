@@ -22,10 +22,13 @@ public class Player : Humanoid {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 
-
+	private Animator anim;
 
 	// Use this for initialization
 	protected override void Start () {
+
+		anim = GetComponent<Animator> ();
+		isMoving = false;
 		playerState = PlayerState.Idle;
 		spawnWeapons ();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
@@ -99,31 +102,36 @@ public class Player : Humanoid {
 	{
 		newY = 0;
 		newX = 0;
+		isMoving = false;
 
 		//Buttons
 		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
 		{
 			newY += Speed * currentWeapon.WeaponMoveSpeed;
+			isMoving = true;
 		}
 		
 		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
 		{
 			newY -= Speed * currentWeapon.WeaponMoveSpeed;
+			isMoving = true;
 		}		 
 		
 		if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
 		{
 			newX -= Speed * currentWeapon.WeaponMoveSpeed;
+			isMoving = true;
 		}
 		
 		if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
 		{
 			newX += Speed * currentWeapon.WeaponMoveSpeed;
+			isMoving = true;
 		}
 
 		checkObstacles ();
-
-		transform.Translate(new Vector3( newX, newY, 0) * Time.deltaTime, Space.World);
+		anim.SetBool ("isMoving", isMoving);
+		transform.parent.Translate(new Vector3( newX, newY, 0) * Time.deltaTime, Space.World);
 	}
 	#endregion
 
@@ -160,6 +168,11 @@ public class Player : Humanoid {
 			Debug.Log ("Busy");
 		}
 
+	}
+
+	public void DisableWeapons()
+	{
+		currentWeapon.gameObject.SetActive(false);
 	}
 
 	public void checkObstacles()
@@ -210,6 +223,7 @@ public class Player : Humanoid {
 
 	public override void Died ()
 	{
+		anim.SetTrigger("isDying");
 		playerState = PlayerState.Dying;
 	}
 

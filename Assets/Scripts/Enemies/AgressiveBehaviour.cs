@@ -16,9 +16,10 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 		_enemy.HitPoints = 4;
 		_enemy.Armor = 1;
 		_enemy.Speed = 1.5f;
+		_enemy.IsMoving = true;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
-		_enemy.transform.parent = GameObject.Find("Spawner").transform;
+		_enemy.transform.parent.parent = GameObject.Find("Spawner").transform;
 		_player = GameObject.Find("Player").GetComponent<Player>();
 		_enemy.enemyState = Enemy.EnemyState.Setup;
 		_enemy.enemyStance = Enemy.EnemyStance.Defensive;
@@ -43,7 +44,7 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 		Vector3 euler = q.eulerAngles;
 		euler.z -= 90;
 		q = Quaternion.Euler(euler);
-		_enemy.transform.rotation = Quaternion.Slerp(_enemy.transform.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
+		_enemy.transform.parent.rotation = Quaternion.Slerp(_enemy.transform.parent.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
 		if(distance >= 4){
 			_enemy.enemyState = Enemy.EnemyState.Moving;
 		}
@@ -58,10 +59,11 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Move() {
 		Debug.Log("Moving!");
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+		Debug.Log(distance);
 		if(distance > 0) {
 			bool[] collisions = CheckCollisions(_enemy.transform);
-			newY = _enemy.currentWeapon.WeaponMoveSpeed * 1.9f * Time.deltaTime;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * 1.9f * Time.deltaTime;
+			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 			
 			if(collisions[0] || collisions[1] || collisions[2]){ // detect collision in front
 				newY = 0;
@@ -77,16 +79,16 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 			}
 			
 			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed *  Time.deltaTime;
 			if(goBack)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 			
-			_enemy.transform.Translate(new Vector2(newX, newY));
+			_enemy.transform.parent.Translate(new Vector2(newX, newY));
 		}
 		else {
 			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = 0;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 			
 			_enemy.transform.Translate(new Vector2(newX, newY));
 		}

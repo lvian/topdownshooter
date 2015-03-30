@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
-	public Entity[] entities;
+	public GameObject[] entities;
 	public GameObject[] spawnPoints;
-	public List<Entity> spawnedEntities;
+	public List<GameObject> spawnedEntities;
 	public int max;
 	public float initialDelay;
 	public float delayFactor;
@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnedEntities = new List<Entity>();
+		spawnedEntities = new List<GameObject>();
 	}
 	
 	// Update is called once per frame

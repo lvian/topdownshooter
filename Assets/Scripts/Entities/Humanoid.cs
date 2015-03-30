@@ -6,7 +6,8 @@ public abstract class Humanoid : Entity {
 	protected Timer hitSoundCooldown;
 	protected AudioSource audioSource;
 	public AudioClip playerHit;
-
+	protected Animator anim;
+	protected bool isMoving;
 
 	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 	public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
@@ -17,6 +18,7 @@ public abstract class Humanoid : Entity {
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		audioSource = GetComponent<AudioSource> ();
 		hitSoundCooldown = new Timer(0.5f);
+		anim = GetComponent<Animator> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -53,6 +55,15 @@ public abstract class Humanoid : Entity {
 		{
 			
 			HitPoints -= damage;
+		}
+	}
+
+	public bool IsMoving {
+		get {
+			return isMoving;
+		}
+		set {
+			isMoving = value;
 		}
 	}
 }
