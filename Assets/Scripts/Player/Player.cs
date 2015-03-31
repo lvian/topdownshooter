@@ -22,12 +22,10 @@ public class Player : Humanoid {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 
-	private Animator anim;
 
 	// Use this for initialization
 	protected override void Start () {
 
-		anim = GetComponent<Animator> ();
 		isMoving = false;
 		playerState = PlayerState.Idle;
 		spawnWeapons ();

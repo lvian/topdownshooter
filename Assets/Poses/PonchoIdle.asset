@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6219d276151454a8c8517078bc520c, type: 3}
+  m_Name: PonchoIdle
+  m_EditorClassIdentifier: 
+  rotations:
+  - name: Bone
+    rotation: {x: 0, y: 0, z: -1, w: -1.62920685e-07}
+  - name: Top
+    rotation: {x: 0, y: 0, z: .00612533232, w: .999981284}
+  - name: Bot
+    rotation: {x: 1, y: 0, z: 0, w: 0}
+  - name: Right
+    rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+  - name: Left
+    rotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  positions:
+  - name: Bone
+    position: {x: -1.46500146, y: -4.50499964, z: 0}
+  - name: Top
+    position: {x: -1.43300021, y: -4.03399992, z: 0}
+  - name: Bot
+    position: {x: -1.47799981, y: -4.94400024, z: 0}
+  - name: Right
+    position: {x: -.843999982, y: -4.49599981, z: 0}
+  - name: Left
+    position: {x: -2.07700014, y: -4.48700047, z: 0}
+  controlPoints: []
+  targets: []

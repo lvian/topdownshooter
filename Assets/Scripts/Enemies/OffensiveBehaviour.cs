@@ -19,7 +19,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		_enemy.IsMoving = true;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
-		_enemy.transform.parent = GameObject.Find("Spawner").transform;
+		_enemy.transform.parent.parent = GameObject.Find("Spawner").transform;
 		_player = GameObject.Find("Player").GetComponent<Player>();
 		_enemy.enemyState = Enemy.EnemyState.Setup;
 		_enemy.enemyStance = Enemy.EnemyStance.Defensive;
@@ -44,7 +44,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		Vector3 euler = q.eulerAngles;
 		euler.z -= 90;
 		q = Quaternion.Euler(euler);
-		_enemy.transform.rotation = Quaternion.Slerp(_enemy.transform.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
+		_enemy.transform.parent.rotation = Quaternion.Slerp(_enemy.transform.parent.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
 		if(distance >= 4){
 			_enemy.enemyState = Enemy.EnemyState.Moving;
 		}
@@ -91,7 +91,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 			newY = 0;
 			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 
-			_enemy.transform.Translate(new Vector2(newX, newY));
+			_enemy.transform.parent.Translate(new Vector2(newX, newY));
 		}
 		if(_enemy.currentWeapon.AmountOfBullets > 0){
 			_enemy.enemyState = Enemy.EnemyState.Attacking;

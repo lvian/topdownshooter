@@ -59,7 +59,6 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Move() {
 		Debug.Log("Moving!");
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		Debug.Log(distance);
 		if(distance > 0) {
 			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;

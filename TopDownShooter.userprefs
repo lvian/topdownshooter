@@ -1,28 +1,28 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\AgressiveBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="7" Column="157" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="176" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="105" Column="5" />
-      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="20" Column="27" />
+      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="224" Column="7" />
+      <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="110" Column="7" />
+      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Rifle\RifleCases.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\TestEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\BaseBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\RevolverBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="19" Column="16" />
+      <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="47" Column="78" />
       <File FileName="Assets\Scripts\Bullets\RifleBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\ShotgunBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\BloodHit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="15" Column="21" />
-      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="59" Column="98" />
-      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="20" Column="40" />
-      <File FileName="Assets\Scripts\Enemies\AgressiveBehaviour.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\DefensiveBehaviour.cs" Line="20" Column="26" />
+      <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="21" Column="27" />
+      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\DefensiveBehaviour.cs" Line="96" Column="27" />
       <File FileName="Assets\Scripts\Enemies\DefensiveEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemySpawner.cs" Line="17" Column="17" />
+      <File FileName="Assets\Scripts\Enemies\EnemySpawner.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\AgressiveBehaviour.cs" Line="62" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
