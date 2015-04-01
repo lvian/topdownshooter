@@ -11,7 +11,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 
 	#region IEnemyBehaviour implementation
 	public void Init (Enemy enemy) {
-		Debug.Log("Initializing");
+		//Debug.Log("Initializing");
 		_enemy = enemy;
 		_enemy.HitPoints = 4;
 		_enemy.Armor = 1;
@@ -27,14 +27,14 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 
 	public void Setup () {
-		Debug.Log("Setting up!");
+		//Debug.Log("Setting up!");
 		_enemy.Start();
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 
 	public void Search ()
 	{
-		Debug.Log("Searching!");
+		//Debug.Log("Searching!");
 		//bool[] collisions = CheckCollisions(_enemy.transform);
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 		
@@ -59,7 +59,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 
 	public void Move() {
-		Debug.Log("Moving!");
+		//Debug.Log("Moving!");
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 		if(distance > 0) {
 			bool[] collisions = CheckCollisions(_enemy.transform);
@@ -102,7 +102,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 
 	public void Attack () {
-		Debug.Log("Attacking!");
+		//Debug.Log("Attacking!");
 		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
 			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
 			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
@@ -113,13 +113,13 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 
 	public void Reload () {
-		Debug.Log("Reloading!");
+		//Debug.Log("Reloading!");
 		_enemy.currentWeapon.Reload(_enemy.transform.gameObject);
 		_enemy.enemyState = Enemy.EnemyState.Attacking;
 	}
 	public void Dodge ()
 	{
-		//Debug.Log("Dodging");
+		////Debug.Log("Dodging");
 	}
 	public void Die ()
 	{

@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Small Obstacle
   - GUI Camera
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

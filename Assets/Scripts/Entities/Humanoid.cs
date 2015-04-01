@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public abstract class Humanoid : Entity {
@@ -40,7 +40,7 @@ public abstract class Humanoid : Entity {
 	
 	public virtual void controlHitPoints(int damage)
 	{
-		if(hitSoundCooldown.IsDelayTimeElapsed())
+		if(hitSoundCooldown.IsElapsed())
 		{
 			//Choose a random pitch to play back our clip at between our high and low pitch ranges.
 			float randomPitch = Random.Range(lowPitchRange, highPitchRange);

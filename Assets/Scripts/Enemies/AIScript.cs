@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -10,7 +10,7 @@ public class AIScript {
 		LayerMask layerMask = ~( (1 << 10) | (1 << 8) );
 		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f, layerMask);
 		if( hit.collider != null){
-			Debug.Log(hit.transform.tag);
+			//Debug.Log(hit.transform.tag);
 			if(hit.transform.Equals(target))
 				return true;
 			else
@@ -107,7 +107,7 @@ public class AIScript {
 
 	protected bool IsDelayTimeElapsed(Enemy.EnemyState state){
 		if(timers.ContainsKey(state)){
-			bool ret = timers[state].IsDelayTimeElapsed();
+			bool ret = timers[state].IsElapsed();
 			if(ret)
 				timers.Remove(state);
 			return ret;
