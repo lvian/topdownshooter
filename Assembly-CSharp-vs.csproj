@@ -194,9 +194,14 @@
      <Compile Include="Assets\Scripts\Enemies\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Enemies\IEnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\IMoveBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Enemies\LevelOneWaves.cs" />
      <Compile Include="Assets\Scripts\Enemies\OffensiveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\OffensiveEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\TestEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Wave.cs" />
+     <Compile Include="Assets\Scripts\Enemies\WaveManager.cs" />
+     <Compile Include="Assets\Scripts\Enemies\WaveScript.cs" />
+     <Compile Include="Assets\Scripts\Enemies\WaveUnit.cs" />
      <Compile Include="Assets\Scripts\Entities\Entity.cs" />
      <Compile Include="Assets\Scripts\Entities\Humanoid.cs" />
      <Compile Include="Assets\Scripts\Other\BloodHit.cs" />

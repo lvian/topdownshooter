@@ -67,6 +67,7 @@ public class Wave : MonoBehaviour {
 	private void spawnUnit(GameObject unit, int lane){
 		spawnsRemaining--;
 		GameObject  newUnit = Object.Instantiate(unit, manager.spawnPoints[lane].transform.position, Quaternion.identity) as GameObject;
+		newUnit.transform.parent = transform;
 	}
 
 	public int NumberOfSpawns {
