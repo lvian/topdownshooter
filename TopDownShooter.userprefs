@@ -1,32 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Wave.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\LevelOneWaves.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="59" Column="18" />
-      <File FileName="Assets\Scripts\Enemies\AgressiveEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="110" Column="7" />
-      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Rifle\RifleCases.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\TestEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullets\BaseBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullets\RevolverBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullets\RifleBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullets\ShotgunBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\BloodHit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\DefensiveBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\DefensiveEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemySpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\OffensiveEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\AgressiveBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\LevelOneWaves.cs" Line="15" Column="19" />
-      <File FileName="Assets\Scripts\Other\Timer.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\LevelOneWaves.cs" Line="19" Column="44" />
+      <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="43" Column="6" />
+      <File FileName="Assets\Scripts\Enemies\WaveManager.cs" Line="80" Column="37" />
+      <File FileName="Assets\Scripts\Other\Timer.cs" Line="21" Column="24" />
+      <File FileName="Assets\Scripts\Enemies\AIScript.cs" Line="110" Column="38" />
+      <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="43" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

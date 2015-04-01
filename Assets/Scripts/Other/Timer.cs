@@ -3,15 +3,25 @@ using System.Collections;
 
 public class Timer {
 	protected float timer;
-	protected float curTimer;
+	protected float duration;
 
 	public Timer(float time){
 		this.timer = CustomTimer.instance.GameTimer;
-		curTimer = time;
+		duration = time;
+	}
+
+	public void AddTime(float seconds){
+		duration += Mathf.Abs(seconds);
+	}
+
+	public void ReduceTime(float seconds){
+		duration -= Mathf.Abs(seconds);
 	}
 	
-	public bool IsElapsed(){
-		return ((CustomTimer.instance.GameTimer - timer) >= curTimer);
+	public bool IsElapsed {
+		get {
+			return ((CustomTimer.instance.GameTimer - timer) >= duration);
+		}
 	}
 
 	public void Reset(){
@@ -21,16 +31,16 @@ public class Timer {
 	public float RemainingTime {
 		get {
 			float elapsed = CustomTimer.instance.GameTimer - timer;
-			if(elapsed >= curTimer)
+			if(elapsed >= duration)
 				return 0;
 			else
-				return (curTimer - elapsed);
+				return (duration - elapsed);
 		}
 	}
 
 	public float Duration {
 		get {
-			return curTimer;
+			return duration;
 		}
 	}
 }

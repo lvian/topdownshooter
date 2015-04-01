@@ -15,9 +15,10 @@ public class LevelOneWaves : WaveScript {
 		Wave wave1Script = wave1.GetComponent<Wave>();
 		wave1Script.units = new WaveUnit[] {
 			new WaveUnit(allEnemies[0], 2f, 0, 0, 3),
-			new WaveUnit(allEnemies[1], 2f, 10, 1, 1),
-			new WaveUnit(allEnemies[2], 2f, 20, 2, 1),
+			new WaveUnit(allEnemies[1], 2f, 10, 1, 3),
+			new WaveUnit(allEnemies[2], 2f, 20, 2, 3),
 		};
+		wave1Script.nextWaveDelay = 10f;
 		waveManager.waves.Add(wave1Script);
 
 		GameObject wave2 = new GameObject("wave2");

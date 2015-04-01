@@ -3623,6 +3623,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -7344,7 +7345,7 @@ Transform:
   m_GameObject: {fileID: 2057595564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20.6100006, z: 0}
-  m_LocalScale: {x: .00393700786, y: .00393700786, z: .00393700786}
+  m_LocalScale: {x: .00277777785, y: .00277777785, z: .00277777785}
   m_Children:
   - {fileID: 1166566378}
   - {fileID: 331605248}
@@ -7424,7 +7425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5ecb5660b11414fb042fb826e03b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scalingStyle: 0
+  scalingStyle: 1
   manualWidth: 1280
   manualHeight: 720
   minimumHeight: 320

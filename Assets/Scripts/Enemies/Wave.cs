@@ -7,15 +7,19 @@ public class Wave : MonoBehaviour {
 	
 	public WaveUnit[] 	units;
 	public WaveManager	manager;
-	public bool			done;
+	public float		nextWaveDelay;
 	public bool 		started;		// defined by WaveManager script
 
+	private bool		done;
 	private int 		numberOfSpawns;
 	private int			spawnsRemaining;
 	private Timer		timer;
+
+	private UILabel		timerLabel;
 	
 	void Awake(){
 		done = started = false;
+		timerLabel = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
 	}
 	
 	void Start(){
@@ -25,11 +29,13 @@ public class Wave : MonoBehaviour {
 	void Update(){
 		if(GameManager.instance.State != GameManager.GameState.Playing)
 			return;
+		if(timer != null)
+			timerLabel.text = Mathf.RoundToInt(timer.RemainingTime) + "s";
 		if(!started || done)
 			return;
 		bool tmpDone = true;
 		foreach(WaveUnit unit in units){
-			if(unit.delay.IsElapsed() && unit.cooldown.IsElapsed()){
+			if(unit.delay.IsElapsed && unit.cooldown.IsElapsed){
 				if(unit.unitCount < unit.Amount){
 					spawnUnit(unit.Unit, unit.SpawnPoint);
 					unit.unitCount++;
@@ -39,6 +45,9 @@ public class Wave : MonoBehaviour {
 			tmpDone = (tmpDone && unit.Done);
 		}
 		done = tmpDone;
+		if(done){
+
+		}
 	}
 	
 	public void initUnits(){
@@ -49,6 +58,7 @@ public class Wave : MonoBehaviour {
 			unit.delay.Reset();
 		}
 		UpdateInfo();
+
 	}
 
 	public void UpdateInfo(){
@@ -60,7 +70,7 @@ public class Wave : MonoBehaviour {
 			if(duration > longest)
 				longest = duration;
 		}
-		timer = new Timer(longest);
+		timer = new Timer(longest + nextWaveDelay);
 		spawnsRemaining = numberOfSpawns;
 	}
 	
@@ -85,6 +95,12 @@ public class Wave : MonoBehaviour {
 	public float TimeRemaining {
 		get {
 			return timer.RemainingTime;
+		}
+	}
+
+	public bool Done {
+		get {
+			return (done && timer.IsElapsed);
 		}
 	}
 }

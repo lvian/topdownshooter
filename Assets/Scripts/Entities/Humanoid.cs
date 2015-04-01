@@ -40,7 +40,7 @@ public abstract class Humanoid : Entity {
 	
 	public virtual void controlHitPoints(int damage)
 	{
-		if(hitSoundCooldown.IsElapsed())
+		if(hitSoundCooldown.IsElapsed)
 		{
 			//Choose a random pitch to play back our clip at between our high and low pitch ranges.
 			float randomPitch = Random.Range(lowPitchRange, highPitchRange);
