@@ -1572,6 +1572,7 @@ MonoBehaviour:
   - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
   currentWeapon: {fileID: 0}
   playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
+  graveyard: {fileID: 0}
   lowPitchRange: .949999988
   highPitchRange: 1.04999995
   reloadBar: {fileID: 0}
@@ -3054,7 +3055,7 @@ SkinnedMeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

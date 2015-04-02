@@ -6,6 +6,8 @@ public abstract class Humanoid : Entity {
 	protected Timer hitSoundCooldown;
 	protected AudioSource audioSource;
 	public AudioClip playerHit;
+	public AudioClip[] deathSounds;
+	public GameObject graveyard;
 	protected Animator anim;
 	protected bool isMoving;
 
@@ -65,5 +67,11 @@ public abstract class Humanoid : Entity {
 		set {
 			isMoving = value;
 		}
+	}
+
+	public void DisableOnDeath()
+	{
+		transform.parent.parent = graveyard.transform;
+		currentWeapon.gameObject.SetActive(false);
 	}
 }

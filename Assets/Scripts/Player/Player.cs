@@ -168,10 +168,7 @@ public class Player : Humanoid {
 
 	}
 
-	public void DisableWeapons()
-	{
-		currentWeapon.gameObject.SetActive(false);
-	}
+
 
 	public void checkObstacles()
 	{
@@ -223,6 +220,7 @@ public class Player : Humanoid {
 	{
 		anim.SetTrigger("isDying");
 		playerState = PlayerState.Dying;
+		reloadBar.SetActive (false);
 	}
 
 	#endregion

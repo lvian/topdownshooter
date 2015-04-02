@@ -24,6 +24,7 @@ public abstract class Enemy : Humanoid{
 	public float rotationSpeed;
 	public float maxShootingDistance;
 	public AudioClip enemyHit;
+	public GameObject bounty;
 
 	public EnemyState enemyState = EnemyState.Init;
 	public EnemyStance enemyStance = EnemyStance.Offensive;
@@ -109,6 +110,8 @@ public abstract class Enemy : Humanoid{
 	{
 		anim.SetTrigger("isDying");
 		enemyState = EnemyState.Dying;
+		bounty = (GameObject) GameObject.Instantiate(bounty , transform.position , transform.rotation); 
+		audioSource.PlayOneShot (deathSounds[Random.Range(0,deathSounds.Length)]);
 	}
 
 	#endregion

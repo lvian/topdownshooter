@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .433857948, y: -.851218402, z: 0}
+  m_LocalPosition: {x: -5.91452408, y: 14.7373066, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404532}
@@ -218,12 +218,18 @@ MonoBehaviour:
   - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
   currentWeapon: {fileID: 0}
   playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: ee84290a30855514897d781be5dfce73, type: 3}
+  - {fileID: 8300000, guid: 0ef58bde329cd5345aa33355f2ad259d, type: 3}
+  - {fileID: 8300000, guid: 3e068d6d2c01f4142a2dae34dd16c5e1, type: 3}
+  graveyard: {fileID: 0}
   lowPitchRange: .949999988
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
   maxShootingDistance: 7
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
+  bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
   enemyState: 0
   enemyStance: 0
 --- !u!212 &21265944

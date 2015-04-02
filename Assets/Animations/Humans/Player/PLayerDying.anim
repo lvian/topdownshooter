@@ -2124,7 +2124,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: DisableWeapons
+    functionName: DisableOnDeath
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

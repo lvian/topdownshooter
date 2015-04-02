@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance = null;
 	private GameState _state;
+	private int playerCash;
 
 	void Awake () {
 		if(instance == null)
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour {
 		Application.LoadLevel (1);
 		_state = GameState.Playing;
 
+		playerCash = 0;
+
 	}
 
 	public GameState State {
@@ -35,4 +38,14 @@ public class GameManager : MonoBehaviour {
 			_state = value;
 		}
 	}
+
+	public int PlayerCash {
+		get {
+			return playerCash;
+		}
+		set {
+			playerCash = value;
+		}
+	}
+
 }
