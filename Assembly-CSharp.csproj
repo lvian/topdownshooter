@@ -216,6 +216,7 @@
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\RotateArm.cs" />
      <Compile Include="Assets\Scripts\Weapons\BaseWeapon.cs" />
+     <Compile Include="Assets\Scripts\Weapons\Dynamite\Dynamite.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver\Revolver.cs" />
      <Compile Include="Assets\Scripts\Weapons\Revolver\RevolverCases.cs" />
      <Compile Include="Assets\Scripts\Weapons\Rifle\Rifle.cs" />

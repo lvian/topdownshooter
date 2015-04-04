@@ -14,11 +14,11 @@ public class Player : Humanoid {
 	}
 
 	//GUI Panels and objects
-	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber;
+	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber, dynamite, dynamiteNumber;
 
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
-
+	protected int dynamiteAmount;
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0;
 
@@ -28,6 +28,7 @@ public class Player : Humanoid {
 
 		isMoving = false;
 		playerState = PlayerState.Idle;
+		dynamiteAmount = 2;
 		spawnWeapons ();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
 		base.Start();
@@ -35,6 +36,7 @@ public class Player : Humanoid {
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 		healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
 		armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
+		dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
 	}
 	
 	// Update is called once per frame
@@ -57,6 +59,11 @@ public class Player : Humanoid {
 				if(Input.GetKey(KeyCode.Mouse0))
 				{
 					currentWeapon.Fire();
+				}
+
+				if(Input.GetKeyDown(KeyCode.Mouse1))
+				{
+					throwDynamite();
 				}
 
 				if(Input.GetKeyDown(KeyCode.Q))
@@ -168,6 +175,18 @@ public class Player : Humanoid {
 
 	}
 
+	void throwDynamite ()
+	{
+		if(dynamiteAmount > 0)
+		{
+			Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition - transform.position);
+			Debug.Log (mousePosition);
+			GameObject dyna = (GameObject) GameObject.Instantiate(dynamite, transform.position, transform.rotation);  
+			dyna.GetComponent<Dynamite> ().Destination = mousePosition;
+			dynamiteAmount --;
+			dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
+		}
+	}
 
 
 	public void checkObstacles()

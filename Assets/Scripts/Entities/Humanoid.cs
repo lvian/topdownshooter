@@ -14,12 +14,15 @@ public abstract class Humanoid : Entity {
 	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 	public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
+	private int damageLeft;
+
 	protected new virtual void Start() {
 		Debug.Log("Starting humanoid!!");
 		base.Start();
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		audioSource = GetComponent<AudioSource> ();
 		hitSoundCooldown = new Timer(0.5f);
+		damageLeft = 0;
 		anim = GetComponent<Animator> ();
 	}
 
@@ -42,6 +45,7 @@ public abstract class Humanoid : Entity {
 	
 	public virtual void controlHitPoints(int damage)
 	{
+		damageLeft = 0;
 		if(hitSoundCooldown.IsElapsed)
 		{
 			//Choose a random pitch to play back our clip at between our high and low pitch ranges.
@@ -50,13 +54,17 @@ public abstract class Humanoid : Entity {
 			audioSource.PlayOneShot (playerHit);
 			hitSoundCooldown.Reset();
 		}
-		if(Armor > 0)
+		while(damage > 0)
 		{
-			Armor -= damage;
-		} else
-		{
-			
-			HitPoints -= damage;
+			if(Armor > 0)
+			{
+				Armor --;
+
+			} else if( HitPoints > 0 )
+			{
+				HitPoints --;
+			}
+			damage --;
 		}
 	}
 
