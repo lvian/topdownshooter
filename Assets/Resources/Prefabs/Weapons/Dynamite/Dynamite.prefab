@@ -175,10 +175,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -288,6 +288,9 @@ MonoBehaviour:
   explo2: {fileID: 19890878}
   fuse: {fileID: 19838030}
   sparks: {fileID: 19844434}
+  fuseStart: {fileID: 8300000, guid: b9739ac804a49f64da913e925b412243, type: 3}
+  fuseBurn: {fileID: 8300000, guid: 31e9e3c45105e564fb29c3a916ba20f7, type: 3}
+  explosion: {fileID: 8300000, guid: 3e257df4937696c4194266550caaa109, type: 3}
 --- !u!198 &19814780
 ParticleSystem:
   m_ObjectHideFlags: 1

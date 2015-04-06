@@ -10,6 +10,7 @@ public class Dynamite : MonoBehaviour {
 	private PlayerCamera playerCamera;
 	private bool exploded;
 	public ParticleSystem explo, explo2, fuse, sparks;
+	public AudioClip fuseStart, fuseBurn, explosion;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,10 @@ public class Dynamite : MonoBehaviour {
 		exploded = false;
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		timer = new Timer (fuseTimer);
+		GetComponent<AudioSource> ().clip = fuseBurn ;
+		GetComponent<AudioSource> ().PlayOneShot (fuseStart);
+
+		GetComponent<AudioSource> ().Play () ;
 	}
 	
 	// Update is called once per frame
@@ -52,6 +57,8 @@ public class Dynamite : MonoBehaviour {
 	{
 		//Booooom
 		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<AudioSource> ().Stop ();
+		GetComponent<AudioSource> ().PlayOneShot (explosion);
 		explo.Play();
 		explo2.Play();
 		fuse.Stop ();
