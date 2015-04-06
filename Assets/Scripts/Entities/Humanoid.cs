@@ -16,9 +16,12 @@ public abstract class Humanoid : Entity {
 
 	private int damageLeft;
 
-	protected new virtual void Start() {
-		Debug.Log("Starting humanoid!!");
-		base.Start();
+	public void Start() {
+	}
+
+	public void InitHumanoid() {
+		//Debug.Log("Starting humanoid!!");
+		InitEntity();
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		audioSource = GetComponent<AudioSource> ();
 		hitSoundCooldown = new Timer(0.5f);

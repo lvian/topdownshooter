@@ -9,17 +9,20 @@ public class Wave : MonoBehaviour {
 	public WaveManager	manager;
 	public float		nextWaveDelay;
 	public bool 		started;		// defined by WaveManager script
+	public bool			last;
 
 	private bool		done;
 	private int 		numberOfSpawns;
 	private int			spawnsRemaining;
 	private Timer		timer;
 
+	private UILabel		timerNumber;
 	private UILabel		timerLabel;
 	
 	void Awake(){
-		done = started = false;
-		timerLabel = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
+		done = started = last = false;
+		timerNumber = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
+		timerLabel = GameObject.Find("Wave Timer Label").GetComponent<UILabel>();
 	}
 	
 	void Start(){
@@ -29,8 +32,16 @@ public class Wave : MonoBehaviour {
 	void Update(){
 		if(GameManager.instance.State != GameManager.GameState.Playing)
 			return;
-		if(timer != null)
-			timerLabel.text = Mathf.RoundToInt(timer.RemainingTime) + "s";
+		if(timer != null){
+			if(!last){
+				timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + "s";
+			}
+			else{
+				timerLabel.text = "Last Wave";
+				timerNumber.text = "";
+			}
+		}
+				
 		if(!started || done)
 			return;
 		bool tmpDone = true;

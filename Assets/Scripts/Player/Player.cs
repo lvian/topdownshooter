@@ -24,19 +24,20 @@ public class Player : Humanoid {
 
 
 	// Use this for initialization
-	protected override void Start () {
+	public IEnumerator Start () {
 
 		isMoving = false;
 		playerState = PlayerState.Idle;
 		dynamiteAmount = 2;
 		spawnWeapons ();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
-		base.Start();
+		InitHumanoid();
 		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
 		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 		healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
 		armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
 		dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
+		yield return null;
 	}
 	
 	// Update is called once per frame

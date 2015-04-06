@@ -5,13 +5,20 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 	private int hitPoints;
 	private int armor;
 	private float speed;
+
+	protected Transform valhalla;
 	public BaseWeapon[] weapons;
 	public BaseWeapon currentWeapon;
 
-	protected virtual void Start(){
+	public void Start(){
+	}
+
+	protected void InitEntity() {
+		//Debug.Log("Starting entity!!");
 		hitPoints = 4;
 		armor = 4;
 		speed = 1.5f;
+		valhalla = GameObject.Find("Valhalla").transform;
 	}
 
 	#region IMoveBehaviour implementation

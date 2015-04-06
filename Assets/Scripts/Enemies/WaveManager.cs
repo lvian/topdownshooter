@@ -45,7 +45,7 @@ public class WaveManager : MonoBehaviour{
 	}*/
 
 	public void Begin(){
-		Debug.Log("Begin() called");
+		//Debug.Log("Begin() called");
 	}
 	
 	private void Initialize(){
@@ -54,23 +54,33 @@ public class WaveManager : MonoBehaviour{
 		_autoStartNextWave = true;
 		totalWave = GameObject.Find("Total Wave").GetComponent<UILabel>();
 		currentWave = GameObject.Find("Current Wave").GetComponent<UILabel>();
-		Begin();
+		//Begin();
 		state = WavesState.NotStarted;
 	}
 	
 	private void Setup(){
 		Debug.Log("Setup() called");
 		_index++;
-		//Debug.Log(_index + " == " + waves.Count);
-		GameObject[] gos = GameObject.FindGameObjectsWithTag("Respawn");
-		if(_index == waves.Count){
-			state = WavesState.Finished;
+		if(_index >= waves.Count){
+			bool allDead = true;
+			foreach(Wave w in waves){
+				Debug.Log(w.transform.name + " has " + w.transform.childCount + " children!");
+				if(w.transform.childCount > 0){
+					allDead = false;
+				}
+			}
+			Debug.Log("All dead? " + allDead);
+			if(allDead)
+				state = WavesState.Finished;
 			return;	
 		}
 		else{
+			Debug.Log(_index + " XXX " + waves.Count + "!");
 			Wave current = waves[_index];
 			current.initUnits();
 			current.started = true;
+			if(_index + 1 == waves.Count)
+				current.last = true;
 			state = WavesState.Idle;
 		}
 	}

@@ -11,7 +11,8 @@ public abstract class Enemy : Humanoid{
 		Attacking,
 		Reloading,
 		Dodging,
-		Dying
+		Dying,
+		Dead
 	}
 
 	public enum EnemyStance{
@@ -31,36 +32,40 @@ public abstract class Enemy : Humanoid{
 	public IEnemyBehaviour enemyBehaviour = new OffensiveBehaviour();
 
 
-	public new IEnumerator Start () {
-		base.Start();
-		while(GameManager.instance.State == GameManager.GameState.Playing){
-			switch(enemyState) {
-			case EnemyState.Init:
-				Init();
-				break;
-			case EnemyState.Setup:
-				Setup();
-				break;
-			case EnemyState.Idle:
-				break;
-			case EnemyState.Searching:
-				Search();
-				break;
-			case EnemyState.Moving:
-				Move();
-				break;
-			case EnemyState.Attacking:
-				Attack();
-				break;
-			case EnemyState.Reloading:
-				Reload();
-				break;
-			case EnemyState.Dodging:
-				Dodge();
-				break;
-			case EnemyState.Dying:
-				Die();
-				break;
+	public IEnumerator Start () {
+		InitHumanoid();
+		while(true) {
+			if(GameManager.instance.State == GameManager.GameState.Playing){
+				switch(enemyState) {
+				case EnemyState.Init:
+					Init();
+					break;
+				case EnemyState.Setup:
+					Setup();
+					break;
+				case EnemyState.Idle:
+					break;
+				case EnemyState.Searching:
+					Search();
+					break;
+				case EnemyState.Moving:
+					Move();
+					break;
+				case EnemyState.Attacking:
+					Attack();
+					break;
+				case EnemyState.Reloading:
+					Reload();
+					break;
+				case EnemyState.Dodging:
+					Dodge();
+					break;
+				case EnemyState.Dying:
+					Die();
+					break;
+				case EnemyState.Dead:
+					break;
+				}
 			}
 			yield return null;
 		}
@@ -112,6 +117,7 @@ public abstract class Enemy : Humanoid{
 		enemyState = EnemyState.Dying;
 		bounty = (GameObject) GameObject.Instantiate(bounty , transform.position , transform.rotation); 
 		audioSource.PlayOneShot (deathSounds[Random.Range(0,deathSounds.Length)]);
+		transform.parent.parent = valhalla;
 	}
 
 	#endregion
