@@ -19,10 +19,28 @@ public class WaveUnit {
 		unitCount		 = 0;
 	}
 
-	public WaveUnit(GameObject unit, float delay, int lane){
+	public WaveUnit(GameObject unit, int lane){
 		this._unit 		 = unit;
 		this._spawnPoint = lane;
 		this._amount 	 = 1;
+		this.delay 		 = new Timer(0f);
+		this.cooldown 	 = new Timer(0f);
+		unitCount		 = 0;
+	}
+
+	public WaveUnit(GameObject unit){
+		this._unit 		 = unit;
+		this._spawnPoint = -1;
+		this._amount 	 = 1;
+		this.delay 		 = new Timer(0f);
+		this.cooldown 	 = new Timer(0f);
+		unitCount		 = 0;
+	}
+
+	public WaveUnit(GameObject unit, float delay, int amount){
+		this._unit 		 = unit;
+		this._spawnPoint = -1;
+		this._amount 	 = amount;
 		this.delay 		 = new Timer(delay);
 		this.cooldown 	 = new Timer(0f);
 		unitCount		 = 0;

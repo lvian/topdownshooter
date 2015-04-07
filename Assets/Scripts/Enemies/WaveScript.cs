@@ -12,7 +12,7 @@ public abstract class WaveScript : MonoBehaviour {
 	}
 
 	protected void Init(){
-		waves = new GameObject("WavesScript");
+		waves = new GameObject("WaveManager");
 		waves.transform.parent = transform;
 		waveManager = waves.AddComponent<WaveManager>() as WaveManager;
 		waveManager.Begin();

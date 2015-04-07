@@ -18,11 +18,14 @@ public class Wave : MonoBehaviour {
 
 	private UILabel		timerNumber;
 	private UILabel		timerLabel;
+
+	private Transform player;
 	
 	void Awake(){
 		done = started = last = false;
 		timerNumber = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
 		timerLabel = GameObject.Find("Wave Timer Label").GetComponent<UILabel>();
+		player = GameObject.Find("Player").GetComponent<Player>().transform;
 	}
 	
 	void Start(){
@@ -87,8 +90,23 @@ public class Wave : MonoBehaviour {
 	
 	private void spawnUnit(GameObject unit, int lane){
 		spawnsRemaining--;
-		GameObject  newUnit = Object.Instantiate(unit, manager.spawnPoints[lane].transform.position, Quaternion.identity) as GameObject;
-		newUnit.transform.parent = transform;
+		if(lane < 0){
+			List<GameObject> spawnPoints = new List<GameObject>(manager.spawnPoints.ToArray());
+			List<int> tooClose = new List<int>();
+			for(int j = 0; j < spawnPoints.Count; j++){
+				float distance = Vector3.Distance(player.position, spawnPoints[j].transform.position);
+				if(distance < 7f)
+					tooClose.Add(j);
+			}
+			foreach(int j in tooClose)
+				spawnPoints.RemoveAt(j);
+			GameObject  newUnit = Object.Instantiate(unit, spawnPoints[Random.Range(0,spawnPoints.Count)].transform.position, Quaternion.identity) as GameObject;
+			newUnit.transform.parent = transform;
+		}
+		else{
+			//GameObject  newUnit = Object.Instantiate(unit, manager.spawnPoints[lane].transform.position, Quaternion.identity) as GameObject;
+			//newUnit.transform.parent = transform;
+		}
 	}
 
 	public int NumberOfSpawns {

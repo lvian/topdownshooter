@@ -14,7 +14,7 @@ public class LevelOneWaves : WaveScript {
 		wave1.AddComponent<Wave>();
 		Wave wave1Script = wave1.GetComponent<Wave>();
 		wave1Script.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0], 2f, 0, 0, 1),
+			new WaveUnit(allEnemies[0], 2f, 20),
 			//new WaveUnit(allEnemies[1], 2f, 10, 1, 1),
 			//new WaveUnit(allEnemies[2], 2f, 20, 2, 1),
 		};
