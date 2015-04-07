@@ -13,9 +13,6 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Init (Enemy enemy) {
 		//Debug.Log("Initializing");
 		_enemy = enemy;
-		_enemy.HitPoints = 4;
-		_enemy.Armor = 1;
-		_enemy.Speed = 1.5f;
 		_enemy.IsMoving = true;
 		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
 		_enemy.currentWeapon.transform.parent = _enemy.transform;
@@ -48,8 +45,10 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 			_enemy.enemyState = Enemy.EnemyState.Moving;
 		}
 		else{
-			if(_enemy.currentWeapon.AmountOfBullets > 0)
+			if(_enemy.currentWeapon.AmountOfBullets > 0){
 				_enemy.enemyState = Enemy.EnemyState.Attacking;
+				AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
+			}
 			else
 				_enemy.enemyState = Enemy.EnemyState.Reloading;
 		}
@@ -90,8 +89,10 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 			
 			_enemy.transform.Translate(new Vector2(newX, newY));
 		}
-		if(_enemy.currentWeapon.AmountOfBullets > 0)
+		if(_enemy.currentWeapon.AmountOfBullets > 0){
 			_enemy.enemyState = Enemy.EnemyState.Attacking;
+			AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
+		}
 		else
 			_enemy.enemyState = Enemy.EnemyState.Reloading;
 	}

@@ -26,6 +26,7 @@ public abstract class Enemy : Humanoid{
 	public float maxShootingDistance;
 	public AudioClip enemyHit;
 	public GameObject bounty;
+	public float shootDelay;
 
 	public EnemyState enemyState = EnemyState.Init;
 	public EnemyStance enemyStance = EnemyStance.Offensive;
@@ -109,6 +110,7 @@ public abstract class Enemy : Humanoid{
 	public void DisableWeapons()
 	{
 		currentWeapon.gameObject.SetActive(false);
+		GetComponentInChildren<SpriteRenderer> ().sortingLayerName = "Background";
 	}
 
 	public override void Died ()

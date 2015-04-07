@@ -4,6 +4,7 @@ using System.Collections;
 public class Bounty : MonoBehaviour {
 
 	public int bountyAmount;
+	public AudioClip bountySound;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,8 +22,10 @@ public class Bounty : MonoBehaviour {
 		{
 
 			GameManager.instance.PlayerCash += bountyAmount;
+			GetComponent<AudioSource>().PlayOneShot(bountySound);
+			GetComponent<SpriteRenderer>().enabled = false;
 			GameObject.Find("Cash Value").GetComponent<UILabel>().text = "$ " +GameManager.instance.PlayerCash.ToString();
-			GameObject.Destroy(transform.gameObject);
+			GameObject.Destroy(transform.gameObject, bountySound.length);
 		}
 	}
 

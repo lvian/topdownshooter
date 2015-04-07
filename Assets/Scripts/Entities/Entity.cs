@@ -2,9 +2,9 @@
 using System.Collections;
 
 public abstract class Entity : MonoBehaviour, IMoveBehaviour {
-	private int hitPoints;
-	private int armor;
-	private float speed;
+	public int hitPoints;
+	public int armor;
+	public float speed;
 
 	protected Transform valhalla;
 	public BaseWeapon[] weapons;
@@ -15,9 +15,6 @@ public abstract class Entity : MonoBehaviour, IMoveBehaviour {
 
 	protected void InitEntity() {
 		//Debug.Log("Starting entity!!");
-		hitPoints = 4;
-		armor = 4;
-		speed = 1.5f;
 		valhalla = GameObject.Find("Valhalla").transform;
 	}
 

@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407632}
   m_Layer: 8
-  m_Name: OffensiveEnemy
+  m_Name: EasyOffensiveEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.54286003, y: 12.2921448, z: 0}
+  m_LocalPosition: {x: .803214908, y: -.795978844, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 491610}
@@ -214,6 +214,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2deae8d1e73c12243a86536d8265940b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 2
+  armor: 0
+  speed: 1
   weapons:
   - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
   currentWeapon: {fileID: 0}
@@ -227,9 +230,10 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  maxShootingDistance: 8
+  maxShootingDistance: 6
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
+  shootDelay: 5
   enemyState: 0
   enemyStance: 0
 --- !u!212 &21213732
