@@ -57,10 +57,11 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Move() {
 		//Debug.Log("Moving!");
 		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		if(distance > 0) {
+		if(distance > 4) {
 			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
 			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+			
 			
 			if(collisions[0] || collisions[1] || collisions[2]){ // detect collision in front
 				newY = 0;
@@ -76,18 +77,25 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 			}
 			
 			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed *  Time.deltaTime;
+				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			if(goBack)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			
 			_enemy.transform.parent.Translate(new Vector2(newX, newY));
 		}
 		else {
 			bool[] collisions = CheckCollisions(_enemy.transform);
 			newY = 0;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 			
-			_enemy.transform.Translate(new Vector2(newX, newY));
+			if(collisions[3]){ // detect collision on the right
+				newX = 0;
+				if(!collisions[7]) // detect collision on the left
+					reverseCircling = true;
+			}
+			
+			if(reverseCircling)
+				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
 		}
 		if(_enemy.currentWeapon.AmountOfBullets > 0){
 			_enemy.enemyState = Enemy.EnemyState.Attacking;
@@ -99,9 +107,12 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	
 	public void Attack () {
 		//Debug.Log("Attacking!");
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance)
-			_enemy.currentWeapon.Fire();
+		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
+			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
+				_enemy.currentWeapon.Fire();
+			}
+		}
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 	

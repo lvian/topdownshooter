@@ -95,13 +95,6 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 
 			_enemy.transform.rotation = oldQ;
 		}
-		else {
-			bool[] collisions = CheckCollisions(_enemy.transform);
-			newY = 0;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
-			
-			_enemy.transform.parent.Translate(new Vector2(newX, newY));
-		}
 		if(_enemy.currentWeapon.AmountOfBullets > 0){
 			_enemy.enemyState = Enemy.EnemyState.Attacking;
 			AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
@@ -112,9 +105,11 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 	
 	public void Attack () {
 		//Debug.Log("Attacking!");
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
-			_enemy.currentWeapon.Fire();
+		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
+			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
+				_enemy.currentWeapon.Fire();
+			}
 		}
 		_enemy.enemyState = Enemy.EnemyState.Searching;
 	}

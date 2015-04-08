@@ -7,8 +7,11 @@ public class AIScript {
 	private Dictionary<Enemy.EnemyState, Timer> timers;
 
 	protected bool CanSeeTarget(Transform self, Transform target){
-		LayerMask layerMask = ~( (1 << 10) | (1 << 8) );
+		CircleCollider2D c = self.GetComponent<CircleCollider2D>();
+		c.enabled = false;
+		LayerMask layerMask = ~( (1 << 10) );
 		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f, layerMask);
+		c.enabled = true;
 		if( hit.collider != null){
 			//Debug.Log(hit.transform.tag);
 			if(hit.transform.Equals(target))
