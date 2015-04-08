@@ -47,9 +47,9 @@ public class Player : Humanoid {
 	void Update () {
 		
 		//if game is in play state
-		if (true) {
-			
-			if(playerState != PlayerState.Dying)
+		if (GameManager.instance.State == GameManager.GameState.Playing) {
+			Debug.Log (playerState);
+			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position
 				Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -96,21 +96,24 @@ public class Player : Humanoid {
 				
 				if(Input.GetKeyDown(KeyCode.Alpha2))
 				{
-					changeWeapons(1);
+					if(GameManager.instance.Upgrades.ShotgunUnlocked == 1)
+					{
+						changeWeapons(1);
+					}
 				}
 				
 				if(Input.GetKeyDown(KeyCode.Alpha3))
 				{
-					changeWeapons(2);
+					if(GameManager.instance.Upgrades.RifleUnlocked == 1)
+					{
+						changeWeapons(2);
+					}
 				}
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
 					StartCoroutine(dodgeMove());
 				}
-			} else if(playerState == PlayerState.Dying)
-			{
-				GetComponent<CircleCollider2D>().enabled = false;
-			}
+			} 
 			
 		}
 		
@@ -168,7 +171,7 @@ public class Player : Humanoid {
 		
 		if(speedY != 0 || speedX != 0)
 		{
-			if(playerState != Player.PlayerState.Dodging)
+			if(playerState != Player.PlayerState.Dodging )
 			{
 				playerState = Player.PlayerState.Moving;
 			}
@@ -208,7 +211,7 @@ public class Player : Humanoid {
 				speedY = 0;
 			}
 		}
-		if(speedY == 0 && speedX == 0)
+		if(speedY == 0 && speedX == 0 && playerState != PlayerState.Dying)
 		{
 			playerState = Player.PlayerState.Idle;
 			anim.SetBool ("isMoving", false);
@@ -246,6 +249,23 @@ public class Player : Humanoid {
 			b.transform.parent = transform;
 			availableWeapons[key] = b;
 			b.gameObject.SetActive(false);
+
+			if(availableWeapons[key].name == "Revolver(Clone)")
+			{
+				if(GameManager.instance.Upgrades.RevolverDeviation == 1)
+					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+			}
+			if(availableWeapons[key].name == "Shotgun(Clone)")
+			{
+				//if(GameManager.instance.Upgrades.RevolverDeviation == 1)
+				//	availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+			}
+			if(availableWeapons[key].name == "Rifle(Clone)")
+			{
+				//if(GameManager.instance.Upgrades.RevolverDeviation == 1)
+				//	availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+			}
+
 			
 		}
 		availableWeapons [0].gameObject.SetActive (true);
@@ -334,6 +354,7 @@ public class Player : Humanoid {
 		anim.SetTrigger("isDying");
 		playerState = PlayerState.Dying;
 		reloadBar.SetActive (false);
+		GetComponent<CircleCollider2D>().enabled = false;
 	}
 	
 	#endregion

@@ -98,8 +98,12 @@ public class Wave : MonoBehaviour {
 				if(distance < 7f)
 					tooClose.Add(j);
 			}
+			int countRemoved = 0;
 			foreach(int j in tooClose)
-				spawnPoints.RemoveAt(j);
+			{
+				spawnPoints.RemoveAt(j - countRemoved);
+				countRemoved++;
+			}
 			GameObject  newUnit = Object.Instantiate(unit, spawnPoints[Random.Range(0,spawnPoints.Count)].transform.position, Quaternion.identity) as GameObject;
 			newUnit.transform.parent = transform;
 		}

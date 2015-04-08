@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
 	private GameState _state;
 	private int playerCash;
 
+	private Upgrades upgrades;
+
 	void Awake () {
 		if(instance == null)
 			instance = this;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		DontDestroyOnLoad (this);
 		_state = GameState.Playing;
+		upgrades = new Upgrades();
 	}
 
 	public void GameStart()
@@ -26,7 +29,8 @@ public class GameManager : MonoBehaviour {
 		Application.LoadLevel (1);
 		_state = GameState.Playing;
 
-		playerCash = 0;
+		Upgrades.Cash = 0;
+
 
 	}
 
@@ -39,13 +43,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public int PlayerCash {
+	public Upgrades Upgrades {
 		get {
-			return playerCash;
+			return upgrades;
 		}
 		set {
-			playerCash = value;
+			upgrades = value;
 		}
 	}
-
 }

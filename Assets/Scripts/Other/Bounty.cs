@@ -21,10 +21,10 @@ public class Bounty : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 
-			GameManager.instance.PlayerCash += bountyAmount;
+			GameManager.instance.Upgrades.Cash += bountyAmount;
 			GetComponent<AudioSource>().PlayOneShot(bountySound);
 			GetComponent<SpriteRenderer>().enabled = false;
-			GameObject.Find("Cash Value").GetComponent<UILabel>().text = "$ " +GameManager.instance.PlayerCash.ToString();
+			GameObject.Find("Cash Value").GetComponent<UILabel>().text = "$ " +GameManager.instance.Upgrades.Cash.ToString();
 			GameObject.Destroy(transform.gameObject, bountySound.length);
 		}
 	}
