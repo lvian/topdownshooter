@@ -41,11 +41,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 98994300162f5044e904c14049b1d9bc, type: 2}
   mSprites:
-  - name: logo
+  - name: exitButton
+    x: 201
+    y: 117
+    width: 30
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: MainMenu
     x: 0
-    y: 1265
-    width: 1268
-    height: 783
+    y: 224
+    width: 1280
+    height: 800
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: MainMenuOptions
+    x: 0
+    y: 148
+    width: 297
+    height: 75
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: MenuPoster
+    x: 0
+    y: 7
+    width: 74
+    height: 99
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 1
+  - name: MenusBackground
+    x: 1281
+    y: 630
+    width: 485
+    height: 394
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: MenuTitle1
+    x: 0
+    y: 107
+    width: 200
+    height: 40
     borderLeft: 0
     borderRight: 0
     borderTop: 0
