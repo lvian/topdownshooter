@@ -49,7 +49,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Initialize(){
-		Debug.Log("Initialize() called");
+		//Debug.Log("Initialize() called");
 		_index = -1;
 		_autoStartNextWave = true;
 		totalWave = GameObject.Find("Total Wave").GetComponent<UILabel>();
@@ -59,7 +59,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Setup(){
-		Debug.Log("Setup() called");
+		//Debug.Log("Setup() called");
 		_index++;
 		if(_index >= waves.Count){
 			bool allDead = true;
@@ -69,13 +69,13 @@ public class WaveManager : MonoBehaviour{
 					allDead = false;
 				}
 			}
-			Debug.Log("All dead? " + allDead);
+			//Debug.Log("All dead? " + allDead);
 			if(allDead)
 				state = WavesState.Finished;
 			return;	
 		}
 		else{
-			Debug.Log(_index + " XXX " + waves.Count + "!");
+			//Debug.Log(_index + " XXX " + waves.Count + "!");
 			Wave current = waves[_index];
 			current.initUnits();
 			current.started = true;
@@ -86,7 +86,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Wait(){
-		Debug.Log("Wait() called");
+		//Debug.Log("Wait() called");
 		currentWave.text = (_index + 1) + " of";
 		totalWave.text = "" + WavesCount;
 		if(waves[_index].Done){
@@ -95,7 +95,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Finish(){
-		Debug.Log("Finish() called");
+		//Debug.Log("Finish() called");
 		//Messenger<bool>.Broadcast("PlayerVictory", true);
 	}
 	

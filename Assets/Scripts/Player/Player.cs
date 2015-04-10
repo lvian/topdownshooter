@@ -48,7 +48,7 @@ public class Player : Humanoid {
 		
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
-			Debug.Log (playerState);
+			//Debug.Log (playerState);
 			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position

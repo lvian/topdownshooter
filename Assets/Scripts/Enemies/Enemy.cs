@@ -101,7 +101,7 @@ public abstract class Enemy : Humanoid{
 	}
 
 	public override void Move (){
-		anim.SetBool ("isMoving", isMoving);
+		//anim.SetBool ("isMoving", isMoving);
 		enemyBehaviour.Move();
 	}
 

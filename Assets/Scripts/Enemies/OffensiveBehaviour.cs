@@ -2,56 +2,48 @@ using UnityEngine;
 using System.Collections;
 
 public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
-	private Enemy _enemy;
-	private Player _player;
+	private Enemy enemy;
+	private Player player;
 	private bool reverseCircling;
 	private bool goBack;
+	private Timer goBackTimer;
+	private Collider2D collider;
+	private float errorMargin = 0.01f;
 
 	private float newY = 0, newX = 0;
 
 	#region IEnemyBehaviour implementation
 	public void Init (Enemy enemy) {
 		//Debug.Log("Initializing");
-		_enemy = enemy;
-		_enemy.IsMoving = true;
-		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
-		_enemy.currentWeapon.transform.parent = _enemy.transform;
-		_player = GameObject.Find("Player").GetComponent<Player>();
-		_enemy.enemyState = Enemy.EnemyState.Setup;
-		_enemy.enemyStance = Enemy.EnemyStance.Defensive;
+		this.enemy = enemy;
+		this.enemy.IsMoving = true;
+		this.enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(enemy.weapons[0], enemy.transform.position, enemy.transform.rotation);  
+		this.enemy.currentWeapon.transform.parent = enemy.transform;
+		player = GameObject.Find("Player").GetComponent<Player>();
+		collider = this.enemy.GetComponent<Collider2D>();
+		this.enemy.enemyState = Enemy.EnemyState.Setup;
+		this.enemy.enemyStance = Enemy.EnemyStance.Defensive;
+		goBack = false;
 		reverseCircling = false;
 	}
 
 	public void Setup () {
 		//Debug.Log("Setting up!");
-		_enemy.Start();
-		_enemy.enemyState = Enemy.EnemyState.Searching;
+		enemy.Start();
+		enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 
 	public void Search ()
 	{
-		//Debug.Log("Searching!");
-		//bool[] collisions = CheckCollisions(_enemy.transform);
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		
-		Vector3 vectorToTarget = _player.transform.position - _enemy.transform.position;
+		//Debug.Log("Searching!");	
+		Vector3 vectorToTarget = player.transform.position - enemy.transform.position;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 		Vector3 euler = q.eulerAngles;
 		euler.z -= 90;
 		q = Quaternion.Euler(euler);
-		_enemy.transform.parent.rotation = Quaternion.Slerp(_enemy.transform.parent.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
-		if(distance >= 4){
-			_enemy.enemyState = Enemy.EnemyState.Moving;
-		}
-		else{
-			if(_enemy.currentWeapon.AmountOfBullets > 0){
-				_enemy.enemyState = Enemy.EnemyState.Attacking;
-				AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
-			}
-			else
-				_enemy.enemyState = Enemy.EnemyState.Reloading;
-		}
+		enemy.transform.parent.rotation = Quaternion.Slerp(enemy.transform.parent.rotation, q, Time.deltaTime * enemy.rotationSpeed);
+		enemy.enemyState = Enemy.EnemyState.Moving;
 	}
 
 	/*public void Move() {
@@ -106,118 +98,111 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}*/
 
 	public void Move(){
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-		LayerMask layerMask = ((1 << 9) | (1 << 8));
+		float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
+		LayerMask layerMask = ((1 << 10) | (1 << 9));
 		if(distance > 4) {
+			if(goBackTimer != null){
+				if(goBackTimer.IsElapsed){
+					goBack = !goBack;
+					goBackTimer = null;
+				}
+			}
+
 			if(goBack)
-				newY = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+				newY = -enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 			else
-				newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+				newY = enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+				newX = -enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 			else
-				newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
+				newX = enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 
+			Vector3 oldPos = enemy.transform.parent.position;
+			enemy.transform.parent.Translate(new Vector2(newX, newY));
+
+			collider.enabled = false;
 			Collider2D[] colX = Physics2D.OverlapCircleAll (
-				new Vector2 ((newX * Time.deltaTime) + _enemy.transform.position.x, _enemy.transform.position.y), 
-				_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
-
+				new Vector2 (enemy.transform.parent.position.x, oldPos.y), 
+				enemy.transform.GetComponent<CircleCollider2D>().radius, layerMask);
 			Collider2D[] colY = Physics2D.OverlapCircleAll (
-				new Vector2 (_enemy.transform.position.x , (newY * Time.deltaTime) + _enemy.transform.position.y),
-				_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
+				new Vector2 (oldPos.x , enemy.transform.parent.position.y),
+				enemy.transform.GetComponent<CircleCollider2D>().radius, layerMask);
+			collider.enabled = true;
 
 			if(colX.Length != 0){
+				enemy.transform.parent.Translate(new Vector2(-(newX/Mathf.Abs(newX) * (Mathf.Abs(newX) + errorMargin)), 0f));
 				newX = 0;
+				reverseCircling = !reverseCircling;
 			}
 
 			if(colY.Length != 0){
+				enemy.transform.parent.Translate(new Vector2(0f, -(newY/Mathf.Abs(newY) * (Mathf.Abs(newY) + errorMargin))));
 				newY = 0;
+				goBackTimer = new Timer(2f);
+				goBack = !goBack;
 			}
 
 			if(newX == 0 && newY == 0){
-				float nX = 0f, nY = 0f;
-				if(goBack)
-					nY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-				else
-					nY = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-				if(reverseCircling)
-					newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-				else
-					newX = -_enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-
-				Collider2D[] cX = Physics2D.OverlapCircleAll (
-					new Vector2 ((nX * Time.deltaTime) + _enemy.transform.position.x, _enemy.transform.position.y), 
-					_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
-				
-				Collider2D[] cY = Physics2D.OverlapCircleAll (
-					new Vector2 (_enemy.transform.position.x , (nY * Time.deltaTime) + _enemy.transform.position.y),
-					_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
-
-				if(cX.Length == 0){
-					reverseCircling = !reverseCircling;
-				}
-				else if(colY.Length == 0){
-					goBack = !goBack;
-				}
+				enemy.anim.SetBool ("isMoving", false);
 			}
-
-			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
-			if(goBack)
-				newY = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
-			
-			Debug.Log(newX + " " + newY);
-			_enemy.transform.parent.Translate(new Vector2(newX, newY));
+			else{
+				enemy.anim.SetBool ("isMoving", true);
+			}
 		}
 		else {
 			newY = 0;
 			if(reverseCircling)
-				newX = _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 			else
-				newX = - _enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = -enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 
+			Vector3 oldPos = enemy.transform.parent.position;
+			enemy.transform.parent.Translate(new Vector2(newX, newY));
+			
+			collider.enabled = false;
 			Collider2D[] colX = Physics2D.OverlapCircleAll (
-				new Vector2 ((newX * Time.deltaTime) + _enemy.transform.position.x, _enemy.transform.position.y), 
-				_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
-
+				new Vector2 (enemy.transform.parent.position.x, oldPos.y), 
+				enemy.transform.GetComponent<CircleCollider2D>().radius, layerMask);
+			collider.enabled = true;
+			
 			if(colX.Length != 0){
-				Collider2D[] cX = Physics2D.OverlapCircleAll (
-					new Vector2 ((newX * Time.deltaTime) + _enemy.transform.position.x, _enemy.transform.position.y), 
-					_enemy.transform.GetComponent<CircleCollider2D> ().radius, layerMask);
-
-				if(cX.Length == 0){
-					reverseCircling = !reverseCircling;
-				}
+				enemy.transform.parent.Translate(new Vector2(-(newX/Mathf.Abs(newX) * (Mathf.Abs(newX) + errorMargin)), 0f));
+				newX = 0;
+				reverseCircling = !reverseCircling;
 			}
 			
-			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			if(newX == 0 && newY == 0){
+				enemy.anim.SetBool ("isMoving", false);
+			}
+			else{
+				enemy.anim.SetBool ("isMoving", true);
+			}
 		}
 
 		// transitions
-		if(_enemy.currentWeapon.AmountOfBullets > 0){
-			_enemy.enemyState = Enemy.EnemyState.Attacking;
-			AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
+		if(enemy.currentWeapon.AmountOfBullets > 0){
+			enemy.enemyState = Enemy.EnemyState.Attacking;
+			AddTimer(enemy.shootDelay, Enemy.EnemyState.Attacking);
 		}
 		else
-			_enemy.enemyState = Enemy.EnemyState.Reloading;
+			enemy.enemyState = Enemy.EnemyState.Reloading;
 	}
 
 	public void Attack () {
 		//Debug.Log("Attacking!");
 		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
-			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
-				_enemy.currentWeapon.Fire();
+			float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
+			if(CanSeeTarget(enemy.transform, player.transform) && distance < enemy.maxShootingDistance){
+				enemy.currentWeapon.Fire();
 			}
 		}
-		_enemy.enemyState = Enemy.EnemyState.Searching;
+		enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 
 	public void Reload () {
 		//Debug.Log("Reloading!");
-		_enemy.currentWeapon.Reload(_enemy.transform.gameObject);
-		_enemy.enemyState = Enemy.EnemyState.Attacking;
+		enemy.currentWeapon.Reload(enemy.transform.gameObject);
+		enemy.enemyState = Enemy.EnemyState.Attacking;
 	}
 	public void Dodge ()
 	{
@@ -225,7 +210,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 	public void Die ()
 	{
-		_enemy.transform.GetComponent<CircleCollider2D> ().enabled = false;
+		enemy.transform.GetComponent<CircleCollider2D> ().enabled = false;
 	}
 	#endregion
 }

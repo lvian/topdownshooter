@@ -8,7 +8,7 @@ public abstract class Humanoid : Entity {
 	public AudioClip playerHit;
 	public AudioClip[] deathSounds;
 	public GameObject graveyard;
-	protected Animator anim;
+	public Animator anim;
 	protected bool isMoving;
 
 	public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
