@@ -64,7 +64,7 @@ public class WaveManager : MonoBehaviour{
 		if(_index >= waves.Count){
 			bool allDead = true;
 			foreach(Wave w in waves){
-				Debug.Log(w.transform.name + " has " + w.transform.childCount + " children!");
+				//Debug.Log(w.transform.name + " has " + w.transform.childCount + " children!");
 				if(w.transform.childCount > 0){
 					allDead = false;
 				}

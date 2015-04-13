@@ -27,7 +27,6 @@ public class GUIManager : MonoBehaviour {
 
 	public void disableTweenColor()
 	{
-		Debug.Log (UIEventTrigger.current.transform.GetChild(0).GetComponentInChildren<TweenColor>());
 		UIEventTrigger.current.transform.GetChild(0).GetComponentInChildren<TweenColor>().ResetToBeginning();
 		UIEventTrigger.current.transform.GetChild(0).GetComponentInChildren<TweenColor>().enabled = false;
 	}
