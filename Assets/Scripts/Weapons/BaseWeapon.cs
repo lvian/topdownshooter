@@ -51,8 +51,8 @@ public abstract class BaseWeapon : MonoBehaviour {
 				if(reloadTimer >= weaponReloadSpeed)
 				{
 					amountOfBullets = maxAmountOfBullets;
-					bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					isReloading = false;
+					ReloadGUI();
 					NGUITools.SetActive(reloadBar , false);
 				} else
 				{
@@ -86,6 +86,8 @@ public abstract class BaseWeapon : MonoBehaviour {
 		muzzleFlashEffect.SetActive (false);
 
 	}
+
+	public abstract void ReloadGUI();
 
 	public string currentAnimation()
 	{

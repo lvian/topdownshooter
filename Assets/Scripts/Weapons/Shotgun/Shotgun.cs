@@ -113,5 +113,10 @@ public class Shotgun : BaseWeapon {
 
 	}
 
+	public override void ReloadGUI()
+	{
+		GUIManager.instance.ShotgunBullets(AmountOfBullets,MaxAmountOfBullets);
+	}
+
 	#endregion
 }

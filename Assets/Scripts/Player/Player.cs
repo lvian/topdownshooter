@@ -23,11 +23,12 @@ public class Player : Humanoid {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0, speedY = 0, speedX = 0, oldX, oldY;
 	private bool isMovingX, isMovingY;
-	
+	private float maxHealth, maxArmor;
 	
 	// Use this for initialization
 	public IEnumerator Start () {
-		
+		maxArmor = Armor;
+		maxHealth = HitPoints;
 		isMovingX = false;
 		isMovingY = false;
 		playerState = PlayerState.Idle;
@@ -35,10 +36,8 @@ public class Player : Humanoid {
 		spawnWeapons ();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
 		InitHumanoid();
-		bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
-		bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
-		healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
-		armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
+		GUIManager.instance.HealthGUI(HitPoints, maxHealth);
+		GUIManager.instance.ArmorGUI(Armor, maxArmor);
 		dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
 		yield return null;
 	}
@@ -332,7 +331,7 @@ public class Player : Humanoid {
 		}
 		set {
 			base.HitPoints = value;
-			healthNumber.GetComponent<UILabel> ().text = HitPoints.ToString();
+			GUIManager.instance.HealthGUI(HitPoints , maxHealth);
 			
 		}
 	}
@@ -343,7 +342,7 @@ public class Player : Humanoid {
 		}
 		set {
 			base.Armor = value;
-			armorNumber.GetComponent<UILabel> ().text = Armor.ToString();
+			GUIManager.instance.ArmorGUI(Armor , maxArmor);
 		}
 	}
 	

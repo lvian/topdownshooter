@@ -37,7 +37,7 @@ public class Wave : MonoBehaviour {
 			return;
 		if(timer != null){
 			if(!last){
-				timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + "s";
+				timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + " s";
 			}
 			else{
 				timerLabel.text = "Last Wave";

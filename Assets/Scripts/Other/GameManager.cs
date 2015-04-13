@@ -29,7 +29,8 @@ public class GameManager : MonoBehaviour {
 		Application.LoadLevel (1);
 		_state = GameState.Playing;
 
-		Upgrades.Cash = 0;
+		GUIManager.instance.StartLevel ();
+		playerCash = Upgrades.Cash;
 
 
 	}

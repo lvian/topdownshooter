@@ -24,7 +24,7 @@ public class Revolver : BaseWeapon {
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
 						audioSource.PlayOneShot(shotSound);
-						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+						GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						playerCamera.shakeCamera(0.1f , 0.05f);
 
@@ -105,5 +105,10 @@ public class Revolver : BaseWeapon {
 
 	}
 
+
+	public override void ReloadGUI()
+	{
+		GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
+	}
 	#endregion
 }

@@ -87,8 +87,8 @@ public class WaveManager : MonoBehaviour{
 	
 	private void Wait(){
 		//Debug.Log("Wait() called");
-		currentWave.text = (_index + 1) + " of";
-		totalWave.text = "" + WavesCount;
+		currentWave.text = "Wave " +(_index + 1) ;
+		totalWave.text = "of " + WavesCount;
 		if(waves[_index].Done){
 			state = WavesState.Setup;
 		}
