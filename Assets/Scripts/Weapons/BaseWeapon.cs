@@ -47,16 +47,16 @@ public abstract class BaseWeapon : MonoBehaviour {
 			if(isReloading)
 			{
 				float sliderPercentage = 1 / weaponReloadSpeed;
-				UISlider slider = reloadBar.GetComponent<UISlider>();
+
 				if(reloadTimer >= weaponReloadSpeed)
 				{
+					GUIManager.instance.ReloadBarActive(false);
 					amountOfBullets = maxAmountOfBullets;
-					isReloading = false;
 					ReloadGUI();
-					NGUITools.SetActive(reloadBar , false);
+					isReloading = false;
 				} else
 				{
-					slider.value = reloadTimer * sliderPercentage;
+					GUIManager.instance.ReloadBarUpdate(reloadTimer * sliderPercentage);
 				}
 
 				reloadTimer += Time.deltaTime;
@@ -87,7 +87,6 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	}
 
-	public abstract void ReloadGUI();
 
 	public string currentAnimation()
 	{
@@ -95,6 +94,8 @@ public abstract class BaseWeapon : MonoBehaviour {
 	}
 	public abstract void Fire();
 	public abstract void Reload(GameObject rb);
+
+	public abstract void ReloadGUI();
 
 	public float WeaponMoveSpeed {
 		get {

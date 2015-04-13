@@ -125,4 +125,18 @@ public class GUIManager : MonoBehaviour {
 		}
 		
 	}
+	public void ReloadBarActive(bool active)
+	{
+		GameObject healthbar = transform.Find("InGame/ReloadBar").gameObject;
+		healthbar.GetComponent<UISlider> ().value = 0;
+		NGUITools.SetActive(healthbar, active);
+		
+	}
+
+	public void ReloadBarUpdate(float barValue)
+	{
+		GameObject healthbar = transform.Find("InGame/ReloadBar").gameObject;
+		healthbar.GetComponent<UISlider> ().value = barValue;
+		
+	}
 }

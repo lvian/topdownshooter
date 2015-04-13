@@ -108,7 +108,6 @@ public class Rifle : BaseWeapon {
 
 	}
 
-
 	public override void ReloadGUI()
 	{
 		GUIManager.instance.RifleBullets(AmountOfBullets,MaxAmountOfBullets);

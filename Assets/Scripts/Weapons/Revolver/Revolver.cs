@@ -79,11 +79,10 @@ public class Revolver : BaseWeapon {
 		if(AmountOfBullets < MaxAmountOfBullets && lastShot >= weaponFireDelay)
 		{
 			if(IsReloading == false){
-
+				Debug.Log (transform.parent.name);
 				//Not cool bro, need a better solution
 				if(rb.tag == "Player"){
-					NGUITools.SetActive (rb, true);
-					rb.GetComponent<UISlider> ().value = 0;
+					GUIManager.instance.ReloadBarActive(true);
 
 				}
 				reloadTimer = 0;
@@ -104,7 +103,6 @@ public class Revolver : BaseWeapon {
 		}
 
 	}
-
 
 	public override void ReloadGUI()
 	{
