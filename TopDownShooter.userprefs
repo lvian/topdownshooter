@@ -1,22 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\BaseWeapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\GUIManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\GUIFollowPlayer.cs" Line="17" Column="121" />
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="139" Column="55" />
-      <File FileName="Assets\Scripts\Other\SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\Upgrades.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="293" Column="78" />
+      <File FileName="Assets\Scripts\Other\Upgrades.cs" Line="121" Column="1" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="29" Column="28" />
       <File FileName="Assets\Scripts\Other\Bounty.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="55" Column="18" />
+      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\WaveManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="110" Column="3" />
-      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="107" Column="4" />
-      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="119" Column="37" />
+      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
     </Files>

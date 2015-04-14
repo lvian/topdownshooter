@@ -251,7 +251,7 @@ public class Player : Humanoid {
 
 			if(availableWeapons[key].name == "Revolver(Clone)")
 			{
-				if(GameManager.instance.Upgrades.RevolverDeviation == 1)
+				if(GameManager.instance.Upgrades.RevolverCone == 1)
 					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
 			}
 			if(availableWeapons[key].name == "Shotgun(Clone)")

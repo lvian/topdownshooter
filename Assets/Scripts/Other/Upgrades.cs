@@ -1,9 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
+
+
+
 public class Upgrades {
 
+	
+	public  int revolver1 = 500;
+	public  int revolver2 = 1000;
+	public  int shotgun1 = 1000;
+	public  int shotgun2 = 1500;
+	public  int rifle1 = 2000;
+	public  int rifle2 = 2500;
+	public  int dodge = 3000;
+	public  int money = 2000;
+	public  int armor1 = 1000;
+	public  int armor2 = 2500;
+	public  int armor3 = 4000;
+	public  int armor4 = 5500;
 	private int cash;
 
 	public int HealthUpgrade1 {
@@ -42,39 +57,57 @@ public class Upgrades {
 		}
 	}
 
-	public int ArmorUpgrade1 {
+	public int Armor1 {
 		get {
-			return PlayerPrefs.GetInt("armorUpgrade1");
+			return PlayerPrefs.GetInt("armor1");
 		}
 		set {
-			PlayerPrefs.SetInt("amorUpgrade1", value);
+			PlayerPrefs.SetInt("armor1", value);
 		}
 	}
 
-	public int ArmorUpgrade2 {
+	public int Armor2 {
 		get {
-			return PlayerPrefs.GetInt("armorUpgrade2");
+			return PlayerPrefs.GetInt("armor2");
 		}
 		set {
-			PlayerPrefs.SetInt("amorUpgrade2", value);
+			PlayerPrefs.SetInt("armor2", value);
 		}
 	}
 
-	public int ArmorUpgrade3 {
+	public int Armor3 {
 		get {
-			return PlayerPrefs.GetInt("armorUpgrade3");
+			return PlayerPrefs.GetInt("armor3");
 		}
 		set {
-			PlayerPrefs.SetInt("amorUpgrade3", value);
+			PlayerPrefs.SetInt("armor3", value);
 		}
 	}
 
-	public int ArmorUpgrade4 {
+	public int Armor4 {
 		get {
-			return PlayerPrefs.GetInt("armorUpgrade4");
+			return PlayerPrefs.GetInt("armor4");
 		}
 		set {
-			PlayerPrefs.SetInt("amorUpgrade4", value);
+			PlayerPrefs.SetInt("armor4", value);
+		}
+	}
+
+	public int Dodge {
+		get {
+			return PlayerPrefs.GetInt("dodge");
+		}
+		set {
+			PlayerPrefs.SetInt("dodge", value);
+		}
+	}
+
+	public int Money {
+		get {
+			return PlayerPrefs.GetInt("money");
+		}
+		set {
+			PlayerPrefs.SetInt("money", value);
 		}
 	}
 
@@ -84,6 +117,7 @@ public class Upgrades {
 		}
 		set {
 			cash = value;
+			GUIManager.instance.UpdateCash(cash);
 		}
 	}
 
@@ -100,12 +134,21 @@ public class Upgrades {
 
 	// Revolver Upgrades 
 
-	public int RevolverDeviation {
+	public int RevolverCone {
 		get {
 			return PlayerPrefs.GetInt("revolverCone");
 		}
 		set {
 			PlayerPrefs.SetInt("revolverCone", value);
+		}
+	}
+
+	public int RevolverReload {
+		get {
+			return PlayerPrefs.GetInt("revolverReload");
+		}
+		set {
+			PlayerPrefs.SetInt("revolverReload", value);
 		}
 	}
 
@@ -121,6 +164,23 @@ public class Upgrades {
 		}
 	}
 
+	public int ShotgunCone {
+		get {
+			return PlayerPrefs.GetInt("ShotgunCone");
+		}
+		set {
+			PlayerPrefs.SetInt("ShotgunCone", value);
+		}
+	}
+	
+	public int ShotgunPellets {
+		get {
+			return PlayerPrefs.GetInt("ShotgunPellet");
+		}
+		set {
+			PlayerPrefs.SetInt("ShotgunPellet", value);
+		}
+	}
 
 
 	// Rifle Upgrades 
@@ -133,4 +193,33 @@ public class Upgrades {
 			PlayerPrefs.SetInt("RifleUnlocked", value);
 		}
 	}
+
+	public int RifleCone {
+		get {
+			return PlayerPrefs.GetInt("RifleCone");
+		}
+		set {
+			PlayerPrefs.SetInt("RifleCone", value);
+		}
+	}
+
+	public int RifleMobility {
+		get {
+			return PlayerPrefs.GetInt("RifleMobility");
+		}
+		set {
+			PlayerPrefs.SetInt("RifleMobility", value);
+		}
+	}
+
+	// Levels Unlocked
+	public int levelsUnlocked {
+		get {
+			return PlayerPrefs.GetInt("levelsUnlocked");
+		}
+		set {
+			PlayerPrefs.SetInt("levelsUnlocked", value);
+		}
+	}
+
 }
