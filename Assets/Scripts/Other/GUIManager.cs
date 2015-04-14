@@ -19,7 +19,9 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
-		GameManager.instance.Upgrades.Cash += 1000;
+		GameManager.instance.Upgrades.Cash += 5000;
+		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		GameManager.instance.Upgrades.RifleUnlocked = 1;
 		InitializeGUI ();
 	}
 	
@@ -286,11 +288,110 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.revolver2;
 			GameManager.instance.Upgrades.RevolverReload = 1;
-			InitializeUpgrades();
 
 			GameObject revolver2 = transform.Find("Upgrades/Board/Revolver2").gameObject;
 			revolver2.GetComponent<UIButton>().isEnabled = false;
 			revolver2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+
+	public void BuyShotgunCone()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.shotgun1)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.shotgun1;
+			GameManager.instance.Upgrades.ShotgunCone = 1;
+			
+			GameObject shotgun1 = transform.Find("Upgrades/Board/Shotgun1").gameObject;
+			shotgun1.GetComponent<UIButton>().isEnabled = false;
+			shotgun1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+		
+	}
+	
+	public void BuyShotgunPellet()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.revolver2)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.shotgun2;
+			GameManager.instance.Upgrades.ShotgunPellets = 1;
+			
+			GameObject shotgun2 = transform.Find("Upgrades/Board/Shotgun2").gameObject;
+			shotgun2.GetComponent<UIButton>().isEnabled = false;
+			shotgun2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+	public void BuyRifleCone()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.rifle1)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.rifle1;
+			GameManager.instance.Upgrades.RifleCone = 1;
+			
+			GameObject rifle1 = transform.Find("Upgrades/Board/Rifle1").gameObject;
+			rifle1.GetComponent<UIButton>().isEnabled = false;
+			rifle1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+		
+	}
+	
+	public void BuyRifleMobility()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.rifle2)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.rifle2;
+			GameManager.instance.Upgrades.RifleMobility = 1;
+			
+			GameObject rifle2 = transform.Find("Upgrades/Board/Rifle2").gameObject;
+			rifle2.GetComponent<UIButton>().isEnabled = false;
+			rifle2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+	public void BuyDodge()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.dodge)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.dodge;
+			GameManager.instance.Upgrades.Dodge = 1;
+			
+			GameObject dodge = transform.Find("Upgrades/Board/Dodge").gameObject;
+			dodge.GetComponent<UIButton>().isEnabled = false;
+			dodge.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+		
+	}
+	
+	public void BuyMoney()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.money)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.money;
+			GameManager.instance.Upgrades.Money = 1;
+			
+			GameObject money = transform.Find("Upgrades/Board/Money").gameObject;
+			money.GetComponent<UIButton>().isEnabled = false;
+			money.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
 		} else
 		{
 			notEnoughMoney();

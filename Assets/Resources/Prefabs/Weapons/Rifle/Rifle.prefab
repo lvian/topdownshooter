@@ -670,9 +670,9 @@ MonoBehaviour:
   weaponFireDelay: 1.5
   weaponReloadSpeed: 4
   weaponSwapSpeed: 1
-  amountOfBullets: 10
-  maxAmountOfBullets: 10
-  rotationSpeed: 1
+  amountOfBullets: 6
+  maxAmountOfBullets: 6
+  rotationSpeed: .800000012
   bulletDeviationAngle: 5
   muzzle: {fileID: 123620}
   weaponCases: {fileID: 177656, guid: 10a505cb83ced75479a1b154728eb06b, type: 2}

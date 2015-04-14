@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : Humanoid {
 	
@@ -15,7 +16,7 @@ public class Player : Humanoid {
 	
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber, dynamite, dynamiteNumber;
-	public float maxSpeed, acellerationSpeed;
+	public float maxSpeed, acellerationSpeed, dodgeCooldown;
 	
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
@@ -23,10 +24,15 @@ public class Player : Humanoid {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0, speedY = 0, speedX = 0, oldX, oldY;
 	private bool isMovingX, isMovingY;
-	private float maxHealth, maxArmor;
+	private float maxHealth, maxArmor, dodgeTimer;
 	
 	// Use this for initialization
 	public IEnumerator Start () {
+		if(GameManager.instance.Upgrades.Dodge == 1)
+		{
+			dodgeCooldown = dodgeCooldown / 2; 
+		}
+		dodgeTimer = 0;
 		maxArmor = Armor;
 		maxHealth = HitPoints;
 		isMovingX = false;
@@ -48,6 +54,8 @@ public class Player : Humanoid {
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
 			//Debug.Log (playerState);
+			dodgeTimer += Time.deltaTime;
+			Debug.Log (dodgeTimer);
 			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position
@@ -110,7 +118,11 @@ public class Player : Humanoid {
 				}
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
-					StartCoroutine(dodgeMove());
+					if(dodgeTimer >= dodgeCooldown)
+					{
+						StartCoroutine(dodgeMove());
+						dodgeTimer = 0;
+					}
 				}
 			} 
 			
@@ -253,16 +265,34 @@ public class Player : Humanoid {
 			{
 				if(GameManager.instance.Upgrades.RevolverCone == 1)
 					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+				if(GameManager.instance.Upgrades.RevolverReload == 1)
+				{
+					//Changing the whole animator speed, because unity doesn't allow for single state speed changes yet. Comming on 5.1
+					availableWeapons[key].weaponReloadSpeed = (availableWeapons[key].weaponReloadSpeed / 4) * 3 ;
+					availableWeapons[key].GetComponent<Animator>().speed = 1.25f;
+
+				}
 			}
 			if(availableWeapons[key].name == "Shotgun(Clone)")
 			{
-				//if(GameManager.instance.Upgrades.RevolverDeviation == 1)
-				//	availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+				if(GameManager.instance.Upgrades.ShotgunCone == 1)
+				{
+					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+				}
+				if(GameManager.instance.Upgrades.ShotgunPellets == 1)
+				{
+					availableWeapons[key].GetComponent<Shotgun>().bulletsperShot = availableWeapons[key].GetComponent<Shotgun>().bulletsperShot * 2;
+				}
 			}
 			if(availableWeapons[key].name == "Rifle(Clone)")
 			{
-				//if(GameManager.instance.Upgrades.RevolverDeviation == 1)
-				//	availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+				if(GameManager.instance.Upgrades.RifleCone == 1)
+					availableWeapons[key].bulletDeviationAngle = 0 ;
+				if(GameManager.instance.Upgrades.RifleMobility == 1)
+				{
+					availableWeapons[key].weaponMoveSpeed = 1.1f;
+					availableWeapons[key].rotationSpeed = 1.1f;
+				}
 			}
 
 			
@@ -352,7 +382,7 @@ public class Player : Humanoid {
 	{
 		anim.SetTrigger("isDying");
 		playerState = PlayerState.Dying;
-		reloadBar.SetActive (false);
+		GUIManager.instance.ReloadBarActive (false);
 		GetComponent<CircleCollider2D>().enabled = false;
 	}
 	

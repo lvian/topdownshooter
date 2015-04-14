@@ -8,6 +8,10 @@ public class Bounty : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+		if(GameManager.instance.Upgrades.Money == 1)
+		{
+			bountyAmount = (int) (bountyAmount * 1.25f); 
+		}
 	}
 	
 	// Update is called once per frame
