@@ -3225,7 +3225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400964, guid: 0b8d974caa30b4049aa0ff6bb3e39b38, type: 2}
       propertyPath: armor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400964, guid: 0b8d974caa30b4049aa0ff6bb3e39b38, type: 2}
       propertyPath: speed
