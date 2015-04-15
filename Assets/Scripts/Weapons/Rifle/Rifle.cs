@@ -24,7 +24,7 @@ public class Rifle : BaseWeapon {
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
 						audioSource.PlayOneShot(shotSound);
-						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+						GUIManager.instance.RifleBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
 						gb.transform.parent = GameObject.Find ("WeaponCases").transform;
@@ -86,8 +86,7 @@ public class Rifle : BaseWeapon {
 
 				//Not cool bro, need a better solution
 				if(rb.tag == "Player"){
-					NGUITools.SetActive (rb, true);
-					rb.GetComponent<UISlider> ().value = 0;
+					GUIManager.instance.ReloadBarActive(true);
 
 				}
 				reloadTimer = 0;

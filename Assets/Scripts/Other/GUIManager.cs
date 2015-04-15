@@ -5,6 +5,7 @@ public class GUIManager : MonoBehaviour {
 
 	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI;
 
+	private GameObject revolverBullets, shotgunBullets, rifleBullets;
 	public static GUIManager instance = null;
 
 	void Awake () {
@@ -22,6 +23,9 @@ public class GUIManager : MonoBehaviour {
 		GameManager.instance.Upgrades.Cash += 16000;
 		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		GameManager.instance.Upgrades.RifleUnlocked = 1;
+		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
+		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
+		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
 		InitializeGUI ();
 	}
 	
@@ -186,34 +190,58 @@ public class GUIManager : MonoBehaviour {
 		}
 	}
 
+	public void ShowRevolverBullets()
+	{
+		NGUITools.SetActive (revolverBullets, true);
+		NGUITools.SetActive (shotgunBullets, false);
+		NGUITools.SetActive (rifleBullets, false);
+
+	}
+
 	public void ShotgunBullets(float bulletsLeft, float bulletsTotal)
 	{
-		GameObject revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
+		GameObject shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		
 		for(int x = (int)bulletsLeft; x < bulletsTotal ; x++)
 		{
-			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, false);
+			NGUITools.SetActive(shotgunBullets.transform.GetChild(x).gameObject, false);
 		}
 		
 		for(int x = (int)bulletsLeft -  1; x >= 0 ; x--)
 		{
-			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, true);
+			NGUITools.SetActive(shotgunBullets.transform.GetChild(x).gameObject, true);
 		}
+	}
+
+	public void ShowShotgunBullets()
+	{
+		NGUITools.SetActive (revolverBullets, false);
+		NGUITools.SetActive (shotgunBullets, true);
+		NGUITools.SetActive (rifleBullets, false);
+		
 	}
 
 	public void RifleBullets(float bulletsLeft, float bulletsTotal)
 	{
-		GameObject revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
+		GameObject rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
 		
 		for(int x = (int)bulletsLeft; x < bulletsTotal ; x++)
 		{
-			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, false);
+			NGUITools.SetActive(rifleBullets.transform.GetChild(x).gameObject, false);
 		}
 		
 		for(int x = (int)bulletsLeft -  1; x >= 0 ; x--)
 		{
-			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, true);
+			NGUITools.SetActive(rifleBullets.transform.GetChild(x).gameObject, true);
 		}
+	}
+
+	public void ShowRifleBullets()
+	{
+		NGUITools.SetActive (revolverBullets, false);
+		NGUITools.SetActive (shotgunBullets, false);
+		NGUITools.SetActive (rifleBullets, true);
+		
 	}
 
 	public void HealthGUI(float healthLeft, float healthTotal)

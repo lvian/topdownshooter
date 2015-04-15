@@ -306,11 +306,21 @@ public class Player : Humanoid {
 	{
 		if(currentWeapon.currentAnimation() == "Idle")
 		{
+			if(weaponNumber == 0)
+			{
+				GUIManager.instance.ShowRevolverBullets();
+			}
+			if(weaponNumber == 1)
+			{
+				GUIManager.instance.ShowShotgunBullets();
+			}
+			if(weaponNumber == 2)
+			{
+				GUIManager.instance.ShowRifleBullets();
+			}
 			currentWeapon.gameObject.SetActive (false);
 			currentWeapon = availableWeapons [weaponNumber];
 			currentWeapon.gameObject.SetActive (true);
-			bulletsNumber.GetComponent<UILabel> ().text = currentWeapon.AmountOfBullets.ToString();
-			bulletsMax.GetComponent<UILabel> ().text = currentWeapon.MaxAmountOfBullets.ToString();
 			
 		} else
 		{

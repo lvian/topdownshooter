@@ -28,7 +28,7 @@ public class Shotgun : BaseWeapon {
 						anim.SetTrigger("Attack");
 						StartCoroutine(muzzleEffect());
 						audioSource.PlayOneShot(shotSound);
-						bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
+						GUIManager.instance.ShotgunBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						playerCamera.shakeCamera(0.1f , 0.05f);
 
@@ -90,8 +90,7 @@ public class Shotgun : BaseWeapon {
 
 				//Not cool bro, need a better solution
 				if(rb.tag == "Player"){
-					NGUITools.SetActive (rb, true);
-					rb.GetComponent<UISlider> ().value = 0;
+					GUIManager.instance.ReloadBarActive(true);
 
 				}
 				reloadTimer = 0;
