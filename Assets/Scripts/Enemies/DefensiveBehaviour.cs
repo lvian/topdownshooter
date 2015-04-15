@@ -2,130 +2,163 @@
 using System.Collections;
 
 public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
-	private Enemy _enemy;
-	private Player _player;
+	private Enemy enemy;
+	private Player player;
 	private Vector3 _covering;
 	private bool reverseCircling;
 	private bool goBack;
+	private Collider2D collider;
+	private GameObject[] obstacles;
+	private Timer goBackTimer;
+	private float errorMargin = 0.01f;
 
 	private float newY = 0, newX = 0;
 
 	#region IEnemyBehaviour implementation
 	public void Init (Enemy enemy) {
 		//Debug.Log("Initializing");
-		_enemy = enemy;
-		_enemy.IsMoving = true;
-		_enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(_enemy.weapons[0], _enemy.transform.position, _enemy.transform.rotation);  
-		_enemy.currentWeapon.transform.parent = _enemy.transform;
-		_player = GameObject.Find("Player").GetComponent<Player>();
-		_enemy.enemyState = Enemy.EnemyState.Setup;
-		_enemy.enemyStance = Enemy.EnemyStance.Defensive;
+		this.enemy = enemy;
+		this.enemy.IsMoving = true;
+		this.enemy.currentWeapon = (BaseWeapon) GameObject.Instantiate(enemy.weapons[0], enemy.transform.position, enemy.transform.rotation);  
+		this.enemy.currentWeapon.transform.parent = enemy.transform;
+		player = GameObject.Find("Player").GetComponent<Player>();
+		collider = this.enemy.GetComponent<Collider2D>();
+		this.enemy.enemyState = Enemy.EnemyState.Setup;
+		this.enemy.enemyStance = Enemy.EnemyStance.Defensive;
 		reverseCircling = false;
-		_covering = GetNearestCovering(_enemy.transform, _player.transform);
+		obstacles = GameObject.FindGameObjectsWithTag("Wall");
+		_covering = GetNearestCovering(this.enemy.transform, player.transform, obstacles);
 	}
 	
 	public void Setup () {
 		//Debug.Log("Setting up!!");
-		_enemy.Start();
-		_enemy.enemyState = Enemy.EnemyState.Searching;
+		enemy.Start();
+		enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 	
 	public void Search ()
 	{
 		//Debug.Log("Searching!");
 		//bool[] collisions = CheckCollisions(_enemy.transform);
-		float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
+		float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
 		
-		Vector3 vectorToTarget = _player.transform.position - _enemy.transform.position;
+		Vector3 vectorToTarget = player.transform.position - enemy.transform.position;
 		float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
 		Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 		Vector3 euler = q.eulerAngles;
 		euler.z -= 90;
 		q = Quaternion.Euler(euler);
-		_enemy.transform.parent.rotation = Quaternion.Slerp(_enemy.transform.parent.rotation, q, Time.deltaTime * _enemy.rotationSpeed);
+		enemy.transform.parent.rotation = Quaternion.Slerp(enemy.transform.parent.rotation, q, Time.deltaTime * enemy.rotationSpeed);
 		if(distance >= 4){
-			_enemy.enemyState = Enemy.EnemyState.Moving;
+			enemy.enemyState = Enemy.EnemyState.Moving;
 		}
 		else{
-			if(_enemy.currentWeapon.AmountOfBullets > 0){
-				_enemy.enemyState = Enemy.EnemyState.Attacking;
-				AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
+			if(enemy.currentWeapon.AmountOfBullets > 0){
+				enemy.enemyState = Enemy.EnemyState.Attacking;
+				AddTimer(enemy.shootDelay, Enemy.EnemyState.Attacking);
 			}
 			else
-				_enemy.enemyState = Enemy.EnemyState.Reloading;
+				enemy.enemyState = Enemy.EnemyState.Reloading;
 		}
 	}
 	
 	public void Move() {
-		//Debug.Log("Moving!");
-		_covering = GetNearestCovering(_enemy.transform, _player.transform);
-		float distance = Vector3.Distance(_enemy.transform.position, _covering);
+		Debug.Log("Moving!");
+		_covering = GetNearestCovering(enemy.transform, player.transform, obstacles);
+		float distance = Vector3.Distance(enemy.transform.position, _covering);
+		Debug.Log("Distance: " + distance );
+		LayerMask layerMask = ((1 << 10) | (1 << 9));
 		if(distance > 1f) {
-			Quaternion oldQ = _enemy.transform.rotation;
-			Vector3 diff = _covering - _enemy.transform.position;
-			diff.Normalize();
-			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-			_enemy.transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-			bool[] collisions = CheckCollisions(_enemy.transform);
-			newY = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-			newX = _enemy.currentWeapon.WeaponMoveSpeed * _enemy.Speed * Time.deltaTime;
-
-			//newY = newPos.y;
-			//newX = newPos.x;
-			
-			if(collisions[0] || collisions[1] || collisions[2]){ // detect collision in front
-				newY = 0;
-				if(collisions[3]){ // detect collision on the right
-					newX = 0;
-					if(!collisions[7]) // detect collision on the left
-						reverseCircling = true;
-					else{
-						if(!collisions[5]) // detect collision behind
-							goBack = true;
-					}
+			if(goBackTimer != null){
+				if(goBackTimer.IsElapsed){
+					goBack = !goBack;
+					goBackTimer = null;
 				}
 			}
 
+			Quaternion oldQ = enemy.transform.parent.rotation;
+			Vector3 diff = _covering - enemy.transform.parent.position;
+			diff.Normalize();
+			float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+			enemy.transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
 			if(reverseCircling)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = -enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			else
+				newX = enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 			if(goBack)
-				newX = -_enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+				newX = -enemy.currentWeapon.WeaponMoveSpeed * Time.deltaTime;
+			else
+				newY = enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
 
-			_enemy.transform.parent.Translate(new Vector2(newX, newY));
+			Vector3 oldPos = enemy.transform.parent.position;
+			enemy.transform.parent.Translate(new Vector2(newX, newY));
 
-			_enemy.transform.rotation = oldQ;
-		}
-		if(_enemy.currentWeapon.AmountOfBullets > 0){
-			_enemy.enemyState = Enemy.EnemyState.Attacking;
-			AddTimer(_enemy.shootDelay, Enemy.EnemyState.Attacking);
+			collider.enabled = false;
+			Collider2D[] colX = Physics2D.OverlapCircleAll (
+				new Vector2 (enemy.transform.parent.position.x, oldPos.y), 
+				enemy.transform.GetComponent<CircleCollider2D>().radius, layerMask);
+			Collider2D[] colY = Physics2D.OverlapCircleAll (
+				new Vector2 (oldPos.x , enemy.transform.parent.position.y),
+				enemy.transform.GetComponent<CircleCollider2D>().radius, layerMask);
+			collider.enabled = true;
+
+			if(colX.Length != 0){
+				enemy.transform.parent.Translate(new Vector2(-(newX/Mathf.Abs(newX) * (Mathf.Abs(newX) + errorMargin)), 0f));
+				newX = 0;
+				reverseCircling = !reverseCircling;
+			}
+			
+			if(colY.Length != 0){
+				enemy.transform.parent.Translate(new Vector2(0f, -(newY/Mathf.Abs(newY) * (Mathf.Abs(newY) + errorMargin))));
+				newY = 0;
+				goBackTimer = new Timer(2f);
+				goBack = !goBack;
+			}
+			
+			if(newX == 0 && newY == 0){
+				enemy.anim.SetBool ("isMoving", false);
+			}
+			else{
+				enemy.anim.SetBool ("isMoving", true);
+			}
+			enemy.transform.parent.rotation = oldQ;
 		}
 		else
-			_enemy.enemyState = Enemy.EnemyState.Reloading;
+			enemy.anim.SetBool ("isMoving", false);
+		if(enemy.currentWeapon.AmountOfBullets > 0){
+			enemy.enemyState = Enemy.EnemyState.Attacking;
+			AddTimer(enemy.shootDelay, Enemy.EnemyState.Attacking);
+		}
+		else
+			enemy.enemyState = Enemy.EnemyState.Reloading;
 	}
 	
 	public void Attack () {
 		//Debug.Log("Attacking!");
-		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
-			float distance = Vector3.Distance(_enemy.transform.position, _player.transform.position);
-			if(CanSeeTarget(_enemy.transform, _player.transform) && distance < _enemy.maxShootingDistance){
-				_enemy.currentWeapon.Fire();
+		if(IsElapsed(Enemy.EnemyState.Attacking)){
+			float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
+			if(CanSeeTarget(enemy.transform, player.transform) && distance < enemy.maxShootingDistance){
+				enemy.currentWeapon.Fire();
 			}
 		}
-		_enemy.enemyState = Enemy.EnemyState.Searching;
+		enemy.enemyState = Enemy.EnemyState.Searching;
 	}
 	
 	public void Reload () {
 		//Debug.Log("Reloading!");
-		_enemy.currentWeapon.Reload(_enemy.transform.gameObject);
-		_enemy.enemyState = Enemy.EnemyState.Attacking;
+		enemy.currentWeapon.Reload(enemy.transform.gameObject);
+		enemy.enemyState = Enemy.EnemyState.Attacking;
 	}
+
 	public void Dodge ()
 	{
 		//Debug.Log("Dodging");
 	}
+
 	public void Die ()
 	{
-		_enemy.transform.GetComponent<CircleCollider2D> ().enabled = false;
+		enemy.transform.GetComponent<CircleCollider2D> ().enabled = false;
 	}
 	#endregion
 	

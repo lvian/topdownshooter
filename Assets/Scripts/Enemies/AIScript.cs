@@ -74,8 +74,7 @@ public class AIScript {
 		return collisions;
 	}
 
-	public Vector2 GetNearestCovering(Transform self, Transform player) {
-		GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Wall");
+	public Vector2 GetNearestCovering(Transform self, Transform player, GameObject[] obstacles) {
 		GameObject closest = null;
 		float distancePlayer = Mathf.Infinity;
 		float distanceWall = Mathf.Infinity;
@@ -108,7 +107,7 @@ public class AIScript {
 		}
 	}
 
-	protected bool IsDelayTimeElapsed(Enemy.EnemyState state){
+	protected bool IsElapsed(Enemy.EnemyState state){
 		if(timers.ContainsKey(state)){
 			bool ret = timers[state].IsElapsed;
 			if(ret)

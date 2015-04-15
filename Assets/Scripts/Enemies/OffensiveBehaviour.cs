@@ -190,7 +190,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 
 	public void Attack () {
 		//Debug.Log("Attacking!");
-		if(IsDelayTimeElapsed(Enemy.EnemyState.Attacking)){
+		if(IsElapsed(Enemy.EnemyState.Attacking)){
 			float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
 			if(CanSeeTarget(enemy.transform, player.transform) && distance < enemy.maxShootingDistance){
 				enemy.currentWeapon.Fire();
