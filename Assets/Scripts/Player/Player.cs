@@ -33,7 +33,8 @@ public class Player : Humanoid {
 			dodgeCooldown = dodgeCooldown / 2; 
 		}
 		dodgeTimer = 0;
-		maxArmor = Armor;
+		Armor = GetArmorUpgrades ();
+		maxArmor = GetArmorUpgrades();
 		maxHealth = HitPoints;
 		isMovingX = false;
 		isMovingY = false;
@@ -55,7 +56,6 @@ public class Player : Humanoid {
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
 			//Debug.Log (playerState);
 			dodgeTimer += Time.deltaTime;
-			Debug.Log (dodgeTimer);
 			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position
@@ -375,7 +375,32 @@ public class Player : Humanoid {
 			GUIManager.instance.ArmorGUI(Armor , maxArmor);
 		}
 	}
-	
+
+
+	public int GetArmorUpgrades()
+	{
+		int armorBought = 0;
+
+		if(GameManager.instance.Upgrades.Armor1 == 1)
+		{
+			armorBought ++;
+		}
+		if(GameManager.instance.Upgrades.Armor2 == 1)
+		{
+			armorBought ++;
+		}
+		if(GameManager.instance.Upgrades.Armor3 == 1)
+		{
+			armorBought ++;
+		}
+		if(GameManager.instance.Upgrades.Armor4 == 1)
+		{
+			armorBought ++;
+		}
+		return armorBought;
+
+	}
+
 	#region implemented abstract members of Entity
 	
 	public override void Died ()

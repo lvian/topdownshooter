@@ -19,7 +19,7 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
-		GameManager.instance.Upgrades.Cash += 5000;
+		GameManager.instance.Upgrades.Cash += 16000;
 		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		GameManager.instance.Upgrades.RifleUnlocked = 1;
 		InitializeGUI ();
@@ -398,6 +398,69 @@ public class GUIManager : MonoBehaviour {
 		}
 	}
 
+	public void BuyArmor1()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.armor1)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor1;
+			GameManager.instance.Upgrades.Armor1 = 1;
+			
+			GameObject armor1 = transform.Find("Upgrades/Board/Armor1").gameObject;
+			armor1.GetComponent<UIButton>().isEnabled = false;
+			armor1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+	public void BuyArmor2()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.armor2)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor2;
+			GameManager.instance.Upgrades.Armor2 = 1;
+			
+			GameObject armor2 = transform.Find("Upgrades/Board/Armor2").gameObject;
+			armor2.GetComponent<UIButton>().isEnabled = false;
+			armor2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+	public void BuyArmor3()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.armor3)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor3;
+			GameManager.instance.Upgrades.Armor3 = 1;
+			
+			GameObject armor3 = transform.Find("Upgrades/Board/Armor3").gameObject;
+			armor3.GetComponent<UIButton>().isEnabled = false;
+			armor3.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
+
+	public void BuyArmor4()
+	{
+		if(GameManager.instance.Upgrades.Cash >= GameManager.instance.Upgrades.armor4)
+		{
+			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor4;
+			GameManager.instance.Upgrades.Armor4 = 1;
+			
+			GameObject armor4 = transform.Find("Upgrades/Board/Armor4").gameObject;
+			armor4.GetComponent<UIButton>().isEnabled = false;
+			armor4.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+		} else
+		{
+			notEnoughMoney();
+		}
+	}
 	public void notEnoughMoney()
 	{
 		GameObject noMoney = transform.Find("Upgrades/Board/No Money").gameObject;

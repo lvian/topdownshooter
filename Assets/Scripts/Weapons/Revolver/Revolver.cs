@@ -79,7 +79,6 @@ public class Revolver : BaseWeapon {
 		if(AmountOfBullets < MaxAmountOfBullets && lastShot >= weaponFireDelay)
 		{
 			if(IsReloading == false){
-				Debug.Log (transform.parent.name);
 				//Not cool bro, need a better solution
 				if(rb.tag == "Player"){
 					GUIManager.instance.ReloadBarActive(true);
