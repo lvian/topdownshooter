@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameStart()
 	{
+
 		Application.LoadLevel (1);
 		_state = GameState.Playing;
 

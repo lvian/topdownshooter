@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GUIManager : MonoBehaviour {
 
-	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI;
+	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen;
 	public AudioClip cashSound;
 	private GameObject revolverBullets, shotgunBullets, rifleBullets;
 	public static GUIManager instance = null;
@@ -189,7 +189,15 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (levelsPanel.gameObject, false);
 		NGUITools.SetActive (upgradesPanel.gameObject, false);
 		NGUITools.SetActive (creditsPanel.gameObject, false);
+		NGUITools.SetActive (loadScreen.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, true);
+	}
+
+	void OnLevelWasLoaded(int level) {
+
+		Debug.Log ("Woohoo");
+		loadScreen.GetComponent<TweenAlpha> ().PlayForward ();
+		
 	}
 
 	public void RevolverBullets(float bulletsLeft, float bulletsTotal)
