@@ -63,10 +63,10 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 	}
 	
 	public void Move() {
-		Debug.Log("Moving!");
+		//Debug.Log("Moving!");
 		_covering = GetNearestCovering(enemy.transform, player.transform, obstacles);
 		float distance = Vector3.Distance(enemy.transform.position, _covering);
-		Debug.Log("Distance: " + distance );
+		//Debug.Log("Distance: " + distance );
 		LayerMask layerMask = ((1 << 10) | (1 << 9));
 		if(distance > 1f) {
 			if(goBackTimer != null){

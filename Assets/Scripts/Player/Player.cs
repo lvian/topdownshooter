@@ -45,7 +45,7 @@ public class Player : Humanoid {
 		InitHumanoid();
 		GUIManager.instance.HealthGUI(HitPoints, maxHealth);
 		GUIManager.instance.ArmorGUI(Armor, maxArmor);
-		dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
+		GUIManager.instance.UpdateDynamite(dynamiteAmount);
 		yield return null;
 	}
 	
@@ -54,8 +54,15 @@ public class Player : Humanoid {
 		
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
-			//Debug.Log (playerState);
-			dodgeTimer += Time.deltaTime;
+
+			//Calculates cooldown and sends to GUI
+			dodgeTimer -= Time.deltaTime;
+			if(dodgeTimer >= 0 && dodgeTimer < dodgeCooldown)
+			{
+				float sliderPercentage = 1 / dodgeCooldown;
+				GUIManager.instance.UpdateDodgeCooldown(dodgeTimer * sliderPercentage);
+			}
+
 			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position
@@ -118,10 +125,12 @@ public class Player : Humanoid {
 				}
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
-					if(dodgeTimer >= dodgeCooldown)
+					if(dodgeTimer <= 0)
 					{
 						StartCoroutine(dodgeMove());
-						dodgeTimer = 0;
+						dodgeTimer = dodgeCooldown;
+						GUIManager.instance.UpdateDodgeCooldown(1);
+
 					}
 				}
 			} 
@@ -337,7 +346,7 @@ public class Player : Humanoid {
 			GameObject dyna = (GameObject) GameObject.Instantiate(dynamite, transform.position, transform.rotation);  
 			dyna.GetComponent<Dynamite> ().Destination = mousePosition;
 			dynamiteAmount --;
-			dynamiteNumber.GetComponent<UILabel> ().text = dynamiteAmount.ToString();
+			GUIManager.instance.UpdateDynamite(dynamiteAmount);
 		}
 	}
 	

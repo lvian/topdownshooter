@@ -4,7 +4,7 @@ using System.Collections;
 public class GUIManager : MonoBehaviour {
 
 	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI;
-
+	public AudioClip cashSound;
 	private GameObject revolverBullets, shotgunBullets, rifleBullets;
 	public static GUIManager instance = null;
 
@@ -151,6 +151,23 @@ public class GUIManager : MonoBehaviour {
 		GameObject upgradesCash = transform.Find("InGame/Player Information/Cash/Cash Value").gameObject;
 		upgradesCash.GetComponent<UILabel>().text = "$ "+value.ToString();
 	}
+
+	public void UpdateDynamite(int value)
+	{
+		GameObject inGameCash = transform.Find("InGame/Weapon Information/Dynamite/Dynamite Number").gameObject;
+		inGameCash.GetComponent<UILabel>().text = value.ToString();
+		
+	}
+
+	
+	public void UpdateDodgeCooldown(float value)
+	{
+		GameObject dodgeCooldown = transform.Find("InGame/Player Information/Dodge Background/Dodge").gameObject;
+
+		dodgeCooldown.GetComponent<UISlider>().value = value;
+
+	}
+
 	public void disableTweenColor()
 	{
 		UIEventTrigger.current.transform.GetChild(0).GetComponentInChildren<TweenColor>().ResetToBeginning();
@@ -299,6 +316,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.revolver1;
 			GameManager.instance.Upgrades.RevolverCone = 1;
+			SoundManager.instance.clipOneShot(cashSound);
 
 			GameObject revolver1 = transform.Find("Upgrades/Board/Revolver1").gameObject;
 			revolver1.GetComponent<UIButton>().isEnabled = false;
@@ -316,7 +334,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.revolver2;
 			GameManager.instance.Upgrades.RevolverReload = 1;
-
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject revolver2 = transform.Find("Upgrades/Board/Revolver2").gameObject;
 			revolver2.GetComponent<UIButton>().isEnabled = false;
 			revolver2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -333,7 +351,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.shotgun1;
 			GameManager.instance.Upgrades.ShotgunCone = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject shotgun1 = transform.Find("Upgrades/Board/Shotgun1").gameObject;
 			shotgun1.GetComponent<UIButton>().isEnabled = false;
 			shotgun1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -350,7 +368,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.shotgun2;
 			GameManager.instance.Upgrades.ShotgunPellets = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject shotgun2 = transform.Find("Upgrades/Board/Shotgun2").gameObject;
 			shotgun2.GetComponent<UIButton>().isEnabled = false;
 			shotgun2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -366,7 +384,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.rifle1;
 			GameManager.instance.Upgrades.RifleCone = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject rifle1 = transform.Find("Upgrades/Board/Rifle1").gameObject;
 			rifle1.GetComponent<UIButton>().isEnabled = false;
 			rifle1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -383,7 +401,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.rifle2;
 			GameManager.instance.Upgrades.RifleMobility = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject rifle2 = transform.Find("Upgrades/Board/Rifle2").gameObject;
 			rifle2.GetComponent<UIButton>().isEnabled = false;
 			rifle2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -399,7 +417,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.dodge;
 			GameManager.instance.Upgrades.Dodge = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject dodge = transform.Find("Upgrades/Board/Dodge").gameObject;
 			dodge.GetComponent<UIButton>().isEnabled = false;
 			dodge.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -416,7 +434,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.money;
 			GameManager.instance.Upgrades.Money = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject money = transform.Find("Upgrades/Board/Money").gameObject;
 			money.GetComponent<UIButton>().isEnabled = false;
 			money.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -432,7 +450,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor1;
 			GameManager.instance.Upgrades.Armor1 = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject armor1 = transform.Find("Upgrades/Board/Armor1").gameObject;
 			armor1.GetComponent<UIButton>().isEnabled = false;
 			armor1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -448,7 +466,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor2;
 			GameManager.instance.Upgrades.Armor2 = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject armor2 = transform.Find("Upgrades/Board/Armor2").gameObject;
 			armor2.GetComponent<UIButton>().isEnabled = false;
 			armor2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -464,7 +482,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor3;
 			GameManager.instance.Upgrades.Armor3 = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject armor3 = transform.Find("Upgrades/Board/Armor3").gameObject;
 			armor3.GetComponent<UIButton>().isEnabled = false;
 			armor3.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
@@ -480,7 +498,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameManager.instance.Upgrades.Cash -= GameManager.instance.Upgrades.armor4;
 			GameManager.instance.Upgrades.Armor4 = 1;
-			
+			SoundManager.instance.clipOneShot(cashSound);
 			GameObject armor4 = transform.Find("Upgrades/Board/Armor4").gameObject;
 			armor4.GetComponent<UIButton>().isEnabled = false;
 			armor4.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";

@@ -668,7 +668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMoveSpeed: .800000012
   weaponFireDelay: 1.5
-  weaponReloadSpeed: 4
+  weaponReloadSpeed: 3
   weaponSwapSpeed: 1
   amountOfBullets: 6
   maxAmountOfBullets: 6
