@@ -51,7 +51,12 @@ public class Wave : MonoBehaviour {
 		foreach(WaveUnit unit in units){
 			if(unit.delay.IsElapsed && unit.cooldown.IsElapsed){
 				if(unit.unitCount < unit.Amount){
-					spawnUnit(unit.Unit, unit.SpawnPoint);
+					if(unit.Unit.Length > 1){
+						spawnUnit(unit.Unit[Random.Range(0,unit.Unit.Length)], unit.SpawnPoint);
+					}
+					else{
+						spawnUnit(unit.Unit[0], unit.SpawnPoint);
+					}
 					unit.unitCount++;
 					unit.delay.Reset();
 				}
@@ -108,8 +113,8 @@ public class Wave : MonoBehaviour {
 			newUnit.transform.parent = transform;
 		}
 		else{
-			//GameObject  newUnit = Object.Instantiate(unit, manager.spawnPoints[lane].transform.position, Quaternion.identity) as GameObject;
-			//newUnit.transform.parent = transform;
+			GameObject  newUnit = Object.Instantiate(unit, manager.spawnPoints[lane].transform.position, Quaternion.identity) as GameObject;
+			newUnit.transform.parent = transform;
 		}
 	}
 
