@@ -117,7 +117,7 @@ public abstract class Enemy : Humanoid{
 	{
 		anim.SetTrigger("isDying");
 		enemyState = EnemyState.Dying;
-		bounty = (GameObject) GameObject.Instantiate(bounty , transform.position , transform.rotation); 
+		GetComponent<Loot>().SpawnLoot();
 		audioSource.PlayOneShot (deathSounds[Random.Range(0,deathSounds.Length)]);
 		transform.parent.parent = valhalla;
 	}
