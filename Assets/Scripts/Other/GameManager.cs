@@ -49,6 +49,12 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(delayRestart(Application.loadedLevel));		
 	}
 
+	public void NextLevel()
+	{
+		
+		StartCoroutine(delayRestart(Application.loadedLevel + 1));		
+	}
+
 	private IEnumerator delayRestart(int level )
 	{
 		GUIManager.instance.RestartLoadScreen ();
@@ -79,8 +85,11 @@ public class GameManager : MonoBehaviour {
 
 	public void Victory ()
 	{
-		_state = GameState.Paused;
-		GUIManager.instance.ShowVictoryScreen ();
+		if(_state != GameState.Paused)
+		{
+			_state = GameState.Paused;
+			GUIManager.instance.ShowVictoryScreen ();
+		}
 		
 	}
 

@@ -36,6 +36,7 @@ public class WaveManager : MonoBehaviour{
 			yield return 0;
 		}
 	}
+
 	/*
 	public void Begin(){
 		_waves = new List<Wave>( GetComponentsInChildren<Wave>());
@@ -59,7 +60,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Setup(){
-		//Debug.Log("Setup() called");
+		Debug.Log("Setup() called");
 		_index++;
 		if(_index >= waves.Count){
 			bool allDead = true;
@@ -95,8 +96,8 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Finish(){
-		//Debug.Log("Finish() called");
-		//Messenger<bool>.Broadcast("PlayerVictory", true);
+		Debug.Log("Finish() called");
+		GameManager.instance.Victory ();
 	}
 	
 	public int WavesCount{

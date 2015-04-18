@@ -195,6 +195,7 @@
      <Compile Include="Assets\Scripts\Enemies\IEnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\IMoveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\LevelOneWaves.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Loot.cs" />
      <Compile Include="Assets\Scripts\Enemies\OffensiveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\OffensiveEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\TestEnemy.cs" />

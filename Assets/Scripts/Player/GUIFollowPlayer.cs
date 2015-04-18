@@ -13,9 +13,13 @@ public class GUIFollowPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		reloadBarPos = Camera.main.WorldToViewportPoint(new Vector3(player.transform.position.x,player.transform.position.y -1  , player.transform.position.z) );
-		reloadBarPos = GUICamera.ViewportToWorldPoint (reloadBarPos);
-		transform.localPosition = transform.parent.InverseTransformPoint(reloadBarPos);
+		if(player)
+		{
+			reloadBarPos = Camera.main.WorldToViewportPoint(new Vector3(player.transform.position.x,player.transform.position.y -1  , player.transform.position.z) );
+			reloadBarPos = GUICamera.ViewportToWorldPoint (reloadBarPos);
+			transform.localPosition = transform.parent.InverseTransformPoint(reloadBarPos);
+		} else{
+			player = GameObject.FindGameObjectWithTag ("Player");
+		}
 	}
 }

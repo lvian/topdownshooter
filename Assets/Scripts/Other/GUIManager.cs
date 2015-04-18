@@ -207,8 +207,9 @@ public class GUIManager : MonoBehaviour {
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
+		Debug.Log (victoryScreen);
 		NGUITools.SetActive (victoryScreen , false);
-		InitializeGUI ();
+		Debug.Log (victoryScreen);
 		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
 
 	}

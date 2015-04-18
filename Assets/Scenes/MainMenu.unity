@@ -10369,7 +10369,7 @@ MonoBehaviour:
   pixelSnap: 0
   onClick:
   - mTarget: {fileID: 1205468685}
-    mMethodName: RestartLevel
+    mMethodName: NextLevel
     mParameters: []
     oneShot: 0
 --- !u!114 &1296246599
