@@ -22,7 +22,6 @@ public abstract class BaseWeapon : MonoBehaviour {
 	void Start () {
 		isReloading = false;
 		lastShot = 0;
-
 		audioSource = GetComponent<AudioSource> ();
 		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
 		bulletsLabelNumber = GameObject.Find ("Bullets Number");

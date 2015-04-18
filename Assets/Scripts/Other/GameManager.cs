@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 		Paused
 	}
 
+	public delegate void Function();
 	public static GameManager instance = null;
 	private GameState _state;
 	private int playerCash;
@@ -34,6 +35,53 @@ public class GameManager : MonoBehaviour {
 		playerCash = Upgrades.Cash;
 
 
+	}
+
+	public void BackToMenu()
+	{
+    		StartCoroutine(delayRestart(0,GUIManager.instance.BackToMenu));		
+
+	}
+
+	public void RestartLevel()
+	{
+
+		StartCoroutine(delayRestart(Application.loadedLevel));		
+	}
+
+	private IEnumerator delayRestart(int level )
+	{
+		GUIManager.instance.RestartLoadScreen ();
+		
+		yield return new WaitForSeconds(1);
+		Application.LoadLevel(level);
+		_state = GameState.Playing;
+		
+	}
+
+	private IEnumerator delayRestart(int level, Function postFunction)
+	{
+		GUIManager.instance.RestartLoadScreen ();
+		
+		yield return new WaitForSeconds(1);
+		postFunction ();
+		Application.LoadLevel(level);
+		_state = GameState.Playing;
+
+	}
+
+	public void Defeat ()
+	{
+		_state = GameState.Paused;
+		GUIManager.instance.ShowDefeatScreen ();
+		upgrades.Cash = (upgrades.Cash / 4) * 3;
+	}
+
+	public void Victory ()
+	{
+		_state = GameState.Paused;
+		GUIManager.instance.ShowVictoryScreen ();
+		
 	}
 
 	public GameState State {

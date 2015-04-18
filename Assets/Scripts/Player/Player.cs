@@ -269,7 +269,7 @@ public class Player : Humanoid {
 			b.transform.parent = transform;
 			availableWeapons[key] = b;
 			b.gameObject.SetActive(false);
-
+			b.ReloadGUI();
 			if(availableWeapons[key].name == "Revolver(Clone)")
 			{
 				if(GameManager.instance.Upgrades.RevolverCone == 1)
@@ -428,6 +428,7 @@ public class Player : Humanoid {
 		playerState = PlayerState.Dying;
 		GUIManager.instance.ReloadBarActive (false);
 		GetComponent<CircleCollider2D>().enabled = false;
+		GameManager.instance.Defeat ();
 	}
 	
 	#endregion

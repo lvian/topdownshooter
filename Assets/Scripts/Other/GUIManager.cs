@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GUIManager : MonoBehaviour {
 
-	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen;
+	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu;
 	public AudioClip cashSound;
 	private GameObject revolverBullets, shotgunBullets, rifleBullets;
 	public static GUIManager instance = null;
@@ -189,13 +189,47 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (levelsPanel.gameObject, false);
 		NGUITools.SetActive (upgradesPanel.gameObject, false);
 		NGUITools.SetActive (creditsPanel.gameObject, false);
+		NGUITools.SetActive (mainMenu.gameObject, false);
+		loadScreen.GetComponent<TweenAlpha> ().ResetToBeginning ();
 		NGUITools.SetActive (loadScreen.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, true);
 	}
 
+	public void BackToMenu()
+	{
+		NGUITools.SetActive (mainMenu.gameObject, true);
+		NGUITools.SetActive (inGameGUI.gameObject, false);
+	}
+
+
+	public void RestartLoadScreen()
+	{
+		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
+		NGUITools.SetActive (defeatScreen , false);
+		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
+		NGUITools.SetActive (victoryScreen , false);
+		InitializeGUI ();
+		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
+
+	}
+
+	public void ShowDefeatScreen()
+	{
+		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
+		NGUITools.SetActive (defeatScreen , true);
+		
+	}
+
+	public void ShowVictoryScreen()
+	{
+		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
+		NGUITools.SetActive (victoryScreen , true);
+		
+	}
+
+
 	void OnLevelWasLoaded(int level) {
 
-		Debug.Log ("Woohoo");
 		loadScreen.GetComponent<TweenAlpha> ().PlayForward ();
 		
 	}

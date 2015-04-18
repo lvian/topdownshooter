@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\GUIManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="199" Column="57" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="193" Column="62" />
       <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\Upgrades.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="29" Column="3" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="77" Column="43" />
       <File FileName="Assets\Scripts\Other\Bounty.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="272" Column="18" />
       <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="25" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\WaveManager.cs" Line="1" Column="1" />
@@ -18,6 +18,7 @@
       <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\DefensiveBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="120" Column="99" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
