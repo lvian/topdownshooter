@@ -9,8 +9,6 @@ public class WaveManager : MonoBehaviour{
 
 	private int 		_index;
 	private bool		_autoStartNextWave;
-	private UILabel		totalWave;
-	private UILabel		currentWave;
 	
 	IEnumerator Start (){
 		state = WavesState.Initialize;
@@ -53,8 +51,6 @@ public class WaveManager : MonoBehaviour{
 		//Debug.Log("Initialize() called");
 		_index = -1;
 		_autoStartNextWave = true;
-		totalWave = GameObject.Find("Total Wave").GetComponent<UILabel>();
-		currentWave = GameObject.Find("Current Wave").GetComponent<UILabel>();
 		//Begin();
 		state = WavesState.NotStarted;
 	}
@@ -88,15 +84,17 @@ public class WaveManager : MonoBehaviour{
 	
 	private void Wait(){
 		//Debug.Log("Wait() called");
-		currentWave.text = "Wave " +(_index + 1) ;
-		totalWave.text = "of " + WavesCount;
+		if (!waves[_index].last) {
+			GUIManager.instance.UpdateWaveCounter (_index + 1, WavesCount);
+		} else {
+			GUIManager.instance.UpdateWaveCounter (_index + 1, WavesCount, true);
+		}
 		if(waves[_index].Done){
 			state = WavesState.Setup;
 		}
 	}
 	
 	private void Finish(){
-		Debug.Log("Finish() called");
 		GameManager.instance.Victory ();
 	}
 	

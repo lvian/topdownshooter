@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
 		
 		yield return new WaitForSeconds(1);
 		Application.LoadLevel(level);
+		GUIManager.instance.RestartWaveInformation ();
 		_state = GameState.Playing;
 		
 	}

@@ -37,11 +37,11 @@ public class Wave : MonoBehaviour {
 			return;
 		if(timer != null){
 			if(!last){
-				timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + " s";
+				//timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + " s";
+				GUIManager.instance.UpdateWaveTimer(Mathf.RoundToInt(timer.RemainingTime));
 			}
 			else{
-				timerLabel.text = "Last Wave";
-				timerNumber.text = "";
+				GUIManager.instance.UpdateWaveTimer( 0, true);
 			}
 		}
 				

@@ -159,7 +159,40 @@ public class GUIManager : MonoBehaviour {
 		
 	}
 
-	
+	public void UpdateWaveCounter(int current, int total, bool bossWave = false)
+	{
+		if(!bossWave)
+		{
+			GameObject waveCurrent = transform.Find("InGame/Wave Information/Waves/Wave Label").gameObject;
+			waveCurrent.GetComponent<UILabel>().text = "Wave "+current.ToString()+" of "+ total.ToString();
+
+		} else
+		{
+			GameObject waveCurrent = transform.Find("InGame/Wave Information/Waves/Wave Label").gameObject;
+			waveCurrent.GetComponent<UILabel>().text = "Boss Wave!";
+
+		}
+		
+	}
+
+	public void UpdateWaveTimer(int time , bool bossWave = false)
+	{
+		Debug.Log ("timer "+ bossWave);
+		if(!bossWave)
+		{
+			GameObject inGameCash = transform.Find("InGame/Wave Information/Timer/Wave Timer Number").gameObject;
+			inGameCash.GetComponent<UILabel>().text = time.ToString();
+		} else
+		{
+			GameObject inGameCash = transform.Find("InGame/Wave Information/Timer/Wave Timer Number").gameObject;
+			inGameCash.GetComponent<UILabel>().text = " - ";
+		}
+	}
+	public void RestartWaveInformation()
+	{
+		UpdateWaveCounter (0,0);
+		UpdateWaveTimer(0,true);
+	}
 	public void UpdateDodgeCooldown(float value)
 	{
 		GameObject dodgeCooldown = transform.Find("InGame/Player Information/Dodge Background/Dodge").gameObject;
@@ -207,6 +240,7 @@ public class GUIManager : MonoBehaviour {
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
+
 		Debug.Log (victoryScreen);
 		NGUITools.SetActive (victoryScreen , false);
 		Debug.Log (victoryScreen);
