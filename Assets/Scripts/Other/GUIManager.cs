@@ -177,7 +177,6 @@ public class GUIManager : MonoBehaviour {
 
 	public void UpdateWaveTimer(int time , bool bossWave = false)
 	{
-		Debug.Log ("timer "+ bossWave);
 		if(!bossWave)
 		{
 			GameObject inGameCash = transform.Find("InGame/Wave Information/Timer/Wave Timer Number").gameObject;
@@ -240,10 +239,8 @@ public class GUIManager : MonoBehaviour {
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
-
-		Debug.Log (victoryScreen);
 		NGUITools.SetActive (victoryScreen , false);
-		Debug.Log (victoryScreen);
+		UpdateDodgeCooldown (0);
 		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
 
 	}

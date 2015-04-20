@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bountyAmount: 0
+  bountySound: {fileID: 8300000, guid: 4c42bc5b213eb194b908f94999ba51ab, type: 3}
 --- !u!114 &11455932
 MonoBehaviour:
   m_ObjectHideFlags: 1

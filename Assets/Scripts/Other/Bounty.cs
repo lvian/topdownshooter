@@ -25,7 +25,7 @@ public class Bounty : MonoBehaviour {
 		if (other.tag == "Player")
 		{
 			GameManager.instance.Upgrades.Cash += bountyAmount;
-			GetComponent<AudioSource>().PlayOneShot(bountySound);
+			SoundManager.instance.clipOneShotRandomPitch(bountySound);
 			GetComponent<SpriteRenderer>().enabled = false;
 
 			GameObject.Destroy(transform.gameObject, bountySound.length);

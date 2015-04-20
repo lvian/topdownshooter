@@ -8,7 +8,7 @@ public class Loot : MonoBehaviour {
 	public List<string> amount;
 
 	public void SpawnLoot(){
-		Debug.Log("Loot, bitch!");
+		//Debug.Log("Loot, bitch!");
 		if(item.Count != chance.Count || chance.Count != amount.Count){
 			Debug.LogWarning("All lists must have the same length");
 			return;

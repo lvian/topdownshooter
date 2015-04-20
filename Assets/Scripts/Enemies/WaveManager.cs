@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Setup(){
-		Debug.Log("Setup() called");
+		//Debug.Log("Setup() called");
 		_index++;
 		if(_index >= waves.Count){
 			bool allDead = true;

@@ -13,6 +13,7 @@ GameObject:
   - 58: {fileID: 5804832}
   - 82: {fileID: 8250244}
   - 95: {fileID: 9587942}
+  - 114: {fileID: 11429126}
   m_Layer: 8
   m_Name: AgressiveEnemy
   m_TagString: Enemy
@@ -237,6 +238,23 @@ MonoBehaviour:
   shootDelay: 0
   enemyState: 0
   enemyStance: 2
+--- !u!114 &11429126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00efbab2b7a00348a10f477d04105b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
+  chance:
+  - 50
+  amount:
+  - 20
 --- !u!212 &21291972
 SpriteRenderer:
   m_ObjectHideFlags: 1

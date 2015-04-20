@@ -44,6 +44,7 @@ GameObject:
   - 58: {fileID: 5813140}
   - 82: {fileID: 8228058}
   - 95: {fileID: 9567010}
+  - 114: {fileID: 11442890}
   m_Layer: 8
   m_Name: OffensiveEnemy
   m_TagString: Enemy
@@ -203,6 +204,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11442890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 179028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00efbab2b7a00348a10f477d04105b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
+  chance:
+  - 50
+  amount:
+  - 20
 --- !u!114 &11479312
 MonoBehaviour:
   m_ObjectHideFlags: 1
