@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour {
 		Paused
 	}
 
+
+	public int reward1,reward2,reward3,reward4,reward5;
 	public delegate void Function();
 	public static GameManager instance = null;
 	private GameState _state;

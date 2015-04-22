@@ -215,6 +215,7 @@
      <Compile Include="Assets\Scripts\Other\SimpleCCD.cs" />
      <Compile Include="Assets\Scripts\Other\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Other\Timer.cs" />
+     <Compile Include="Assets\Scripts\Other\Tooltip.cs" />
      <Compile Include="Assets\Scripts\Other\Upgrades.cs" />
      <Compile Include="Assets\Scripts\Player\GUIFollowPlayer.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />

@@ -20,9 +20,9 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
-		GameManager.instance.Upgrades.Cash += 16000;
-		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
-		GameManager.instance.Upgrades.RifleUnlocked = 1;
+		GameManager.instance.Upgrades.Cash += 1500;
+		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		//GameManager.instance.Upgrades.RifleUnlocked = 1;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
@@ -216,6 +216,11 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (panel, false);
 	}
 
+	public void ShowTooltip()
+	{
+
+	}
+
 	public void StartLevel()
 	{
 		NGUITools.SetActive (levelsPanel.gameObject, false);
@@ -256,6 +261,8 @@ public class GUIManager : MonoBehaviour {
 	{
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , true);
+		GameObject victoryText = transform.Find("InGame/Victory Panel/Sprite/Poster/Win Text 2").gameObject;
+		victoryText.GetComponent<UILabel> ().text = "$ xxxx Cash Reward." ;
 		
 	}
 
