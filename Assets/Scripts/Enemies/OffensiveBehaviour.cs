@@ -7,6 +7,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 	private bool reverseCircling;
 	private bool goBack;
 	private Timer goBackTimer;
+	private Timer reverseCirclingTimer;
 	private Collider2D collider;
 	private float errorMargin = 0.01f;
 
@@ -25,6 +26,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 		this.enemy.enemyStance = Enemy.EnemyStance.Defensive;
 		goBack = false;
 		reverseCircling = false;
+		reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
 	}
 
 	public void Setup () {
@@ -107,6 +109,11 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 					goBackTimer = null;
 				}
 			}
+			if(reverseCirclingTimer.IsElapsed){
+				reverseCircling = !reverseCircling;
+				reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
+				reverseCirclingTimer.Reset();
+			}
 
 			if(goBack)
 				newY = -enemy.currentWeapon.WeaponMoveSpeed * enemy.Speed * Time.deltaTime;
@@ -133,6 +140,7 @@ public class OffensiveBehaviour : AIScript, IEnemyBehaviour {
 				enemy.transform.parent.Translate(new Vector2(-(newX/Mathf.Abs(newX) * (Mathf.Abs(newX) + errorMargin)), 0f));
 				newX = 0;
 				reverseCircling = !reverseCircling;
+				reverseCirclingTimer.Reset();
 			}
 
 			if(colY.Length != 0){

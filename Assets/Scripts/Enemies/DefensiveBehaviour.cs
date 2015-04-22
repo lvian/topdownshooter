@@ -10,6 +10,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 	private Collider2D collider;
 	private GameObject[] obstacles;
 	private Timer goBackTimer;
+	private Timer reverseCirclingTimer;
 	private float errorMargin = 0.01f;
 
 	private float newY = 0, newX = 0;
@@ -26,6 +27,7 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 		this.enemy.enemyState = Enemy.EnemyState.Setup;
 		this.enemy.enemyStance = Enemy.EnemyStance.Defensive;
 		reverseCircling = false;
+		reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
 		obstacles = GameObject.FindGameObjectsWithTag("Wall");
 		_covering = GetNearestCovering(this.enemy.transform, player.transform, obstacles);
 	}
@@ -74,6 +76,11 @@ public class DefensiveBehaviour : AIScript, IEnemyBehaviour {
 					goBack = !goBack;
 					goBackTimer = null;
 				}
+			}
+			if(reverseCirclingTimer.IsElapsed){
+				reverseCircling = !reverseCircling;
+				reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
+				reverseCirclingTimer.Reset();
 			}
 
 			Quaternion oldQ = enemy.transform.parent.rotation;

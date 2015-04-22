@@ -7,6 +7,7 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	private bool reverseCircling;
 	private bool goBack;
 	private Timer goBackTimer;
+	private Timer reverseCirclingTimer;
 	private Collider2D collider;
 	private float errorMargin = 0.01f;
 	
@@ -25,6 +26,7 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 		this.enemy.enemyStance = Enemy.EnemyStance.Defensive;
 		goBack = false;
 		reverseCircling = false;
+		reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
 	}
 	
 	public void Setup () {
@@ -56,6 +58,11 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 					goBack = !goBack;
 					goBackTimer = null;
 				}
+			}
+			if(reverseCirclingTimer.IsElapsed){
+				reverseCircling = !reverseCircling;
+				reverseCirclingTimer = new Timer(Random.Range(5f, 15f));
+				reverseCirclingTimer.Reset();
 			}
 			
 			if(goBack)
