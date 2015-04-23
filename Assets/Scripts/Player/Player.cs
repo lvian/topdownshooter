@@ -17,7 +17,8 @@ public class Player : Humanoid {
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber, dynamite, dynamiteNumber;
 	public float maxSpeed, acellerationSpeed, dodgeCooldown;
-	
+
+
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
 	protected int dynamiteAmount;
@@ -25,7 +26,8 @@ public class Player : Humanoid {
 	private float newY = 0, newX = 0, speedY = 0, speedX = 0, oldX, oldY;
 	private bool isMovingX, isMovingY;
 	private float maxHealth, maxArmor, dodgeTimer;
-	
+	private ParticleSystem dustEmitter;
+
 	// Use this for initialization
 	public IEnumerator Start () {
 		if(GameManager.instance.Upgrades.Dodge == 1)
@@ -41,6 +43,7 @@ public class Player : Humanoid {
 		playerState = PlayerState.Idle;
 		dynamiteAmount = 2;
 		spawnWeapons ();
+		dustEmitter = transform.FindChild("DustEmmiter").GetComponent<ParticleSystem>();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
 		InitHumanoid();
 		GUIManager.instance.HealthGUI(HitPoints, maxHealth);
@@ -54,7 +57,6 @@ public class Player : Humanoid {
 		
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
-
 			//Calculates cooldown and sends to GUI
 			dodgeTimer -= Time.deltaTime;
 			if(dodgeTimer >= 0 && dodgeTimer < dodgeCooldown)
@@ -243,6 +245,7 @@ public class Player : Humanoid {
 	{
 		if(playerState == Player.PlayerState.Moving)
 		{
+			dustEmitter.emissionRate = 15;
 			oldX = speedX;
 			oldY = speedY;
 			playerState = Player.PlayerState.Dodging;
@@ -255,8 +258,9 @@ public class Player : Humanoid {
 			speedX = oldX;
 			speedY = oldY;
 			playerState = Player.PlayerState.Moving;
+			dustEmitter.emissionRate = 2;
 		}
-		
+
 	}
 	
 	public void spawnWeapons()
@@ -272,13 +276,19 @@ public class Player : Humanoid {
 			b.ReloadGUI();
 			if(availableWeapons[key].name == "Revolver(Clone)")
 			{
+				availableWeapons[key].coneBase.gameObject.SetActive(true);
+				availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =  Resources.Load("Sprites/15 Cone", typeof(Sprite)) as Sprite;
 				if(GameManager.instance.Upgrades.RevolverCone == 1)
+				{
 					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+					availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =    Resources.Load("Sprites/5 Cone", typeof(Sprite)) as Sprite;
+					//availableWeapons[key].coneUpgraded.gameObject.SetActive(true);
+				}
 				if(GameManager.instance.Upgrades.RevolverReload == 1)
 				{
 					//Changing the whole animator speed, because unity doesn't allow for single state speed changes yet. Comming on 5.1
-					availableWeapons[key].weaponReloadSpeed = (availableWeapons[key].weaponReloadSpeed / 4) * 3 ;
-					availableWeapons[key].GetComponent<Animator>().speed = 1.25f;
+					availableWeapons[key].weaponReloadSpeed = (availableWeapons[key].weaponReloadSpeed / 2)  ;
+					availableWeapons[key].GetComponent<Animator>().speed = 1.5f;
 
 				}
 			}

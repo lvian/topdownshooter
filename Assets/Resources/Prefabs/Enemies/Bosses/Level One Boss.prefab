@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-  - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
+  - {fileID: 156264, guid: 8842974e3ef97cf46b9235424e30ca5f, type: 2}
   chance:
   - 100
   amount:

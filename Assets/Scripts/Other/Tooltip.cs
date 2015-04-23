@@ -16,10 +16,10 @@ public class Tooltip : MonoBehaviour {
 
 	void OnTooltip (bool show)
 	{
-
+		Debug.Log ("Tooltip "+ show);
 		if (show == true)
 		{
-			UITooltip.Show(tooltipText);
+			CustomTooltip.Show(tooltipText);
 			return;
 		}
 		UITooltip.Hide();

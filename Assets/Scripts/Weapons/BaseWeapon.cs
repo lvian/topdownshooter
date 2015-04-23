@@ -5,7 +5,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
 	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets, rotationSpeed, bulletDeviationAngle;
-	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect;
+	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect, coneBase;
 	public AudioClip  shotSound,reloadSound, triggerSound;
 
 
@@ -53,6 +53,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 					amountOfBullets = maxAmountOfBullets;
 					ReloadGUI();
 					isReloading = false;
+					coneBase.gameObject.SetActive(true);
 				} else
 				{
 					GUIManager.instance.ReloadBarUpdate(reloadTimer * sliderPercentage);

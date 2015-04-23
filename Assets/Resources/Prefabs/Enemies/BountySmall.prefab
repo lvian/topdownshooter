@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11432026}
   - 114: {fileID: 11455932}
   m_Layer: 0
-  m_Name: Currency
+  m_Name: BountySmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

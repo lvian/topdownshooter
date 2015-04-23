@@ -9,7 +9,8 @@ using System.Collections;
 		public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
-		
+		private bool muteFx;
+		private AudioSource[] allAudioSources;
 		
 		void Awake ()
 		{
@@ -26,9 +27,22 @@ using System.Collections;
 			DontDestroyOnLoad (gameObject);
 			musicSource.clip = music1;
 			musicSource.Play ();
+			muteFx = false;
 
 		}
 		
+		void Update()
+		{
+			if(muteFx)
+			{
+				allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+				foreach( AudioSource audioS in allAudioSources) {
+					if(audioS.name != "SoundManager")
+						audioS.Stop();
+				}
+			}
+
+		}
 		
 		//Used to play single sound clips.
 		public void PlaySingle(AudioClip clip)
@@ -61,4 +75,34 @@ using System.Collections;
 			//Play the clip.
 			efxSource.PlayOneShot(clip);
 		}
+
+	public void MuteMusic()
+	{
+		if(UIToggle.current.value == false)
+		{
+			musicSource.Play();
+		} else
+		{
+			musicSource.Pause();
+		}
+	}
+
+	public void MuteFX()
+	{
+
+		if(UIToggle.current.value == false)
+		{
+			allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+			foreach( AudioSource audioS in allAudioSources) {
+				if(audioS.name != "SoundManager")
+					audioS.Stop();
+			}
+			muteFx = UIToggle.current.value;
+
+		} else
+		{
+			muteFx = UIToggle.current.value;
+		}
+	}
+
 	}

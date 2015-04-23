@@ -84,6 +84,7 @@ public class Revolver : BaseWeapon {
 					GUIManager.instance.ReloadBarActive(true);
 
 				}
+				coneBase.gameObject.SetActive(false);
 				reloadTimer = 0;
 				isReloading = true;
 				base.reloadBar = rb;

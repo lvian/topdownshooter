@@ -216,10 +216,6 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (panel, false);
 	}
 
-	public void ShowTooltip()
-	{
-
-	}
 
 	public void StartLevel()
 	{
