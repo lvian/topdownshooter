@@ -1,19 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\L18n.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="207" Column="1" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="2" Column="12" />
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\Tooltip.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Scripts\UI\UITooltip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\CustomTooltip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Entity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Entities\Humanoid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\L18n.cs" Line="35" Column="53" />
+      <File FileName="Assets\Scripts\Other\Tooltip.cs" Line="19" Column="32" />
+      <File FileName="Assets\Scripts\Other\LabelLocalization.cs" Line="16" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1304,6 +1304,7 @@ GameObject:
   - 4: {fileID: 228449273}
   - 114: {fileID: 228449274}
   - 114: {fileID: 228449275}
+  - 114: {fileID: 228449276}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -1431,6 +1432,18 @@ MonoBehaviour:
   callWhenFinished: 
   from: {r: 0, g: 0, b: 0, a: 1}
   to: {r: .551470578, g: .00810986944, b: .00810986944, a: 1}
+--- !u!114 &228449276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228449272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: menuCredits
 --- !u!1 &229832003
 GameObject:
   m_ObjectHideFlags: 0
@@ -10712,6 +10725,7 @@ GameObject:
   - 4: {fileID: 1205468686}
   - 114: {fileID: 1205468685}
   - 114: {fileID: 1205468687}
+  - 114: {fileID: 1205468688}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10758,6 +10772,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b50bf2f8405984c8d4090de015aa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1205468688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1205468684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c78de869e8b7f3469bdf7c62c068fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLanguage: Brazilian Portuguese
 --- !u!1 &1211492766
 GameObject:
   m_ObjectHideFlags: 0
@@ -16580,6 +16606,7 @@ GameObject:
   - 4: {fileID: 1828824285}
   - 114: {fileID: 1828824286}
   - 114: {fileID: 1828824287}
+  - 114: {fileID: 1828824288}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -16707,6 +16734,18 @@ MonoBehaviour:
   callWhenFinished: 
   from: {r: 0, g: 0, b: 0, a: 1}
   to: {r: .551470578, g: .00810986944, b: .00810986944, a: 1}
+--- !u!114 &1828824288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828824284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: menuStart
 --- !u!1 &1839214670
 GameObject:
   m_ObjectHideFlags: 0
@@ -18355,6 +18394,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -18655,6 +18695,7 @@ GameObject:
   - 4: {fileID: 2099066749}
   - 114: {fileID: 2099066750}
   - 114: {fileID: 2099066752}
+  - 114: {fileID: 2099066751}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -18739,6 +18780,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &2099066751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2099066748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: menuControls
 --- !u!114 &2099066752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19523,6 +19576,7 @@ GameObject:
   - 4: {fileID: 2122572249}
   - 114: {fileID: 2122572250}
   - 114: {fileID: 2122572251}
+  - 114: {fileID: 2122572252}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -19650,6 +19704,18 @@ MonoBehaviour:
   callWhenFinished: 
   from: {r: 0, g: 0, b: 0, a: 1}
   to: {r: .551470578, g: .00810986944, b: .00810986944, a: 1}
+--- !u!114 &2122572252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122572248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: menuUpgrades
 --- !u!1 &2127903129
 GameObject:
   m_ObjectHideFlags: 0
