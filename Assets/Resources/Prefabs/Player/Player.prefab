@@ -1620,6 +1620,10 @@ MonoBehaviour:
   maxSpeed: 1.5
   acellerationSpeed: 5
   dodgeCooldown: 4
+  steps:
+  - {fileID: 8300000, guid: 69d94c3e84466f84c97a53a7ef5adacf, type: 3}
+  - {fileID: 8300000, guid: 690965923d518ee46ac4a097f98c9453, type: 3}
+  dodgeSound: {fileID: 8300000, guid: f241315730b80c4488fb85c60c1f62e3, type: 3}
 --- !u!114 &11403088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3374,7 +3378,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 3
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:

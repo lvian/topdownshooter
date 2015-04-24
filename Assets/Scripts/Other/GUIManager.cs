@@ -5,7 +5,7 @@ public class GUIManager : MonoBehaviour {
 
 	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu;
 	public AudioClip cashSound;
-	private GameObject revolverBullets, shotgunBullets, rifleBullets;
+	private GameObject revolverBullets, shotgunBullets, rifleBullets, messageWindow;
 	public static GUIManager instance = null;
 
 	void Awake () {
@@ -23,6 +23,7 @@ public class GUIManager : MonoBehaviour {
 		GameManager.instance.Upgrades.Cash += 1500;
 		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		//GameManager.instance.Upgrades.RifleUnlocked = 1;
+		messageWindow = transform.Find("Message Panel/Message").gameObject;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
@@ -589,6 +590,15 @@ public class GUIManager : MonoBehaviour {
 		GameObject noMoney = transform.Find("Upgrades/Board/No Money").gameObject;
 		noMoney.GetComponent<TweenAlpha> ().ResetToBeginning();
 		noMoney.GetComponent<TweenAlpha> ().PlayForward ();
+
+	}
+
+	public void ShowMessage(string message, float duration)
+	{
+		messageWindow.transform.FindChild ("Text").GetComponent<UILabel> ().text = message;
+		messageWindow.GetComponent<TweenAlpha> ().ResetToBeginning ();
+		messageWindow.GetComponent<TweenAlpha> ().duration = duration;
+		messageWindow.GetComponent<TweenAlpha> ().PlayForward();
 
 	}
 }

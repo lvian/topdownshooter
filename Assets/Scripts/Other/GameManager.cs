@@ -29,8 +29,31 @@ public class GameManager : MonoBehaviour {
 
 	public void GameStart()
 	{
+		if(UIButton.current.name == "Level One")
+		{
+			Application.LoadLevel (1);
+		}
+		if(UIButton.current.name == "Level Two")
+		{
+			Application.LoadLevel (2);
+		}
+		if(UIButton.current.name == "Level Three")
+		{
+			Application.LoadLevel (3);
+		}
+		if(UIButton.current.name == "Level Four")
+		{
+			Application.LoadLevel (4);
+		}
+		if(UIButton.current.name == "Level Five")
+		{
+			Application.LoadLevel (5);
+		}
+		if(UIButton.current.name == "Level Endless")
+		{
+			Application.LoadLevel (6);
+		}
 
-		Application.LoadLevel (1);
 		_state = GameState.Playing;
 
 		GUIManager.instance.StartLevel ();

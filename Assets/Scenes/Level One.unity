@@ -11315,10 +11315,10 @@ Prefab:
       propertyPath: m_Name
       value: PlayerBase
       objectReference: {fileID: 0}
-    - target: {fileID: 19888064, guid: 0b8d974caa30b4049aa0ff6bb3e39b38, type: 2}
-      propertyPath: EmissionModule.rate.scalar
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 11400964, guid: 0b8d974caa30b4049aa0ff6bb3e39b38, type: 2}
+      propertyPath: dodgeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f241315730b80c4488fb85c60c1f62e3, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b8d974caa30b4049aa0ff6bb3e39b38, type: 2}
   m_IsPrefabParent: 0

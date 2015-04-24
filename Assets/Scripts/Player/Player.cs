@@ -17,7 +17,8 @@ public class Player : Humanoid {
 	//GUI Panels and objects
 	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber, dynamite, dynamiteNumber;
 	public float maxSpeed, acellerationSpeed, dodgeCooldown;
-
+	public AudioClip[] steps;
+	public AudioClip dodgeSound;
 
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
@@ -25,7 +26,7 @@ public class Player : Humanoid {
 	private GameObject[] obstacles;
 	private float newY = 0, newX = 0, speedY = 0, speedX = 0, oldX, oldY;
 	private bool isMovingX, isMovingY;
-	private float maxHealth, maxArmor, dodgeTimer;
+	private float maxHealth, maxArmor, dodgeTimer, stepSoundTimer;
 	private ParticleSystem dustEmitter;
 
 	// Use this for initialization
@@ -35,6 +36,7 @@ public class Player : Humanoid {
 			dodgeCooldown = dodgeCooldown / 2; 
 		}
 		dodgeTimer = 0;
+		stepSoundTimer = 0;
 		Armor = GetArmorUpgrades ();
 		maxArmor = GetArmorUpgrades();
 		maxHealth = HitPoints;
@@ -59,6 +61,7 @@ public class Player : Humanoid {
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
 			//Calculates cooldown and sends to GUI
 			dodgeTimer -= Time.deltaTime;
+
 			if(dodgeTimer >= 0 && dodgeTimer < dodgeCooldown)
 			{
 				float sliderPercentage = 1 / dodgeCooldown;
@@ -99,7 +102,7 @@ public class Player : Humanoid {
 				
 				if(Input.GetKeyDown(KeyCode.E))
 				{
-					// next weapon 
+					GUIManager.instance.ShowMessage("Information system!!", 1f);
 				}
 				if(Input.GetKeyDown(KeyCode.R))
 				{
@@ -198,6 +201,16 @@ public class Player : Humanoid {
 				playerState = Player.PlayerState.Moving;
 			}
 			anim.SetBool ("isMoving", true);
+			stepSoundTimer += Time.deltaTime;
+			if(stepSoundTimer >= 0.65f)
+			{
+				//Choose a random pitch to play back our clip at between our high and low pitch ranges.
+				float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+				audioSource.pitch = randomPitch;
+				audioSource.PlayOneShot (steps[Random.Range(0,steps.Length)]);
+				hitSoundCooldown.Reset();
+				stepSoundTimer = 0;
+			}
 		}
 		transform.parent.Translate(new Vector3( newX, newY, 0) * Time.deltaTime, Space.World);
 	}
@@ -246,6 +259,10 @@ public class Player : Humanoid {
 		if(playerState == Player.PlayerState.Moving)
 		{
 			dustEmitter.emissionRate = 15;
+			float randomPitch = Random.Range(lowPitchRange, highPitchRange);
+			audioSource.pitch = randomPitch;
+			audioSource.PlayOneShot (dodgeSound);
+
 			oldX = speedX;
 			oldY = speedY;
 			playerState = Player.PlayerState.Dodging;

@@ -57,7 +57,6 @@ public class CustomTooltip : MonoBehaviour
 	
 	protected virtual void Update ()
 	{
-		Debug.Log (mInstance);
 		if (mHover != UICamera.hoveredObject)
 		{
 			mHover = null;
@@ -105,7 +104,6 @@ public class CustomTooltip : MonoBehaviour
 	
 	protected virtual void SetText (string tooltipText)
 	{
-		Debug.Log (tooltipText);
 		if (text != null && !string.IsNullOrEmpty(tooltipText))
 		{
 			mTarget = 1f;
