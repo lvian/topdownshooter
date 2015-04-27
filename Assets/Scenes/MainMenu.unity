@@ -1243,10 +1243,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228449272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
   m_Name: 
@@ -2309,12 +2309,12 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.15094328
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: 'Not enough
 
     Money!'
-  mFontSize: 14
+  mFontSize: 18
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -2879,10 +2879,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -3408,7 +3408,6 @@ GameObject:
   - 114: {fileID: 411944540}
   - 61: {fileID: 411944539}
   - 114: {fileID: 411944538}
-  - 114: {fileID: 411944537}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -3429,21 +3428,6 @@ Transform:
   - {fileID: 1030644636}
   m_Father: {fileID: 714667765}
   m_RootOrder: 0
---- !u!114 &411944537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 411944535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d44bc69c2ca5f943b845318866dc1bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 24b1a294665081c4e9127ff82e27a8bd, type: 3}
-  trigger: 0
-  volume: 1
-  pitch: 1
 --- !u!114 &411944538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3684,7 +3668,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 432324038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 992060043}
@@ -3720,17 +3704,17 @@ MonoBehaviour:
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
   mWidth: 92
-  mHeight: 23
+  mHeight: 35
   mDepth: 3
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4
+  aspectRatio: 2.62857151
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 1500
-  mFontSize: 55
+  mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -4143,10 +4127,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -8126,6 +8110,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 836651230}
+  - 81: {fileID: 836651232}
+  - 114: {fileID: 836651231}
   m_Layer: 5
   m_Name: Microphone
   m_TagString: Untagged
@@ -8145,6 +8131,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2059842768}
   m_RootOrder: 0
+--- !u!114 &836651231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836651229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f94d4a5c9649746938fcb591555e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!81 &836651232
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 836651229}
+  m_Enabled: 1
 --- !u!1 &841807872
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,7 +9258,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.36666679
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: Sponsor
   mFontSize: 11
@@ -11443,10 +11447,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -12558,7 +12562,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.36666679
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: Caco
   mFontSize: 11
@@ -12651,7 +12655,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 4.36666679
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: Vian
   mFontSize: 11
@@ -12744,10 +12748,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -12930,10 +12934,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -14809,10 +14813,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -15059,10 +15063,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -15315,10 +15319,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -18500,7 +18504,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1828824284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
   m_Name: 
@@ -19322,10 +19326,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -19678,10 +19682,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -19771,10 +19775,10 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 2.57692313
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
+  mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
   mText: S$ 500
-  mFontSize: 10
+  mFontSize: 14
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -20378,7 +20382,6 @@ GameObject:
   - 4: {fileID: 2059842768}
   - 20: {fileID: 2059842767}
   - 114: {fileID: 2059842766}
-  - 81: {fileID: 2059842769}
   m_Layer: 5
   m_Name: Camera
   m_TagString: GUI Camera
@@ -20467,13 +20470,6 @@ Transform:
   - {fileID: 836651230}
   m_Father: {fileID: 1887004380}
   m_RootOrder: 0
---- !u!81 &2059842769
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2059842765}
-  m_Enabled: 1
 --- !u!1 &2068538380
 GameObject:
   m_ObjectHideFlags: 0
@@ -20809,7 +20805,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2099066748}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
   m_Name: 
@@ -21640,7 +21636,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2122572248}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
   m_Name: 
