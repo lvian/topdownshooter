@@ -7,7 +7,7 @@ public class GUIManager : MonoBehaviour {
 	public AudioClip cashSound;
 	private GameObject revolverBullets, shotgunBullets, rifleBullets, messageWindow;
 	public static GUIManager instance = null;
-
+	private bool mainCursor;
 	void Awake () {
 		if(instance == null)
 			instance = this;
@@ -21,8 +21,8 @@ public class GUIManager : MonoBehaviour {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
 		GameManager.instance.Upgrades.Cash += 15000;
-		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
-		//GameManager.instance.Upgrades.RifleUnlocked = 1;
+		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		GameManager.instance.Upgrades.RifleUnlocked = 1;
 		messageWindow = transform.Find("Message Panel/Message").gameObject;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
@@ -31,8 +31,25 @@ public class GUIManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		if(GameManager.instance.State == GameManager.GameState.Playing)
+		{
+			if(UICamera.hoveredObject.GetComponent<UIButton>())
+			{
+				if(mainCursor == false)
+				{
+					ChangeCursor(true);
+				}
+			}else{
+				if(mainCursor == true)
+				{
+					ChangeCursor(false);
+				}
+			}
+		}
 	}
+
 	public void InitializeGUI () 
 	{
 		InitializeLevels ();
@@ -268,7 +285,6 @@ public class GUIManager : MonoBehaviour {
 		GamePaused (false);
 		GameObject pauseButton = transform.Find("InGame/Pause Button").gameObject;
 		pauseButton.GetComponent<UIToggle> ().value = false;
-		Debug.Log ("Paused");
 		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
 
 	}
@@ -655,6 +671,25 @@ public class GUIManager : MonoBehaviour {
 		noMoney.GetComponent<TweenAlpha> ().ResetToBeginning();
 		noMoney.GetComponent<TweenAlpha> ().PlayForward ();
 
+	}
+
+	public void ChangeCursor(bool main)
+	{
+		GameObject cursorMain = transform.Find("Cursor Panel/Cursor/Main").gameObject;
+		GameObject cursorPlay = transform.Find("Cursor Panel/Cursor/Play").gameObject;
+
+		if(main)
+		{
+			NGUITools.SetActive (cursorMain , true);
+			NGUITools.SetActive (cursorPlay , false);
+			mainCursor = true;
+		}else
+		{
+			NGUITools.SetActive (cursorMain , false);
+			NGUITools.SetActive (cursorPlay , true);
+			mainCursor = false;
+		}
+		
 	}
 
 	public void ShowMessage(string message, float duration)

@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 98994300162f5044e904c14049b1d9bc, type: 2}
   mSprites:
   - name: Armor1Icon
-    x: 546
-    y: 178
+    x: 499
+    y: 128
     width: 44
     height: 45
     borderLeft: 0
@@ -56,7 +56,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: Armor2Icon
     x: 499
-    y: 36
+    y: 82
     width: 44
     height: 45
     borderLeft: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
     paddingBottom: 4
   - name: Armor3Icon
     x: 499
-    y: 82
+    y: 36
     width: 44
     height: 45
     borderLeft: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor4Icon
-    x: 499
-    y: 128
+    x: 546
+    y: 178
     width: 44
     height: 45
     borderLeft: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 0
   - name: exitButton
-    x: 499
-    y: 5
+    x: 546
+    y: 52
     width: 30
     height: 30
     borderLeft: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: firstBossPortrait
     x: 360
-    y: 76
+    y: 25
     width: 50
     height: 50
     borderLeft: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
     paddingBottom: 5
   - name: GUIRevolverBullet
     x: 360
-    y: 25
+    y: 76
     width: 50
     height: 50
     borderLeft: 0
@@ -262,6 +262,19 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 4
     paddingBottom: 3
+  - name: MainCursor
+    x: 148
+    y: 15
+    width: 27
+    height: 32
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 2
+    paddingTop: 0
+    paddingBottom: 0
   - name: MainMenu
     x: 0
     y: 224
@@ -366,6 +379,19 @@ MonoBehaviour:
     paddingRight: 11
     paddingTop: 5
     paddingBottom: 5
+  - name: PlayCursor
+    x: 499
+    y: 3
+    width: 32
+    height: 32
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: RevolverConeIcon
     x: 101
     y: 1

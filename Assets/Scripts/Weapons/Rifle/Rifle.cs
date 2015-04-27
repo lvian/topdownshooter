@@ -19,6 +19,11 @@ public class Rifle : BaseWeapon {
 					{
 						GameObject bullet = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RifleBullet") , muzzle.transform.position , muzzle.transform.rotation); 
 						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
+						if(GameManager.instance.Upgrades.RifleCone == 1)
+						{
+							bullet.GetComponent<RifleBullet>().bulletDamage = 2;
+							bullet.GetComponent<RifleBullet>().bulletSpeed = 10;
+						}
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");

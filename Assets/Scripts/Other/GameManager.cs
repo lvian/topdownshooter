@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	private int playerCash;
 
 	private Upgrades upgrades;
+	private Vector2 mouseOffset = new Vector2(16,16);
 
 	void Awake () {
 		if(instance == null)
@@ -23,8 +24,14 @@ public class GameManager : MonoBehaviour {
 		else if(instance != this)
 			Destroy(gameObject);
 		DontDestroyOnLoad (this);
+		//Cursor.SetCursor(Resources.Load("Sprites/MainCursor", typeof(Texture2D)) as Texture2D, Vector2.zero, CursorMode.Auto );
+	
+	}
+
+	void Start(){
 		State = GameState.Menu;
 		upgrades = new Upgrades();
+		Cursor.visible = false;
 	}
 
 	public void GameStart()
@@ -115,7 +122,6 @@ public class GameManager : MonoBehaviour {
 
 	public void Pause()
 	{
-		Debug.Log ("Paused");
 		if(UIToggle.current.value == true)
 		{
 			State = GameState.Paused;
@@ -136,6 +142,15 @@ public class GameManager : MonoBehaviour {
 		}
 		set {
 			_state = value;
+			if(value == GameState.Playing )
+			{
+				GUIManager.instance.ChangeCursor(false);
+				//Cursor.SetCursor(Resources.Load("Sprites/PlayCursor", typeof(Texture2D)) as Texture2D, mouseOffset, CursorMode.Auto );
+			} else 
+			{
+				GUIManager.instance.ChangeCursor(true);
+				//Cursor.SetCursor(Resources.Load("Sprites/MainCursor", typeof(Texture2D)) as Texture2D, Vector2.zero, CursorMode.Auto );
+			} 
 		}
 	}
 

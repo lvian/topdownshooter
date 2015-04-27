@@ -1,26 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\Bounty.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\GUIManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="260" Column="3" />
+      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="288" Column="1" />
       <File FileName="Assets\Scripts\Other\L18n.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\Tooltip.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\Other\Tooltip.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\LabelLocalization.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="92" Column="25" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="147" Column="43" />
       <File FileName="Assets\Scripts\Other\SoundManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="458" Column="30" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\AgressiveBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\DefensiveBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\BaseWeapon.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Revolver\Revolver.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\CustomTimer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\CustomTooltip.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Bullets\BaseBullet.cs" Line="15" Column="1" />
+      <File FileName="Assets\Scripts\Bullets\BaseBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\Bounty.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -311,9 +311,12 @@ public class Player : Humanoid {
 			}
 			if(availableWeapons[key].name == "Shotgun(Clone)")
 			{
+				availableWeapons[key].coneBase.gameObject.SetActive(true);
+				availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =    Resources.Load("Sprites/50 Cone", typeof(Sprite)) as Sprite;
 				if(GameManager.instance.Upgrades.ShotgunCone == 1)
 				{
-					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+					availableWeapons[key].bulletDeviationAngle = (availableWeapons[key].bulletDeviationAngle / 5) * 3 ;
+					availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =    Resources.Load("Sprites/30 Cone", typeof(Sprite)) as Sprite;
 				}
 				if(GameManager.instance.Upgrades.ShotgunPellets == 1)
 				{
@@ -322,8 +325,7 @@ public class Player : Humanoid {
 			}
 			if(availableWeapons[key].name == "Rifle(Clone)")
 			{
-				if(GameManager.instance.Upgrades.RifleCone == 1)
-					availableWeapons[key].bulletDeviationAngle = 0 ;
+				availableWeapons[key].coneBase.gameObject.SetActive(true);
 				if(GameManager.instance.Upgrades.RifleMobility == 1)
 				{
 					availableWeapons[key].weaponMoveSpeed = 1.1f;
