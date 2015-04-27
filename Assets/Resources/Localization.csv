@@ -1,0 +1,23 @@
+KEY,English,Portuguese
+StartButton,Start,Jogar
+Upgrades,Upgrades,Armas
+ControlstButton,Controls,Controles
+CreditsButton,Credits,Creditos
+LevelsTitle,Levels,Niveis
+LevelTitle,Wanted,Procurado
+LevelOne,Dry\nGut,Tripa\nSeca
+UpgradeNoMoney,Not enough\nMoney!,Dinheiro\ninsuficiente!
+PlayerCashTitle,Cash,Dinheiro
+Controls,Controls and images are going to be displayed here!,Controles e imagens serão exibidos aqui!
+CreditsTitle,Credits,Creditos
+LoadScreenLabel,Continue,Continuar
+MessagePanelText,Not enough Money!,Dinheiro insuficiente!
+Revolver1Tooltip,"Improves revolver accuracy, reducing bullet deviation from 15 degress to 5!","Melhora precisão do revolver, reduzindo desvio da bala de 15 para 5 graus!"
+Revolver2Tooltip,"Improves revolver reload time, reducing it from 2 seconds to 1!",Reduz tempo de recarregamento do revólver de 2 para 1 segundo!
+Shotgun1Tooltip,"Improves shotgun accuracy, reducing bullet deviation by from 50 degress to 30!","Melhora precisão da espingarda, reduzindo desvio da bala de 50 ara 30 graus!"
+Shotgun2Tooltip,"Improves shotgun shots, increasing the number of pellets per shot from 5 to 10!","Melhora tiros de espingarda, aumentando o número de estilhaços de 5 para 10 por tiro!"
+Rifle1Tooltip,Increses rifle bullet speed and damage !,Melhora a velocidade e dano da bala do rifle!
+Rifle2Tooltip,"Improves rifle maneuverability, incresing move and rotation speed  while using the rifle!","Melhora movimentação usando rifle, aumentando a velocidade de rotação e movimentação usando-o!"
+MoneyTooltip,Increses the amount of money dropped from enemies by 25 percent!,Aumenta a quantidade de dinheiro que cai dos inimigom em 25 por cento!
+DodgeTooltip,"Improves dodge cooldown, reducing it from 4 seconds to 2!","Melhora o tempo de recarregamento da esquiva, reduzindo-o de 4 para 2 segundos!"
+ArmorTooltip,Increses player armor by 1!,Aumenta a armadura do jogador em 1!

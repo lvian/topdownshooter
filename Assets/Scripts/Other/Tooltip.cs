@@ -4,6 +4,7 @@ using System.Collections;
 public class Tooltip : MonoBehaviour {
 
 	public string tooltipText;
+	public string localizeKey;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +19,8 @@ public class Tooltip : MonoBehaviour {
 	{
 		if (show == true)
 		{
-			CustomTooltip.Show(tooltipText);
+			//CustomTooltip.Show(tooltipText);
+			CustomTooltip.Show(localizeKey, true);
 			return;
 		}
 		UITooltip.Hide();

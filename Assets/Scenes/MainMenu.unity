@@ -714,6 +714,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 68085234}
   - 114: {fileID: 68085235}
+  - 114: {fileID: 68085236}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -798,6 +799,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &68085236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68085233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: LevelsTitle
 --- !u!1 &88896777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,7 +1451,7 @@ GameObject:
   - 4: {fileID: 228449273}
   - 114: {fileID: 228449274}
   - 114: {fileID: 228449275}
-  - 114: {fileID: 228449276}
+  - 114: {fileID: 228449277}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -1566,18 +1579,18 @@ MonoBehaviour:
   callWhenFinished: 
   from: {r: 0, g: 0, b: 0, a: 1}
   to: {r: .551470578, g: .00810986944, b: .00810986944, a: 1}
---- !u!114 &228449276
+--- !u!114 &228449277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 228449272}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: menuCredits
+  key: CreditsButton
 --- !u!1 &229832003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2265,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 303921845}
   - 114: {fileID: 303921847}
+  - 114: {fileID: 303921846}
   m_Layer: 5
   m_Name: Value
   m_TagString: Untagged
@@ -2271,6 +2285,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1798483675}
   m_RootOrder: 1
+--- !u!114 &303921846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 303921844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: UpgradeNoMoney
 --- !u!114 &303921847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2421,6 +2447,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 314492953}
   - 114: {fileID: 314492954}
+  - 114: {fileID: 314492955}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2505,6 +2532,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &314492955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314492952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: MessagePanelText
 --- !u!1 &320255477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,6 +2852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses the amount of money dropped from enemies by 25 percent!
+  localizeKey: MoneyTooltip
 --- !u!1 &333605791
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses player armor by 1!
+  localizeKey: ArmorTooltip
 --- !u!1 &393884841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,6 +3602,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421810250}
   - 114: {fileID: 421810251}
+  - 114: {fileID: 421810252}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -3645,6 +3687,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &421810252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421810249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlstButton
 --- !u!1 &432324038
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,6 +4031,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 489959801}
   - 114: {fileID: 489959802}
+  - 114: {fileID: 489959803}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -4061,6 +4116,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &489959803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 489959800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Controls
 --- !u!1 &494939102
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,6 +6551,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 710716313}
   - 114: {fileID: 710716314}
+  - 114: {fileID: 710716315}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -6568,6 +6636,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &710716315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 710716312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: Upgrades
 --- !u!1 &714667764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8409,6 +8489,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 855647439}
   - 114: {fileID: 855647440}
+  - 114: {fileID: 855647441}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -8493,6 +8574,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &855647441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 855647438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: LevelTitle
 --- !u!1 &874536806
 GameObject:
   m_ObjectHideFlags: 0
@@ -9192,6 +9285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Improves rifle maneuverability, incresing move and rotation speed  while
     using the rifle!
+  localizeKey: Rifle2Tooltip
 --- !u!1 &924621501
 GameObject:
   m_ObjectHideFlags: 0
@@ -10274,6 +10368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses player armor by 1!
+  localizeKey: ArmorTooltip
 --- !u!1 &1030644635
 GameObject:
   m_ObjectHideFlags: 0
@@ -10284,6 +10379,7 @@ GameObject:
   - 4: {fileID: 1030644636}
   - 114: {fileID: 1030644638}
   - 114: {fileID: 1030644637}
+  - 114: {fileID: 1030644639}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -10411,6 +10507,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1030644639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030644635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: LoadScreenLabel
 --- !u!1 &1036969174
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,6 +11273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Improves revolver reload time, reducing it from 2 seconds to 1!
+  localizeKey: Revolver2Tooltip
 --- !u!1 &1129107925
 GameObject:
   m_ObjectHideFlags: 0
@@ -11303,6 +11412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Improves revolver accuracy, reducing bullet deviation from 15 degress
     to 5!
+  localizeKey: Revolver1Tooltip
 --- !u!1 &1135265337
 GameObject:
   m_ObjectHideFlags: 0
@@ -11676,6 +11786,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1176100359}
   - 114: {fileID: 1176100360}
+  - 114: {fileID: 1176100361}
   m_Layer: 5
   m_Name: Label 1
   m_TagString: Untagged
@@ -11762,6 +11873,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1176100361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176100358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: LevelOne
 --- !u!1 &1176529956
 GameObject:
   m_ObjectHideFlags: 0
@@ -13864,6 +13987,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1352960046}
   - 114: {fileID: 1352960047}
+  - 114: {fileID: 1352960048}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -13949,6 +14073,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1352960048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352960045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &1369143782
 GameObject:
   m_ObjectHideFlags: 0
@@ -14252,6 +14388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses player armor by 1!
+  localizeKey: ArmorTooltip
 --- !u!1 &1400097212
 GameObject:
   m_ObjectHideFlags: 0
@@ -16665,6 +16802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses rifle bullet speed and damage !
+  localizeKey: Rifle1Tooltip
 --- !u!1 &1700557259
 GameObject:
   m_ObjectHideFlags: 0
@@ -17463,6 +17601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Improves dodge cooldown, reducing it from 4 seconds to 2!
+  localizeKey: DodgeTooltip
 --- !u!1 &1775655736
 GameObject:
   m_ObjectHideFlags: 0
@@ -18504,12 +18643,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1828824284}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: menuStart
+  key: StartButton
 --- !u!1 &1839214670
 GameObject:
   m_ObjectHideFlags: 0
@@ -19616,6 +19755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Improves shotgun shots, increasing the number of pellets per shot from
     5 to 10!
+  localizeKey: Shotgun2Tooltip
 --- !u!1 &1927316922
 GameObject:
   m_ObjectHideFlags: 0
@@ -20421,6 +20561,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27
@@ -20714,7 +20855,7 @@ GameObject:
   - 4: {fileID: 2099066749}
   - 114: {fileID: 2099066750}
   - 114: {fileID: 2099066752}
-  - 114: {fileID: 2099066751}
+  - 114: {fileID: 2099066753}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -20799,18 +20940,6 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!114 &2099066751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2099066748}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: menuControls
 --- !u!114 &2099066752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20854,6 +20983,18 @@ MonoBehaviour:
   callWhenFinished: 
   from: {r: 0, g: 0, b: 0, a: 1}
   to: {r: .551470578, g: .00810986944, b: .00810986944, a: 1}
+--- !u!114 &2099066753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2099066748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlstButton
 --- !u!1 &2102400294
 GameObject:
   m_ObjectHideFlags: 0
@@ -21193,6 +21334,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2117003442}
   - 114: {fileID: 2117003443}
+  - 114: {fileID: 2117003444}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -21277,6 +21419,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &2117003444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2117003441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: CreditsTitle
 --- !u!1 &2118073479
 GameObject:
   m_ObjectHideFlags: 0
@@ -21636,12 +21790,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2122572248}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c2de1a74c967847b2f1beb5a6b6268, type: 3}
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: menuUpgrades
+  key: Upgrades
 --- !u!1 &2127903129
 GameObject:
   m_ObjectHideFlags: 0
@@ -21936,6 +22090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipText: Increses player armor by 1!
+  localizeKey: ArmorTooltip
 --- !u!1 &2138643184
 GameObject:
   m_ObjectHideFlags: 0
@@ -22292,3 +22447,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Improves shotgun accuracy, reducing bullet deviation by from 50 degress
     to 30!
+  localizeKey: Shotgun1Tooltip

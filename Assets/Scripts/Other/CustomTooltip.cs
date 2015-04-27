@@ -108,8 +108,8 @@ public class CustomTooltip : MonoBehaviour
 		{
 			mTarget = 1f;
 			mHover = UICamera.hoveredObject;
-			text.text = tooltipText;
-			
+			//text.text = tooltipText;
+			text.text = Localization.Get(tooltipText);
 			// Orthographic camera positioning is trivial
 			mPos = Input.mousePosition;
 			
@@ -190,6 +190,10 @@ public class CustomTooltip : MonoBehaviour
 	
 	static public void Show (string text) {
 		if (mInstance != null) mInstance.SetText(text);
+	}
+
+	static public void Show (string keyText, bool key) {
+		if (mInstance != null) mInstance.SetText(keyText);
 	}
 	
 	/// <summary>
