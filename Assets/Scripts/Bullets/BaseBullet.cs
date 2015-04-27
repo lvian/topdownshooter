@@ -11,8 +11,9 @@ public abstract class BaseBullet  : MonoBehaviour{
 
 	// Update is called once per frame
 	void Update () {
-		
-		transform.Translate(new Vector3(0, bulletSpeed, 0) * Time.deltaTime);
+		if (GameManager.instance.State == GameManager.GameState.Playing) {
+			transform.Translate(new Vector3(0, bulletSpeed, 0) * Time.deltaTime);
+		}
 	}
 
 	public abstract void destroy();

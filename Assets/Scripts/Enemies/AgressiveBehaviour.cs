@@ -158,7 +158,7 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	
 	public void Reload () {
 		//Debug.Log("Reloading!");
-		enemy.currentWeapon.Reload(enemy.transform.gameObject);
+		enemy.currentWeapon.Reload();
 		enemy.enemyState = Enemy.EnemyState.Attacking;
 	}
 	public void Dodge ()

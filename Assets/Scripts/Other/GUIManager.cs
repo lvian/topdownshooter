@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GUIManager : MonoBehaviour {
 
-	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu;
+	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu, victoryPanel, defeatPanel;
 	public AudioClip cashSound;
 	private GameObject revolverBullets, shotgunBullets, rifleBullets, messageWindow;
 	public static GUIManager instance = null;
@@ -20,7 +20,7 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
-		GameManager.instance.Upgrades.Cash += 1500;
+		GameManager.instance.Upgrades.Cash += 15000;
 		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		//GameManager.instance.Upgrades.RifleUnlocked = 1;
 		messageWindow = transform.Find("Message Panel/Message").gameObject;
@@ -32,7 +32,6 @@ public class GUIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 	public void InitializeGUI () 
 	{
@@ -165,11 +164,12 @@ public class GUIManager : MonoBehaviour {
 		if(!bossWave)
 		{
 			GameObject waveCurrent = transform.Find("InGame/Wave Information/Waves/Wave Label").gameObject;
-			waveCurrent.GetComponent<UILabel>().text = "Wave "+current.ToString()+" of "+ total.ToString();
+			waveCurrent.GetComponent<UILabel>().text = current.ToString()+"/"+ total.ToString();
 
 		} else
 		{
 			GameObject waveCurrent = transform.Find("InGame/Wave Information/Waves/Wave Label").gameObject;
+			//change number by boss sprite
 			waveCurrent.GetComponent<UILabel>().text = "Boss Wave!";
 
 		}
@@ -180,11 +180,11 @@ public class GUIManager : MonoBehaviour {
 	{
 		if(!bossWave)
 		{
-			GameObject inGameCash = transform.Find("InGame/Wave Information/Timer/Wave Timer Number").gameObject;
-			inGameCash.GetComponent<UILabel>().text = time.ToString();
+			GameObject inGameCash = transform.Find("InGame/Wave Information/Waves/Wave Timer Number").gameObject;
+			inGameCash.GetComponent<UILabel>().text = time.ToString() + " s";
 		} else
 		{
-			GameObject inGameCash = transform.Find("InGame/Wave Information/Timer/Wave Timer Number").gameObject;
+			GameObject inGameCash = transform.Find("InGame/Wave Information/Waves/Wave Timer Number").gameObject;
 			inGameCash.GetComponent<UILabel>().text = " - ";
 		}
 	}
@@ -199,6 +199,24 @@ public class GUIManager : MonoBehaviour {
 
 		dodgeCooldown.GetComponent<UISlider>().value = value;
 
+	}
+
+	public void GamePaused(bool value)
+	{
+		if(value == true)
+		{
+			GameObject pauseIcon = transform.Find("InGame/Pause Button").gameObject;
+			pauseIcon.GetComponent<UISprite> ().spriteName = "GoButton";
+			GameObject pausePanel = transform.Find("InGame/Pause Panel").gameObject;
+			NGUITools.SetActive(pausePanel, true);
+		} else
+		{
+			GameObject pauseIcon = transform.Find("InGame/Pause Button").gameObject;
+			pauseIcon.GetComponent<UISprite> ().spriteName = "Pause Icon";
+			GameObject pausePanel = transform.Find("InGame/Pause Panel").gameObject;
+			NGUITools.SetActive(pausePanel, false);
+		}
+		
 	}
 
 	public void disableTweenColor()
@@ -218,12 +236,14 @@ public class GUIManager : MonoBehaviour {
 	}
 
 
-	public void StartLevel()
+	public void StartLevelGUI()
 	{
 		NGUITools.SetActive (levelsPanel.gameObject, false);
 		NGUITools.SetActive (upgradesPanel.gameObject, false);
 		NGUITools.SetActive (creditsPanel.gameObject, false);
 		NGUITools.SetActive (mainMenu.gameObject, false);
+		//NGUITools.SetActive (defeatPanel, false);
+		//NGUITools.SetActive (victoryPanel, false);
 		loadScreen.GetComponent<TweenAlpha> ().ResetToBeginning ();
 		NGUITools.SetActive (loadScreen.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, true);
@@ -242,9 +262,20 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , false);
+		GameObject pausePanel = transform.Find("InGame/Pause Panel").gameObject;
+		NGUITools.SetActive(pausePanel, false);
 		UpdateDodgeCooldown (0);
+		GamePaused (false);
+		GameObject pauseButton = transform.Find("InGame/Pause Button").gameObject;
+		pauseButton.GetComponent<UIToggle> ().value = false;
+		Debug.Log ("Paused");
 		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
 
+	}
+
+	public void LeaveLoadScreen()
+	{
+		loadScreen.GetComponent<TweenAlpha> ().PlayForward();
 	}
 
 	public void ShowDefeatScreen()
@@ -263,10 +294,26 @@ public class GUIManager : MonoBehaviour {
 		
 	}
 
+	public void BeforeLoadLevel( ) {
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Continue").gameObject, true);
+		loadScreen.transform.Find("LoadImage/Continue").GetComponent<UIButton>().isEnabled = false;
+	}
+
+	public void BeforeLoadMenu( ) {
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Continue").gameObject, false);
+	}
 
 	void OnLevelWasLoaded(int level) {
 
-		loadScreen.GetComponent<TweenAlpha> ().PlayForward ();
+		if(level == 0)
+		{
+			BackToMenu();
+
+			loadScreen.GetComponent<TweenAlpha> ().PlayForward ();
+		} else
+		{
+			loadScreen.transform.Find("LoadImage/Continue").GetComponent<UIButton>().isEnabled = true;
+		}
 		
 	}
 
@@ -358,7 +405,8 @@ public class GUIManager : MonoBehaviour {
 	public void ArmorGUI(float armorLeft , float armorTotal)
 	{
 		GameObject armorIcons = transform.Find("InGame/Player Information/Health/Armor Value").gameObject;
-		
+
+
 		for(int x = (int)armorLeft; x < armorTotal ; x++)
 		{
 			NGUITools.SetActive(armorIcons.transform.GetChild(x).gameObject, false);
@@ -532,6 +580,10 @@ public class GUIManager : MonoBehaviour {
 			GameObject armor1 = transform.Find("Upgrades/Board/Armor1").gameObject;
 			armor1.GetComponent<UIButton>().isEnabled = false;
 			armor1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+
+			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
+			healthBarSprite.GetComponent<UISprite>().width += 30;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
 		} else
 		{
 			notEnoughMoney();
@@ -548,6 +600,10 @@ public class GUIManager : MonoBehaviour {
 			GameObject armor2 = transform.Find("Upgrades/Board/Armor2").gameObject;
 			armor2.GetComponent<UIButton>().isEnabled = false;
 			armor2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+
+			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
+			healthBarSprite.GetComponent<UISprite>().width += 30;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
 		} else
 		{
 			notEnoughMoney();
@@ -564,6 +620,10 @@ public class GUIManager : MonoBehaviour {
 			GameObject armor3 = transform.Find("Upgrades/Board/Armor3").gameObject;
 			armor3.GetComponent<UIButton>().isEnabled = false;
 			armor3.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+
+			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
+			healthBarSprite.GetComponent<UISprite>().width += 30;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
 		} else
 		{
 			notEnoughMoney();
@@ -580,6 +640,10 @@ public class GUIManager : MonoBehaviour {
 			GameObject armor4 = transform.Find("Upgrades/Board/Armor4").gameObject;
 			armor4.GetComponent<UIButton>().isEnabled = false;
 			armor4.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
+
+			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
+			healthBarSprite.GetComponent<UISprite>().width += 30;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
 		} else
 		{
 			notEnoughMoney();

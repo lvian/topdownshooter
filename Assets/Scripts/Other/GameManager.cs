@@ -23,12 +23,16 @@ public class GameManager : MonoBehaviour {
 		else if(instance != this)
 			Destroy(gameObject);
 		DontDestroyOnLoad (this);
-		_state = GameState.Playing;
+		State = GameState.Menu;
 		upgrades = new Upgrades();
 	}
 
 	public void GameStart()
 	{
+		GUIManager.instance.BeforeLoadLevel ();
+		if(State != GameState.Menu)
+			State = GameState.Paused;
+
 		if(UIButton.current.name == "Level One")
 		{
 			Application.LoadLevel (1);
@@ -54,69 +58,76 @@ public class GameManager : MonoBehaviour {
 			Application.LoadLevel (6);
 		}
 
-		_state = GameState.Playing;
 
-		GUIManager.instance.StartLevel ();
+		GUIManager.instance.StartLevelGUI ();
 		playerCash = Upgrades.Cash;
 
 
 	}
 
+
+	public void StartLevel()
+	{
+		GUIManager.instance.LeaveLoadScreen ();
+		State = GameState.Playing;
+	}
 	public void BackToMenu()
 	{
-    		StartCoroutine(delayRestart(0,GUIManager.instance.BackToMenu));		
+		State = GameState.Menu;
+		GUIManager.instance.BeforeLoadMenu ();
+		GUIManager.instance.RestartLoadScreen ();
+		StartCoroutine(delayRestart(0));	
 
-	}
-
-	public void RestartLevel()
-	{
-
-		StartCoroutine(delayRestart(Application.loadedLevel));		
-	}
-
-	public void NextLevel()
-	{
-		
-		StartCoroutine(delayRestart(Application.loadedLevel + 1));		
 	}
 
 	private IEnumerator delayRestart(int level )
 	{
-		GUIManager.instance.RestartLoadScreen ();
-		
 		yield return new WaitForSeconds(1);
 		Application.LoadLevel(level);
 		GUIManager.instance.RestartWaveInformation ();
-		_state = GameState.Playing;
-		
 	}
 
-	private IEnumerator delayRestart(int level, Function postFunction)
+	public void RestartLevel()
 	{
+		State = GameState.Menu;
 		GUIManager.instance.RestartLoadScreen ();
-		
-		yield return new WaitForSeconds(1);
-		postFunction ();
-		Application.LoadLevel(level);
-		_state = GameState.Playing;
-
+		GUIManager.instance.RestartWaveInformation ();
+		Application.LoadLevel(Application.loadedLevel);
 	}
+
 
 	public void Defeat ()
 	{
-		_state = GameState.Paused;
+		State = GameState.Paused;
 		GUIManager.instance.ShowDefeatScreen ();
 		upgrades.Cash = (upgrades.Cash / 4) * 3;
 	}
 
 	public void Victory ()
 	{
-		if(_state != GameState.Paused)
+		if(State != GameState.Paused)
 		{
-			_state = GameState.Paused;
+			State = GameState.Paused;
 			GUIManager.instance.ShowVictoryScreen ();
 		}
 		
+	}
+
+	public void Pause()
+	{
+		Debug.Log ("Paused");
+		if(UIToggle.current.value == true)
+		{
+			State = GameState.Paused;
+			GUIManager.instance.GamePaused(true);
+		} else
+		{
+			if(State != GameState.Menu)
+			{
+				State = GameState.Playing;
+				GUIManager.instance.GamePaused(false);
+			}
+		}
 	}
 
 	public GameState State {

@@ -15,7 +15,7 @@ public class Player : Humanoid {
 	}
 	
 	//GUI Panels and objects
-	public GameObject reloadBar, bulletsNumber, bulletsMax, healthNumber, armorNumber, dynamite, dynamiteNumber;
+	public GameObject dynamite;
 	public float maxSpeed, acellerationSpeed, dodgeCooldown;
 	public AudioClip[] steps;
 	public AudioClip dodgeSound;
@@ -106,7 +106,7 @@ public class Player : Humanoid {
 				}
 				if(Input.GetKeyDown(KeyCode.R))
 				{
-					currentWeapon.Reload(reloadBar);
+					currentWeapon.Reload();
 				}
 				if(Input.GetKeyDown(KeyCode.Alpha1))
 				{

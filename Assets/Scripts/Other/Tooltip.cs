@@ -16,7 +16,6 @@ public class Tooltip : MonoBehaviour {
 
 	void OnTooltip (bool show)
 	{
-		Debug.Log ("Tooltip "+ show);
 		if (show == true)
 		{
 			CustomTooltip.Show(tooltipText);

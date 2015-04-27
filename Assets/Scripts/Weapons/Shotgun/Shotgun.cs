@@ -82,21 +82,20 @@ public class Shotgun : BaseWeapon {
 		}
 	}
 
-	public override void Reload (GameObject rb)
+	public override void Reload ()
 	{
 		if(AmountOfBullets < MaxAmountOfBullets && lastShot >= weaponFireDelay)
 		{
 			if(IsReloading == false){
 
 				//Not cool bro, need a better solution
-				if(rb.tag == "Player"){
+				if(transform.parent.name == "Player"){
 					GUIManager.instance.ReloadBarActive(true);
 
 				}
 				coneBase.gameObject.SetActive(false);
 				reloadTimer = 0;
 				isReloading = true;
-				base.reloadBar = rb;
 				anim.SetTrigger("Reload");
 				audioSource.PlayOneShot(reloadSound);
 				GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 

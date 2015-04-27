@@ -23,8 +23,8 @@ public class Wave : MonoBehaviour {
 	
 	void Awake(){
 		done = started = last = false;
-		timerNumber = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
-		timerLabel = GameObject.Find("Wave Timer Label").GetComponent<UILabel>();
+		//timerNumber = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
+		//timerLabel = GameObject.Find("Wave Timer Label").GetComponent<UILabel>();
 		player = GameObject.Find("Player").GetComponent<Player>().transform;
 	}
 	

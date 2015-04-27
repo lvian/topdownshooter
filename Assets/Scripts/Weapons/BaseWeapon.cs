@@ -13,7 +13,6 @@ public abstract class BaseWeapon : MonoBehaviour {
 	protected GameObject  bulletsLabelNumber, bulletsLabelMax;
 	protected float lastShot,reloadTimer, triggerSoundDelay;
 	protected bool isReloading;
-	protected GameObject reloadBar;
 	protected Animator anim;
 	protected PlayerCamera playerCamera;
 	protected AudioSource audioSource;
@@ -93,7 +92,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 		return anim.GetCurrentAnimatorClipInfo(0)[0].clip.name;
 	}
 	public abstract void Fire();
-	public abstract void Reload(GameObject rb);
+	public abstract void Reload();
 
 	public abstract void ReloadGUI();
 

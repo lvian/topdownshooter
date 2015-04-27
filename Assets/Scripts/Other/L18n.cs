@@ -23,6 +23,7 @@ public class L18n : MonoBehaviour {
 
 	// Use this for initialization
 	void Start(){
+		/*
 		DirectoryInfo info = new DirectoryInfo("Assets/l18n/");
 		FileInfo[] f = info.GetFiles("*.xml");
 		//Debug.Log(f.Length);
@@ -37,6 +38,7 @@ public class L18n : MonoBehaviour {
 		foreach( string key in database.Keys ){
 			Debug.Log("<entry key=\""+ key +">"+database[key]+"</entry>");
 		}
+		*/
 	}
 
 	void LoadDatabase(string fileFullPath){

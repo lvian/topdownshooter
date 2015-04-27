@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 98994300162f5044e904c14049b1d9bc, type: 2}
   mSprites:
   - name: Armor1Icon
-    x: 353
-    y: 36
+    x: 546
+    y: 178
     width: 44
     height: 45
     borderLeft: 0
@@ -55,8 +55,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor2Icon
-    x: 400
-    y: 86
+    x: 499
+    y: 36
     width: 44
     height: 45
     borderLeft: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor3Icon
-    x: 445
-    y: 86
+    x: 499
+    y: 82
     width: 44
     height: 45
     borderLeft: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor4Icon
-    x: 400
-    y: 40
+    x: 499
+    y: 128
     width: 44
     height: 45
     borderLeft: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: armorIcon
-    x: 445
-    y: 41
+    x: 546
+    y: 83
     width: 44
     height: 44
     borderLeft: 0
@@ -106,9 +106,22 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 2
     paddingBottom: 4
-  - name: DodgeIcon
+  - name: CashIcon
     x: 298
-    y: 76
+    y: 68
+    width: 61
+    height: 56
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 3
+    paddingTop: 4
+    paddingBottom: 4
+  - name: DodgeIcon
+    x: 415
+    y: 132
     width: 50
     height: 50
     borderLeft: 0
@@ -119,9 +132,35 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: DynamiteIcon
+    x: 237
+    y: 11
+    width: 57
+    height: 60
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 1
+    paddingBottom: 3
+  - name: EnemyIcon
+    x: 298
+    y: 125
+    width: 61
+    height: 57
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 1
+    paddingTop: 7
+    paddingBottom: 0
   - name: exitButton
-    x: 445
-    y: 10
+    x: 499
+    y: 5
     width: 30
     height: 30
     borderLeft: 0
@@ -133,8 +172,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: firstBossPortrait
-    x: 298
-    y: 25
+    x: 360
+    y: 76
     width: 50
     height: 50
     borderLeft: 0
@@ -146,7 +185,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: FX Button
-    x: 298
+    x: 360
     y: 127
     width: 54
     height: 55
@@ -158,9 +197,22 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 4
     paddingBottom: 3
+  - name: GoButton
+    x: 252
+    y: 93
+    width: 44
+    height: 54
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 11
+    paddingRight: 9
+    paddingTop: 5
+    paddingBottom: 5
   - name: GUIRevolverBullet
-    x: 353
-    y: 132
+    x: 360
+    y: 25
     width: 50
     height: 50
     borderLeft: 0
@@ -289,8 +341,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 0
   - name: NotButton
-    x: 237
-    y: 15
+    x: 298
+    y: 11
     width: 56
     height: 56
     borderLeft: 0
@@ -301,6 +353,19 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 3
     paddingBottom: 3
+  - name: Pause Icon
+    x: 411
+    y: 21
+    width: 42
+    height: 54
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 11
+    paddingRight: 11
+    paddingTop: 5
+    paddingBottom: 5
   - name: RevolverConeIcon
     x: 101
     y: 1
@@ -315,8 +380,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 0
   - name: RevolverReloadIcon
-    x: 353
-    y: 3
+    x: 466
+    y: 150
     width: 32
     height: 32
     borderLeft: 0
@@ -328,8 +393,8 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 8
   - name: RifleConeIcon
-    x: 252
-    y: 99
+    x: 454
+    y: 27
     width: 43
     height: 48
     borderLeft: 0
@@ -341,8 +406,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: RifleMobilityIcon
-    x: 353
-    y: 82
+    x: 499
+    y: 174
     width: 46
     height: 49
     borderLeft: 0
@@ -354,8 +419,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 0
   - name: ShotgunConeIcon
-    x: 404
-    y: 132
+    x: 411
+    y: 76
     width: 50
     height: 50
     borderLeft: 0
@@ -367,8 +432,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ShotgunPelletIcon
-    x: 455
-    y: 133
+    x: 546
+    y: 128
     width: 40
     height: 49
     borderLeft: 0
@@ -380,8 +445,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: Sound Button
-    x: 400
-    y: 3
+    x: 462
+    y: 90
     width: 36
     height: 36
     borderLeft: 0

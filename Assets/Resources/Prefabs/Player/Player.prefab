@@ -1610,13 +1610,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   lowPitchRange: .949999988
   highPitchRange: 1.04999995
-  reloadBar: {fileID: 0}
-  bulletsNumber: {fileID: 0}
-  bulletsMax: {fileID: 0}
-  healthNumber: {fileID: 0}
-  armorNumber: {fileID: 0}
   dynamite: {fileID: 156190, guid: 9e44c086d5ce92e478a831541c077eec, type: 2}
-  dynamiteNumber: {fileID: 0}
   maxSpeed: 1.5
   acellerationSpeed: 5
   dodgeCooldown: 4
