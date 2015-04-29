@@ -152,6 +152,17 @@ public class Upgrades {
 		}
 	}
 
+	//Shotgun Upgrades 
+	
+	public int DynamiteUnlocked {
+		get {
+			return PlayerPrefs.GetInt("DynamiteUnlocked");
+		}
+		set {
+			PlayerPrefs.SetInt("DynamiteUnlocked", value);
+		}
+	}
+
 
 	//Shotgun Upgrades 
 

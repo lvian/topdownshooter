@@ -12272,7 +12272,6 @@ GameObject:
   - 4: {fileID: 1205468686}
   - 114: {fileID: 1205468685}
   - 114: {fileID: 1205468687}
-  - 114: {fileID: 1205468688}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12319,18 +12318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b50bf2f8405984c8d4090de015aa10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1205468688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1205468684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c78de869e8b7f3469bdf7c62c068fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLanguage: Brazilian Portuguese
 --- !u!1 &1211492766
 GameObject:
   m_ObjectHideFlags: 0
@@ -13316,7 +13303,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1296246594}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -18434,7 +18421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1821160289
 Transform:
   m_ObjectHideFlags: 0
@@ -19492,6 +19479,49 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &1891259886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1891259888}
+  - 114: {fileID: 1891259887}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1891259887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891259886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151a7b524fd62db44858e575444ec8c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  domainMustContain:
+  - www.flashgameslicense.com
+  - www.fgl.com
+  redirectURL: www.fgl.com
+--- !u!4 &1891259888
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1891259886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.3897667, y: 3.06929183, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &1892159049
 GameObject:
   m_ObjectHideFlags: 0
@@ -20561,7 +20591,6 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
-  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27

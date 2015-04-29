@@ -22,6 +22,7 @@ public class GUIManager : MonoBehaviour {
 		PlayerPrefs.DeleteAll ();
 		GameManager.instance.Upgrades.Cash += 1500;
 		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		//GameManager.instance.Upgrades.RifleUnlocked = 1;
 		messageWindow = transform.Find("Message Panel/Message").gameObject;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
@@ -62,6 +63,7 @@ public class GUIManager : MonoBehaviour {
 		GameObject levels = transform.Find("Levels/Board").gameObject;
 		for(int x =  GameManager.instance.Upgrades.levelsUnlocked ;  x >= 0 ; x--)
 		{
+
 			levels.transform.GetChild(x).GetComponent<UIButton>().isEnabled = true;
 		}
 	}
@@ -275,10 +277,12 @@ public class GUIManager : MonoBehaviour {
 
 	public void RestartLoadScreen()
 	{
+		Debug.Log ("disable victory screen");
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , false);
+		//Debug.Log (victoryScreen.);
 		GameObject pausePanel = transform.Find("InGame/Pause Panel").gameObject;
 		NGUITools.SetActive(pausePanel, false);
 		UpdateDodgeCooldown (0);
@@ -301,12 +305,12 @@ public class GUIManager : MonoBehaviour {
 		
 	}
 
-	public void ShowVictoryScreen()
+	public void ShowVictoryScreen(int reward)
 	{
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , true);
 		GameObject victoryText = transform.Find("InGame/Victory Panel/Sprite/Poster/Win Text 2").gameObject;
-		victoryText.GetComponent<UILabel> ().text = "$ xxxx Cash Reward." ;
+		victoryText.GetComponent<UILabel> ().text = "$ "+ reward +" Cash Reward." ;
 		
 	}
 
@@ -353,6 +357,13 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (revolverBullets, true);
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, false);
+
+	}
+
+	public void ActivateDynamite()
+	{
+		GameObject dynamite = transform.Find("InGame/Weapon Information/Dynamite").gameObject;
+		NGUITools.SetActive (dynamite, true);
 
 	}
 

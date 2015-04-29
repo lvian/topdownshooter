@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour{
 
 	private int 		_index;
 	private bool		_autoStartNextWave;
+	private WaveScript	waveScript;
 	
 	IEnumerator Start (){
 		state = WavesState.Initialize;
@@ -95,7 +96,11 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Finish(){
-		GameManager.instance.Victory ();
+		//Get value from level wave
+		waveScript.LevelComplete ();
+		GameManager.instance.Victory (waveScript.levelReward);
+
+
 	}
 	
 	public int WavesCount{
@@ -116,6 +121,15 @@ public class WaveManager : MonoBehaviour{
 		}
 		set {
 			_autoStartNextWave = value;	
+		}
+	}
+
+	public WaveScript WaveScript {
+		get {
+			return waveScript;
+		}
+		set {
+			waveScript = value;
 		}
 	}
 }

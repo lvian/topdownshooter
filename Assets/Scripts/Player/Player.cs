@@ -92,7 +92,10 @@ public class Player : Humanoid {
 				
 				if(Input.GetKeyDown(KeyCode.Mouse1))
 				{
-					throwDynamite();
+					if(GameManager.instance.Upgrades.DynamiteUnlocked == 1)
+					{
+						throwDynamite();
+					}
 				}
 				
 				if(Input.GetKeyDown(KeyCode.Q))
