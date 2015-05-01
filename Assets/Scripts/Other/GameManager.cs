@@ -73,6 +73,12 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	public void NextLevel()
+	{
+		GUIManager.instance.RestartLoadScreen ();
+		GUIManager.instance.RestartWaveInformation ();
+		Application.LoadLevel (Application.loadedLevel + 1);
+	}
 
 	public void StartLevel()
 	{
@@ -111,12 +117,14 @@ public class GameManager : MonoBehaviour {
 		upgrades.Cash = (upgrades.Cash / 4) * 3;
 	}
 
-	public void Victory ()
+	public void Victory (int reward)
 	{
-		if(State != GameState.Paused)
+		if(State == GameState.Playing)
 		{
+			upgrades.Cash += reward;
 			State = GameState.Paused;
-			GUIManager.instance.ShowVictoryScreen ();
+			GUIManager.instance.ShowVictoryScreen (reward);
+			GUIManager.instance.InitializeLevels ();
 		}
 		
 	}

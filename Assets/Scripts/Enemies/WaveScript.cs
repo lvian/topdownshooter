@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class WaveScript : MonoBehaviour {
 	public    GameObject[] spawnPoints;
+	public int levelReward;
 	protected WaveManager  waveManager;
 	protected GameObject   waves;
 
@@ -18,5 +19,8 @@ public abstract class WaveScript : MonoBehaviour {
 		waveManager.Begin();
 		waveManager.spawnPoints = new System.Collections.Generic.List<GameObject>(spawnPoints);
 		waveManager.waves = new System.Collections.Generic.List<Wave>();
+		waveManager.WaveScript = this; 
 	}
+
+	public abstract void LevelComplete();
 }
