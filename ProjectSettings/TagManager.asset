@@ -10,6 +10,7 @@ TagManager:
   - Small Obstacle
   - GUI Camera
   - SpawnPoint
+  - Boss
   layers:
   - Default
   - TransparentFX

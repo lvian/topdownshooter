@@ -4,15 +4,9 @@ using System.Collections;
 public class BossIndicator : MonoBehaviour {
 	public GameObject boss;
 	public GameObject player;
-<<<<<<< HEAD
-	private Camera cCamera;
-	private Camera GUICamera;
-	private UISprite sprite;
-=======
 	public Camera cCamera;
 	public Camera GUICamera;
 	private GameObject sprite;
->>>>>>> ad96e1bad780cea9bf4600d272f7a1bd68a59fc1
 
 	// Use this for initialization
 	void Start () {
@@ -46,11 +40,7 @@ public class BossIndicator : MonoBehaviour {
 					topRight.x - bottomLeft.x,
 					topRight.y - bottomLeft.y);
 
-<<<<<<< HEAD
-				Vector3 bossPos = new Vector3(boss.transform.position.x, boss.transform.position.y, 0);
-=======
 				Vector3 bossPos = new Vector3(boss.transform.position.x, boss.transform.position.y, 0f);
->>>>>>> ad96e1bad780cea9bf4600d272f7a1bd68a59fc1
 
 				Vector3 newPos = new Vector3(
 					Mathf.Clamp(bossPos.x, cameraRect.xMin, cameraRect.xMax),
