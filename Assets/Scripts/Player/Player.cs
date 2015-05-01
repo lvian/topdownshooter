@@ -464,4 +464,13 @@ public class Player : Humanoid {
 	}
 	
 	#endregion
+
+	public int DynamiteAmount {
+		get {
+			return dynamiteAmount;
+		}
+		set {
+			dynamiteAmount = value;
+		}
+	}
 }

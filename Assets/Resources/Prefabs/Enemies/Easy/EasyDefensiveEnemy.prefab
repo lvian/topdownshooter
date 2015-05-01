@@ -217,10 +217,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
   - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
+  - {fileID: 174912, guid: 404827cad4d1e2a478bc3ce434ac2b03, type: 2}
   chance:
   - 50
+  - 15
   amount:
   - 20
+  - 0
 --- !u!114 &11424080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +252,7 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  maxShootingDistance: 8
+  maxShootingDistance: 7
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
   shootDelay: 0

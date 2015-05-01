@@ -18,7 +18,10 @@ public class Loot : MonoBehaviour {
 			if(sortedChance <= chance[i]){
 				int sortedAmount = GetAmount(amount[i]);
 				GameObject go = GameObject.Instantiate(item[i], transform.position, transform.rotation) as GameObject;
-				go.GetComponent<Bounty>().bountyAmount = sortedAmount;
+				if(sortedAmount > 0)
+				{
+					go.GetComponent<Bounty>().bountyAmount = sortedAmount;
+				}
 			}
 		}
 	}

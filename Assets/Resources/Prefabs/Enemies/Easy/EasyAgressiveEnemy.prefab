@@ -251,10 +251,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
   - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
+  - {fileID: 174912, guid: 404827cad4d1e2a478bc3ce434ac2b03, type: 2}
   chance:
   - 50
+  - 15
   amount:
   - 20
+  - 0
 --- !u!212 &21291972
 SpriteRenderer:
   m_ObjectHideFlags: 1

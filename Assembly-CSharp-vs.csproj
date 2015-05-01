@@ -188,6 +188,7 @@
      <Compile Include="Assets\Scripts\Enemies\AIScript.cs" />
      <Compile Include="Assets\Scripts\Enemies\AgressiveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\AgressiveEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\BossIndicator.cs" />
      <Compile Include="Assets\Scripts\Enemies\DefensiveBehaviour.cs" />
      <Compile Include="Assets\Scripts\Enemies\DefensiveEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy.cs" />
@@ -208,6 +209,8 @@
      <Compile Include="Assets\Scripts\Levels\LevelTwoWaves.cs" />
      <Compile Include="Assets\Scripts\Other\BloodHit.cs" />
      <Compile Include="Assets\Scripts\Other\Bounty.cs" />
+     <Compile Include="Assets\Scripts\Other\BountyDynamite.cs" />
+     <Compile Include="Assets\Scripts\Other\BountyHealth.cs" />
      <Compile Include="Assets\Scripts\Other\CustomTimer.cs" />
      <Compile Include="Assets\Scripts\Other\CustomTooltip.cs" />
      <Compile Include="Assets\Scripts\Other\GUIManager.cs" />
