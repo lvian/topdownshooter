@@ -27,13 +27,21 @@ public abstract class Enemy : Humanoid{
 	public AudioClip enemyHit;
 	public GameObject bounty;
 	public float shootDelay;
+	public bool throwsDynamite;
+	public float dynamiteThrowInterval;
 
 	public EnemyState enemyState = EnemyState.Init;
 	public EnemyStance enemyStance = EnemyStance.Offensive;
 	public IEnemyBehaviour enemyBehaviour = new OffensiveBehaviour();
 
+	private float dynamiteThrowTimer;
+	public void Update()
+	{
+		dynamiteThrowTimer -= Time.deltaTime;
+	}
 
 	public IEnumerator Start () {
+		dynamiteThrowTimer = 0;
 		InitHumanoid();
 		while(true) {
 			if(GameManager.instance.State == GameManager.GameState.Playing){
@@ -124,4 +132,12 @@ public abstract class Enemy : Humanoid{
 
 	#endregion
 
+	public float DynamiteThrowTimer {
+		get {
+			return dynamiteThrowTimer;
+		}
+		set {
+			dynamiteThrowTimer = value;
+		}
+	}
 }

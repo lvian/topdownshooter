@@ -5,7 +5,8 @@ public class Dynamite : MonoBehaviour {
 
 	protected Vector3 destination;
 	protected int damage;
-	protected float fuseTimer, maxDistance ,traveledDistance ;
+	protected float maxDistance ,traveledDistance ;
+	public float fuseTimer;
 	private Timer timer;
 	private PlayerCamera playerCamera;
 	private bool exploded;
@@ -14,7 +15,6 @@ public class Dynamite : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		fuseTimer = 5f;
 		damage = 4;
 		maxDistance = 5f;
 		traveledDistance = 0;

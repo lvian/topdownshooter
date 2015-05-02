@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc126e560014c1e44a706daf3cd56940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuseTimer: 3
   explo: {fileID: 19814780}
   explo2: {fileID: 19890878}
   fuse: {fileID: 19838030}

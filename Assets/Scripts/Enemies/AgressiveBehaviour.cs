@@ -150,7 +150,16 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 		if(IsElapsed(Enemy.EnemyState.Attacking)){
 			float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
 			if(CanSeeTarget(enemy.transform, player.transform) && distance < enemy.maxShootingDistance){
-				enemy.currentWeapon.Fire();
+				if(enemy.throwsDynamite == true && enemy.DynamiteThrowTimer <= 0)
+				{
+					//throws dynamite
+					GameObject dyna = (GameObject) GameObject.Instantiate(Resources.Load("Prefabs/Weapons/Dynamite/Dynamite") , enemy.transform.position, enemy.transform.rotation);  
+					dyna.GetComponent<Dynamite> ().Destination = player.transform.position;
+					enemy.DynamiteThrowTimer = enemy.dynamiteThrowInterval;
+				}
+				else {
+					enemy.currentWeapon.Fire();
+				}
 			}
 		}
 		enemy.enemyState = Enemy.EnemyState.Searching;
