@@ -15,9 +15,8 @@ public class MicFollowPlayer : MonoBehaviour {
 	void Update () {
 		if(player)
 		{
-			reloadBarPos = Camera.main.WorldToViewportPoint(new Vector3(player.transform.position.x,player.transform.position.y, player.transform.position.z) );
-			reloadBarPos = GUICamera.ViewportToWorldPoint (reloadBarPos);
-			transform.localPosition = transform.parent.InverseTransformPoint(reloadBarPos);
+
+			transform.position = player.transform.position;
 			transform.rotation = player.transform.rotation;
 		} else{
 			player = GameObject.FindGameObjectWithTag ("Player");
