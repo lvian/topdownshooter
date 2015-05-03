@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407632}
   m_Layer: 8
-  m_Name: EasyOffensiveEnemy
+  m_Name: EasyOffensiveEnemyDynamite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,8 +256,8 @@ MonoBehaviour:
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
   shootDelay: 2
-  throwsDynamite: 0
-  dynamiteThrowInterval: 5
+  throwsDynamite: 1
+  dynamiteThrowInterval: 7
   enemyState: 0
   enemyStance: 0
 --- !u!212 &21213732

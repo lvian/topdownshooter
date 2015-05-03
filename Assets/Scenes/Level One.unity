@@ -2533,6 +2533,7 @@ MonoBehaviour:
   levelReward: 500
   allEnemies:
   - {fileID: 104626, guid: fbcfcb6ad2f719840855cb0e815a3939, type: 2}
+  - {fileID: 104626, guid: 6987751329c67064e8f2f849ac6c9a83, type: 2}
 --- !u!4 &831853477
 Transform:
   m_ObjectHideFlags: 0

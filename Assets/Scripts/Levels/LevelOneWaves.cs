@@ -74,8 +74,10 @@ public class LevelOneWaves : WaveScript {
 		bossWaveScript.units = new WaveUnit[] {
 			new WaveUnit(allEnemies[0], 0, 6, 0, 2),
 			new WaveUnit(allEnemies[0], 3, 6, 1, 2),
-			new WaveUnit(allEnemies[0], 12, 4, 0, 2),
-			new WaveUnit(allEnemies[0], 12, 6, 1, 2),
+			new WaveUnit(allEnemies[0], 12, 4, 0, 1),
+			new WaveUnit(allEnemies[0], 12, 6, 1, 1),
+			new WaveUnit(allEnemies[1], 12, 4, 0, 1),
+			new WaveUnit(allEnemies[1], 12, 6, 1, 1),
 		};
 		bossWaveScript.nextWaveDelay = 22f;
 		waveManager.waves.Add(bossWaveScript);
