@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour {
 		else if(instance != this)
 			Destroy(gameObject);
 		DontDestroyOnLoad (this);
-		//Cursor.SetCursor(Resources.Load("Sprites/MainCursor", typeof(Texture2D)) as Texture2D, Vector2.zero, CursorMode.Auto );
 	
 	}
 
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour {
 		State = GameState.Menu;
 		upgrades = new Upgrades();
 		Cursor.visible = false;
-		Localization.language = "Portuguese";
+		Localization.language = "English";
 	}
 
 	public void GameStart()
@@ -51,6 +50,7 @@ public class GameManager : MonoBehaviour {
 		}
 		if(UIButton.current.name == "Level Three")
 		{
+			//Change levels to the right values later
 			Application.LoadLevel (3);
 		}
 		if(UIButton.current.name == "Level Four")

@@ -257,7 +257,7 @@ MonoBehaviour:
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
   shootDelay: 2
   throwsDynamite: 1
-  dynamiteThrowInterval: 7
+  dynamiteThrowInterval: 9
   enemyState: 0
   enemyStance: 0
 --- !u!212 &21213732

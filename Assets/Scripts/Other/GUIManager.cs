@@ -20,8 +20,8 @@ public class GUIManager : MonoBehaviour {
 	void Start () {
 		//Uncomment to delete upgrades and level
 		PlayerPrefs.DeleteAll ();
-		//GameManager.instance.Upgrades.Cash += 1500;
-		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		GameManager.instance.Upgrades.Cash += 1500;
+		GameManager.instance.Upgrades.levelsUnlocked = 5;
 		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		//GameManager.instance.Upgrades.RifleUnlocked = 1;
 		messageWindow = transform.Find("Message Panel/Message").gameObject;

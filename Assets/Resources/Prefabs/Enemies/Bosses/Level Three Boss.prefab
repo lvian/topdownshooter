@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 415698}
   m_Layer: 8
-  m_Name: EasyDefensiveEnemy
+  m_Name: Level Three Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,11 +235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5ba5567f6aac74392b072d5ad00a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 2
-  armor: 0
-  speed: 1
+  hitPoints: 4
+  armor: 2
+  speed: 1.5
   weapons:
-  - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
+  - {fileID: 11436716, guid: 86d414cbcc93bba42807344e7e5aa595, type: 2}
   currentWeapon: {fileID: 0}
   playerHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   deathSounds:
@@ -252,10 +252,10 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  maxShootingDistance: 9
+  maxShootingDistance: 15
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
-  shootDelay: 2
+  shootDelay: 0
   throwsDynamite: 0
   dynamiteThrowInterval: 0
   enemyState: 0

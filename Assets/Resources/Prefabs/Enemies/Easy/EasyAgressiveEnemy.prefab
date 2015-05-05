@@ -215,9 +215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acea7b553fcbc934698039ea048c132a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 0
+  hitPoints: 2
   armor: 0
-  speed: 0
+  speed: 1.29999995
   weapons:
   - {fileID: 11458150, guid: 78716932b1dab8541944c08717fb6a07, type: 2}
   currentWeapon: {fileID: 0}
@@ -232,10 +232,12 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  maxShootingDistance: 6
+  maxShootingDistance: 7
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
-  shootDelay: 0
+  shootDelay: 2
+  throwsDynamite: 0
+  dynamiteThrowInterval: 0
   enemyState: 0
   enemyStance: 2
 --- !u!114 &11429126

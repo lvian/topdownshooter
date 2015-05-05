@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 2
   armor: 0
-  speed: 1
+  speed: 1.10000002
   weapons:
   - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
   currentWeapon: {fileID: 0}
@@ -252,7 +252,7 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  maxShootingDistance: 9
+  maxShootingDistance: 8
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 110666, guid: 5964c24761bbbdf4ab7661cef3bdd0d4, type: 2}
   shootDelay: 2
