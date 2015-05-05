@@ -4,14 +4,20 @@ using System.Collections.Generic;
 
 
 public class Wave : MonoBehaviour {
-	
+	public enum WaveMode {
+		TimeBased,
+		EnemyDeathBased
+	}
+
 	public WaveUnit[] 	units;
 	public WaveManager	manager;
+	public WaveMode		waveMode;
 	public float		nextWaveDelay;
 	public bool 		started;		// defined by WaveManager script
 	public bool			last;
 
 	private bool		done;
+	private bool		doneFirstSpawn;
 	private int 		numberOfSpawns;
 	private int			spawnsRemaining;
 	private Timer		timer;
@@ -22,9 +28,7 @@ public class Wave : MonoBehaviour {
 	private Transform player;
 	
 	void Awake(){
-		done = started = last = false;
-		//timerNumber = GameObject.Find("Wave Timer Number").GetComponent<UILabel>();
-		//timerLabel = GameObject.Find("Wave Timer Label").GetComponent<UILabel>();
+		done = started = last = doneFirstSpawn = false;
 		player = GameObject.Find("Player").GetComponent<Player>().transform;
 	}
 	
@@ -37,7 +41,6 @@ public class Wave : MonoBehaviour {
 			return;
 		if(timer != null){
 			if(!last){
-				//timerNumber.text = Mathf.RoundToInt(timer.RemainingTime) + " s";
 				GUIManager.instance.UpdateWaveTimer(Mathf.RoundToInt(timer.RemainingTime));
 			}
 			else{
@@ -59,18 +62,16 @@ public class Wave : MonoBehaviour {
 					}
 					unit.unitCount++;
 					unit.delay.Reset();
+					doneFirstSpawn = true;
 				}
 			}
 			tmpDone = (tmpDone && unit.Done);
 		}
 		done = tmpDone;
-		if(done){
-
-		}
 	}
 	
 	public void initUnits(){
-		done = started = false;
+		done = started = doneFirstSpawn = false;
 		foreach(WaveUnit unit in units){
 			unit.unitCount 		= 0;
 			unit.cooldown.Reset();
@@ -89,7 +90,10 @@ public class Wave : MonoBehaviour {
 			if(duration > longest)
 				longest = duration;
 		}
-		timer = new Timer(longest + nextWaveDelay);
+		if(waveMode == WaveMode.TimeBased)
+			timer = new Timer(longest + nextWaveDelay);
+		else
+			timer = null;
 		spawnsRemaining = numberOfSpawns;
 	}
 	
@@ -138,7 +142,23 @@ public class Wave : MonoBehaviour {
 
 	public bool Done {
 		get {
-			return (done && timer.IsElapsed);
+			switch(waveMode){
+			case WaveMode.TimeBased:
+				Debug.Log("TimeBased(" + transform.name + ") = (done && timer.IsElapsed) = (" + done + " && " + timer.IsElapsed + ") = " + (done && timer.IsElapsed));
+				return (done && timer.IsElapsed );
+			case WaveMode.EnemyDeathBased:
+				Debug.Log("DeathBased(" + transform.name + ") = (done && AllDead && doneFirstSpawn) = (" + done + " && " + AllDead + " && " + doneFirstSpawn + ") = " + (done && AllDead && doneFirstSpawn));
+				return (done && AllDead && doneFirstSpawn);
+			default:
+				Debug.LogError("waveMode not defined");
+				return false;
+			}
+		}
+	}
+
+	public bool AllDead {
+		get {
+			return (transform.childCount == 0 && started);
 		}
 	}
 }

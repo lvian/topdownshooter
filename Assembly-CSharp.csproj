@@ -209,6 +209,7 @@
      <Compile Include="Assets\Scripts\Entities\Humanoid.cs" />
      <Compile Include="Assets\Scripts\Levels\LevelOneWaves.cs" />
      <Compile Include="Assets\Scripts\Levels\LevelTwoWaves.cs" />
+     <Compile Include="Assets\Scripts\Levels\TestWaves.cs" />
      <Compile Include="Assets\Scripts\Other\BloodHit.cs" />
      <Compile Include="Assets\Scripts\Other\Bounty.cs" />
      <Compile Include="Assets\Scripts\Other\BountyDynamite.cs" />

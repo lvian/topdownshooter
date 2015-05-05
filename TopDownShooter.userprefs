@@ -1,12 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\AIScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Levels\TestWaves.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\StaticBehaviour.cs" Line="51" Column="21" />
-      <File FileName="Assets\Scripts\Enemies\StaticEnemy.cs" Line="6" Column="39" />
-      <File FileName="Assets\Scripts\Enemies\OffensiveBehaviour.cs" Line="232" Column="12" />
-      <File FileName="Assets\Scripts\Enemies\OffensiveEnemy.cs" Line="8" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\AIScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\WaveManager.cs" Line="82" Column="3" />
+      <File FileName="Assets\Scripts\Enemies\WaveUnit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Wave.cs" Line="148" Column="15" />
+      <File FileName="Assets\Scripts\Levels\TestWaves.cs" Line="43" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

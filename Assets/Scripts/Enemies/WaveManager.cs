@@ -62,18 +62,13 @@ public class WaveManager : MonoBehaviour{
 		if(_index >= waves.Count){
 			bool allDead = true;
 			foreach(Wave w in waves){
-				//Debug.Log(w.transform.name + " has " + w.transform.childCount + " children!");
-				if(w.transform.childCount > 0){
-					allDead = false;
-				}
+				allDead = allDead && w.AllDead;
 			}
-			//Debug.Log("All dead? " + allDead);
 			if(allDead)
 				state = WavesState.Finished;
 			return;	
 		}
 		else{
-			//Debug.Log(_index + " XXX " + waves.Count + "!");
 			Wave current = waves[_index];
 			current.initUnits();
 			current.started = true;
@@ -84,7 +79,7 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Wait(){
-		//Debug.Log("Wait() called");
+		Debug.Log("Wait() called");
 		if (!waves[_index].last) {
 			GUIManager.instance.UpdateWaveCounter (_index + 1, WavesCount);
 		} else {
