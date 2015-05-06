@@ -23,6 +23,7 @@ public abstract class Enemy : Humanoid{
 
 	public Player player;
 	public float rotationSpeed;
+	public float minDistanceFromTarget;
 	public float maxShootingDistance;
 	public AudioClip enemyHit;
 	public GameObject bounty;

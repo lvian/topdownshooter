@@ -52,7 +52,7 @@ public class AgressiveBehaviour : AIScript, IEnemyBehaviour {
 	public void Move(){
 		float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
 		LayerMask layerMask = ((1 << 10) | (1 << 9));
-		if(distance > 4) {
+		if(distance > enemy.minDistanceFromTarget) {
 			if(goBackTimer != null){
 				if(goBackTimer.IsElapsed){
 					goBack = !goBack;
