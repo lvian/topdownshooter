@@ -220,7 +220,7 @@ MonoBehaviour:
   - {fileID: 174912, guid: 404827cad4d1e2a478bc3ce434ac2b03, type: 2}
   chance:
   - 50
-  - 15
+  - 100
   amount:
   - 20
   - 0

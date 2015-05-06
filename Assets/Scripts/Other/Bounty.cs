@@ -5,6 +5,7 @@ public class Bounty : MonoBehaviour {
 
 	public int bountyAmount;
 	public AudioClip bountySound;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,11 +13,12 @@ public class Bounty : MonoBehaviour {
 		{
 			bountyAmount = (int) (bountyAmount * 1.25f); 
 		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -31,5 +33,4 @@ public class Bounty : MonoBehaviour {
 			GameObject.Destroy(transform.gameObject, bountySound.length);
 		}
 	}
-
 }
