@@ -126,6 +126,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 8300000, guid: d2b8481851727f54997d7fcd902d37dc, type: 3}
+  fades: 1
+  timeToLive: 10
+  fadeTime: 2
 --- !u!114 &11473978
 MonoBehaviour:
   m_ObjectHideFlags: 1
