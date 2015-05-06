@@ -3527,19 +3527,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 831853475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5a48b88b5a9cf45b97af4fedac7e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 75a3af271c5b41545b85f700937b2cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 1927406405}
-  - {fileID: 742042619}
-  - {fileID: 764459631}
-  - {fileID: 1209810396}
-  levelReward: 1000
-  allEnemies:
-  - {fileID: 104626, guid: fbcfcb6ad2f719840855cb0e815a3939, type: 2}
-  - {fileID: 104626, guid: 6987751329c67064e8f2f849ac6c9a83, type: 2}
-  - {fileID: 186218, guid: 7218052eac1f6194fb3340126f9df455, type: 2}
+  spawnPoints: []
+  levelReward: 2500
+  allEnemies: []
 --- !u!4 &831853477
 Transform:
   m_ObjectHideFlags: 0

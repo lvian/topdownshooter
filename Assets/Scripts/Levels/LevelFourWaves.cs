@@ -17,10 +17,10 @@ public class LevelFourWaves : WaveScript {
 		Wave wave1Script = wave1.GetComponent<Wave>();
 		wave1Script.units = new WaveUnit[] {
 			new WaveUnit(allEnemies[0], 0, 0, 0, 1),
-			//new WaveUnit(allEnemies[1], 2f, 10, 1, 1),
-			//new WaveUnit(allEnemies[2], 2f, 20, 2, 1),
+			new WaveUnit(allEnemies[0], 0, 0, 1, 1),
+
 		};
-		wave1Script.nextWaveDelay = 10f;
+		wave1Script.nextWaveDelay = 15f;
 		waveManager.waves.Add(wave1Script);
 	
 		GameObject wave2 = new GameObject("wave2");
@@ -28,8 +28,8 @@ public class LevelFourWaves : WaveScript {
 		wave2.AddComponent<Wave>();
 		Wave wave2Script = wave2.GetComponent<Wave>();
 		wave2Script.units = new WaveUnit[] {
-						new WaveUnit(allEnemies[0],  0, 0, 0, 1),
-						new WaveUnit(allEnemies[1],  0, 0, 1, 1),
+				new WaveUnit(allEnemies[0], 0, 0, 1, 1),
+				new WaveUnit(allEnemies[0], 0, 0, 2, 1),
 		};
 
 		wave2Script.nextWaveDelay = 15f;
@@ -40,10 +40,11 @@ public class LevelFourWaves : WaveScript {
 		wave3.AddComponent<Wave>();
 		Wave wave3Script = wave3.GetComponent<Wave>();
 		wave3Script.units = new WaveUnit[] {
-				new WaveUnit(allEnemies[1],  0, 0, 0, 1),
-				new WaveUnit(allEnemies[0],  1, 0, 1, 2),
+				new WaveUnit(allEnemies[1], 0, 0, 0, 1),
+				new WaveUnit(allEnemies[0], 0, 0, 2, 1),
+				new WaveUnit(allEnemies[2], 0, 0, 3, 1),
 			};
-		wave3Script.nextWaveDelay = 15f;
+		wave3Script.nextWaveDelay = 20f;
 		waveManager.waves.Add(wave3Script);
 
 			GameObject wave4 = new GameObject("wave4");
@@ -51,10 +52,12 @@ public class LevelFourWaves : WaveScript {
 		wave4.AddComponent<Wave>();
 		Wave wave4Script = wave4.GetComponent<Wave>();
 		wave4Script.units = new WaveUnit[] {
-				new WaveUnit(allEnemies[1], 1, 0, 1, 2),
-				new WaveUnit(allEnemies[1], 1, 0, 2, 2),
+				new WaveUnit(allEnemies[0], 5, 0, 0, 2),
+				new WaveUnit(allEnemies[1], 0, 0, 1, 1),
+				new WaveUnit(allEnemies[2], 0, 0, 2, 1),
+				new WaveUnit(allEnemies[3], 0, 0, 4, 1),
 			};
-		wave4Script.nextWaveDelay = 20f;
+		wave4Script.nextWaveDelay = 25f;
 		waveManager.waves.Add(wave4Script);
 
 	
@@ -64,10 +67,12 @@ public class LevelFourWaves : WaveScript {
 		wave5.AddComponent<Wave>();
 		Wave wave5Script = wave5.GetComponent<Wave>();
 		wave5Script.units = new WaveUnit[] {
-				new WaveUnit(allEnemies[1], 2f, 0, 1, 2),
-				new WaveUnit(allEnemies[1], 2f, 0, 2, 3),
+				new WaveUnit(allEnemies[1], 5, 0, 3, 1),
+				new WaveUnit(allEnemies[0], 5, 0, 1, 2),
+				new WaveUnit(allEnemies[0], 5, 0, 2, 2),
+				new WaveUnit(allEnemies[1], 0, 0, 4, 1),
 			};
-		wave5Script.nextWaveDelay = 20f;
+		wave5Script.nextWaveDelay = 25f;
 		waveManager.waves.Add(wave5Script);
 
 	
@@ -76,10 +81,8 @@ public class LevelFourWaves : WaveScript {
 		bossWave.AddComponent<Wave>();
 		Wave bossWaveScript = bossWave.GetComponent<Wave>();
 		bossWaveScript.units = new WaveUnit[] {
-				new WaveUnit(allEnemies[2], 2f, 0, 3, 1),
-				new WaveUnit(allEnemies[1], 2f, 0, 0, 1),
-				new WaveUnit(allEnemies[1], 2f, 0, 1, 1),
-				new WaveUnit(allEnemies[1], 2f, 0, 2, 1),
+				new WaveUnit(allEnemies[5], 0, 0, 4, 1),
+				new WaveUnit(allEnemies[4], 0, 0, 3, 1),
 			};
 		bossWaveScript.nextWaveDelay = 30f;
 		waveManager.waves.Add(bossWaveScript);
