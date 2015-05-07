@@ -43,7 +43,12 @@ public class Player : Humanoid {
 		isMovingX = false;
 		isMovingY = false;
 		playerState = PlayerState.Idle;
-		dynamiteAmount = 1;
+		if (GameManager.instance.Upgrades.ExtraDynamite == 1) {
+			dynamiteAmount = 2;
+		}else
+		{
+			dynamiteAmount = 1;
+		}
 		spawnWeapons ();
 		dustEmitter = transform.FindChild("DustEmmiter").GetComponent<ParticleSystem>();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");

@@ -95,7 +95,7 @@ public class LevelFourWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		GameManager.instance.Upgrades.ExtraDynamite = 1;
 		GameManager.instance.Upgrades.levelsUnlocked += 1;
 	}
 	#endregion

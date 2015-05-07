@@ -320,7 +320,41 @@ public class GUIManager : MonoBehaviour {
 		loadScreen.transform.Find("LoadImage/Continue").GetComponent<UIButton>().isEnabled = false;
 	}
 
+	public void HideLevelDescription()
+	{
+		NGUITools.SetActiveChildren(loadScreen.transform.Find("LoadImage/Sprite").gameObject, false);
+		loadScreen.transform.Find("LoadImage/Sprite").gameObject.SetActive(true);
+	}
+
+	public void LevelOneDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level One").gameObject, true);
+	}
+	public void LevelTwoDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Two").gameObject, true);
+	}
+	public void LevelThreeDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Three").gameObject, true);
+	}
+	public void LevelFourDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Four").gameObject, true);
+	}
+	public void LevelFiveDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Five").gameObject, true);
+	}
+	public void LevelEndlessDescription( ) {
+		HideLevelDescription ();
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Endless").gameObject, true);
+	}
+
+
+
 	public void BeforeLoadMenu( ) {
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite").gameObject, false);
 		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Continue").gameObject, false);
 	}
 

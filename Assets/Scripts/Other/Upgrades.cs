@@ -163,6 +163,16 @@ public class Upgrades {
 		}
 	}
 
+	public int ExtraDynamite {
+		get {
+			return PlayerPrefs.GetInt("ExtraDynamite");
+		}
+		set {
+			PlayerPrefs.SetInt("ExtraDynamite", value);
+		}
+	}
+
+
 
 	//Shotgun Upgrades 
 

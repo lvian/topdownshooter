@@ -41,27 +41,32 @@ public class GameManager : MonoBehaviour {
 
 		if(UIButton.current.name == "Level One")
 		{
+			GUIManager.instance.LevelOneDescription();
 			Application.LoadLevel (1);
 		}
 		if(UIButton.current.name == "Level Two")
 		{
+			GUIManager.instance.LevelTwoDescription();
 			Application.LoadLevel (2);
 		}
 		if(UIButton.current.name == "Level Three")
 		{
-			//Change levels to the right values later
+			GUIManager.instance.LevelThreeDescription();
 			Application.LoadLevel (3);
 		}
 		if(UIButton.current.name == "Level Four")
 		{
+			GUIManager.instance.LevelFourDescription();
 			Application.LoadLevel (4);
 		}
 		if(UIButton.current.name == "Level Five")
 		{
+			GUIManager.instance.LevelFiveDescription();
 			Application.LoadLevel (5);
 		}
 		if(UIButton.current.name == "Level Endless")
 		{
+			GUIManager.instance.LevelEndlessDescription();
 			Application.LoadLevel (6);
 		}
 

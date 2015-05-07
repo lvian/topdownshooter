@@ -10,6 +10,7 @@ public class LevelEndlessWaves : WaveScript {
 
 		//public WaveUnit(GameObject unit, float delay, float cooldown, int lane, int maxamount){
 
+		//Endless will have 16 waves, last boss weats a mariarti hat
 		//waveManager = waves.GetComponentInChildren<WaveManager>();
 		GameObject wave1 = new GameObject("wave1");
 		wave1.transform.parent = waves.transform;
@@ -93,8 +94,8 @@ public class LevelEndlessWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+		//GameManager.instance.Upgrades.levelsUnlocked += 1;
 	}
 	#endregion
 }
