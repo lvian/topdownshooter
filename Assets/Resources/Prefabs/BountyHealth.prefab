@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 8300000, guid: 29c50bd7546f6a544aa077c98af351ba, type: 3}
   fades: 1
-  timeToLive: 2
+  timeToLive: 10
   fadeTime: 2
 --- !u!212 &21248876
 SpriteRenderer:

@@ -131,6 +131,14 @@ public class Player : Humanoid {
 						changeWeapons(2);
 					}
 				}
+
+				if(Input.GetKeyDown(KeyCode.Alpha4))
+				{
+					if(GameManager.instance.Upgrades.DualRevolverUnlocked == 1)
+					{
+						changeWeapons(3);
+					}
+				}
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
 					if(dodgeTimer <= 0)
@@ -334,6 +342,22 @@ public class Player : Humanoid {
 					availableWeapons[key].weaponMoveSpeed = 1.1f;
 					availableWeapons[key].rotationSpeed = 1.1f;
 				}
+			}
+
+			if(availableWeapons[key].name == "Dual Revolver(Clone)")
+			{
+				availableWeapons[key].coneBase.gameObject.SetActive(true);
+				DualRevolver dr = (DualRevolver) availableWeapons[key];
+				dr.coneBaseLeft.gameObject.SetActive(true);
+				availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =  Resources.Load("Sprites/15 Cone", typeof(Sprite)) as Sprite;
+				dr.coneBaseLeft.GetComponent<SpriteRenderer>().sprite =  Resources.Load("Sprites/15 Cone", typeof(Sprite)) as Sprite;
+				if(GameManager.instance.Upgrades.RevolverCone == 1)
+				{  
+					availableWeapons[key].bulletDeviationAngle = availableWeapons[key].bulletDeviationAngle / 2 ;
+					availableWeapons[key].coneBase.GetComponent<SpriteRenderer>().sprite =  Resources.Load("Sprites/5 Cone", typeof(Sprite)) as Sprite;
+					dr.coneBaseLeft.GetComponent<SpriteRenderer>().sprite =  Resources.Load("Sprites/5 Cone", typeof(Sprite)) as Sprite;
+				}
+
 			}
 
 			

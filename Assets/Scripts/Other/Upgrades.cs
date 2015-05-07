@@ -223,6 +223,18 @@ public class Upgrades {
 		}
 	}
 
+	//Dual Revolver Upgrades 
+	
+	public int DualRevolverUnlocked {
+		get {
+			return PlayerPrefs.GetInt("DualRevolverUnlocked");
+		}
+		set {
+			PlayerPrefs.SetInt("DualRevolverUnlocked", value);
+		}
+	}
+
+
 	// Levels Unlocked
 	public int levelsUnlocked {
 		get {

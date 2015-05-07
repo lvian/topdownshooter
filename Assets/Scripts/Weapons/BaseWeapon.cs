@@ -78,11 +78,11 @@ public abstract class BaseWeapon : MonoBehaviour {
 		}
 	}
 
-	protected IEnumerator muzzleEffect()
+	protected IEnumerator muzzleEffect(GameObject mfe)
 	{
-		muzzleFlashEffect.SetActive (true);
+		mfe.SetActive (true);
 		yield return new WaitForSeconds (0.2f);
-		muzzleFlashEffect.SetActive (false);
+		mfe.SetActive (false);
 
 	}
 

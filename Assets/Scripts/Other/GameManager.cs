@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour {
 	private int playerCash;
 
 	private Upgrades upgrades;
-	private Vector2 mouseOffset = new Vector2(16,16);
 
 	void Awake () {
 		if(instance == null)
@@ -154,11 +153,9 @@ public class GameManager : MonoBehaviour {
 			if(value == GameState.Playing )
 			{
 				GUIManager.instance.ChangeCursor(false);
-				//Cursor.SetCursor(Resources.Load("Sprites/PlayCursor", typeof(Texture2D)) as Texture2D, mouseOffset, CursorMode.Auto );
 			} else 
 			{
 				GUIManager.instance.ChangeCursor(true);
-				//Cursor.SetCursor(Resources.Load("Sprites/MainCursor", typeof(Texture2D)) as Texture2D, Vector2.zero, CursorMode.Auto );
 			} 
 		}
 	}

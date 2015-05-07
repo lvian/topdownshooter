@@ -8,7 +8,6 @@ public class MicFollowPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		GUICamera =(Camera) GameObject.FindGameObjectWithTag ("GUI Camera").GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame

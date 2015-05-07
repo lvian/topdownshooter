@@ -2490,7 +2490,7 @@ MonoBehaviour:
   - {fileID: 764459631}
   levelReward: 500
   allEnemies:
-  - {fileID: 104626, guid: fbcfcb6ad2f719840855cb0e815a3939, type: 2}
+  - {fileID: 104626, guid: 1ce0b23109c9800498b5e8dab73c8a2b, type: 2}
   - {fileID: 104626, guid: 6987751329c67064e8f2f849ac6c9a83, type: 2}
 --- !u!4 &831853477
 Transform:
@@ -2663,7 +2663,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &890568175
 Transform:
   m_PrefabParentObject: {fileID: 416600, guid: 31a2e308f9119fb4e9a60d42f5662a4f, type: 2}
@@ -3400,7 +3400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &1105346636
 Transform:
   m_PrefabParentObject: {fileID: 427366, guid: 7202b05c7ccaf27468ed3788005ecf37, type: 2}

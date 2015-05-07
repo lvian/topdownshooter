@@ -81,7 +81,6 @@ public class LevelFourWaves : WaveScript {
 		bossWave.AddComponent<Wave>();
 		Wave bossWaveScript = bossWave.GetComponent<Wave>();
 		bossWaveScript.units = new WaveUnit[] {
-				new WaveUnit(allEnemies[5], 0, 0, 4, 1),
 				new WaveUnit(allEnemies[4], 0, 0, 3, 1),
 			};
 		bossWaveScript.nextWaveDelay = 30f;

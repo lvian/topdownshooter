@@ -22,7 +22,7 @@ public class Revolver : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						audioSource.PlayOneShot(shotSound);
 						GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -49,10 +49,11 @@ public class Revolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						GameObject bullet = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation);
+						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						lastShot = 0;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						amountOfBullets --;
 						audioSource.PlayOneShot(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();

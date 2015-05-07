@@ -27,7 +27,7 @@ public class Rifle : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						audioSource.PlayOneShot(shotSound);
 						GUIManager.instance.RifleBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -56,10 +56,11 @@ public class Rifle : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RifleBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						GameObject bullet = (GameObject)  GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RifleBullet") , muzzle.transform.position , muzzle.transform.rotation); 
+						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						lastShot = 0;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						amountOfBullets --;
 						audioSource.PlayOneShot(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();

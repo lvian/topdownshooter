@@ -24,6 +24,7 @@ public class GUIManager : MonoBehaviour {
 		GameManager.instance.Upgrades.levelsUnlocked = 5;
 		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		//GameManager.instance.Upgrades.RifleUnlocked = 1;
+		GameManager.instance.Upgrades.DualRevolverUnlocked = 1;
 		messageWindow = transform.Find("Message Panel/Message").gameObject;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;

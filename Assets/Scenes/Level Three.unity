@@ -3769,10 +3769,10 @@ MonoBehaviour:
   - {fileID: 1209810396}
   levelReward: 1500
   allEnemies:
-  - {fileID: 104626, guid: fbcfcb6ad2f719840855cb0e815a3939, type: 2}
+  - {fileID: 104626, guid: 1ce0b23109c9800498b5e8dab73c8a2b, type: 2}
   - {fileID: 104626, guid: 6987751329c67064e8f2f849ac6c9a83, type: 2}
   - {fileID: 186218, guid: f1b38c690125c164e930594ac142bb9b, type: 2}
-  - {fileID: 170658, guid: a0e697f82028a5a4fac7be93769f222e, type: 2}
+  - {fileID: 170658, guid: 0b73cb2e0cada934e9be37d00d4b623b, type: 2}
 --- !u!4 &831853477
 Transform:
   m_ObjectHideFlags: 0

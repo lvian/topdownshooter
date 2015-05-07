@@ -26,7 +26,7 @@ public class Shotgun : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						audioSource.PlayOneShot(shotSound);
 						GUIManager.instance.ShotgunBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -62,7 +62,7 @@ public class Shotgun : BaseWeapon {
 						anim.SetTrigger("Attack");
 						amountOfBullets --;
 						audioSource.PlayOneShot(shotSound);
-						StartCoroutine(muzzleEffect());
+						StartCoroutine(muzzleEffect(muzzleFlashEffect));
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						//bulletsLabelNumber.GetComponent<UILabel>().text = AmountOfBullets.ToString();
 					}
