@@ -7,7 +7,7 @@ public class Loot : MonoBehaviour {
 	public List<float> chance;
 	public List<string> amount;
 
-	private float offset = 1f;
+	private float offset = .1f;
 
 	public void SpawnLoot(){
 		//Debug.Log("Loot, bitch!");
@@ -19,12 +19,14 @@ public class Loot : MonoBehaviour {
 			float sortedChance = Random.Range(0f,100f);
 			if(sortedChance <= chance[i]){
 				int sortedAmount = GetAmount(amount[i]);
-				Vector3 pos = new Vector3(
-					transform.position.x + (Random.Range(-offset,offset)),
-					transform.position.x + (Random.Range(-offset,offset)),
+				Vector3 offsetPos = new Vector3(
+					Random.Range(-offset,offset),
+					Random.Range(-offset,offset),
 					0
 				);
-				GameObject go = GameObject.Instantiate(item[i], pos, transform.rotation) as GameObject;
+				GameObject go = GameObject.Instantiate(item[i], transform.position, transform.rotation) as GameObject;
+				//Debug.Log(transform.position + " " + offsetPos);
+				go.transform.Translate(offsetPos);
 				if(sortedAmount > 0)
 				{
 					go.GetComponent<Bounty>().bountyAmount = sortedAmount;

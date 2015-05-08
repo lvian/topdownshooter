@@ -19,17 +19,17 @@ public class Dynamite : MonoBehaviour {
 		maxDistance = 5f;
 		traveledDistance = 0;
 		exploded = false;
-		playerCamera = Camera.main.GetComponent<PlayerCamera> ();
-		timer = new Timer (fuseTimer);
-		GetComponent<AudioSource> ().clip = fuseBurn ;
-		GetComponent<AudioSource> ().PlayOneShot (fuseStart);
+		playerCamera = Camera.main.GetComponent<PlayerCamera>();
+		timer = new Timer(fuseTimer);
+		GetComponent<AudioSource>().clip = fuseBurn;
+		GetComponent<AudioSource>().PlayOneShot (fuseStart);
 
-		GetComponent<AudioSource> ().Play () ;
+		GetComponent<AudioSource>().Play();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(GameManager.instance.State == GameManager.GameState.Playing )
+		if(GameManager.instance.State == GameManager.GameState.Playing)
 		{
 			if(Vector3.Distance(transform.position, destination) > 0 && traveledDistance <= maxDistance)
 			{
@@ -57,20 +57,21 @@ public class Dynamite : MonoBehaviour {
 	{
 		//Booooom
 		GetComponent<SpriteRenderer>().enabled = false;
-		GetComponent<AudioSource> ().Stop ();
-		GetComponent<AudioSource> ().PlayOneShot (explosion);
+		GetComponent<AudioSource>().Stop();
+		GetComponent<AudioSource>().PlayOneShot(explosion);
 		explo.Play();
 		explo2.Play();
-		fuse.Stop ();
-		sparks.Stop ();
-		Collider2D[] col =  Physics2D.OverlapCircleAll( transform.position ,  transform.GetComponent<CircleCollider2D> ().radius);
-		foreach(Collider2D c in col )
+		fuse.Stop();
+		sparks.Stop();
+		float radius = transform.GetComponent<CircleCollider2D>().radius;
+		Collider2D[] col =  Physics2D.OverlapCircleAll(transform.position, radius);
+		foreach(Collider2D c in col)
 		{
 			if(c.tag == "Enemy" || c.tag == "Player")
 			{
 				Humanoid h = (Humanoid) c.gameObject.GetComponent<Humanoid>();
-				
-				h.controlHitPoints(damage);
+				float distance = Vector3.Distance(transform.position, h.transform.position);
+				h.controlHitPoints(Mathf.CeilToInt(damage * (1/distance)));
 			}
 		}
 		playerCamera.shakeCamera(0.3f , 0.3f);

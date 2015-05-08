@@ -144,10 +144,10 @@ public class Wave : MonoBehaviour {
 		get {
 			switch(waveMode){
 			case WaveMode.TimeBased:
-				Debug.Log("TimeBased(" + transform.name + ") = (done && timer.IsElapsed) = (" + done + " && " + timer.IsElapsed + ") = " + (done && timer.IsElapsed));
+				//Debug.Log("TimeBased(" + transform.name + ") = (done && timer.IsElapsed) = (" + done + " && " + timer.IsElapsed + ") = " + (done && timer.IsElapsed));
 				return (done && timer.IsElapsed );
 			case WaveMode.EnemyDeathBased:
-				Debug.Log("DeathBased(" + transform.name + ") = (done && AllDead && doneFirstSpawn) = (" + done + " && " + AllDead + " && " + doneFirstSpawn + ") = " + (done && AllDead && doneFirstSpawn));
+				//Debug.Log("DeathBased(" + transform.name + ") = (done && AllDead && doneFirstSpawn) = (" + done + " && " + AllDead + " && " + doneFirstSpawn + ") = " + (done && AllDead && doneFirstSpawn));
 				return (done && AllDead && doneFirstSpawn);
 			default:
 				Debug.LogError("waveMode not defined");
