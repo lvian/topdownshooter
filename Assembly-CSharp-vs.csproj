@@ -46,6 +46,21 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\2DLightAssets\2DLight\DynamicLight.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\2.MultiplesLights\interface_manager.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\3.CoverExplosion(shockwave)\ReachedEventManager.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\3.CoverExplosion(shockwave)\bomb.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\9.ConeOfSight\SpawnCasters.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\TablaSenoCoseno.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\TimerClass.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\Helpers\interface_touch2.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\IntelliMesh\IntelliderCircle.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\IntelliMesh\IntelliderConvexxxxxxxx.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\IntelliMesh\SmoothShadowFollow.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\SetRenderQueue.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\restoreStone.cs" />
+     <Compile Include="Assets\2DLightAssets\Scripts\rotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -375,6 +390,8 @@
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 3.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\2DLightAssets\Shaders\Gradient-NoTexture-Radial-SingleColor-ToTransparent-RegularUV-AlphaBlend.shader" />
+     <None Include="Assets\2DLightAssets\Shaders\DepthMask.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (TextureClip).shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 1.shader" />
@@ -382,6 +399,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
+     <None Include="Assets\2DLightAssets\Shaders\OffsetShader.shader" />
      <None Include="Assets\SpritesAndBones\Shader\LinesColoredBlended.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
@@ -390,10 +408,12 @@
      <None Include="Assets\SpritesAndBones\license-attributions.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\2DLightAssets\Shaders\VertexColor.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\SpritesAndBones\Shader\Sprites-Skeleton-Diffuse.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\2DLightAssets\Shaders\Gradient-ZFighting.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />

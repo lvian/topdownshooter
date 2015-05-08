@@ -7412,8 +7412,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66150d73cc8c4f49a6973526ca0fca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
-  levelReward: 0
+  spawnPoints:
+  - {fileID: 1589266719}
+  - {fileID: 2053181261}
+  - {fileID: 222739320}
+  - {fileID: 939965514}
+  - {fileID: 1463305699}
+  - {fileID: 171318005}
+  - {fileID: 1747318164}
+  - {fileID: 1422712596}
+  levelReward: 5000
   allEnemies: []
 --- !u!4 &831853477
 Transform:

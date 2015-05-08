@@ -27,7 +27,7 @@ public class DualRevolver : BaseWeapon {
 							anim.SetTrigger("Attack Right");
 							StartCoroutine(muzzleEffect(muzzleFlashEffect));
 							audioSource.PlayOneShot(shotSound);
-							//GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
+							GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 							muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 							playerCamera.shakeCamera(0.1f , 0.05f);
 							leftRight = false;
@@ -40,7 +40,7 @@ public class DualRevolver : BaseWeapon {
 							anim.SetTrigger("Attack Left");
 							StartCoroutine(muzzleEffect(muzzleFlashEffectLeft));
 							audioSource.PlayOneShot(shotSound);
-							//GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
+							GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 							muzzleFireEffectLeft.GetComponent<ParticleSystem>().Play();
 							playerCamera.shakeCamera(0.1f , 0.05f);
 							leftRight = true;

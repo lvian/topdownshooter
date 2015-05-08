@@ -5,7 +5,7 @@ public class GUIManager : MonoBehaviour {
 
 	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu, victoryPanel, defeatPanel;
 	public AudioClip cashSound;
-	private GameObject revolverBullets, shotgunBullets, rifleBullets, messageWindow;
+	private GameObject revolverBullets, shotgunBullets, rifleBullets, dualRevolverBullets,messageWindow;
 	public static GUIManager instance = null;
 	private bool mainCursor;
 	void Awake () {
@@ -29,6 +29,7 @@ public class GUIManager : MonoBehaviour {
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
+		dualRevolverBullets = transform.Find("InGame/Weapon Information/Dual Revolver Bullets").gameObject;
 		InitializeGUI ();
 	}
 	
@@ -392,7 +393,32 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (revolverBullets, true);
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, false);
+		NGUITools.SetActive (dualRevolverBullets, false);
 
+	}
+
+	public void DualRevolverBullets(float bulletsLeft, float bulletsTotal)
+	{
+		GameObject revolverBullets = transform.Find("InGame/Weapon Information/Dual Revolver Bullets").gameObject;
+		
+		for(int x = (int)bulletsLeft; x < bulletsTotal ; x++)
+		{
+			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, false);
+		}
+		
+		for(int x = (int)bulletsLeft -  1; x >= 0 ; x--)
+		{
+			NGUITools.SetActive(revolverBullets.transform.GetChild(x).gameObject, true);
+		}
+	}
+	
+	public void ShowDualRevolverBullets()
+	{
+		NGUITools.SetActive (dualRevolverBullets, true);
+		NGUITools.SetActive (revolverBullets, false);
+		NGUITools.SetActive (shotgunBullets, false);
+		NGUITools.SetActive (rifleBullets, false);
+		
 	}
 
 	public void ActivateDynamite()
@@ -422,6 +448,7 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (revolverBullets, false);
 		NGUITools.SetActive (shotgunBullets, true);
 		NGUITools.SetActive (rifleBullets, false);
+		NGUITools.SetActive (dualRevolverBullets, false);
 		
 	}
 
@@ -445,6 +472,7 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (revolverBullets, false);
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, true);
+		NGUITools.SetActive (dualRevolverBullets, false);
 		
 	}
 

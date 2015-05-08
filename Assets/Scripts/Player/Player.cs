@@ -388,6 +388,10 @@ public class Player : Humanoid {
 			{
 				GUIManager.instance.ShowRifleBullets();
 			}
+			if(weaponNumber == 3)
+			{
+				GUIManager.instance.ShowDualRevolverBullets();
+			}
 			currentWeapon.gameObject.SetActive (false);
 			currentWeapon = availableWeapons [weaponNumber];
 			currentWeapon.gameObject.SetActive (true);
