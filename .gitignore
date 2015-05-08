@@ -16,7 +16,9 @@ Assets/NGUI
 #
 #
 Assets/2DLightAssets
-
+Assets/2DLightAssets.meta
+Assets/Gizmos
+Assets/Gizmos.meta
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
