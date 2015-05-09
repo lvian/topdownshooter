@@ -5,10 +5,13 @@ public class Bounty : MonoBehaviour {
 
 	public int bountyAmount;
 	public AudioClip bountySound;
+	private GameObject player;
+	protected bool finished;
 
 	// Use this for initialization
 	void Start () {
 	
+		player = GameObject.FindGameObjectWithTag("Player");
 		if(GameManager.instance.Upgrades.Money == 1)
 		{
 			bountyAmount = (int) (bountyAmount * 1.25f); 
@@ -19,6 +22,10 @@ public class Bounty : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(finished)
+		{
+			transform.position =  Vector2.Lerp(transform.position , player.transform.position , Time.deltaTime * 1.5f);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -31,6 +38,15 @@ public class Bounty : MonoBehaviour {
 			GetComponent<SpriteRenderer>().enabled = false;
 
 			GameObject.Destroy(transform.gameObject, bountySound.length);
+		}
+	}
+
+	public bool Finished {
+		get {
+			return finished;
+		}
+		set {
+			finished = value;
 		}
 	}
 }

@@ -99,8 +99,20 @@ public class LevelFiveWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.DualRevolverUnlocked = 1;
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+		if(finishCalled == false)
+		{
+			base.findBounty ();
+			finishCalled = true;
+			if (GameManager.instance.Upgrades.DualRevolverUnlocked == 0)
+			{
+				GameManager.instance.Upgrades.DualRevolverUnlocked = 1;
+				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ShowUnlockMessage ("Dual revolver unlocked (Keyboard button 4)!");
+			} else 
+			{
+				GUIManager.instance.HideUnlockMessage();
+			}
+		}
 	}
 	#endregion
 }

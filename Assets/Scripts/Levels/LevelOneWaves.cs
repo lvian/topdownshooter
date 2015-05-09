@@ -8,7 +8,7 @@ public class LevelOneWaves : WaveScript {
 	public new IEnumerator Start () {
 		Init();
 
-		//public WaveUnit(GameObject unit, float delay, float cooldown, int lane, int maxamount){
+		//public WaveUnit(GameObject unit, float delayEntreUnidades, float startDaWave, int lane, int maxamount){
 
 		//waveManager = waves.GetComponentInChildren<WaveManager>();
 		GameObject wave1 = new GameObject("wave1");
@@ -36,8 +36,7 @@ public class LevelOneWaves : WaveScript {
 		wave3.AddComponent<Wave>();
 		Wave wave3Script = wave3.GetComponent<Wave>();
 		wave3Script.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0],  0, 0, 0, 1),
-			new WaveUnit(allEnemies[0],  0, 0, 1, 1),
+			new WaveUnit(allEnemies[0], 4, 2 ),
 		};
 		wave3Script.nextWaveDelay = 10f;
 		waveManager.waves.Add(wave3Script);
@@ -47,10 +46,10 @@ public class LevelOneWaves : WaveScript {
 		wave4.AddComponent<Wave>();
 		Wave wave4Script = wave4.GetComponent<Wave>();
 		wave4Script.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0], 0, 6, 0, 2),
-			new WaveUnit(allEnemies[0], 3, 6, 1, 2),
+			new WaveUnit(allEnemies[0], 4, 3),
+			new WaveUnit(allEnemies[1], 0, 3, 0, 1),
 		};
-		wave4Script.nextWaveDelay = 20f;
+		wave4Script.nextWaveDelay = 15f;
 		waveManager.waves.Add(wave4Script);
 		
 		
@@ -59,10 +58,8 @@ public class LevelOneWaves : WaveScript {
 		wave5.AddComponent<Wave>();
 		Wave wave5Script = wave5.GetComponent<Wave>();
 		wave5Script.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0], 0, 0, 0, 1),
-			new WaveUnit(allEnemies[0], 0, 0, 1, 1),
-			new WaveUnit(allEnemies[0], 6, 3, 0, 2),
-			new WaveUnit(allEnemies[0], 9, 0, 1, 2),
+			new WaveUnit(allEnemies[0], 4, 2),
+			new WaveUnit(allEnemies[1], 2, 2),
 		};
 		wave5Script.nextWaveDelay = 13f;
 		waveManager.waves.Add(wave5Script);
@@ -72,14 +69,10 @@ public class LevelOneWaves : WaveScript {
 		bossWave.AddComponent<Wave>();
 		Wave bossWaveScript = bossWave.GetComponent<Wave>();
 		bossWaveScript.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0], 0, 6, 0, 2),
-			new WaveUnit(allEnemies[0], 3, 6, 1, 2),
-			new WaveUnit(allEnemies[0], 12, 4, 0, 1),
-			new WaveUnit(allEnemies[0], 12, 6, 1, 1),
-			new WaveUnit(allEnemies[1], 12, 4, 0, 1),
-			new WaveUnit(allEnemies[1], 12, 6, 1, 1),
+			new WaveUnit(allEnemies[1], 4, 1),
+			new WaveUnit(allEnemies[0], 2, 4, 0, 4),
 		};
-		bossWaveScript.nextWaveDelay = 22f;
+		bossWaveScript.nextWaveDelay = 15f;
 		waveManager.waves.Add(bossWaveScript);
 
 		yield return new WaitForSeconds(1f);
@@ -90,9 +83,21 @@ public class LevelOneWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.DynamiteUnlocked = 1;
-		GUIManager.instance.ActivateDynamite ();
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+
+		if(finishCalled == false)
+		{
+			base.findBounty ();
+			finishCalled = true;
+			if(GameManager.instance.Upgrades.DynamiteUnlocked == 0)
+			{
+				GameManager.instance.Upgrades.DynamiteUnlocked = 1;
+				GUIManager.instance.ActivateDynamite ();
+				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ShowUnlockMessage ("Dynamite unlocked (Mouse button 2)!");
+			} else{
+				GUIManager.instance.HideUnlockMessage();
+			}
+		}
 	}
 	#endregion
 }

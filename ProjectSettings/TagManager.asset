@@ -11,6 +11,7 @@ TagManager:
   - GUI Camera
   - SpawnPoint
   - Boss
+  - Bounty
   layers:
   - Default
   - TransparentFX

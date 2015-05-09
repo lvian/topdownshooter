@@ -7422,7 +7422,15 @@ MonoBehaviour:
   - {fileID: 1747318164}
   - {fileID: 1422712596}
   levelReward: 5000
-  allEnemies: []
+  allEnemies:
+  - {fileID: 104626, guid: 1ce0b23109c9800498b5e8dab73c8a2b, type: 2}
+  - {fileID: 104626, guid: 6987751329c67064e8f2f849ac6c9a83, type: 2}
+  - {fileID: 186218, guid: f1b38c690125c164e930594ac142bb9b, type: 2}
+  - {fileID: 104626, guid: eefe973bc9136204eb5c6b93f0af1b09, type: 2}
+  - {fileID: 104626, guid: 15bd896b0de55d74aadb57cf322e9e95, type: 2}
+  - {fileID: 104626, guid: 252420babdd3e0c41825fb33b96d1326, type: 2}
+  - {fileID: 186218, guid: db6f9e4862c6b024682aa4eac1dcd6dc, type: 2}
+  - {fileID: 104626, guid: b89ee1fd3d019e94e87801c02a925303, type: 2}
 --- !u!4 &831853477
 Transform:
   m_ObjectHideFlags: 0

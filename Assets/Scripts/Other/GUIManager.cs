@@ -256,6 +256,18 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (panel, false);
 	}
 
+	public void ShowUnlockMessage(string message)
+	{
+		GameObject unlock = transform.Find("InGame/Victory Panel/Sprite/Poster/Win Unlock").gameObject;
+		unlock.GetComponent<UILabel> ().text = message;
+		NGUITools.SetActive(unlock, true);
+	}
+
+	public void HideUnlockMessage()
+	{
+		GameObject unlock = transform.Find("InGame/Victory Panel/Sprite/Poster/Win Unlock").gameObject;
+		NGUITools.SetActive(unlock, false);
+	}
 
 	public void StartLevelGUI()
 	{

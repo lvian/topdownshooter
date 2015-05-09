@@ -107,8 +107,20 @@ public class LevelThreeWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.RifleUnlocked = 1;
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+		if(finishCalled == false)
+		{
+			base.findBounty ();
+			finishCalled = true;
+			if(GameManager.instance.Upgrades.RifleUnlocked == 0)
+			{
+				GameManager.instance.Upgrades.RifleUnlocked = 1;
+				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ShowUnlockMessage ("Rifle unlocked (Keyboard button 3)!");
+			} else
+			{
+				GUIManager.instance.HideUnlockMessage ();
+			}
+		}
 	}
 	#endregion
 }

@@ -139,7 +139,7 @@ public class DualRevolver : BaseWeapon {
 
 	public override void ReloadGUI()
 	{
-		//GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
+		GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 	}
 	#endregion
 }

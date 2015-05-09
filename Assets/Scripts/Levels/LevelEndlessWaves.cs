@@ -92,8 +92,13 @@ public class LevelEndlessWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		//GameManager.instance.Upgrades.ShotgunUnlocked = 1;
-		//GameManager.instance.Upgrades.levelsUnlocked += 1;
+		base.findBounty ();
+		if (finishCalled == false) {
+			finishCalled = true;
+			//unlocks mariarchi hat
+		}
+
+
 	}
 	#endregion
 }

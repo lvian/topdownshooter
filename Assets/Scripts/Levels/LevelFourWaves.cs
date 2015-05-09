@@ -95,8 +95,20 @@ public class LevelFourWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.ExtraDynamite = 1;
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+		if(finishCalled == false)
+		{
+			base.findBounty ();
+			finishCalled = true;
+			if (GameManager.instance.Upgrades.ExtraDynamite == 0) {
+				GameManager.instance.Upgrades.ExtraDynamite = 1;
+				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ShowUnlockMessage ("Extra dynamite unlocked!");
+			}
+			else
+			{
+				GUIManager.instance.HideUnlockMessage();
+			}
+		}
 	}
 	#endregion
 }

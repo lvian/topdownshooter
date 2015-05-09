@@ -252,8 +252,8 @@ MonoBehaviour:
   highPitchRange: 1.04999995
   player: {fileID: 0}
   rotationSpeed: 68
-  minDistanceFromTarget: 6
-  maxShootingDistance: 9
+  minDistanceFromTarget: 4
+  maxShootingDistance: 10
   enemyHit: {fileID: 8300000, guid: 599049361cdfa80498554b01ae89798a, type: 3}
   bounty: {fileID: 0}
   shootDelay: 0

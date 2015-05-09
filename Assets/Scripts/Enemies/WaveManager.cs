@@ -79,7 +79,6 @@ public class WaveManager : MonoBehaviour{
 	}
 	
 	private void Wait(){
-		Debug.Log("Wait() called");
 		if (!waves[_index].last) {
 			GUIManager.instance.UpdateWaveCounter (_index + 1, WavesCount);
 		} else {

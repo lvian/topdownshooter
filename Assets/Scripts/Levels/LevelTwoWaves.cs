@@ -96,8 +96,19 @@ public class LevelTwoWaves : WaveScript {
 	#region implemented abstract members of WaveScript
 	public override void LevelComplete ()
 	{
-		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
-		GameManager.instance.Upgrades.levelsUnlocked += 1;
+		if(finishCalled == false)
+		{
+			base.findBounty ();
+			finishCalled = true;
+			if(GameManager.instance.Upgrades.ShotgunUnlocked == 0)
+			{
+				GameManager.instance.Upgrades.ShotgunUnlocked = 1;
+				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ShowUnlockMessage ("Shotgun unlocked (Keyboard button 2)!");
+			} else{
+				GUIManager.instance.HideUnlockMessage();
+			}
+		}
 	}
 	#endregion
 }
