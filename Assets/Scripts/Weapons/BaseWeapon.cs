@@ -5,7 +5,7 @@ public abstract class BaseWeapon : MonoBehaviour {
 
 	//Weapon Variables
 	public float weaponMoveSpeed, weaponFireDelay, weaponReloadSpeed, weaponSwapSpeed, amountOfBullets, maxAmountOfBullets, rotationSpeed, bulletDeviationAngle;
-	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect, coneBase;
+	public GameObject muzzle, weaponCases, muzzleFireEffect, muzzleFlashEffect, coneBase, shotLight;
 	public AudioClip  shotSound,reloadSound, triggerSound;
 
 
@@ -78,11 +78,13 @@ public abstract class BaseWeapon : MonoBehaviour {
 		}
 	}
 
-	protected IEnumerator muzzleEffect(GameObject mfe)
+	protected IEnumerator muzzleEffect(GameObject mfe , GameObject light)
 	{
 		mfe.SetActive (true);
+		light.SetActive (true);
 		yield return new WaitForSeconds (0.2f);
 		mfe.SetActive (false);
+		light.SetActive (false);
 
 	}
 

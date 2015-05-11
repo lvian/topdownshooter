@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DualRevolver : BaseWeapon {
 
-	public GameObject muzzleLeft, muzzleFireEffectLeft , muzzleFlashEffectLeft , coneBaseLeft;
+	public GameObject muzzleLeft, muzzleFireEffectLeft , muzzleFlashEffectLeft , coneBaseLeft, shotLightLeft;
 	private bool leftRight = true;
 	#region implemented abstract members of BaseWeapon
 
@@ -25,7 +25,7 @@ public class DualRevolver : BaseWeapon {
 				 			lastShot = 0;
 							amountOfBullets --;
 							anim.SetTrigger("Attack Right");
-							StartCoroutine(muzzleEffect(muzzleFlashEffect));
+							StartCoroutine(muzzleEffect(muzzleFlashEffect,shotLight));
 							audioSource.PlayOneShot(shotSound);
 							GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 							muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -38,7 +38,7 @@ public class DualRevolver : BaseWeapon {
 							lastShot = 0;
 							amountOfBullets --;
 							anim.SetTrigger("Attack Left");
-							StartCoroutine(muzzleEffect(muzzleFlashEffectLeft));
+							StartCoroutine(muzzleEffect(muzzleFlashEffectLeft,shotLightLeft));
 							audioSource.PlayOneShot(shotSound);
 							GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 							muzzleFireEffectLeft.GetComponent<ParticleSystem>().Play();
@@ -75,7 +75,7 @@ public class DualRevolver : BaseWeapon {
 							lastShot = 0;
 							amountOfBullets --;
 							anim.SetTrigger("Attack Right");
-							StartCoroutine(muzzleEffect(muzzleFlashEffect));
+							StartCoroutine(muzzleEffect(muzzleFlashEffect,shotLight));
 							audioSource.PlayOneShot(shotSound);
 							muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 							leftRight = false;
@@ -86,7 +86,7 @@ public class DualRevolver : BaseWeapon {
 							lastShot = 0;
 							amountOfBullets --;
 							anim.SetTrigger("Attack Left");
-							StartCoroutine(muzzleEffect(muzzleFlashEffectLeft));
+							StartCoroutine(muzzleEffect(muzzleFlashEffectLeft,shotLightLeft));
 							audioSource.PlayOneShot(shotSound);
 							muzzleFireEffectLeft.GetComponent<ParticleSystem>().Play();
 							leftRight = true;

@@ -22,7 +22,7 @@ public class Revolver : BaseWeapon {
 			 			lastShot = 0;
 						amountOfBullets --;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect(muzzleFlashEffect));
+						StartCoroutine(muzzleEffect(muzzleFlashEffect,shotLight));
 						audioSource.PlayOneShot(shotSound);
 						GUIManager.instance.RevolverBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
@@ -53,7 +53,7 @@ public class Revolver : BaseWeapon {
 						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						lastShot = 0;
 						anim.SetTrigger("Attack");
-						StartCoroutine(muzzleEffect(muzzleFlashEffect));
+						StartCoroutine(muzzleEffect(muzzleFlashEffect, shotLight));
 						amountOfBullets --;
 						audioSource.PlayOneShot(shotSound);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();

@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: LightFire
+  m_Name: StandardLightSceneOne
   m_Shader: {fileID: 4800000, guid: 0e834bebf3661fe44b788f5af448b9de, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -37,20 +37,20 @@ Material:
       data:
         first:
           name: _UVXScale
-        second: .800000012
+        second: .600000024
       data:
         first:
           name: _UVYScale
-        second: .800000012
+        second: .600000024
       data:
         first:
           name: _Offset
-        second: -2.06999993
+        second: -16.8199997
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .904411793, g: .262334466, b: .07315097, a: .176470593}
+        second: {r: .886274517, g: .307721406, b: .137254879, a: .0156862754}
       data:
         first:
           name: _TintColor
