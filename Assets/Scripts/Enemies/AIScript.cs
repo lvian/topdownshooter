@@ -9,15 +9,19 @@ public class AIScript {
 	protected bool CanSeeTarget(Transform self, Transform target){
 		CircleCollider2D c = self.GetComponent<CircleCollider2D>();
 		c.enabled = false;
-		LayerMask layerMask = ~( (1 << 10) );
+		LayerMask layerMask = ~( (1 << 8) | (1 << 11 ) );
 		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f, layerMask);
 		c.enabled = true;
 		if( hit.collider != null){
 			//Debug.Log(hit.transform.tag);
 			if(hit.transform.Equals(target))
+			{
 				return true;
+			}
 			else
+			{
 				return false;
+			}
 		}
 		else{
 			return false;

@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 482050}
   - 212: {fileID: 21218042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 456386}
   - 114: {fileID: 11424374}
   - 212: {fileID: 21275246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 114: {fileID: 11446640}
   - 212: {fileID: 21286848}
   - 114: {fileID: 11457624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - 4: {fileID: 420456}
   - 114: {fileID: 11436194}
   - 212: {fileID: 21209420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 400282}
   - 114: {fileID: 11478374}
   - 212: {fileID: 21230716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452640}
   - 114: {fileID: 11439842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Hand_IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 114: {fileID: 11422172}
   - 212: {fileID: 21241850}
   - 114: {fileID: 11448924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488748}
   - 212: {fileID: 21201518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 451262}
   - 212: {fileID: 21218718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle_flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468076}
   - 212: {fileID: 21226380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: muzzle_flash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 421290}
   - 114: {fileID: 11425532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Hand_IK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - 4: {fileID: 422146}
   - 198: {fileID: 19821534}
   - 199: {fileID: 19947794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436636}
   - 212: {fileID: 21280398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IKs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,8 @@ GameObject:
   - 82: {fileID: 8223434}
   - 95: {fileID: 9509878}
   - 114: {fileID: 11432068}
-  m_Layer: 0
+  - 60: {fileID: 6094666}
+  m_Layer: 8
   m_Name: Dual Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +291,7 @@ GameObject:
   - 4: {fileID: 441538}
   - 198: {fileID: 19845306}
   - 199: {fileID: 19906020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +307,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 477042}
   - 212: {fileID: 21283524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +324,7 @@ GameObject:
   - 4: {fileID: 460286}
   - 114: {fileID: 11464132}
   - 212: {fileID: 21272132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,6 +590,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 436636}
   m_RootOrder: 2
+--- !u!60 &6094666
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174718}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .474117279, y: -.0365896225}
+      - {x: .415800095, y: .153262138}
+      - {x: .268383026, y: .237743378}
+      - {x: -.260357946, y: .251513481}
+      - {x: -.407714844, y: .125962257}
+      - {x: -.44065094, y: -.029337883}
+      - {x: -.394916534, y: -.134461403}
+      - {x: -.196626663, y: -.195218325}
+      - {x: .24155426, y: -.213712454}
+      - {x: .412788391, y: -.130703211}
 --- !u!82 &8223434
 AudioSource:
   m_ObjectHideFlags: 1
