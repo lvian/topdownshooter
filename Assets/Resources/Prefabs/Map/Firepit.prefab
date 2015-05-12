@@ -47,7 +47,6 @@ GameObject:
   - 58: {fileID: 5826170}
   - 199: {fileID: 19916770}
   - 198: {fileID: 19836082}
-  - 58: {fileID: 5838402}
   m_Layer: 10
   m_Name: Firepit
   m_TagString: Small Obstacle
@@ -115,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.3019638, y: -4.72408867, z: 0}
+  m_LocalPosition: {x: 1.02999997, y: -3.52999997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 451380}
@@ -166,19 +165,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .319999993
---- !u!58 &5838402
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172066}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: .319999993
 --- !u!108 &10821912
 Light:
   m_ObjectHideFlags: 1
@@ -190,7 +176,7 @@ Light:
   m_Type: 2
   m_Color: {r: .904411793, g: .494858205, b: .27265361, a: 1}
   m_Intensity: 4.40999985
-  m_Range: 6.28999996
+  m_Range: 6.03999996
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -202,7 +188,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -266,21 +252,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   lightRadius: 4
-  lightSegments: 11
+  lightSegments: 8
   Layer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   notifyGameObjectsReached: 0
-  intelliderConvex: 0
+  intelliderConvex: 1
   staticScene: 0
-  recalculateNormals: 1
+  recalculateNormals: 0
   flipXYtoXZ: 0
   debugLines: 0
-  vertexWorking: 74
+  vertexWorking: 4
   RangeAngle: 360
 --- !u!198 &19836082
 ParticleSystem:

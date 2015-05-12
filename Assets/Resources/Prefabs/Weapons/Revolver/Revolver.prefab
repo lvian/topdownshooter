@@ -273,7 +273,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150060}
-  m_LocalRotation: {x: 0, y: 0, z: .162118733, w: -.986771286}
+  m_LocalRotation: {x: 0, y: 0, z: .165241078, w: -.986253262}
   m_LocalPosition: {x: -.300000012, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -313,7 +313,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124630}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: .358999997, z: 0}
+  m_LocalPosition: {x: -.00200000009, y: .632000029, z: -.200000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 491892}
@@ -337,7 +337,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110870}
-  m_LocalRotation: {x: 0, y: 0, z: .218536302, w: .975828826}
+  m_LocalRotation: {x: 0, y: 0, z: .229704291, w: .973260462}
   m_LocalPosition: {x: -.00999999978, y: .331999987, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -376,7 +376,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .930000007, y: -12.3999996, z: 0}
+  m_LocalPosition: {x: 1.00399995, y: -12.4779997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447084}
@@ -427,7 +427,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181272}
-  m_LocalRotation: {x: 0, y: 0, z: .299378574, w: -.954134405}
+  m_LocalRotation: {x: 0, y: 0, z: .297957391, w: -.954579175}
   m_LocalPosition: {x: 3.35276127e-08, y: .421583921, z: 0}
   m_LocalScale: {x: .99999994, y: 1.00000072, z: 1}
   m_Children:
@@ -591,11 +591,11 @@ Light:
   m_GameObject: {fileID: 124630}
   m_Enabled: 1
   serializedVersion: 6
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: .977941155, g: .740497828, b: .524924278, a: 1}
-  m_Intensity: 8
-  m_Range: 2.49000001
-  m_SpotAngle: 60
+  m_Intensity: 2.57999992
+  m_Range: 1.41999996
+  m_SpotAngle: 49.9000015
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -606,7 +606,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

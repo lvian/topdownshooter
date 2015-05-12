@@ -85,6 +85,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &133190
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 476898}
+  - 108: {fileID: 10895192}
+  m_Layer: 8
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &137652
 GameObject:
   m_ObjectHideFlags: 1
@@ -117,22 +133,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &141072
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 466338}
-  - 108: {fileID: 10884728}
-  m_Layer: 8
-  m_Name: Light 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &154856
 GameObject:
   m_ObjectHideFlags: 1
@@ -370,7 +370,7 @@ Transform:
   m_Children:
   - {fileID: 439456}
   m_Father: {fileID: 465150}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &443660
 Transform:
   m_ObjectHideFlags: 1
@@ -435,7 +435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465150}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &465150
 Transform:
   m_ObjectHideFlags: 1
@@ -446,23 +446,11 @@ Transform:
   m_LocalPosition: {x: .0280000009, y: .101999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: .333333343}
   m_Children:
-  - {fileID: 466338}
   - {fileID: 442828}
   - {fileID: 462194}
   - {fileID: 484706}
+  - {fileID: 476898}
   m_Father: {fileID: 469310}
-  m_RootOrder: 0
---- !u!4 &466338
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141072}
-  m_LocalRotation: {x: -.707106829, y: 5.9604659e-08, z: -8.94069885e-08, w: .707106829}
-  m_LocalPosition: {x: -.00400000019, y: .638000011, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 465150}
   m_RootOrder: 0
 --- !u!4 &469310
 Transform:
@@ -477,6 +465,18 @@ Transform:
   - {fileID: 465150}
   m_Father: {fileID: 415654}
   m_RootOrder: 0
+--- !u!4 &476898
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133190}
+  m_LocalRotation: {x: -.707106829, y: -1.19209304e-07, z: -2.98023252e-07, w: .707106829}
+  m_LocalPosition: {x: 0, y: .958000004, z: -.200000003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 465150}
+  m_RootOrder: 3
 --- !u!4 &484706
 Transform:
   m_ObjectHideFlags: 1
@@ -488,7 +488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 465150}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &495134
 Transform:
   m_ObjectHideFlags: 1
@@ -613,19 +613,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!108 &10884728
+--- !u!108 &10895192
 Light:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141072}
+  m_GameObject: {fileID: 133190}
   m_Enabled: 1
   serializedVersion: 6
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: .977941155, g: .740497828, b: .524924278, a: 1}
-  m_Intensity: 8
-  m_Range: 2.49000001
-  m_SpotAngle: 62.1199989
+  m_Intensity: 2.94000006
+  m_Range: 1.41999996
+  m_SpotAngle: 49.9000015
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -636,7 +636,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -793,7 +793,7 @@ MonoBehaviour:
   muzzleFireEffect: {fileID: 198468}
   muzzleFlashEffect: {fileID: 102838}
   coneBase: {fileID: 154856}
-  shotLight: {fileID: 141072}
+  shotLight: {fileID: 133190}
   shotSound: {fileID: 8300000, guid: b2ca4eb680c39ad4ea23c78828511650, type: 3}
   reloadSound: {fileID: 8300000, guid: fbc3d828adc0ff442993a283c6c453dc, type: 3}
   triggerSound: {fileID: 8300000, guid: 6a326b875ee10c441b3146b509eb05fd, type: 3}

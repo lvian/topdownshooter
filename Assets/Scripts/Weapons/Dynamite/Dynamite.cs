@@ -12,6 +12,7 @@ public class Dynamite : MonoBehaviour {
 	private bool exploded;
 	public ParticleSystem explo, explo2, fuse, sparks;
 	public AudioClip fuseStart, fuseBurn, explosion;
+	public Light light;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +57,7 @@ public class Dynamite : MonoBehaviour {
 	protected void explode()
 	{
 		//Booooom
+		StartCoroutine (LightEffect());
 		GetComponent<SpriteRenderer>().enabled = false;
 		GetComponent<AudioSource>().Stop();
 		GetComponent<AudioSource>().PlayOneShot(explosion);
@@ -79,7 +81,12 @@ public class Dynamite : MonoBehaviour {
 
 	}
 
-
+	public IEnumerator LightEffect()
+	{
+		light.range = 6;
+		yield return new WaitForSeconds (0.2f);
+		light.enabled = false;
+	}
 
 	public Vector3 Destination {
 		get {

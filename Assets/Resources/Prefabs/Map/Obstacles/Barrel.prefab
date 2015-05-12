@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 490442}
   - 60: {fileID: 6068088}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .939999998, y: -6.32000017, z: 0}
+  m_LocalPosition: {x: .00999999978, y: 13.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490442}
@@ -111,6 +111,8 @@ PolygonCollider2D:
       - {x: .0505822301, y: -.500000477}
       - {x: .327699721, y: -.390194416}
       - {x: .440193951, y: -.240000248}
+      - {x: .499126673, y: -.113408089}
+      - {x: .506017923, y: .112362862}
       - {x: .456295788, y: .22089529}
 --- !u!212 &21278846
 SpriteRenderer:
