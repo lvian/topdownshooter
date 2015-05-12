@@ -93,7 +93,7 @@ public class LevelOneWaves : WaveScript {
 				GameManager.instance.Upgrades.DynamiteUnlocked = 1;
 				GUIManager.instance.ActivateDynamite ();
 				GameManager.instance.Upgrades.levelsUnlocked += 1;
-				GUIManager.instance.ShowUnlockMessage ("Dynamite unlocked (Mouse button 2)!");
+				GUIManager.instance.ShowUnlockMessage (Localization.Get("VictoryUnlockLevelOne"));
 			} else{
 				GUIManager.instance.HideUnlockMessage();
 			}

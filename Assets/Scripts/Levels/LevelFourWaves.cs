@@ -102,7 +102,7 @@ public class LevelFourWaves : WaveScript {
 			if (GameManager.instance.Upgrades.ExtraDynamite == 0) {
 				GameManager.instance.Upgrades.ExtraDynamite = 1;
 				GameManager.instance.Upgrades.levelsUnlocked += 1;
-				GUIManager.instance.ShowUnlockMessage ("Extra dynamite unlocked!");
+				GUIManager.instance.ShowUnlockMessage (Localization.Get("VictoryUnlockLevelFour"));
 			}
 			else
 			{

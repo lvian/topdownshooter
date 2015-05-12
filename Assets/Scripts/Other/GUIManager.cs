@@ -191,7 +191,7 @@ public class GUIManager : MonoBehaviour {
 		{
 			GameObject waveCurrent = transform.Find("InGame/Wave Information/Waves/Wave Label").gameObject;
 			//change number by boss sprite
-			waveCurrent.GetComponent<UILabel>().text = "Boss Wave!";
+			waveCurrent.GetComponent<UILabel>().text = Localization.Get("WaveLastWave");
 
 		}
 		
@@ -324,7 +324,7 @@ public class GUIManager : MonoBehaviour {
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , true);
 		GameObject victoryText = transform.Find("InGame/Victory Panel/Sprite/Poster/Win Text 2").gameObject;
-		victoryText.GetComponent<UILabel> ().text = "$ "+ reward +" Cash Reward." ;
+		victoryText.GetComponent<UILabel> ().text = "$ "+ reward + " " +Localization.Get("VictoryText2");
 		
 	}
 

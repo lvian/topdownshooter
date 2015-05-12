@@ -104,7 +104,7 @@ public class LevelTwoWaves : WaveScript {
 			{
 				GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 				GameManager.instance.Upgrades.levelsUnlocked += 1;
-				GUIManager.instance.ShowUnlockMessage ("Shotgun unlocked (Keyboard button 2)!");
+				GUIManager.instance.ShowUnlockMessage (Localization.Get("VictoryUnlockLevelTwo"));
 			} else{
 				GUIManager.instance.HideUnlockMessage();
 			}

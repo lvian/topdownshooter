@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 		State = GameState.Menu;
 		upgrades = new Upgrades();
 		Cursor.visible = false;
-		Localization.language = "English";
+		Localization.language = "Portuguese";
 	}
 
 	public void GameStart()
