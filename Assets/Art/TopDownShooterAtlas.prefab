@@ -42,8 +42,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 98994300162f5044e904c14049b1d9bc, type: 2}
   mSprites:
   - name: Armor1Icon
-    x: 593
-    y: 79
+    x: 1376
+    y: 1532
     width: 44
     height: 45
     borderLeft: 0
@@ -55,8 +55,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor2Icon
-    x: 593
-    y: 33
+    x: 1421
+    y: 1532
     width: 44
     height: 45
     borderLeft: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor3Icon
-    x: 640
-    y: 178
+    x: 1466
+    y: 1532
     width: 44
     height: 45
     borderLeft: 0
@@ -81,8 +81,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: Armor4Icon
-    x: 640
-    y: 132
+    x: 1511
+    y: 1532
     width: 44
     height: 45
     borderLeft: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 4
   - name: armorIcon
-    x: 640
-    y: 87
+    x: 1325
+    y: 1486
     width: 44
     height: 44
     borderLeft: 0
@@ -107,8 +107,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 4
   - name: CashIcon
-    x: 425
-    y: 63
+    x: 1832
+    y: 1787
     width: 61
     height: 56
     borderLeft: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 4
   - name: DodgeIcon
-    x: 499
-    y: 71
+    x: 1945
+    y: 1793
     width: 50
     height: 50
     borderLeft: 0
@@ -133,8 +133,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: DynamiteIcon
-    x: 363
-    y: 1
+    x: 1958
+    y: 1846
     width: 57
     height: 60
     borderLeft: 0
@@ -146,8 +146,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 3
   - name: EndlessIcon
-    x: 298
-    y: 1
+    x: 1894
+    y: 1791
     width: 50
     height: 52
     borderLeft: 0
@@ -159,8 +159,8 @@ MonoBehaviour:
     paddingTop: 6
     paddingBottom: 6
   - name: EnemyIcon
-    x: 363
-    y: 62
+    x: 1767
+    y: 1655
     width: 61
     height: 57
     borderLeft: 0
@@ -172,8 +172,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 0
   - name: exitButton
-    x: 593
-    y: 2
+    x: 2016
+    y: 1876
     width: 30
     height: 30
     borderLeft: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: FifthBossIcon
-    x: 363
-    y: 120
+    x: 1832
+    y: 1844
     width: 64
     height: 62
     borderLeft: 0
@@ -198,8 +198,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 2
   - name: firstBossPortrait
-    x: 499
-    y: 122
+    x: 1894
+    y: 1740
     width: 50
     height: 50
     borderLeft: 0
@@ -211,8 +211,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: FourthBossIcon
-    x: 298
-    y: 118
+    x: 1767
+    y: 1842
     width: 64
     height: 64
     borderLeft: 0
@@ -224,8 +224,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: FX Button
-    x: 425
-    y: 7
+    x: 1832
+    y: 1674
     width: 54
     height: 55
     borderLeft: 0
@@ -236,9 +236,22 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 4
     paddingBottom: 3
+  - name: GameLogo
+    x: 0
+    y: 843
+    width: 781
+    height: 404
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 105
+    paddingRight: 138
+    paddingTop: 49
+    paddingBottom: 59
   - name: GoButton
-    x: 252
-    y: 93
+    x: 1945
+    y: 1736
     width: 44
     height: 54
     borderLeft: 0
@@ -250,8 +263,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 5
   - name: GUIRevolverBullet
-    x: 499
-    y: 173
+    x: 1996
+    y: 1793
     width: 50
     height: 50
     borderLeft: 0
@@ -263,8 +276,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: GUIRifleBullet
-    x: 176
-    y: 72
+    x: 1943
+    y: 1973
     width: 75
     height: 75
     borderLeft: 0
@@ -276,8 +289,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: GUIShotgunBullet
-    x: 0
-    y: 47
+    x: 1767
+    y: 1948
     width: 100
     height: 100
     borderLeft: 0
@@ -289,8 +302,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: healthIcon
-    x: 0
-    y: 3
+    x: 1992
+    y: 1692
     width: 50
     height: 43
     borderLeft: 0
@@ -302,8 +315,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 3
   - name: MainCursor
-    x: 148
-    y: 15
+    x: 2019
+    y: 2016
     width: 27
     height: 32
     borderLeft: 0
@@ -316,7 +329,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: MainMenu
     x: 0
-    y: 224
+    y: 1248
     width: 1280
     height: 800
     borderLeft: 0
@@ -328,8 +341,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: MainMenuOptions
-    x: 0
-    y: 148
+    x: 1281
+    y: 1578
     width: 297
     height: 75
     borderLeft: 0
@@ -341,8 +354,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: MenuPoster
-    x: 101
-    y: 48
+    x: 1868
+    y: 1949
     width: 74
     height: 99
     borderLeft: 10
@@ -355,7 +368,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: MenusBackground
     x: 1281
-    y: 630
+    y: 1654
     width: 485
     height: 394
     borderLeft: 0
@@ -367,8 +380,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: MenuTitle1
-    x: 298
-    y: 183
+    x: 1767
+    y: 1907
     width: 200
     height: 40
     borderLeft: 0
@@ -380,8 +393,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: MoneyIcon
-    x: 51
-    y: 1
+    x: 1328
+    y: 1532
     width: 47
     height: 45
     borderLeft: 0
@@ -393,8 +406,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 0
   - name: NotButton
-    x: 241
-    y: 15
+    x: 1832
+    y: 1730
     width: 56
     height: 56
     borderLeft: 0
@@ -406,8 +419,8 @@ MonoBehaviour:
     paddingTop: 3
     paddingBottom: 3
   - name: Pause Icon
-    x: 550
-    y: 169
+    x: 1990
+    y: 1736
     width: 42
     height: 54
     borderLeft: 0
@@ -419,8 +432,8 @@ MonoBehaviour:
     paddingTop: 5
     paddingBottom: 5
   - name: PlayCursor
-    x: 550
-    y: 49
+    x: 2005
+    y: 1915
     width: 32
     height: 32
     borderLeft: 0
@@ -432,8 +445,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: RevolverConeIcon
-    x: 101
-    y: 1
+    x: 1281
+    y: 1531
     width: 46
     height: 46
     borderLeft: 0
@@ -445,8 +458,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 0
   - name: RevolverReloadIcon
-    x: 550
-    y: 16
+    x: 1894
+    y: 1656
     width: 32
     height: 32
     borderLeft: 0
@@ -458,8 +471,8 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 8
   - name: RifleConeIcon
-    x: 593
-    y: 125
+    x: 1281
+    y: 1482
     width: 43
     height: 48
     borderLeft: 0
@@ -471,8 +484,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 1
   - name: RifleMobilityIcon
-    x: 593
-    y: 174
+    x: 1945
+    y: 1686
     width: 46
     height: 49
     borderLeft: 0
@@ -484,8 +497,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 0
   - name: SecondBossPortrait
-    x: 176
-    y: 7
+    x: 1767
+    y: 1777
     width: 64
     height: 64
     borderLeft: 0
@@ -497,8 +510,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ShotgunConeIcon
-    x: 499
-    y: 20
+    x: 1894
+    y: 1689
     width: 50
     height: 50
     borderLeft: 0
@@ -510,8 +523,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ShotgunPelletIcon
-    x: 550
-    y: 119
+    x: 1281
+    y: 1432
     width: 40
     height: 49
     borderLeft: 0
@@ -523,8 +536,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: Sound Button
-    x: 550
-    y: 82
+    x: 1968
+    y: 1911
     width: 36
     height: 36
     borderLeft: 0
@@ -536,8 +549,8 @@ MonoBehaviour:
     paddingTop: 11
     paddingBottom: 15
   - name: ThirdBossPortrait
-    x: 298
-    y: 54
+    x: 1767
+    y: 1713
     width: 64
     height: 63
     borderLeft: 0
@@ -549,8 +562,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: UpgradesBackground
-    x: 428
-    y: 122
+    x: 1897
+    y: 1846
     width: 60
     height: 60
     borderLeft: 5

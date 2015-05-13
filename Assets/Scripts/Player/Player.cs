@@ -87,11 +87,15 @@ public class Player : Humanoid {
 				
 				if(Input.GetKey(KeyCode.Mouse0))
 				{
-					if(playerState != Player.PlayerState.Dodging)
+					Debug.Log (UICamera.hoveredObject);
+					if(UICamera.hoveredObject.name == "GUI")
 					{
-						currentWeapon.Fire();
-					} else{
-						Debug.Log ("Can't fire while dodging!");
+						if(playerState != Player.PlayerState.Dodging)
+						{
+							currentWeapon.Fire();
+						} else{
+							Debug.Log ("Can't fire while dodging!");
+						}
 					}
 				}
 				

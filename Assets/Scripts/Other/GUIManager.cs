@@ -328,7 +328,22 @@ public class GUIManager : MonoBehaviour {
 		
 	}
 
+	public void HideNextLevelButton()
+	{
+		GameObject nextButton = victoryPanel.transform.Find("Sprite/Poster/Next Level").gameObject;
+		nextButton.SetActive (false);
+		
+	}
+
+	public void ShowNextLevelButton()
+	{
+		GameObject nextButton = victoryPanel.transform.Find("Sprite/Poster/Next Level").gameObject;
+		nextButton.SetActive (true);
+		
+	}
+
 	public void BeforeLoadLevel( ) {
+		ShowNextLevelButton();
 		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Continue").gameObject, true);
 		loadScreen.transform.Find("LoadImage/Continue").GetComponent<UIButton>().isEnabled = false;
 	}
