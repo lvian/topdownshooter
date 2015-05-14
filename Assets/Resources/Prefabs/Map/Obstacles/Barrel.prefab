@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21278846}
   - 50: {fileID: 5093366}
   - 58: {fileID: 5861934}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Small Obstacle
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00999999978, y: 13.79, z: 0}
+  m_LocalPosition: {x: 1.57000005, y: -6.36000013, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490442}
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0c8aa51e6a738a24bb2613685ac759f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000

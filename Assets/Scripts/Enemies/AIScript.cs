@@ -9,7 +9,7 @@ public class AIScript {
 	protected bool CanSeeTarget(Transform self, Transform target){
 		CircleCollider2D c = self.GetComponent<CircleCollider2D>();
 		c.enabled = false;
-		LayerMask layerMask = ~( (1 << 8) | (1 << 11 ) );
+		LayerMask layerMask = ~( (1 << 8) | (1 << 11 ) | (1 << 10 ) );
 		RaycastHit2D hit = Physics2D.Raycast(self.position, self.up, 1000f, layerMask);
 		c.enabled = true;
 		if( hit.collider != null){
@@ -48,7 +48,8 @@ public class AIScript {
 		RaycastHit2D[] hit = new RaycastHit2D[8];
 		bool[] collisions = new bool[8];
 
-		LayerMask layerMask = ~((1 << 8));
+		//changed to 9, 8 is shadowlayer now
+		LayerMask layerMask = ~((1 << 9 | (1 << 10) ));
 		hit[0] = Physics2D.Raycast(self.position, up + (-right), distance, layerMask);
 		hit[1] = Physics2D.Raycast(self.position, up, distance, layerMask);
 		hit[2] = Physics2D.Raycast(self.position, up + right, distance, layerMask);

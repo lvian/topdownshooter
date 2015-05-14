@@ -21,7 +21,7 @@ public class Rifle : BaseWeapon {
 						bullet.transform.Rotate(0f ,0f , Random.Range(- bulletDeviationAngle/ 2 , bulletDeviationAngle/2));
 						if(GameManager.instance.Upgrades.RifleCone == 1)
 						{
-							bullet.GetComponent<RifleBullet>().bulletDamage = 2;
+							bullet.GetComponent<RifleBullet>().bulletDamage = 3;
 							bullet.GetComponent<RifleBullet>().bulletSpeed = 10;
 						}
 			 			lastShot = 0;

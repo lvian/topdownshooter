@@ -17348,7 +17348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   efxSource: {fileID: 1400097216}
   musicSource: {fileID: 1400097214}
-  music1: {fileID: 8300000, guid: 634e48e0606cbf940b7a729f4d5f88d8, type: 3}
+  music1: {fileID: 8300000, guid: 9fa2d2f3cfa88f74e91b8957f9a2d30d, type: 3}
   lowPitchRange: .949999988
   highPitchRange: 1.04999995
 --- !u!82 &1400097214
@@ -26163,7 +26163,6 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
-  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27

@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 496902}
   - 212: {fileID: 21267290}
   - 61: {fileID: 6198906}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Cross
   m_TagString: Small Obstacle
   m_Icon: {fileID: 0}

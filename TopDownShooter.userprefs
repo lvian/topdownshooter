@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\GameManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Levels\LevelEndlessWaves.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="33" Column="35" />
-      <File FileName="Assets\Scripts\Levels\LevelEndlessWaves.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="356" Column="2" />
+      <File FileName="Assets\Scripts\Levels\LevelEndlessWaves.cs" Line="139" Column="33" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelOneWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelTwoWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelThreeWaves.cs" Line="1" Column="1" />
@@ -12,6 +12,10 @@
       <File FileName="Assets\Scripts\Levels\LevelFiveWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Shotgun\Shotgun.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\BossIndicator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\AIScript.cs" Line="45" Column="35" />
+      <File FileName="Assets\Scripts\Weapons\Rifle\Rifle.cs" Line="29" Column="33" />
+      <File FileName="Assets\Scripts\Enemies\WaveUnit.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

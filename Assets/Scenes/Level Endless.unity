@@ -364,7 +364,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Name
@@ -526,7 +526,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425744, guid: 83ef4ef747adb39459e04c23512214f3, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83ef4ef747adb39459e04c23512214f3, type: 2}
@@ -609,7 +609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 62
+  m_RootOrder: 61
 --- !u!58 &39225013
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 60
+  m_RootOrder: 59
 --- !u!58 &45524225
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -745,7 +745,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 118
+  m_RootOrder: 117
 --- !u!58 &62439393
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -813,7 +813,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 96
+  m_RootOrder: 95
 --- !u!58 &62713663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -997,7 +997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 99
+  m_RootOrder: 98
 --- !u!58 &80267166
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1130,18 +1130,6 @@ Prefab:
       propertyPath: m_Name
       value: Barrel 2
       objectReference: {fileID: 0}
-    - target: {fileID: 21278846, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21278846, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
   m_IsPrefabParent: 0
@@ -1240,11 +1228,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490570, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 190726, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 190726, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
       propertyPath: m_Name
@@ -1281,7 +1269,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 102
+  m_RootOrder: 101
 --- !u!58 &108062372
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1465,7 +1453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 31
+  m_RootOrder: 30
 --- !u!58 &113633949
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1533,7 +1521,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 113
+  m_RootOrder: 112
 --- !u!58 &143816899
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1809,7 +1797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 76
+  m_RootOrder: 75
 --- !u!58 &160818259
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2225,7 +2213,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 61
+  m_RootOrder: 60
 --- !u!58 &227555220
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2351,7 +2339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 66
+  m_RootOrder: 65
 --- !u!58 &258015559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2461,7 +2449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 29
+  m_RootOrder: 28
 --- !u!58 &265905381
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2602,6 +2590,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 6
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -2637,7 +2629,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 124
+  m_RootOrder: 123
 --- !u!58 &300267014
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2719,6 +2711,10 @@ Prefab:
     - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
       propertyPath: m_Name
       value: Bag 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
@@ -2893,7 +2889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 91
+  m_RootOrder: 90
 --- !u!58 &332336157
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3011,7 +3007,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 131
+  m_RootOrder: 130
 --- !u!58 &345417330
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3079,7 +3075,7 @@ Transform:
   m_Children:
   - {fileID: 1369374127}
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 156
+  m_RootOrder: 155
 --- !u!212 &356839273
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3134,7 +3130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 81
+  m_RootOrder: 80
 --- !u!58 &360773137
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3331,7 +3327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 40
+  m_RootOrder: 39
 --- !u!58 &378180930
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3449,7 +3445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 122
+  m_RootOrder: 121
 --- !u!58 &387999683
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3516,7 +3512,7 @@ Transform:
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 152
+  m_RootOrder: 151
 --- !u!212 &391147526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3617,7 +3613,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 56
+  m_RootOrder: 55
 --- !u!58 &400914256
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3685,7 +3681,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 121
+  m_RootOrder: 120
 --- !u!58 &401254402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3803,7 +3799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 120
+  m_RootOrder: 119
 --- !u!58 &410195748
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3871,7 +3867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 85
+  m_RootOrder: 84
 --- !u!58 &412421590
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4255,7 +4251,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 33
+  m_RootOrder: 32
 --- !u!58 &438963506
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4547,7 +4543,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 89
+  m_RootOrder: 88
 --- !u!58 &456612280
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4615,7 +4611,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 94
+  m_RootOrder: 93
 --- !u!58 &458613807
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4745,7 +4741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 38
+  m_RootOrder: 37
 --- !u!58 &468099076
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4826,7 +4822,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484596, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Name
@@ -4842,7 +4838,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
@@ -4983,7 +4979,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 68
+  m_RootOrder: 67
 --- !u!58 &494132280
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5221,7 +5217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 49
+  m_RootOrder: 48
 --- !u!58 &515165312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5289,7 +5285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 110
+  m_RootOrder: 109
 --- !u!58 &516707795
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5473,7 +5469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 54
+  m_RootOrder: 53
 --- !u!58 &542049894
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5599,7 +5595,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 125
+  m_RootOrder: 124
 --- !u!58 &561703682
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5833,7 +5829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 98
+  m_RootOrder: 97
 --- !u!58 &609838559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5901,7 +5897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 59
+  m_RootOrder: 58
 --- !u!58 &610460472
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5969,7 +5965,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 58
+  m_RootOrder: 57
 --- !u!58 &618058416
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6137,7 +6133,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 136
+  m_RootOrder: 135
 --- !u!58 &635275872
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6220,6 +6216,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 5
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -6255,7 +6255,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 45
+  m_RootOrder: 44
 --- !u!58 &655411516
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6323,7 +6323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 48
+  m_RootOrder: 47
 --- !u!58 &659733942
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6441,7 +6441,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 64
+  m_RootOrder: 63
 --- !u!58 &661850594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6555,7 +6555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 42
+  m_RootOrder: 41
 --- !u!58 &681433437
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6761,7 +6761,7 @@ Transform:
   m_Children:
   - {fileID: 1280153507}
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 154
+  m_RootOrder: 152
 --- !u!212 &719743118
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6816,7 +6816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 101
+  m_RootOrder: 100
 --- !u!58 &725736180
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6915,7 +6915,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 95
+  m_RootOrder: 94
 --- !u!58 &737938098
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6983,7 +6983,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 72
+  m_RootOrder: 71
 --- !u!58 &741964626
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7101,7 +7101,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 127
+  m_RootOrder: 126
 --- !u!58 &750926216
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7227,7 +7227,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 87
+  m_RootOrder: 86
 --- !u!58 &758372363
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7295,7 +7295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 106
+  m_RootOrder: 105
 --- !u!58 &771013683
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7377,6 +7377,10 @@ Prefab:
     - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
       propertyPath: m_Name
       value: Bag 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
@@ -7537,7 +7541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 78
+  m_RootOrder: 77
 --- !u!58 &803898580
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7605,7 +7609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 90
+  m_RootOrder: 89
 --- !u!58 &808663049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7781,7 +7785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 103
+  m_RootOrder: 102
 --- !u!58 &820765194
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7917,6 +7921,10 @@ MonoBehaviour:
   - {fileID: 104626, guid: 252420babdd3e0c41825fb33b96d1326, type: 2}
   - {fileID: 186218, guid: db6f9e4862c6b024682aa4eac1dcd6dc, type: 2}
   - {fileID: 104626, guid: b89ee1fd3d019e94e87801c02a925303, type: 2}
+  - {fileID: 186218, guid: 7218052eac1f6194fb3340126f9df455, type: 2}
+  - {fileID: 104626, guid: 2e5dd8e4387ed2441880953578ed2a95, type: 2}
+  - {fileID: 104626, guid: fbcfcb6ad2f719840855cb0e815a3939, type: 2}
+  - {fileID: 104626, guid: be21dd66501976c438c4a6c4adec9567, type: 2}
 --- !u!4 &831853477
 Transform:
   m_ObjectHideFlags: 0
@@ -8161,7 +8169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 52
+  m_RootOrder: 51
 --- !u!58 &851273252
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8287,7 +8295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 83
+  m_RootOrder: 82
 --- !u!58 &876849858
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8411,7 +8419,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 135
+  m_RootOrder: 134
 --- !u!58 &888710947
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8479,7 +8487,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 77
+  m_RootOrder: 76
 --- !u!58 &889204538
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8647,6 +8655,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 7
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -8682,7 +8694,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 75
+  m_RootOrder: 74
 --- !u!58 &907883923
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8754,7 +8766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 69
+  m_RootOrder: 68
 --- !u!58 &921076376
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8884,7 +8896,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 79
+  m_RootOrder: 78
 --- !u!58 &926973662
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9060,7 +9072,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 67
+  m_RootOrder: 66
 --- !u!58 &938539364
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9213,7 +9225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 88
+  m_RootOrder: 87
 --- !u!58 &941415293
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9281,7 +9293,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 44
+  m_RootOrder: 43
 --- !u!58 &952617984
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9591,7 +9603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 132
+  m_RootOrder: 131
 --- !u!58 &988142128
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9717,7 +9729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 151
+  m_RootOrder: 142
 --- !u!58 &995733575
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9785,7 +9797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 117
+  m_RootOrder: 116
 --- !u!58 &1004602207
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9926,6 +9938,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 2
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -9961,7 +9977,7 @@ Transform:
   m_Children:
   - {fileID: 1610111192}
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 155
+  m_RootOrder: 154
 --- !u!212 &1031889775
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10158,7 +10174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 128
+  m_RootOrder: 127
 --- !u!58 &1053225426
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10396,7 +10412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 53
+  m_RootOrder: 52
 --- !u!58 &1068178663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10597,7 +10613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
@@ -10688,7 +10704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 104
+  m_RootOrder: 103
 --- !u!58 &1087920879
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11178,7 +11194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 27
+  m_RootOrder: 3
 --- !u!58 &1139794692
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11292,7 +11308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 71
+  m_RootOrder: 70
 --- !u!58 &1155086395
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11360,7 +11376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 32
+  m_RootOrder: 31
 --- !u!58 &1155850729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11553,7 +11569,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
@@ -11866,7 +11882,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 36
+  m_RootOrder: 35
 --- !u!58 &1248059910
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11934,7 +11950,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 92
+  m_RootOrder: 91
 --- !u!58 &1249259375
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12002,7 +12018,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 134
+  m_RootOrder: 133
 --- !u!58 &1251705481
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12327,7 +12343,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 126
+  m_RootOrder: 125
 --- !u!58 &1286675029
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12524,11 +12540,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425966, guid: 871aed8d2f647694494ec355df425c49, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
       propertyPath: m_Name
       value: Bag 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
@@ -12565,7 +12585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 50
+  m_RootOrder: 49
 --- !u!58 &1301335650
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12887,7 +12907,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 190726, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 190726, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
       propertyPath: m_Name
@@ -12978,7 +12998,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 108
+  m_RootOrder: 107
 --- !u!58 &1338727069
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13104,7 +13124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 30
+  m_RootOrder: 29
 --- !u!58 &1359520287
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13172,7 +13192,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 123
+  m_RootOrder: 122
 --- !u!58 &1365945191
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13294,7 +13314,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 84
+  m_RootOrder: 83
 --- !u!58 &1374578373
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13362,7 +13382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 47
+  m_RootOrder: 46
 --- !u!58 &1374616150
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13476,7 +13496,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 142
+  m_RootOrder: 141
 --- !u!58 &1376401897
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13590,7 +13610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 141
+  m_RootOrder: 136
 --- !u!58 &1384037337
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13708,7 +13728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 74
+  m_RootOrder: 73
 --- !u!58 &1408452233
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13776,7 +13796,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 43
+  m_RootOrder: 42
 --- !u!58 &1414146749
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13844,7 +13864,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 63
+  m_RootOrder: 62
 --- !u!58 &1421112665
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13943,7 +13963,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 46
+  m_RootOrder: 45
 --- !u!58 &1437657886
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14065,7 +14085,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 35
+  m_RootOrder: 34
 --- !u!58 &1451401735
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14133,7 +14153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 100
+  m_RootOrder: 99
 --- !u!58 &1451803622
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14201,7 +14221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 80
+  m_RootOrder: 79
 --- !u!58 &1454701311
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14400,7 +14420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 39
+  m_RootOrder: 38
 --- !u!58 &1466975105
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14836,7 +14856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 37
+  m_RootOrder: 36
 --- !u!58 &1557598246
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15055,7 +15075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 55
+  m_RootOrder: 54
 --- !u!1 &1589266719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15515,7 +15535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 114
+  m_RootOrder: 113
 --- !u!58 &1629346263
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15583,7 +15603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 34
+  m_RootOrder: 33
 --- !u!58 &1639112554
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15651,7 +15671,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 112
+  m_RootOrder: 111
 --- !u!58 &1648899854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15731,7 +15751,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 133
+  m_RootOrder: 132
 --- !u!58 &1656909377
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15817,6 +15837,10 @@ Prefab:
     - target: {fileID: 425966, guid: 871aed8d2f647694494ec355df425c49, type: 2}
       propertyPath: m_LocalScale.x
       value: 1.49999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
@@ -15996,7 +16020,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 51
+  m_RootOrder: 50
 --- !u!58 &1681450979
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16180,7 +16204,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 130
+  m_RootOrder: 129
 --- !u!58 &1695342457
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16306,7 +16330,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 109
+  m_RootOrder: 108
 --- !u!58 &1702752975
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16919,7 +16943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 107
+  m_RootOrder: 106
 --- !u!58 &1788202033
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17103,7 +17127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 93
+  m_RootOrder: 92
 --- !u!58 &1798123865
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17233,7 +17257,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 105
+  m_RootOrder: 104
 --- !u!58 &1814922311
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17366,10 +17390,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 190726, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 195c0a53dc2265147bec215348c9ecf7, type: 2}
   m_IsPrefabParent: 0
@@ -17401,7 +17421,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 115
+  m_RootOrder: 114
 --- !u!58 &1827138848
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17469,7 +17489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 119
+  m_RootOrder: 118
 --- !u!58 &1828942556
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17711,7 +17731,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 41
+  m_RootOrder: 40
 --- !u!58 &1843157716
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17779,7 +17799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 97
+  m_RootOrder: 96
 --- !u!58 &1855456288
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17978,6 +17998,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 9
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -18092,11 +18116,11 @@ Transform:
   - {fileID: 1934319192}
   - {fileID: 105628345}
   - {fileID: 1427859963}
-  - {fileID: 1921260677}
+  - {fileID: 1139794691}
   - {fileID: 802369449}
   - {fileID: 29443404}
-  - {fileID: 90995205}
   - {fileID: 1297785666}
+  - {fileID: 90995205}
   - {fileID: 1016252898}
   - {fileID: 316733624}
   - {fileID: 2099002707}
@@ -18107,16 +18131,15 @@ Transform:
   - {fileID: 1884865142}
   - {fileID: 1666907891}
   - {fileID: 26907825}
+  - {fileID: 34106670}
   - {fileID: 473958328}
   - {fileID: 2016013128}
-  - {fileID: 34106670}
   - {fileID: 746101627}
   - {fileID: 828631057}
   - {fileID: 333060055}
   - {fileID: 1465320931}
   - {fileID: 1197169590}
   - {fileID: 1332592348}
-  - {fileID: 1139794691}
   - {fileID: 1946134862}
   - {fileID: 265905380}
   - {fileID: 1359520286}
@@ -18226,12 +18249,13 @@ Transform:
   - {fileID: 1251705480}
   - {fileID: 888710946}
   - {fileID: 635275871}
+  - {fileID: 1384037336}
   - {fileID: 1335798302}
   - {fileID: 1739281806}
   - {fileID: 1898021600}
   - {fileID: 384353745}
-  - {fileID: 1384037336}
   - {fileID: 1376401896}
+  - {fileID: 995733574}
   - {fileID: 1093481996}
   - {fileID: 410111396}
   - {fileID: 2050204602}
@@ -18240,10 +18264,9 @@ Transform:
   - {fileID: 661170462}
   - {fileID: 1100437678}
   - {fileID: 628361226}
-  - {fileID: 995733574}
   - {fileID: 391147525}
-  - {fileID: 520630397}
   - {fileID: 719743117}
+  - {fileID: 520630397}
   - {fileID: 1031889774}
   - {fileID: 356839272}
   m_Father: {fileID: 698694847}
@@ -18326,7 +18349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 129
+  m_RootOrder: 128
 --- !u!58 &1906196773
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18436,7 +18459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 73
+  m_RootOrder: 72
 --- !u!58 &1915624734
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18622,60 +18645,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 416600, guid: 31a2e308f9119fb4e9a60d42f5662a4f, type: 2}
   m_PrefabInternal: {fileID: 1918100259}
---- !u!1001 &1921260676
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1891703720}
-    m_Modifications:
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -4.55999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -6.30000019
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .99999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .000402152567
-      objectReference: {fileID: 0}
-    - target: {fileID: 408226, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 139194, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_Name
-      value: Small House 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 139194, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8e969c8d944633c46af33def64091a92, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1921260677
-Transform:
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 1921260676}
 --- !u!1 &1922254347
 GameObject:
   m_ObjectHideFlags: 0
@@ -18758,7 +18727,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 86
+  m_RootOrder: 85
 --- !u!58 &1927777218
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18954,7 +18923,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 28
+  m_RootOrder: 27
 --- !u!58 &1946134863
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19076,7 +19045,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 70
+  m_RootOrder: 69
 --- !u!58 &1969770512
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19318,7 +19287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 82
+  m_RootOrder: 81
 --- !u!58 &1991746649
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19506,7 +19475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 57
+  m_RootOrder: 56
 --- !u!58 &2013096056
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19583,23 +19552,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 484596, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
       propertyPath: m_Name
       value: Barrel 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 21278846, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21278846, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 185466, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc8c3dd5ce2b0074aa9c0efc33eea103, type: 2}
@@ -19636,7 +19593,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 116
+  m_RootOrder: 115
 --- !u!58 &2030640854
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19997,6 +19954,10 @@ Prefab:
       propertyPath: m_Name
       value: Bag 4
       objectReference: {fileID: 0}
+    - target: {fileID: 196456, guid: 871aed8d2f647694494ec355df425c49, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 871aed8d2f647694494ec355df425c49, type: 2}
   m_IsPrefabParent: 0
@@ -20152,7 +20113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 65
+  m_RootOrder: 64
 --- !u!58 &2110367371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20278,7 +20239,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1891703720}
-  m_RootOrder: 111
+  m_RootOrder: 110
 --- !u!58 &2116555832
 CircleCollider2D:
   m_ObjectHideFlags: 0
