@@ -4409,6 +4409,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 429878228}
   - 114: {fileID: 429878229}
+  - 114: {fileID: 429878230}
   m_Layer: 5
   m_Name: Label 3
   m_TagString: Untagged
@@ -4493,6 +4494,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &429878230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 429878227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescMouseLeft
 --- !u!1 &432324038
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,7 +5057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: ControlstButton
+  key: CreditsTitle
 --- !u!114 &500031867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,6 +5132,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 504918555}
   - 114: {fileID: 504918556}
+  - 114: {fileID: 504918557}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -5203,6 +5217,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &504918557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 504918554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: CreditsSponsor
 --- !u!1 &507810184
 GameObject:
   m_ObjectHideFlags: 0
@@ -13929,6 +13955,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1131561453}
   - 114: {fileID: 1131561454}
+  - 114: {fileID: 1131561455}
   m_Layer: 5
   m_Name: Label 2
   m_TagString: Untagged
@@ -14013,6 +14040,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1131561455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131561452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescReload
 --- !u!1 &1135265337
 GameObject:
   m_ObjectHideFlags: 0
@@ -15200,6 +15239,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1241711360}
   - 114: {fileID: 1241711359}
+  - 114: {fileID: 1241711361}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -15284,6 +15324,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 850028512}
   m_RootOrder: 4
+--- !u!114 &1241711361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1241711358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescMovement
 --- !u!1 &1248702172
 GameObject:
   m_ObjectHideFlags: 0
@@ -15998,6 +16050,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1306287021}
   - 114: {fileID: 1306287022}
+  - 114: {fileID: 1306287023}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -16082,6 +16135,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1306287023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306287020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescDodgeKey
 --- !u!1 &1306951050
 GameObject:
   m_ObjectHideFlags: 0
@@ -16091,6 +16156,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1306951051}
   - 114: {fileID: 1306951052}
+  - 114: {fileID: 1306951053}
   m_Layer: 5
   m_Name: Label 1
   m_TagString: Untagged
@@ -16175,6 +16241,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1306951053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1306951050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescDodgeName
 --- !u!1 &1311315027
 GameObject:
   m_ObjectHideFlags: 0
@@ -19093,7 +19171,9 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 70af4c60b8f1acf4ab8670b4515978aa, type: 3}
   mFont: {fileID: 0}
-  mText: Endless
+  mText: 'Dead Man''s
+
+    Land'
   mFontSize: 12
   mFontStyle: 0
   mAlignment: 0
@@ -20504,6 +20584,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1695553330}
   - 114: {fileID: 1695553331}
+  - 114: {fileID: 1695553332}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -20590,6 +20671,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1695553332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1695553329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescWeapons
 --- !u!1 &1700557259
 GameObject:
   m_ObjectHideFlags: 0
@@ -22467,7 +22560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: LevelTitle
+  key: LevelEndlessWarning
 --- !u!114 &1810870034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22508,7 +22601,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: bb1f639f2d43fb048825a5d1afdf5b0c, type: 3}
   mFont: {fileID: 0}
-  mText: Wanted
+  mText: Beware
   mFontSize: 10
   mFontStyle: 0
   mAlignment: 0
@@ -22620,6 +22713,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1817211077}
   - 114: {fileID: 1817211078}
+  - 114: {fileID: 1817211079}
   m_Layer: 5
   m_Name: Label 4
   m_TagString: Untagged
@@ -22704,6 +22798,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1817211079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817211076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: ControlsDescMouseRight
 --- !u!1 &1821160288
 GameObject:
   m_ObjectHideFlags: 0
@@ -26057,6 +26163,7 @@ MonoBehaviour:
   scrollAxisName: Mouse ScrollWheel
   verticalAxisName: Vertical
   horizontalAxisName: Horizontal
+  commandClick: 1
   submitKey0: 13
   submitKey1: 330
   cancelKey0: 27

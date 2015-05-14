@@ -10,11 +10,20 @@ LevelTwo,Almost\nNothing,Quase\nNada
 LevelThree,Meat\nBall,Almondega
 LevelFour,Black\nSoul,Alma Negra
 LevelFive,Quick\nTrigger,Pistoleiro Veloz
-LevelEndless,Endless,Sem\n Fim
+LevelEndless,Dead Man's\nLand,Terra dos\nMortos
+LevelEndlessWarning,Beware,Cuidado
 UpgradeNoMoney,Not enough\nMoney!,Dinheiro\ninsuficiente!
 PlayerCashTitle,Cash,Dinheiro
-Controls,Controls and images are going to be displayed here!,Controles e imagens serão exibidos aqui!
+ControlsTitle,Controls,Controles
+ControlsDescMouseLeft,Shoot,Atirar
+ControlsDescMouseRight,Dynamite,Dinamite
+ControlsDescReload,Reload,Recarregar
+ControlsDescMovement,Movement,Movimento
+ControlsDescDodgeName,Dodge,Esquiva
+ControlsDescDodgeKey,Space,Espaço
+ControlsDescWeapons,Weapons\n,Armas\n
 CreditsTitle,Credits,Creditos
+CreditsSponsor,Sponsor,Patrocinador
 LoadScreenLabel,Continue,Continuar
 LoadScreenLevelOne,"Ramon ""Dry Gut"" was known for using dynamite when he lead the gang, until he died ... but the name stuck and also his love for dynamite.\n\n\n-Finishing this bounty unlocks the dynamite!","Ramon “Tripa Seca” era conhecido por utilizar dinamite quando liderava seu bando, ate morrer... porém, o seu nome sobreviveu assim como seu amor por dinamite.\n\n\n-Completar essa recompensa desbloqueia a dinamite!"
 LoadScreenLevelTwo,"Carl ""Almost Nothing"" is skinny, but don't let that fool you, he is a slicky bastard. His alias is mean to remember people what is left of who got hit by his vicious sawed off shotgun, not his looks!\n\n\n-Finishing this bounty unlocks the sawed off shotgun!","Carlos “Quase-nada” e seco, mas não deixe isso lhe enganar, ele e perigoso como uma cobra. Seu apelido foi dado para lembrar o que sobra daqueles que ficam no caminho de sua espingarda serrada, e nao por causa de sua magreza.\n\n\n-Completar essa recompensa desbloqueia a espingarda serrada! "
