@@ -87,7 +87,7 @@ public class Player : Humanoid {
 				
 				if(Input.GetKey(KeyCode.Mouse0))
 				{
-					Debug.Log (UICamera.hoveredObject);
+					//Debug.Log (UICamera.hoveredObject);
 					if(UICamera.hoveredObject.name == "GUI")
 					{
 						if(playerState != Player.PlayerState.Dodging)

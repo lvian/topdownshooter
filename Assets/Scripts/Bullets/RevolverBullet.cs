@@ -8,28 +8,27 @@ public class RevolverBullet : BaseBullet {
 
 	
 	}
-	
-
-
 
 	#region implemented abstract members of BaseBullet
 	public override void destroy ()
 	{
-		throw new System.NotImplementedException ();
+		GameObject.Destroy(gameObject);
 	}
+
 	public override void OnTriggerEnter2D (Collider2D other)
 	{
-		//Debug.Log (other.tag);
+		Debug.Log (other.tag + " " + other.name );
 		if(other.tag == "Wall")
 		{
-			GameObject.Destroy(gameObject);
+			destroy();
 		}
 
 	}
 
 	public void OnCollisionEnter2D (Collision2D other)
 	{
-		//Debug.Log (other.gameObject.name);
+		//Debug.Log ("Pew pew");
+		//Debug.Log (other.tag + " " + other.name );
 	}
 	#endregion
 }
