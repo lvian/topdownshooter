@@ -30,7 +30,7 @@ public class Shotgun : BaseWeapon {
 						audioSource.PlayOneShot(shotSound);
 						GUIManager.instance.ShotgunBullets(AmountOfBullets,MaxAmountOfBullets);
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
-						playerCamera.shakeCamera(0.1f , 0.05f);
+						playerCamera.shakeCamera(0.2f , 0.05f);
 
 					}
 				} else{

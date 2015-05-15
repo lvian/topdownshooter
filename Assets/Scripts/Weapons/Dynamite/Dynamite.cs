@@ -76,7 +76,7 @@ public class Dynamite : MonoBehaviour {
 				h.controlHitPoints(Mathf.CeilToInt(damage * (1/distance)));
 			}
 		}
-		playerCamera.shakeCamera(0.3f , 0.3f);
+		playerCamera.shakeCamera(0.3f , 0.5f);
 		exploded = true;
 
 	}

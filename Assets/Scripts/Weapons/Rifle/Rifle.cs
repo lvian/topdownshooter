@@ -33,7 +33,7 @@ public class Rifle : BaseWeapon {
 						muzzleFireEffect.GetComponent<ParticleSystem>().Play();
 						GameObject gb = (GameObject) GameObject.Instantiate(weaponCases , transform.position , transform.rotation); 
 						gb.transform.parent = GameObject.Find ("WeaponCases").transform;
-						playerCamera.shakeCamera(0.1f , 0.05f);
+						playerCamera.shakeCamera(0.2f , 0.05f);
 
 					}
 				} else{
