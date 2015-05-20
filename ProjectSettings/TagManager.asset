@@ -12,6 +12,7 @@ TagManager:
   - SpawnPoint
   - Boss
   - Bounty
+  - ShadowLayer
   layers:
   - Default
   - TransparentFX

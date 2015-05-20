@@ -36,7 +36,8 @@ public class LevelOneWaves : WaveScript {
 		wave3.AddComponent<Wave>();
 		Wave wave3Script = wave3.GetComponent<Wave>();
 		wave3Script.units = new WaveUnit[] {
-			new WaveUnit(allEnemies[0], 4, 2 ),
+			new WaveUnit(allEnemies[0],  0, 0, 0, 1),
+			new WaveUnit(allEnemies[0],  5, 0, 1, 1),
 		};
 		wave3Script.nextWaveDelay = 10f;
 		waveManager.waves.Add(wave3Script);
@@ -47,7 +48,7 @@ public class LevelOneWaves : WaveScript {
 		Wave wave4Script = wave4.GetComponent<Wave>();
 		wave4Script.units = new WaveUnit[] {
 			new WaveUnit(allEnemies[0], 4, 3),
-			new WaveUnit(allEnemies[1], 0, 3, 0, 1),
+			new WaveUnit(allEnemies[1], 0, 4, 0, 1),
 		};
 		wave4Script.nextWaveDelay = 15f;
 		waveManager.waves.Add(wave4Script);
@@ -70,7 +71,7 @@ public class LevelOneWaves : WaveScript {
 		Wave bossWaveScript = bossWave.GetComponent<Wave>();
 		bossWaveScript.units = new WaveUnit[] {
 			new WaveUnit(allEnemies[1], 4, 1),
-			new WaveUnit(allEnemies[0], 2, 4, 0, 4),
+			new WaveUnit(allEnemies[0], 2, 5, 0, 4),
 		};
 		bossWaveScript.nextWaveDelay = 15f;
 		waveManager.waves.Add(bossWaveScript);

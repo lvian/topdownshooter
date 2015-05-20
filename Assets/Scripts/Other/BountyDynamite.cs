@@ -5,6 +5,7 @@ public class BountyDynamite : MonoBehaviour {
 
 	public AudioClip pickupSound;
 	private GameObject player;
+	protected bool finished;
 	public bool fades;
 	public float timeToLive;
 	public float fadeTime;
@@ -42,6 +43,10 @@ public class BountyDynamite : MonoBehaviour {
 				animateAlpha();
 			}
 		}
+		if(finished)
+		{
+			transform.position =  Vector2.Lerp(transform.position , player.transform.position , Time.deltaTime * 1.5f);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -56,6 +61,10 @@ public class BountyDynamite : MonoBehaviour {
 
 			GameObject.Destroy(transform.gameObject, pickupSound.length);
 		}
+		if (other.tag == "Magnet")
+		{
+			Finished = true;
+		}
 	}
 
 	private void animateAlpha (){
@@ -65,5 +74,14 @@ public class BountyDynamite : MonoBehaviour {
 		
 		Color c = new Color(_renderer.material.color.r, _renderer.material.color.g, _renderer.material.color.b, alpha);
 		_renderer.material.color = c;
+	}
+
+	public bool Finished {
+		get {
+			return finished;
+		}
+		set {
+			finished = value;
+		}
 	}
 }

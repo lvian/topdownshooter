@@ -39,6 +39,10 @@ public class Bounty : MonoBehaviour {
 
 			GameObject.Destroy(transform.gameObject, bountySound.length);
 		}
+		if (other.tag == "Magnet")
+		{
+			Finished = true;
+		}
 	}
 
 	public bool Finished {

@@ -76,12 +76,14 @@ public class Player : Humanoid {
 			if(playerState != Player.PlayerState.Dying)
 			{
 				//Turns the player towards the current mouse position
-				Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-				diff.Normalize();
-				float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-				Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
-				transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
-				
+				if(UICamera.hoveredObject.name == "GUI")
+				{
+					Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+					diff.Normalize();
+					float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+					Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
+					transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
+				}
 				Move();
 				
 				
@@ -148,6 +150,10 @@ public class Player : Humanoid {
 						changeWeapons(3);
 					}
 				}
+				if(Input.GetKeyDown(KeyCode.Escape))
+				{
+					GameManager.instance.EscPause();
+				}
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
 					if(dodgeTimer <= 0)
@@ -160,6 +166,13 @@ public class Player : Humanoid {
 				}
 			} 
 			
+		} else if(GameManager.instance.State == GameManager.GameState.Paused)
+		{
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+				GameManager.instance.EscPause();
+			}
+
 		}
 		
 	}

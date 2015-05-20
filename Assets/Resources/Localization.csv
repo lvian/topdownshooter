@@ -5,11 +5,11 @@ ControlstButton,Controls,Controles
 CreditsButton,Credits,Creditos
 LevelsTitle,Levels,Niveis
 LevelTitle,Wanted,Procurado
-LevelOne,Dry\nGut,Tripa\nSeca
+LevelOne,Dry Gut,Tripa\nSeca
 LevelTwo,Almost\nNothing,Quase\nNada
-LevelThree,Meat\nBall,Almondega
-LevelFour,Black\nSoul,Alma Negra
-LevelFive,Quick\nTrigger,Pistoleiro Veloz
+LevelThree,Meatball,Almondega
+LevelFour,Black Soul,Alma Negra
+LevelFive,Quick Trigger,Pistoleiro Veloz
 LevelEndless,Dead Man's\nLand,Terra dos\nMortos
 LevelEndlessWarning,Beware,Cuidado
 UpgradeNoMoney,Not enough\nMoney!,Dinheiro\ninsuficiente!
@@ -60,3 +60,4 @@ VictoryNextLevel,Next Level,Proximo
 PausedTitle,Paused,Pausado
 PausedText,Game paused !,Jogo pausado !
 RestartText,Restart,Recomeçar
+ResumeText,Resume,Continuar

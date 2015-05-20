@@ -5,12 +5,13 @@ using System.Collections;
 	{
 		public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
 		public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
-		public AudioClip music1;
+		public AudioClip music1,music2;
 		public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 		private bool muteFx;
 		private AudioSource[] allAudioSources;
+		private float wait;
 		
 		void Awake ()
 		{
@@ -26,6 +27,7 @@ using System.Collections;
 			//Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
 			DontDestroyOnLoad (gameObject);
 			musicSource.clip = music1;
+			wait = music1.length;
 			musicSource.Play ();
 			muteFx = false;
 
@@ -33,6 +35,8 @@ using System.Collections;
 		
 		void Update()
 		{
+
+			wait -= Time.deltaTime;
 			if(muteFx)
 			{
 				allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
@@ -41,7 +45,23 @@ using System.Collections;
 						audioS.Stop();
 				}
 			}
+			if(wait <= 0){
 
+				if(musicSource.clip.name == "Music2")
+				{
+					Debug.Log ("tocou music 2");
+					musicSource.clip = music2;
+					musicSource.Play ();
+					wait = music2.length;
+				} else if(musicSource.clip.name == "Music3")
+				{
+					Debug.Log ("tocou music 3");
+					musicSource.clip = music1;
+					musicSource.Play ();
+					wait = music1.length;
+				}
+				Debug.Log (wait);
+			}
 		}
 		
 		//Used to play single sound clips.

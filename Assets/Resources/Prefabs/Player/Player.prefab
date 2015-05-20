@@ -644,6 +644,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &173572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 493900}
+  - 58: {fileID: 5849698}
+  - 50: {fileID: 5024312}
+  m_Layer: 10
+  m_Name: Magnet
+  m_TagString: Magnet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &174510
 GameObject:
   m_ObjectHideFlags: 1
@@ -982,9 +999,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .310000002, y: -13.6199999, z: 0}
+  m_LocalPosition: {x: 2.06999993, y: -14.0200005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children:
+  - {fileID: 493900}
   - {fileID: 471644}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1260,7 +1278,7 @@ Transform:
   - {fileID: 464224}
   - {fileID: 454744}
   m_Father: {fileID: 443114}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &471764
 Transform:
   m_ObjectHideFlags: 1
@@ -1432,6 +1450,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 479446}
   m_RootOrder: 29
+--- !u!4 &493900
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 443114}
+  m_RootOrder: 0
 --- !u!4 &496862
 Transform:
   m_ObjectHideFlags: 1
@@ -1478,6 +1508,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!50 &5024312
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173572}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!58 &5802314
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1491,6 +1536,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .460000008
+--- !u!58 &5849698
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173572}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!82 &8232942
 AudioSource:
   m_ObjectHideFlags: 1

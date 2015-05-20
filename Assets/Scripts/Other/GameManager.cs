@@ -133,6 +133,24 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+ 	public void EscPause()
+	{
+		UIToggle pause =  GameObject.Find("Pause Button").GetComponent<UIToggle> ();
+
+		if(pause.value == true)
+		{
+			pause.value = false;
+		} else
+		{
+			if(State != GameState.Menu)
+			{
+				pause.value = true;
+			}
+		}
+	}
+	                    
+
+
 	public void Pause()
 	{
 		if(UIToggle.current.value == true)

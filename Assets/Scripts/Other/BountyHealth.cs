@@ -4,6 +4,7 @@ using System.Collections;
 public class BountyHealth : MonoBehaviour {
 
 	private GameObject player;
+	protected bool finished;
 	public AudioClip pickupSound;
 	public bool fades;
 	public float timeToLive;
@@ -41,6 +42,10 @@ public class BountyHealth : MonoBehaviour {
 				animateAlpha();
 			}
 		}
+		if(finished)
+		{
+			transform.position =  Vector2.Lerp(transform.position , player.transform.position , Time.deltaTime * 1.5f);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -59,6 +64,13 @@ public class BountyHealth : MonoBehaviour {
 				GameObject.Destroy(transform.gameObject, pickupSound.length);
 			}
 		}
+		if (other.tag == "Magnet")
+		{
+			if(player.GetComponent<Player>().HitPoints < 4)
+			{
+				Finished = true;
+			}
+		}
 	}
 
 	private void animateAlpha (){
@@ -68,6 +80,15 @@ public class BountyHealth : MonoBehaviour {
 		
 		Color c = new Color(_renderer.material.color.r, _renderer.material.color.g, _renderer.material.color.b, alpha);
 		_renderer.material.color = c;
+	}
+
+	public bool Finished {
+		get {
+			return finished;
+		}
+		set {
+			finished = value;
+		}
 	}
 
 }
