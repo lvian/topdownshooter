@@ -49,13 +49,11 @@ using System.Collections;
 
 				if(musicSource.clip.name == "Music2")
 				{
-					Debug.Log ("tocou music 2");
 					musicSource.clip = music2;
 					musicSource.Play ();
 					wait = music2.length;
 				} else if(musicSource.clip.name == "Music3")
 				{
-					Debug.Log ("tocou music 3");
 					musicSource.clip = music1;
 					musicSource.Play ();
 					wait = music1.length;

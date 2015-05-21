@@ -369,7 +369,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .0133186076, w: .999911308}
   m_LocalPosition: {x: 2.04978278e-07, y: .341133326, z: 0}
   m_LocalScale: {x: .999997556, y: .999998391, z: 1}
   m_Children:
@@ -394,7 +394,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110206}
-  m_LocalRotation: {x: 0, y: 0, z: .0033928412, w: -.999994278}
+  m_LocalRotation: {x: 0, y: 0, z: .00944973063, w: -.999955356}
   m_LocalPosition: {x: -6.99365046e-08, y: .347326487, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -419,7 +419,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116724}
-  m_LocalRotation: {x: 0, y: 0, z: .0110370386, w: -.999939084}
+  m_LocalRotation: {x: 0, y: 0, z: .00812894292, w: -.999966979}
   m_LocalPosition: {x: -4.20957804e-07, y: .341133922, z: 0}
   m_LocalScale: {x: .99999994, y: 1.00000072, z: 1}
   m_Children:
@@ -536,7 +536,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109982}
-  m_LocalRotation: {x: 0, y: 0, z: .000185936573, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: .0066612782, w: -.999977827}
   m_LocalPosition: {x: .300000012, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -549,7 +549,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178544}
-  m_LocalRotation: {x: 0, y: 0, z: .00690608472, w: .999976158}
+  m_LocalRotation: {x: 0, y: 0, z: .00572265172, w: .999983668}
   m_LocalPosition: {x: -.300000012, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -562,7 +562,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127456}
-  m_LocalRotation: {x: 0, y: 0, z: .00688847806, w: .999976277}
+  m_LocalRotation: {x: 0, y: 0, z: .00416437304, w: .999991357}
   m_LocalPosition: {x: -8.38190317e-08, y: .347325414, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponMoveSpeed: 1
   weaponFireDelay: .25
-  weaponReloadSpeed: 2
+  weaponReloadSpeed: 2.5
   weaponSwapSpeed: 0
   amountOfBullets: 12
   maxAmountOfBullets: 12

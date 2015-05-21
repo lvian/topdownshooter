@@ -5,7 +5,7 @@ public class GUIManager : MonoBehaviour {
 
 	public UIPanel levelsPanel, upgradesPanel, creditsPanel, inGameGUI, loadScreen, mainMenu, victoryPanel, defeatPanel;
 	public AudioClip cashSound;
-	private GameObject revolverBullets, shotgunBullets, rifleBullets, dualRevolverBullets,messageWindow;
+	private GameObject revolverBullets, shotgunBullets, rifleBullets, dualRevolverBullets,messageWindow, revolverIndicator, shotgunIndicator,rifleIndicator, dualRevolverIndicator;
 	public static GUIManager instance = null;
 	private bool mainCursor;
 	void Awake () {
@@ -27,11 +27,19 @@ public class GUIManager : MonoBehaviour {
 		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		GameManager.instance.Upgrades.RifleUnlocked = 1;
 		GameManager.instance.Upgrades.DualRevolverUnlocked = 1;
+		ActivateShotgun ();
+		ActivateRifle ();
+		ActivateDualRevolver ();
 		messageWindow = transform.Find("Message Panel/Message").gameObject;
 		revolverBullets = transform.Find("InGame/Weapon Information/Revolver Bullets").gameObject;
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
 		dualRevolverBullets = transform.Find("InGame/Weapon Information/Dual Revolver Bullets").gameObject;
+		revolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Revolver").gameObject;
+		shotgunIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun").gameObject;;
+		rifleIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle").gameObject;;
+		dualRevolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers").gameObject;;
+
 		InitializeGUI ();
 	}
 	
@@ -293,12 +301,10 @@ public class GUIManager : MonoBehaviour {
 
 	public void RestartLoadScreen()
 	{
-		Debug.Log ("disable victory screen");
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
 		GameObject victoryScreen = transform.Find("InGame/Victory Panel").gameObject;
 		NGUITools.SetActive (victoryScreen , false);
-		//Debug.Log (victoryScreen.);
 		GameObject pausePanel = transform.Find("InGame/Pause Panel").gameObject;
 		NGUITools.SetActive(pausePanel, false);
 		UpdateDodgeCooldown (0);
@@ -423,6 +429,10 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, false);
 		NGUITools.SetActive (dualRevolverBullets, false);
+		revolverIndicator.GetComponent<TweenPosition> ().PlayForward ();
+		shotgunIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		rifleIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		dualRevolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
 
 	}
 
@@ -447,6 +457,10 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (revolverBullets, false);
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, false);
+		revolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		shotgunIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		rifleIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		dualRevolverIndicator.GetComponent<TweenPosition> ().PlayForward ();
 		
 	}
 
@@ -457,6 +471,26 @@ public class GUIManager : MonoBehaviour {
 
 	}
 
+	public void ActivateShotgun()
+	{
+		GameObject shotgun = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun").gameObject;
+		NGUITools.SetActive (shotgun, true);
+		
+	}
+
+	public void ActivateRifle()
+	{
+		GameObject rifle = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle").gameObject;
+		NGUITools.SetActive (rifle, true);
+		
+	}
+
+	public void ActivateDualRevolver()
+	{
+		GameObject dualRevolvers = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers").gameObject;
+		NGUITools.SetActive (dualRevolvers, true);
+		
+	}
 	public void ShotgunBullets(float bulletsLeft, float bulletsTotal)
 	{
 		GameObject shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
@@ -478,6 +512,10 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (shotgunBullets, true);
 		NGUITools.SetActive (rifleBullets, false);
 		NGUITools.SetActive (dualRevolverBullets, false);
+		revolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		shotgunIndicator.GetComponent<TweenPosition> ().PlayForward ();
+		rifleIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		dualRevolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
 		
 	}
 
@@ -502,6 +540,10 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (shotgunBullets, false);
 		NGUITools.SetActive (rifleBullets, true);
 		NGUITools.SetActive (dualRevolverBullets, false);
+		revolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		shotgunIndicator.GetComponent<TweenPosition> ().PlayReverse ();
+		rifleIndicator.GetComponent<TweenPosition> ().PlayForward ();
+		dualRevolverIndicator.GetComponent<TweenPosition> ().PlayReverse ();
 		
 	}
 

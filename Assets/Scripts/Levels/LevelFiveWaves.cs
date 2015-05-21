@@ -107,6 +107,7 @@ public class LevelFiveWaves : WaveScript {
 			{
 				GameManager.instance.Upgrades.DualRevolverUnlocked = 1;
 				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ActivateDualRevolver ();
 				GUIManager.instance.ShowUnlockMessage (Localization.Get("VictoryUnlockLevelFive"));
 			} else 
 			{

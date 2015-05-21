@@ -115,6 +115,7 @@ public class LevelThreeWaves : WaveScript {
 			{
 				GameManager.instance.Upgrades.RifleUnlocked = 1;
 				GameManager.instance.Upgrades.levelsUnlocked += 1;
+				GUIManager.instance.ActivateRifle ();
 				GUIManager.instance.ShowUnlockMessage (Localization.Get("VictoryUnlockLevelThree"));
 			} else
 			{

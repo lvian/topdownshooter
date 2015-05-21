@@ -61,7 +61,6 @@ public class BossIndicator : MonoBehaviour {
 				else if((int)(transform.localPosition.y) <= -(NGUITools.screenSize.y/2 - (sizeY/4))){
 					newPos.y += (sizeY/2);
 				}
-				Debug.Log(NGUITools.screenSize);
 				if(transform.localPosition.x >= (NGUITools.screenSize.x/2 - (sizeX/4))){
 					newPos.x -= (sizeX/2);
 				}

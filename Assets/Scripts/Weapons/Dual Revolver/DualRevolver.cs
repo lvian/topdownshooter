@@ -119,6 +119,7 @@ public class DualRevolver : BaseWeapon {
 
 				}
 				coneBase.gameObject.SetActive(false);
+				coneBaseLeft.gameObject.SetActive(false);
 				reloadTimer = 0;
 				isReloading = true;
 				anim.SetTrigger("Reload");
@@ -140,6 +141,7 @@ public class DualRevolver : BaseWeapon {
 	public override void ReloadGUI()
 	{
 		GUIManager.instance.DualRevolverBullets(AmountOfBullets,MaxAmountOfBullets);
+		coneBaseLeft.gameObject.SetActive(true);
 	}
 	#endregion
 }

@@ -385,6 +385,7 @@ public class Player : Humanoid {
 			
 		}
 		availableWeapons [0].gameObject.SetActive (true);
+		GUIManager.instance.ShowRevolverBullets ();
 		currentWeapon = availableWeapons[0];
 		currentWeapon.gameObject.SetActive(true);
 	}
