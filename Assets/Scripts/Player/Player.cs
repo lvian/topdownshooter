@@ -524,4 +524,11 @@ public class Player : Humanoid {
 			dynamiteAmount = value;
 		}
 	}
+
+	public PlayerState GetPlayerState {
+		get {
+			return playerState;
+		}
+	}
+
 }

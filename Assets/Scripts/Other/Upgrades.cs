@@ -255,4 +255,14 @@ public class Upgrades {
 		}
 	}
 
+	public int DoneTutorial {
+		get {
+			return PlayerPrefs.GetInt("DoneTutorial");
+		}
+		set {
+			PlayerPrefs.SetInt("DoneTutorial", value);
+		}
+	}
+
+
 }

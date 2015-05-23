@@ -13,6 +13,7 @@ TagManager:
   - Boss
   - Bounty
   - ShadowLayer
+  - Magnet
   layers:
   - Default
   - TransparentFX
@@ -49,7 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 1820373997
-    locked: 0
+    locked: 1
   - name: Default
     uniqueID: 0
     locked: 0

@@ -70,11 +70,30 @@ public class GameManager : MonoBehaviour {
 			Application.LoadLevel (6);
 		}
 
+		if(UIButton.current.name == "Tutorial")
+		{
+			GUIManager.instance.LevelTutorialDescription();
+			Application.LoadLevel (7);
+		}
 
 		GUIManager.instance.StartLevelGUI ();
 		playerCash = Upgrades.Cash;
 
 
+	}
+
+	public void CheckTutorial()
+	{
+		if(GameManager.instance.upgrades.DoneTutorial == 0)
+		{
+			GUIManager.instance.ShowTutorialPanel();
+		}
+	}
+
+	public void SkipTutorial()
+	{
+		upgrades.DoneTutorial = 1;
+		GUIManager.instance.HideTutorialPanel();
 	}
 
 	public void NextLevel()

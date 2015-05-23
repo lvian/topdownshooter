@@ -58,7 +58,6 @@ using System.Collections;
 					musicSource.Play ();
 					wait = music1.length;
 				}
-				Debug.Log (wait);
 			}
 		}
 		

@@ -67,7 +67,6 @@ public class DualRevolver : BaseWeapon {
 				{
 					if(lastShot >= weaponFireDelay )
 					{
-						Debug.Log (leftRight);
 						if(leftRight == true)
 						{
 							GameObject bullet = (GameObject) GameObject.Instantiate(Resources.Load ("Prefabs/Bullets/RevolverBullet") , muzzle.transform.position , muzzle.transform.rotation); 

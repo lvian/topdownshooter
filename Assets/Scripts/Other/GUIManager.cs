@@ -285,17 +285,44 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive (upgradesPanel.gameObject, false);
 		NGUITools.SetActive (creditsPanel.gameObject, false);
 		NGUITools.SetActive (mainMenu.gameObject, false);
-		//NGUITools.SetActive (defeatPanel, false);
-		//NGUITools.SetActive (victoryPanel, false);
 		loadScreen.GetComponent<TweenAlpha> ().ResetToBeginning ();
 		NGUITools.SetActive (loadScreen.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, true);
+		HideTutorialPanel ();
 	}
 
 	public void BackToMenu()
 	{
 		NGUITools.SetActive (mainMenu.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, false);
+		GameObject waveInfo = transform.Find("InGame/Wave Information").gameObject;
+		NGUITools.SetActive (waveInfo , true);
+	}
+
+	public void ShowLeaveButton()
+	{
+		GameObject unlock = transform.Find("InGame/Leave Button").gameObject;
+		NGUITools.SetActive(unlock, true);
+
+	}
+	public void HideLeaveButton()
+	{
+		GameObject unlock = transform.Find("InGame/Leave Button").gameObject;
+		NGUITools.SetActive(unlock, false);
+		
+	}
+
+
+	public void ShowTutorialPanel()
+	{
+		GameObject tutorial = transform.Find("Tutorial").gameObject;
+		NGUITools.SetActive(tutorial, true);
+	}
+
+	public void HideTutorialPanel()
+	{
+		GameObject tutorial = transform.Find("Tutorial").gameObject;
+		NGUITools.SetActive(tutorial, false);
 	}
 
 
@@ -385,6 +412,13 @@ public class GUIManager : MonoBehaviour {
 	public void LevelEndlessDescription( ) {
 		HideLevelDescription ();
 		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Endless").gameObject, true);
+	}
+
+	public void LevelTutorialDescription( ) {
+		HideLevelDescription ();
+		GameObject waveInfo = transform.Find("InGame/Wave Information").gameObject;
+		NGUITools.SetActive (waveInfo , false);
+		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite/Level Tutorial").gameObject, true);
 	}
 
 
