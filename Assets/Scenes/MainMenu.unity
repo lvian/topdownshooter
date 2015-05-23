@@ -1407,7 +1407,7 @@ MonoBehaviour:
   pixelSnap: 0
   onClick:
   - mTarget: {fileID: 1205468685}
-    mMethodName: RestartLevel
+    mMethodName: SkipTutorial
     mParameters: []
     oneShot: 0
 --- !u!114 &174023591
@@ -23269,7 +23269,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1748763711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.9000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1017171164}
@@ -28014,7 +28014,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.21739125
+  aspectRatio: 1.85454547
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
