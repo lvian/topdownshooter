@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 4
   armor: 0
-  speed: 1.5
+  speed: 1.75
   weapons:
   - {fileID: 11469122, guid: 2c9b7cd6b5091d04a82c231fb5939e7d, type: 2}
   - {fileID: 11458150, guid: 78716932b1dab8541944c08717fb6a07, type: 2}

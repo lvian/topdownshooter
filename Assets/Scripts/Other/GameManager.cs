@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
 	public int reward1,reward2,reward3,reward4,reward5;
 	public delegate void Function();
+	public string[] tips;
 	public static GameManager instance = null;
 	private GameState _state;
 	private int playerCash;
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour {
 			Application.LoadLevel (7);
 		}
 
-		GUIManager.instance.StartLevelGUI ();
+		GUIManager.instance.StartLevelGUI (tips[Random.Range(0, tips.Length)]);
 		playerCash = Upgrades.Cash;
 
 
@@ -98,21 +99,40 @@ public class GameManager : MonoBehaviour {
 
 	public void NextLevel()
 	{
-		GUIManager.instance.RestartLoadScreen ();
+		GUIManager.instance.RestartLoadScreen (tips[Random.Range(0, tips.Length)]);
 		GUIManager.instance.RestartWaveInformation ();
+		switch (Application.loadedLevel + 1)
+		{
+		case 2:
+			GUIManager.instance.LevelTwoDescription();
+			break;
+		case 3:
+			GUIManager.instance.LevelThreeDescription();
+			break;
+		case 4:
+			GUIManager.instance.LevelFourDescription();
+			break;
+		case 5:
+			GUIManager.instance.LevelFiveDescription();
+			break;
+		case 6:
+			GUIManager.instance.LevelEndlessDescription();
+			break;
+		}
 		Application.LoadLevel (Application.loadedLevel + 1);
 	}
 
 	public void StartLevel()
 	{
+
 		GUIManager.instance.LeaveLoadScreen ();
 		State = GameState.Playing;
 	}
 	public void BackToMenu()
 	{
 		State = GameState.Menu;
+		GUIManager.instance.RestartLoadScreen (tips[Random.Range(0, tips.Length)]);
 		GUIManager.instance.BeforeLoadMenu ();
-		GUIManager.instance.RestartLoadScreen ();
 		StartCoroutine(delayRestart(0));	
 
 	}
@@ -127,7 +147,7 @@ public class GameManager : MonoBehaviour {
 	public void RestartLevel()
 	{
 		State = GameState.Menu;
-		GUIManager.instance.RestartLoadScreen ();
+		GUIManager.instance.RestartLoadScreen (tips[Random.Range(0, tips.Length)]);
 		GUIManager.instance.RestartWaveInformation ();
 		Application.LoadLevel(Application.loadedLevel);
 	}

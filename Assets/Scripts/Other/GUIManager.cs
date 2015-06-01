@@ -279,7 +279,7 @@ public class GUIManager : MonoBehaviour {
 		NGUITools.SetActive(unlock, false);
 	}
 
-	public void StartLevelGUI()
+	public void StartLevelGUI(string tip)
 	{
 		NGUITools.SetActive (levelsPanel.gameObject, false);
 		NGUITools.SetActive (upgradesPanel.gameObject, false);
@@ -288,15 +288,25 @@ public class GUIManager : MonoBehaviour {
 		loadScreen.GetComponent<TweenAlpha> ().ResetToBeginning ();
 		NGUITools.SetActive (loadScreen.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, true);
+		ShowTips (tip);
 		HideTutorialPanel ();
 	}
 
+
+	public void ShowTips(string tip)
+	{
+		GameObject tips = transform.Find("LoadScreen/LoadImage/Tips/Label").gameObject;
+		tips.GetComponent<UILabel> ().text = tip;
+		GameObject tipGO = transform.Find("LoadScreen/LoadImage/Tips").gameObject;
+		NGUITools.SetActive (tipGO , true);
+	}
 	public void BackToMenu()
 	{
 		NGUITools.SetActive (mainMenu.gameObject, true);
 		NGUITools.SetActive (inGameGUI.gameObject, false);
 		GameObject waveInfo = transform.Find("InGame/Wave Information").gameObject;
 		NGUITools.SetActive (waveInfo , true);
+
 	}
 
 	public void ShowLeaveButton()
@@ -326,7 +336,7 @@ public class GUIManager : MonoBehaviour {
 	}
 
 
-	public void RestartLoadScreen()
+	public void RestartLoadScreen(string tip)
 	{
 		GameObject defeatScreen = transform.Find("InGame/Defeat Panel").gameObject;
 		NGUITools.SetActive (defeatScreen , false);
@@ -339,13 +349,16 @@ public class GUIManager : MonoBehaviour {
 		GameObject pauseButton = transform.Find("InGame/Pause Button").gameObject;
 		pauseButton.GetComponent<UIToggle> ().value = false;
 		loadScreen.GetComponent<TweenAlpha> ().PlayReverse ();
+		GUIManager.instance.ShowTips (tip);
 
 	}
 
 	public void LeaveLoadScreen()
 	{
 		loadScreen.GetComponent<TweenAlpha> ().PlayForward();
+
 	}
+
 
 	public void ShowDefeatScreen()
 	{
@@ -426,6 +439,8 @@ public class GUIManager : MonoBehaviour {
 	public void BeforeLoadMenu( ) {
 		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Sprite").gameObject, false);
 		NGUITools.SetActive(loadScreen.transform.Find("LoadImage/Continue").gameObject, false);
+		GameObject tips = transform.Find("LoadScreen/LoadImage/Tips").gameObject;
+		NGUITools.SetActive (tips , false);
 	}
 
 	void OnLevelWasLoaded(int level) {

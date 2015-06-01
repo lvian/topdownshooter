@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 407632}
   m_Layer: 8
   m_Name: Level Four Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

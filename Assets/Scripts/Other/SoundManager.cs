@@ -9,7 +9,7 @@ using System.Collections;
 		public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
-		private bool muteFx;
+		private bool muteFx,muteMusic;
 		private AudioSource[] allAudioSources;
 		private float wait;
 		
@@ -35,8 +35,10 @@ using System.Collections;
 		
 		void Update()
 		{
-
-			wait -= Time.deltaTime;
+			if (!muteMusic)
+			{
+				wait -= Time.deltaTime;
+			}
 			if(muteFx)
 			{
 				allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
@@ -97,9 +99,11 @@ using System.Collections;
 	{
 		if(UIToggle.current.value == false)
 		{
+			muteMusic = false;
 			musicSource.Play();
 		} else
 		{
+			muteMusic = true;
 			musicSource.Pause();
 		}
 	}

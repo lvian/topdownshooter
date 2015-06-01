@@ -218,11 +218,14 @@ MonoBehaviour:
   item:
   - {fileID: 156264, guid: 85e511138438a3f4e8d0c6192f7e6008, type: 2}
   - {fileID: 174912, guid: 404827cad4d1e2a478bc3ce434ac2b03, type: 2}
+  - {fileID: 186708, guid: 76cdd28b8b58e964cb7d4af14bab3bf3, type: 2}
   chance:
   - 50
   - 15
+  - 30
   amount:
   - 20
+  - 0
   - 0
 --- !u!114 &11479312
 MonoBehaviour:

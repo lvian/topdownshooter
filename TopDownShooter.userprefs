@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Localization.csv">
     <Files>
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="481" Column="27" />
       <File FileName="Assets\Scripts\Other\Bottle.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\TrainingLevel.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\BountyDynamite.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="92" Column="1" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\ShotgunBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\BaseBullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bullets\RevolverBullet.cs" Line="1" Column="1" />
@@ -15,7 +15,7 @@
       <File FileName="Assets\Scripts\Other\Bounty.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\BountyHealth.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelOneWaves.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\SoundManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\SoundManager.cs" Line="38" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelThreeWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Levels\LevelFiveWaves.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\BossIndicator.cs" Line="1" Column="1" />
@@ -27,11 +27,19 @@
       <File FileName="Assets\Scripts\Other\CustomTimer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Dynamite\Dynamite.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\Upgrades.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Localization.csv" Line="13" Column="26" />
+      <File FileName="Assets\Resources\Localization.csv" Line="27" Column="103" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Scripts" expanded="True">
+              <Node name="Other" expanded="True">
+                <Node name="SoundManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

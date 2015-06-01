@@ -32,7 +32,7 @@ public class Bottle : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D other) {
 		if (other.tag == "Bullet")
 		{
-			SoundManager.instance.clipOneShotRandomPitch(explosion);
+			GetComponent<AudioSource>().PlayOneShot(explosion);
 			GetComponent<ParticleSystem>().Play();
 			GetComponent<SpriteRenderer>().enabled = false;
 			GetComponent<CircleCollider2D>().enabled = false;
