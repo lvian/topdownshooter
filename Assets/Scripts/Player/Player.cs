@@ -20,6 +20,7 @@ public class Player : Humanoid {
 	public AudioClip[] steps;
 	public AudioClip dodgeSound;
 
+	protected GameObject leftJoystick, rightJoystick;
 	protected BaseWeapon[] availableWeapons;
 	protected PlayerState playerState;
 	protected int dynamiteAmount;
@@ -52,6 +53,8 @@ public class Player : Humanoid {
 		spawnWeapons ();
 		dustEmitter = transform.FindChild("DustEmmiter").GetComponent<ParticleSystem>();
 		GameObject[] obstacles = GameObject.FindGameObjectsWithTag ("Wall");
+		leftJoystick = GameObject.Find ("Left Joystick"); 
+		rightJoystick = GameObject.Find ("Right Joystick");
 		InitHumanoid();
 		GUIManager.instance.HealthGUI(HitPoints, maxHealth);
 		GUIManager.instance.ArmorGUI(Armor, maxArmor);
@@ -78,28 +81,13 @@ public class Player : Humanoid {
 				//Turns the player towards the current mouse position
 				if(UICamera.hoveredObject.name == "GUI")
 				{
-					Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-					diff.Normalize();
-					float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-					Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
-					transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
+
 				}
 				Move();
+
+				Fire();
 				
-				
-				if(Input.GetKey(KeyCode.Mouse0))
-				{
-					//Debug.Log (UICamera.hoveredObject);
-					if(UICamera.hoveredObject.name == "GUI")
-					{
-						if(playerState != Player.PlayerState.Dodging)
-						{
-							currentWeapon.Fire();
-						} else{
-							Debug.Log ("Can't fire while dodging!");
-						}
-					}
-				}
+
 				
 				if(Input.GetKeyDown(KeyCode.Mouse1))
 				{
@@ -109,15 +97,8 @@ public class Player : Humanoid {
 					}
 				}
 				
-				if(Input.GetKeyDown(KeyCode.Q))
-				{
-					// previous weapon
-				}
+
 				
-				if(Input.GetKeyDown(KeyCode.E))
-				{
-					GUIManager.instance.ShowMessage("Information system!!", 1f);
-				}
 				if(Input.GetKeyDown(KeyCode.R))
 				{
 					currentWeapon.Reload();
@@ -184,44 +165,81 @@ public class Player : Humanoid {
 		newX = 0;
 		isMovingX = false;
 		isMovingY = false;
-		
-		//Buttons
-		if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-		{
-			if(speedY < maxSpeed)
+
+		#if UNITY_ANDROID
+			if( leftJoystick.GetComponent<UIJoystick>().joyStickPosY > 0)
 			{
-				speedY += acellerationSpeed * Time.deltaTime;
+				if(speedY < maxSpeed)
+				{
+					speedY += acellerationSpeed * Time.deltaTime;
+				}
+				isMovingY = true;
 			}
-			isMovingY = true;
-		}
-		
-		if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-		{
-			if(speedY > - maxSpeed)
+			
+			if( leftJoystick.GetComponent<UIJoystick>().joyStickPosY < 0)
 			{
-				speedY -= acellerationSpeed * Time.deltaTime;
-			}
-			isMovingY = true;
-		}		 
-		
-		if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-		{
-			if(speedX > -maxSpeed)
+				if(speedY > - maxSpeed)
+				{
+					speedY -= acellerationSpeed * Time.deltaTime;
+				}
+				isMovingY = true;
+			}		 
+			
+			if(leftJoystick.GetComponent<UIJoystick>().joyStickPosX < 0)
 			{
-				speedX -= acellerationSpeed * Time.deltaTime;
+				if(speedX > -maxSpeed)
+				{
+					speedX -= acellerationSpeed * Time.deltaTime;
+				}
+				isMovingX = true;
 			}
-			isMovingX = true;
-		}
-		
-		if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-		{
-			if(speedX < maxSpeed)
+			
+			if(leftJoystick.GetComponent<UIJoystick>().joyStickPosX > 0)
 			{
-				speedX += acellerationSpeed * Time.deltaTime;
+				if(speedX < maxSpeed)
+				{
+					speedX += acellerationSpeed * Time.deltaTime;
+				}
+				isMovingX = true;
 			}
-			isMovingX = true;
-		}
-		
+		#else
+			if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+			{
+				if(speedY < maxSpeed)
+				{
+					speedY += acellerationSpeed * Time.deltaTime;
+				}
+				isMovingY = true;
+			}
+			
+			if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+			{
+				if(speedY > - maxSpeed)
+				{
+					speedY -= acellerationSpeed * Time.deltaTime;
+				}
+				isMovingY = true;
+			}		 
+			
+			if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+			{
+				if(speedX > -maxSpeed)
+				{
+					speedX -= acellerationSpeed * Time.deltaTime;
+				}
+				isMovingX = true;
+			}
+			
+			if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+			{
+				if(speedX < maxSpeed)
+				{
+					speedX += acellerationSpeed * Time.deltaTime;
+				}
+				isMovingX = true;
+			}
+		#endif
+
 		newY += speedY * currentWeapon.WeaponMoveSpeed;
 		newX += speedX * currentWeapon.WeaponMoveSpeed;
 		
@@ -246,6 +264,42 @@ public class Player : Humanoid {
 			}
 		}
 		transform.parent.Translate(new Vector3( newX, newY, 0) * Time.deltaTime, Space.World);
+	}
+
+	public void Fire()
+	{
+		if(rightJoystick.GetComponent<UIJoystick>().joyStickPosX != 0)
+		{
+
+			float rot_z = Mathf.Atan2(rightJoystick.GetComponent<UIJoystick>().joyStickPosY , rightJoystick.GetComponent<UIJoystick>().joyStickPosX) * Mathf.Rad2Deg;
+			Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
+			Debug.Log (Quaternion.Angle(transform.rotation, q));
+
+			transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
+
+			#if UNITY_ANDROID
+			if(Quaternion.Angle(transform.rotation, q) <= 2)
+			{
+				if(playerState != Player.PlayerState.Dodging)
+				{
+					currentWeapon.Fire();
+				} else{
+					Debug.Log ("Can't fire while dodging!");
+				}
+			}
+			#else
+			if(UICamera.hoveredObject.name == "GUI")
+			{
+				if(playerState != Player.PlayerState.Dodging)
+				{
+					currentWeapon.Fire();
+				} else{
+					Debug.Log ("Can't fire while dodging!");
+				}
+			}
+			#endif
+		}
+		
 	}
 	
 	#endregion
