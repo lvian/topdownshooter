@@ -134,7 +134,6 @@ public class UIJoystick : MonoBehaviour
 	
 	void OnDrag (Vector2 delta)
 	{
-		Debug.Log ("haha");
 		if (enabled && NGUITools.GetActive(gameObject) && target != null)
 		{
 			UICamera.currentTouch.clickNotification = UICamera.ClickNotification.BasedOnDelta;

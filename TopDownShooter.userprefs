@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\UIJoystick.cs" Line="210" Column="16" />
+      <File FileName="Assets\Scripts\Other\UIJoystick.cs" Line="137" Column="1" />
       <File FileName="Assets\Scripts\Other\Bottle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="281" Column="51" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="469" Column="5" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="81" Column="18" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="518" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

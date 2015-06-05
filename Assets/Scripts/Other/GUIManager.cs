@@ -35,10 +35,10 @@ public class GUIManager : MonoBehaviour {
 		shotgunBullets = transform.Find("InGame/Weapon Information/Shotgun Bullets").gameObject;
 		rifleBullets = transform.Find("InGame/Weapon Information/Rifle Bullets").gameObject;
 		dualRevolverBullets = transform.Find("InGame/Weapon Information/Dual Revolver Bullets").gameObject;
-		revolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Revolver").gameObject;
-		shotgunIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun").gameObject;;
-		rifleIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle").gameObject;;
-		dualRevolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers").gameObject;;
+		revolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Revolver Button").gameObject;
+		shotgunIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun Button").gameObject;;
+		rifleIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle Button").gameObject;;
+		dualRevolverIndicator = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers Button").gameObject;;
 
 		InitializeGUI ();
 	}
@@ -226,7 +226,7 @@ public class GUIManager : MonoBehaviour {
 	}
 	public void UpdateDodgeCooldown(float value)
 	{
-		GameObject dodgeCooldown = transform.Find("InGame/Player Information/Dodge Background/Dodge").gameObject;
+		GameObject dodgeCooldown = transform.Find("InGame/Buttons/Dodge Background/Dodge").gameObject;
 
 		dodgeCooldown.GetComponent<UISlider>().value = value;
 
@@ -522,21 +522,21 @@ public class GUIManager : MonoBehaviour {
 
 	public void ActivateShotgun()
 	{
-		GameObject shotgun = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun").gameObject;
+		GameObject shotgun = transform.Find("InGame/Weapon Information/Weapon Bar/Shotgun Button").gameObject;
 		NGUITools.SetActive (shotgun, true);
 		
 	}
 
 	public void ActivateRifle()
 	{
-		GameObject rifle = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle").gameObject;
+		GameObject rifle = transform.Find("InGame/Weapon Information/Weapon Bar/Rifle Button").gameObject;
 		NGUITools.SetActive (rifle, true);
 		
 	}
 
 	public void ActivateDualRevolver()
 	{
-		GameObject dualRevolvers = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers").gameObject;
+		GameObject dualRevolvers = transform.Find("InGame/Weapon Information/Weapon Bar/Dual Revolvers Button").gameObject;
 		NGUITools.SetActive (dualRevolvers, true);
 		
 	}

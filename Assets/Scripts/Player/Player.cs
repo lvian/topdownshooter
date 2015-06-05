@@ -32,6 +32,25 @@ public class Player : Humanoid {
 
 	// Use this for initialization
 	public IEnumerator Start () {
+		EventDelegate.Add (GameObject.Find("Dodge Background").GetComponent<UIButton>().onClick, Dodge);
+		EventDelegate.Add (GameObject.Find("Reload Button").GetComponent<UIButton>().onClick, Reload);
+
+		EventDelegate changeRevolver = new EventDelegate(this, "changeWeapons");
+		changeRevolver.parameters[0].value = 0;
+		GameObject.Find("Revolver Button").GetComponent<UIButton>().onClick.Add( changeRevolver );
+
+		EventDelegate changeShotgun = new EventDelegate(this, "changeWeapons");
+		changeShotgun.parameters[0].value = 1;
+		GameObject.Find("Shotgun Button").GetComponent<UIButton>().onClick.Add( changeShotgun );
+
+		EventDelegate changeRifle = new EventDelegate(this, "changeWeapons");
+		changeRifle.parameters[0].value = 2;
+		GameObject.Find("Rifle Button").GetComponent<UIButton>().onClick.Add( changeRifle );
+
+		EventDelegate changeDualRevolver = new EventDelegate(this, "changeWeapons");
+		changeDualRevolver.parameters[0].value = 3;
+		GameObject.Find("Dual Revolvers Button").GetComponent<UIButton>().onClick.Add( changeDualRevolver );
+
 		if(GameManager.instance.Upgrades.Dodge == 1)
 		{
 			dodgeCooldown = dodgeCooldown / 2; 
@@ -61,10 +80,10 @@ public class Player : Humanoid {
 		GUIManager.instance.UpdateDynamite(dynamiteAmount);
 		yield return null;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
 			//Calculates cooldown and sends to GUI
@@ -273,8 +292,6 @@ public class Player : Humanoid {
 
 			float rot_z = Mathf.Atan2(rightJoystick.GetComponent<UIJoystick>().joyStickPosY , rightJoystick.GetComponent<UIJoystick>().joyStickPosX) * Mathf.Rad2Deg;
 			Quaternion q = Quaternion.Euler(0f, 0f, rot_z - 90);
-			Debug.Log (Quaternion.Angle(transform.rotation, q));
-
 			transform.rotation = Quaternion.RotateTowards(transform.rotation , q , Time.deltaTime * 250 * currentWeapon.RotationSpeed);
 
 			#if UNITY_ANDROID
@@ -339,6 +356,22 @@ public class Player : Humanoid {
 			anim.SetBool ("isMoving", false);
 		}
 		
+	}
+
+	public void Dodge()
+	{
+		if(dodgeTimer <= 0)
+		{
+			StartCoroutine(dodgeMove());
+			dodgeTimer = dodgeCooldown;
+			GUIManager.instance.UpdateDodgeCooldown(1);
+			
+		}
+	}
+
+	public void Reload()
+	{
+			currentWeapon.Reload();
 	}
 	
 	public IEnumerator dodgeMove ()
