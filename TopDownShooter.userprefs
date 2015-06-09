@@ -1,12 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\PlayerCamera.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\UIJoystick.cs" Line="137" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="296" Column="21" />
+      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="227" Column="31" />
+      <File FileName="Assets\Scripts\Other\UIJoystick.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Other\Bottle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="469" Column="5" />
-      <File FileName="Assets\Scripts\Other\GameManager.cs" Line="81" Column="18" />
-      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="518" Column="75" />
+      <File FileName="Assets\Scripts\Other\GUIManager.cs" Line="882" Column="45" />
+      <File FileName="Assets\Scripts\Other\BountyDynamite.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\BountyHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Other\PlayerCamera.cs" Line="30" Column="47" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

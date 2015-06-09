@@ -83,7 +83,6 @@ public class Player : Humanoid {
 
 	// Update is called once per frame
 	void Update () {
-
 		//if game is in play state
 		if (GameManager.instance.State == GameManager.GameState.Playing) {
 			//Calculates cooldown and sends to GUI
@@ -299,7 +298,10 @@ public class Player : Humanoid {
 			{
 				if(playerState != Player.PlayerState.Dodging)
 				{
-					currentWeapon.Fire();
+					if( Mathf.Abs( rightJoystick.GetComponent<UIJoystick>().joyStickPosX) >= 0.7 ||  Mathf.Abs( rightJoystick.GetComponent<UIJoystick>().joyStickPosY) >= 0.7)
+					{
+						currentWeapon.Fire();
+					}
 				} else{
 					Debug.Log ("Can't fire while dodging!");
 				}
@@ -609,6 +611,7 @@ public class Player : Humanoid {
 		}
 		set {
 			dynamiteAmount = value;
+			GUIManager.instance.UpdateDynamite(dynamiteAmount);
 		}
 	}
 

@@ -22,7 +22,7 @@ public class GUIManager : MonoBehaviour {
 		PlayerPrefs.DeleteAll ();
 		GameManager.instance.Upgrades.DynamiteUnlocked = 1;
 		GUIManager.instance.ActivateDynamite ();
-		GameManager.instance.Upgrades.Cash += 10000;
+		GameManager.instance.Upgrades.Cash += 15000;
 		GameManager.instance.Upgrades.levelsUnlocked = 5;
 		GameManager.instance.Upgrades.ShotgunUnlocked = 1;
 		GameManager.instance.Upgrades.RifleUnlocked = 1;
@@ -46,6 +46,7 @@ public class GUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+	
 		if(GameManager.instance.State == GameManager.GameState.Playing)
 		{
 			if(UICamera.hoveredObject.GetComponent<UIButton>())
@@ -792,8 +793,8 @@ public class GUIManager : MonoBehaviour {
 			armor1.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
 
 			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
-			healthBarSprite.GetComponent<UISprite>().width += 30;
-			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
+			healthBarSprite.GetComponent<UISprite>().width += 16;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 2;
 		} else
 		{
 			notEnoughMoney();
@@ -812,8 +813,8 @@ public class GUIManager : MonoBehaviour {
 			armor2.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
 
 			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
-			healthBarSprite.GetComponent<UISprite>().width += 30;
-			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
+			healthBarSprite.GetComponent<UISprite>().width += 16;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 2;
 		} else
 		{
 			notEnoughMoney();
@@ -832,8 +833,8 @@ public class GUIManager : MonoBehaviour {
 			armor3.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
 
 			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
-			healthBarSprite.GetComponent<UISprite>().width += 30;
-			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
+			healthBarSprite.GetComponent<UISprite>().width += 16;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 2;
 		} else
 		{
 			notEnoughMoney();
@@ -852,8 +853,8 @@ public class GUIManager : MonoBehaviour {
 			armor4.transform.FindChild("Value Background/Value").GetComponent<UILabel>().text = "Sold";
 
 			GameObject healthBarSprite = transform.Find("InGame/Player Information/Health").gameObject;
-			healthBarSprite.GetComponent<UISprite>().width += 30;
-			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 5;
+			healthBarSprite.GetComponent<UISprite>().width += 16;
+			healthBarSprite.GetComponent<UISprite>().leftAnchor.absolute = 2;
 		} else
 		{
 			notEnoughMoney();
@@ -869,6 +870,9 @@ public class GUIManager : MonoBehaviour {
 
 	public void ChangeCursor(bool main)
 	{
+		#if UNITY_ANDROID
+
+		#else
 		GameObject cursorMain = transform.Find("Cursor Panel/Cursor/Main").gameObject;
 		GameObject cursorPlay = transform.Find("Cursor Panel/Cursor/Play").gameObject;
 
@@ -883,6 +887,7 @@ public class GUIManager : MonoBehaviour {
 			NGUITools.SetActive (cursorPlay , true);
 			mainCursor = false;
 		}
+		#endif
 		
 	}
 

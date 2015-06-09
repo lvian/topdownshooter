@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour {
 		else if(instance != this)
 			Destroy(gameObject);
 		DontDestroyOnLoad (this);
+
+		#if UNITY_ANDROID
+			Cursor.visible = false;
+		#endif
 	
 	}
 
@@ -212,6 +216,9 @@ public class GameManager : MonoBehaviour {
 		}
 		set {
 			_state = value;
+			#if UNITY_ANDROID
+				
+			#else
 			if(value == GameState.Playing )
 			{
 				GUIManager.instance.ChangeCursor(false);
@@ -219,6 +226,7 @@ public class GameManager : MonoBehaviour {
 			{
 				GUIManager.instance.ChangeCursor(true);
 			} 
+			#endif
 		}
 	}
 

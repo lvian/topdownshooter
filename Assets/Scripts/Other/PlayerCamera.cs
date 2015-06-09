@@ -11,20 +11,24 @@ public class PlayerCamera : MonoBehaviour {
 	private Vector2 mousePos;
 	private float newX, newY;
 	private Vector3 newPosCamera, newPosPlayer;
+	private UIJoystick rightJoystick;
 	// Use this for initialization
 	void Start () {
 		isShaking = false;
 		camera = GetComponent<Camera> ();
 		camera.transform.position = new Vector3(player.transform.position.x,player.transform.position.y, camera.transform.position.z);
+		rightJoystick = GameObject.Find ("Right Joystick").GetComponent<UIJoystick> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		mousePos = Camera.main.ScreenToViewportPoint (Input.mousePosition);
+		//mousePos = Camera.main.ScreenToViewportPoint (Input.mousePosition);
 
-		newPosCamera.x = (mousePos.x - 0.5f)*2;
-		newPosCamera.y = (mousePos.y - 0.5f)*2 ;
+		//newPosCamera.x = (mousePos.x - 0.5f)*2;
+		//newPosCamera.y = (mousePos.y - 0.5f)*2 ;
+		newPosCamera.x = rightJoystick.joyStickPosX;
+		newPosCamera.y = rightJoystick.joyStickPosY;
 		newPosCamera.z = camera.transform.position.z;
 		if(shakeTime > 0)
 		{
