@@ -379,6 +379,7 @@
      <Compile Include="Assets\SpritesAndBones\Scripts\Utils\Triangulator.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Utils\Utils.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Utils\Vertices.cs" />
+     <Compile Include="Assets\StopTrigger.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.7.8.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 2.shader" />

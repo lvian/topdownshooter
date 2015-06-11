@@ -369,7 +369,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119006}
-  m_LocalRotation: {x: 0, y: 0, z: .0133186076, w: .999911308}
+  m_LocalRotation: {x: 0, y: 0, z: .00973156933, w: .999952674}
   m_LocalPosition: {x: 2.04978278e-07, y: .341133326, z: 0}
   m_LocalScale: {x: .999997556, y: .999998391, z: 1}
   m_Children:
@@ -394,7 +394,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110206}
-  m_LocalRotation: {x: 0, y: 0, z: .00944973063, w: -.999955356}
+  m_LocalRotation: {x: 0, y: 0, z: .00571310613, w: -.999983668}
   m_LocalPosition: {x: -6.99365046e-08, y: .347326487, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -470,7 +470,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.45499992, y: -20.3659992, z: 0}
+  m_LocalPosition: {x: -44.1971779, y: 6.6188488, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472162}
@@ -536,7 +536,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109982}
-  m_LocalRotation: {x: 0, y: 0, z: .0066612782, w: -.999977827}
+  m_LocalRotation: {x: 0, y: 0, z: .00528085977, w: -.999986053}
   m_LocalPosition: {x: .300000012, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -562,7 +562,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127456}
-  m_LocalRotation: {x: 0, y: 0, z: .00416437304, w: .999991357}
+  m_LocalRotation: {x: 0, y: 0, z: .00433694432, w: .999990582}
   m_LocalPosition: {x: -8.38190317e-08, y: .347325414, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editMode: 0
   showBoneInfluence: 1
-  IK_Enabled: 1
+  IK_Enabled: 0
   basePose: {fileID: 0}
   _flipY: 0
   _flipX: 0

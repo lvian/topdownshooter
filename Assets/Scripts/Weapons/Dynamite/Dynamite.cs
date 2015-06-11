@@ -30,8 +30,10 @@ public class Dynamite : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if(GameManager.instance.State == GameManager.GameState.Playing)
 		{
+
 			if(Vector3.Distance(transform.position, destination) > 0 && traveledDistance <= maxDistance)
 			{
 				traveledDistance += Vector3.Distance(transform.position , Vector3.MoveTowards( transform.position , destination, 6 * Time.deltaTime ));
@@ -80,6 +82,8 @@ public class Dynamite : MonoBehaviour {
 		exploded = true;
 
 	}
+
+
 
 	public IEnumerator LightEffect()
 	{

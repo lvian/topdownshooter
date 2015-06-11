@@ -133,12 +133,15 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AlphaNumericSort.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationCurvesCopier.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationEventCopier.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationHierarchyEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\AnimationToPNGMenu.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\BakePoseEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\BoneEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\ControlPointEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\InverseKinematicsEditor.cs" />
+     <Compile Include="Assets\SpritesAndBones\Scripts\Editor\MeshCreator.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\PoseEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\SkeletonEditor.cs" />
      <Compile Include="Assets\SpritesAndBones\Scripts\Editor\Skin2DEditor.cs" />

@@ -518,6 +518,8 @@ public class GUIManager : MonoBehaviour {
 	{
 		GameObject dynamite = transform.Find("InGame/Weapon Information/Dynamite").gameObject;
 		NGUITools.SetActive (dynamite, true);
+		GameObject dynamiteButton = transform.Find("InGame/Buttons/Dynamite Button").gameObject;
+		NGUITools.SetActive (dynamiteButton, true);
 
 	}
 

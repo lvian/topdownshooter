@@ -34,6 +34,7 @@ public class Player : Humanoid {
 	public IEnumerator Start () {
 		EventDelegate.Add (GameObject.Find("Dodge Background").GetComponent<UIButton>().onClick, Dodge);
 		EventDelegate.Add (GameObject.Find("Reload Button").GetComponent<UIButton>().onClick, Reload);
+		EventDelegate.Add (GameObject.Find("Dynamite Button").GetComponent<UIButton>().onClick, throwDynamite);
 
 		EventDelegate changeRevolver = new EventDelegate(this, "changeWeapons");
 		changeRevolver.parameters[0].value = 0;
@@ -106,14 +107,6 @@ public class Player : Humanoid {
 				Fire();
 				
 
-				
-				if(Input.GetKeyDown(KeyCode.Mouse1))
-				{
-					if(GameManager.instance.Upgrades.DynamiteUnlocked == 1)
-					{
-						throwDynamite();
-					}
-				}
 				
 
 				
@@ -514,9 +507,16 @@ public class Player : Humanoid {
 	{
 		if(dynamiteAmount > 0)
 		{
+			#if UNITY_ANDROID
+
+			Vector3 mousePosition = transform.TransformPoint( Vector3.up * 4.5f );
+			GameObject dyna = (GameObject) GameObject.Instantiate(dynamite, transform.position, transform.rotation);  
+			dyna.GetComponent<Dynamite> ().Destination = mousePosition;
+			#else
 			Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition - transform.position);
 			GameObject dyna = (GameObject) GameObject.Instantiate(dynamite, transform.position, transform.rotation);  
 			dyna.GetComponent<Dynamite> ().Destination = mousePosition;
+			#endif
 			dynamiteAmount --;
 			GUIManager.instance.UpdateDynamite(dynamiteAmount);
 		}
